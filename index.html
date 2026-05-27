@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أحمد عصام رمضان | AI Systems & Workflows for MENA</title>
+  <meta name="description" content="مصمم أنظمة AI وبناء براند إبداعي للبزنس العربي. AI Systems Architect building workflows and brand assets for Arabic businesses in MENA.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" type="image/x-icon" href="./assets/general/favicon.ico">
+  
+  <!-- Inline FOUC avoidance scripts -->
+  <script>
+    {
+      const theme = localStorage.getItem('theme') || 'dark';
+      document.querySelector('meta[name="color-scheme"]').content = theme;
+      document.documentElement.setAttribute('data-theme', theme);
+      
+      const lang = localStorage.getItem('lang') || 'ar';
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    }
+  </script>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./css/style.css">
+  
+  <style>
+    /* Hero Visual Styles */
+    .hero-sec {
+      position: relative;
+      padding-block: var(--space-xl) var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: 2.8rem;
+      font-weight: 900;
+      line-height: 1.15;
+      margin-block-end: var(--space-md);
+      letter-spacing: -0.02em;
+    }
+
+    @media (min-width: 768px) {
+      .hero-title {
+        font-size: 3.8rem;
+      }
+    }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--text-dark-secondary);
+      max-inline-size: 800px;
+      margin-block-end: var(--space-lg);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: var(--space-sm);
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-block-end: var(--space-xl);
+    }
+
+    /* Gap Section Specifics */
+    .gap-sec {
+      background-color: var(--bg-dark-surface);
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg) var(--space-md);
+      margin-block: var(--space-lg);
+      border: var(--border-width) solid var(--border-dark-glass);
+      text-align: center;
+    }
+
+    .gap-number {
+      font-size: 4rem;
+      font-weight: 900;
+      color: var(--gold-primary);
+      line-height: 1;
+      margin-block-end: var(--space-xs);
+    }
+
+    /* Steps Layout */
+    .step-card {
+      position: relative;
+      padding-inline-start: var(--space-lg);
+    }
+
+    .step-number {
+      position: absolute;
+      inset-inline-start: var(--space-sm);
+      top: var(--space-md);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--gold-primary);
+      opacity: 0.2;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="site-container navbar-inner">
+      <a href="./index.html" class="logo">
+        <span class="logo-symbol">◈</span>
+        <span>أحمد عصام</span>
+      </a>
+      
+      <!-- Nav Links -->
+      <div class="nav-links">
+        <a href="./index.html" class="nav-link active">
+          <span lang="ar">الرئيسية</span>
+          <span lang="en">Home</span>
+        </a>
+        <a href="./about/index.html" class="nav-link">
+          <span lang="ar">عني</span>
+          <span lang="en">About</span>
+        </a>
+        <a href="./services/index.html" class="nav-link">
+          <span lang="ar">الخدمات</span>
+          <span lang="en">Services</span>
+        </a>
+        <a href="./work/index.html" class="nav-link">
+          <span lang="ar">أعمالي</span>
+          <span lang="en">Work</span>
+        </a>
+        <a href="./contact/index.html" class="nav-link">
+          <span lang="ar">تواصل</span>
+          <span lang="en">Contact</span>
+        </a>
+      </div>
+
+      <!-- Controls -->
+      <div style="display: flex; gap: var(--space-xs); align-items: center;">
+        <button id="theme-toggle" class="btn btn-secondary" style="padding: 0.5rem; border-radius: 50%; min-width: 40px; block-size: 40px;">
+          <!-- Icons are switched by JavaScript -->
+          <span class="theme-icon-light" style="display:none;">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="btn btn-secondary lang-toggle-btn" data-lang-target="en" style="font-size: 0.85rem; font-weight: 700; padding: 0.5rem 0.8rem;">
+          <span lang="ar">English</span>
+          <span lang="en">العربية</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <main class="site-container">
+
+    <!-- Hero Section -->
+    <section class="hero-sec">
+      <div class="section-label">AI Systems Architect · Cairo, Egypt · MENA</div>
+      <h1 class="hero-title text-pretty">
+        <span lang="ar">بدأت بائع ملابس في الشارع.<br>دلوقتي بابني <em>أنظمة AI</em> للبزنس العربي.</span>
+        <span lang="en">Started selling clothes in the street.<br>Now I build <em>AI systems</em> for Arabic businesses.</span>
+      </h1>
+      <p class="hero-sub text-pretty">
+        <span lang="ar">10+ سنين في العمليات والمبيعات وسلاسل التوريد علّموني حاجة واحدة: التكنولوجيا اللي مش بتفهم الناس اللي بتستخدمها بتفشل دايماً. بابني AI workflows وأنظمة براند وخطوط محتوى بتشتغل فعلاً — بالعربي، للبزنس العربي.</span>
+        <span lang="en">10+ years across operations, sales, and supply chain taught me one thing: technology that doesn't understand the people using it always fails. I build AI workflows, brand systems, and content pipelines that actually run — in Arabic, for Arabic businesses.</span>
+      </p>
+      <div class="hero-actions">
+        <a href="./work/index.html" class="btn btn-primary">
+          <span lang="ar">شوف الشغل</span>
+          <span lang="en">See the Work</span>
+        </a>
+        <a href="./contact/index.html" class="btn btn-secondary">
+          <span lang="ar">ابدأ مشروع</span>
+          <span lang="en">Start a Project</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Metrics Section -->
+    <section style="padding-block-start: 0;">
+      <div class="grid-2" style="gap: var(--space-sm);">
+        <div class="card-glass" style="display: flex; gap: var(--space-md); align-items: center;">
+          <div style="font-size: 2.5rem; font-weight: 800; color: var(--gold-primary); width: 80px;">10+</div>
+          <div>
+            <h4 lang="ar" style="font-size: 1rem; font-weight: 700;">موقع عميل متبني</h4>
+            <h4 lang="en" style="font-size: 1rem; font-weight: 700;">Client websites built</h4>
+            <p lang="ar" class="text-secondary font-size-sm">تم بناؤها ونشرها باستخدام Lovable.dev وأنظمة الـ No-Code.</p>
+            <p lang="en" class="text-secondary font-size-sm">Built and launched using Lovable.dev and No-Code systems.</p>
+          </div>
+        </div>
+        
+        <div class="card-glass" style="display: flex; gap: var(--space-md); align-items: center;">
+          <div style="font-size: 2.5rem; font-weight: 800; color: var(--gold-primary); width: 80px;">40%</div>
+          <div>
+            <h4 lang="ar" style="font-size: 1rem; font-weight: 700;">تحسين في إنتاج المحتوى</h4>
+            <h4 lang="en" style="font-size: 1rem; font-weight: 700;">Faster content production</h4>
+            <p lang="ar" class="text-secondary font-size-sm">تحسين كفاءة صناعة المحتوى باستخدام سير عمل AI متكامل.</p>
+            <p lang="en" class="text-secondary font-size-sm">Accelerated content pipelines through custom AI automation workflows.</p>
+          </div>
+        </div>
+
+        <div class="card-glass" style="display: flex; gap: var(--space-md); align-items: center;">
+          <div style="font-size: 2.5rem; font-weight: 800; color: var(--gold-primary); width: 80px;">3</div>
+          <div>
+            <h4 lang="ar" style="font-size: 1rem; font-weight: 700;">منصات AI معتمد عليها</h4>
+            <h4 lang="en" style="font-size: 1rem; font-weight: 700;">AI platforms certified</h4>
+            <p lang="ar" class="text-secondary font-size-sm">أدوات وشهادات من (Anthropic, Google, ALX, HubSpot).</p>
+            <p lang="en" class="text-secondary font-size-sm">Certified in leading AI ecosystems (Anthropic, Google, ALX, HubSpot).</p>
+          </div>
+        </div>
+
+        <div class="card-glass" style="display: flex; gap: var(--space-md); align-items: center;">
+          <div style="font-size: 2.5rem; font-weight: 800; color: var(--gold-primary); width: 80px;">5+</div>
+          <div>
+            <h4 lang="ar" style="font-size: 1rem; font-weight: 700;">قطاعات تم خدمتها في MENA</h4>
+            <h4 lang="en" style="font-size: 1rem; font-weight: 700;">Industries served across MENA</h4>
+            <p lang="ar" class="text-secondary font-size-sm">لوجستيات، تجارة إلكترونية، وكالات، صناعة محتوى، وتعليم.</p>
+            <p lang="en" class="text-secondary font-size-sm">Logistics, E-commerce, digital agencies, content creators, education.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Gap Section -->
+    <section>
+      <div class="gap-sec">
+        <div class="section-label">
+          <span lang="ar">فجوة التنفيذ</span>
+          <span lang="en">The Execution Gap</span>
+        </div>
+        <div class="gap-number">87%</div>
+        <h3 lang="ar" class="section-title text-balance" style="font-size: 1.8rem;">من الشركات الصغيرة والمتوسطة في MENA</h3>
+        <h3 lang="en" class="section-title text-balance" style="font-size: 1.8rem;">of MENA SMEs</h3>
+        <p lang="ar" class="text-secondary" style="max-inline-size: 700px; margin-inline: auto;">
+          جربت أدوات AI وتخلت عنها خلال 3 شهور — مش لأن الأدوات فشلت، لكن لأن محدش بناها في الـ workflow الفعلي للشركة. دي هي الفجوة اللي بشتغل على سدها.
+        </p>
+        <p lang="en" class="text-secondary" style="max-inline-size: 700px; margin-inline: auto;">
+          have tried AI tools and abandoned them within 3 months — not because the tools failed, but because no one built them into the actual daily workflow of the company. That is the gap I bridge.
+        </p>
+      </div>
+    </section>
+
+    <!-- Focus Areas Section -->
+    <section>
+      <div class="text-center" style="margin-block-end: var(--space-lg);">
+        <div class="section-label">
+          <span lang="ar">مجالات التركيز</span>
+          <span lang="en">Areas of Expertise</span>
+        </div>
+        <h2 class="section-title">
+          <span lang="ar">أين أشتغل</span>
+          <span lang="en">Where I Focus</span>
+        </h2>
+      </div>
+
+      <div class="grid-3">
+        <div class="card-glass">
+          <div style="font-size: 2rem; margin-block-end: var(--space-xs);">⚙️</div>
+          <h3 lang="ar" style="font-size: 1.25rem; margin-block-end: var(--space-xs);">عمليات البزنس ← أنظمة AI</h3>
+          <h3 lang="en" style="font-size: 1.25rem; margin-block-end: var(--space-xs);">Business Operations &rarr; AI Systems</h3>
+          <p lang="ar" class="text-secondary font-size-sm">
+            بترجم 10 سنين عمليات ميدانية لـ AI workflows. مبني على طريقة عمل الـ SMEs الفعلية — مش طريقة المستشارين. مبيعات ومخزون وسلاسل توريد وعمليات العملاء — كلها متوثقة في AI.
+          </p>
+          <p lang="en" class="text-secondary font-size-sm">
+            I translate 10 years of field operations into AI workflows. Built for how SMEs actually run — not how consultants think they should. Sales, inventory, supply chain, customer ops — all mapped to AI.
+          </p>
+        </div>
+
+        <div class="card-glass">
+          <div style="font-size: 2rem; margin-block-end: var(--space-xs);">🗣️</div>
+          <h3 lang="ar" style="font-size: 1.25rem; margin-block-end: var(--space-xs);">Context Engineering عربي أولاً</h3>
+          <h3 lang="en" style="font-size: 1.25rem; margin-block-end: var(--space-xs);">Arabic-First Context Engineering</h3>
+          <p lang="ar" class="text-secondary font-size-sm">
+            صوت البراند والسياق التسويقي والمنطق الثقافي — مبني من اليوم الأول. مش إنجليزي مترجم — تفكير عربي أصيل في كل output. لهجات ومراجع وtone بتناسب جمهورك فعلاً.
+          </p>
+          <p lang="en" class="text-secondary font-size-sm">
+            Brand voice, market context, and cultural logic built in from day one. Not translated English — native Arabic thinking in every output. Dialects, references, and tone that actually fit your audience.
+          </p>
+        </div>
+
+        <div class="card-glass">
+          <div style="font-size: 2rem; margin-block-end: var(--space-xs);">📈</div>
+          <h3 lang="ar" style="font-size: 1.25rem; margin-block-end: var(--space-xs);">تكامل AI قابل للقياس</h3>
+          <h3 lang="en" style="font-size: 1.25rem; margin-block-end: var(--space-xs);">Measurable AI Integration</h3>
+          <p lang="ar" class="text-secondary font-size-sm">
+            الـ KPIs بتتحدد قبل اختيار أي أداة. أنظمة موثقة فريقك يشغّلها من غيري. قياس وتعديل وتحسين — مش setup وبعدين نسيان.
+          </p>
+          <p lang="en" class="text-secondary font-size-sm">
+            KPIs defined before any tool is chosen. Documented systems your team can run without me. Iterate, measure, improve — not set and forget.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section>
+      <div class="text-center" style="margin-block-end: var(--space-lg);">
+        <div class="section-label">
+          <span lang="ar">طريقة العمل</span>
+          <span lang="en">How I Work</span>
+        </div>
+        <h2 class="section-title">
+          <span lang="ar">كيف أشتغل</span>
+          <span lang="en">My Process</span>
+        </h2>
+      </div>
+
+      <div class="grid-3">
+        <div class="card-glass step-card">
+          <span class="step-number">01</span>
+          <h3 lang="ar" style="font-size: 1.15rem; margin-block-end: var(--space-xs);">فهم البزنس الأول</h3>
+          <h3 lang="en" style="font-size: 1.15rem; margin-block-end: var(--space-xs);">Understand Business First</h3>
+          <p lang="ar" class="text-secondary font-size-sm">قبل أي توصية بأداة — بعمل map لعملياتك الفعلية وقيود فريقك وأهداف بزنسك. معظم إخفاقات AI بتبدأ هنا.</p>
+          <p lang="en" class="text-secondary font-size-sm">Before any tool recommendation — I map your actual operations, team constraints, and business goals. Most AI failures start here.</p>
+        </div>
+
+        <div class="card-glass step-card">
+          <span class="step-number">02</span>
+          <h3 lang="ar" style="font-size: 1.15rem; margin-block-end: var(--space-xs);">بابني نظام مش prompt</h3>
+          <h3 lang="en" style="font-size: 1.15rem; margin-block-end: var(--space-xs);">Build a System, Not a Prompt</h3>
+          <p lang="ar" class="text-secondary font-size-sm">سياق البراند وتصميم الـ workflow واختيار الأدوات والمنطق بالعربي والإنجليزي — كلها مجموعة في pipeline فريقك يقدر يشغّله فعلاً.</p>
+          <p lang="en" class="text-secondary font-size-sm">Brand context, workflow design, tool selection, Arabic/English logic — all assembled into a pipeline your team can actually run.</p>
+        </div>
+
+        <div class="card-glass step-card">
+          <span class="step-number">03</span>
+          <h3 lang="ar" style="font-size: 1.15rem; margin-block-end: var(--space-xs);">قياس وتوثيق وتسليم</h3>
+          <h3 lang="en" style="font-size: 1.15rem; margin-block-end: var(--space-xs);">Measure, Document & Hand Off</h3>
+          <p lang="ar" class="text-secondary font-size-sm">KPIs وتوثيق وتدريب. الهدف الرئيسي هو إن النظام يشتغل ويكمل بكفاءة عالية حتى في غيابي.</p>
+          <p lang="en" class="text-secondary font-size-sm">KPIs, documentation, training. The main goal is that the system operates efficiently even when I am out of the room.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section>
+      <div class="text-center" style="margin-block-end: var(--space-lg);">
+        <div class="section-label">
+          <span lang="ar">أراء العملاء</span>
+          <span lang="en">Testimonials</span>
+        </div>
+        <h2 class="section-title">
+          <span lang="ar">شغل حقيقي، نتائج حقيقية</span>
+          <span lang="en">Real Clients, Real Outcomes</span>
+        </h2>
+      </div>
+
+      <div class="grid-2">
+        <div class="card-glass" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <p lang="ar" style="font-style: italic; font-size: 1.1rem; margin-block-end: var(--space-md);">
+            "أحمد مش بس بيوصي بأدوات AI — هو بيبني النظام حوالين بزنسك. ده هو الفرق الحقيقي اللي خلانا نعتمد عليه بالكامل."
+          </p>
+          <p lang="en" style="font-style: italic; font-size: 1.1rem; margin-block-end: var(--space-md);">
+            "Ahmed doesn't just recommend AI tools — he builds the system around your business. That's the difference that allowed us to rely completely on his work."
+          </p>
+          <div>
+            <h4 lang="ar" style="font-size: 0.95rem; font-weight: 700;">عميل تجارة إلكترونية B2B</h4>
+            <h4 lang="en" style="font-size: 0.95rem; font-weight: 700;">B2B E-commerce Client</h4>
+            <p lang="ar" class="text-secondary font-size-sm">القاهرة، مصر</p>
+            <p lang="en" class="text-secondary font-size-sm">Cairo, Egypt</p>
+          </div>
+        </div>
+
+        <div class="card-glass" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <p lang="ar" style="font-style: italic; font-size: 1.1rem; margin-block-end: var(--space-md);">
+            "أخيراً حد بيفهم إن المحتوى العربي مش مجرد إنجليزي مترجم. صوت البراند اللي بناه لينا بيبان كأنه صوتنا وبيعبر عننا فعلاً."
+          </p>
+          <p lang="en" style="font-style: italic; font-size: 1.1rem; margin-block-end: var(--space-md);">
+            "Finally someone who understands that Arabic content isn't just translated English. The brand voice he built actually sounds like us and represents our identity."
+          </p>
+          <div>
+            <h4 lang="ar" style="font-size: 0.95rem; font-weight: 700;">مدير تسويق في شركة متوسطة</h4>
+            <h4 lang="en" style="font-size: 0.95rem; font-weight: 700;">SME Marketing Manager</h4>
+            <p lang="ar" class="text-secondary font-size-sm">الجيزة، مصر</p>
+            <p lang="en" class="text-secondary font-size-sm">Giza, Egypt</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA Section -->
+    <section class="text-center" style="margin-block-end: var(--space-lg);">
+      <div class="card-glass" style="padding: var(--space-lg) var(--space-md); border-color: rgba(224, 169, 109, 0.2);">
+        <h2 class="section-title" style="margin-block-end: var(--space-xs);">
+          <span lang="ar">عندك مشروع؟ خلينا نبنيه.</span>
+          <span lang="en">Let's Build Something Real.</span>
+        </h2>
+        <p lang="ar" class="text-secondary" style="margin-block-end: var(--space-md); max-inline-size: 600px; margin-inline: auto;">
+          جاهز لتصميم أنظمة ذكاء اصطناعي وهوية بصرية متكاملة لبزنسك؟ خلينا نحدد مكالمة تشخيصية سريعة ونبدأ شغل.
+        </p>
+        <p lang="en" class="text-secondary" style="margin-block-end: var(--space-md); max-inline-size: 600px; margin-inline: auto;">
+          Ready to implement custom AI systems and a unified visual brand for your business? Let's schedule a quick diagnostic call.
+        </p>
+        <a href="./contact/index.html" class="btn btn-primary">
+          <span lang="ar">تواصل معايا</span>
+          <span lang="en">Start a Project</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="site-container footer-inner">
+      <div>
+        <div class="logo" style="margin-block-end: var(--space-xs);">
+          <span class="logo-symbol">◈</span>
+          <span>أحمد عصام</span>
+        </div>
+        <p lang="ar" class="text-secondary font-size-sm">مستشار أنظمة ذكاء اصطناعي وتسويق رقمي</p>
+        <p lang="en" class="text-secondary font-size-sm">AI Systems & Digital Marketing Consultant</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: var(--space-xs); align-items: center;">
+        <div class="footer-links">
+          <a href="./index.html" class="nav-link active">
+            <span lang="ar">الرئيسية</span>
+            <span lang="en">Home</span>
+          </a>
+          <a href="./about/index.html" class="nav-link">
+            <span lang="ar">عني</span>
+            <span lang="en">About</span>
+          </a>
+          <a href="./services/index.html" class="nav-link">
+            <span lang="ar">الخدمات</span>
+            <span lang="en">Services</span>
+          </a>
+          <a href="./work/index.html" class="nav-link">
+            <span lang="ar">أعمالي</span>
+            <span lang="en">Work</span>
+          </a>
+          <a href="./contact/index.html" class="nav-link">
+            <span lang="ar">تواصل</span>
+            <span lang="en">Contact</span>
+          </a>
+        </div>
+        
+        <p class="text-secondary font-size-sm">
+          &copy; 2026 Ahmed Issam Ramadan — VentureCycle Studio. 
+          <span lang="ar">جميع الحقوق محفوظة.</span>
+          <span lang="en">All rights reserved.</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./js/main.js"></script>
+</body>
+</html>

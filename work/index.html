@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>معرض الأعمال ودراسات الحالة | Case Studies Gallery</title>
+  <meta name="description" content="مشاريع حية ودراسات حالة لعملاء حقيقيين في هويات البراند، استراتيجيات المحتوى وأتمتة العمليات بالـ AI. Live client projects and AI systems case studies.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" type="image/x-icon" href="../assets/general/favicon.ico">
+  
+  <!-- Inline FOUC avoidance scripts -->
+  <script>
+    {
+      const theme = localStorage.getItem('theme') || 'dark';
+      document.querySelector('meta[name="color-scheme"]').content = theme;
+      document.documentElement.setAttribute('data-theme', theme);
+      
+      const lang = localStorage.getItem('lang') || 'ar';
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    }
+  </script>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/style.css">
+  
+  <style>
+    /* Case Studies Gallery Grid */
+    .hub-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+      margin-block-start: var(--space-lg);
+    }
+    
+    @media (min-width: 768px) {
+      .hub-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .hub-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .hub-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .hub-card__thumb-wrapper {
+      position: relative;
+      inline-size: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      margin-block-end: var(--space-xs);
+      border: var(--border-width) solid var(--border-dark-glass);
+      background-color: #0b0a0d;
+    }
+
+    .hub-card__thumb {
+      inline-size: 100%;
+      block-size: 100%;
+      object-fit: cover;
+      transition: var(--transition-normal);
+    }
+
+    .hub-card:hover .hub-card__thumb {
+      transform: scale(1.05);
+    }
+
+    .hub-card__type {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--gold-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-block-end: 4px;
+    }
+
+    .hub-card__title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-block-end: var(--space-xs);
+    }
+
+    .hub-card__tagline {
+      font-size: 0.9rem;
+      color: var(--text-dark-secondary);
+      flex: 1;
+      margin-block-end: var(--space-xs);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="site-container navbar-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-symbol">◈</span>
+        <span>أحمد عصام</span>
+      </a>
+      
+      <!-- Nav Links -->
+      <div class="nav-links">
+        <a href="../index.html" class="nav-link">
+          <span lang="ar">الرئيسية</span>
+          <span lang="en">Home</span>
+        </a>
+        <a href="../about/index.html" class="nav-link">
+          <span lang="ar">عني</span>
+          <span lang="en">About</span>
+        </a>
+        <a href="../services/index.html" class="nav-link">
+          <span lang="ar">الخدمات</span>
+          <span lang="en">Services</span>
+        </a>
+        <a href="./index.html" class="nav-link active">
+          <span lang="ar">أعمالي</span>
+          <span lang="en">Work</span>
+        </a>
+        <a href="../contact/index.html" class="nav-link">
+          <span lang="ar">تواصل</span>
+          <span lang="en">Contact</span>
+        </a>
+      </div>
+
+      <!-- Controls -->
+      <div style="display: flex; gap: var(--space-xs); align-items: center;">
+        <button id="theme-toggle" class="btn btn-secondary" style="padding: 0.5rem; border-radius: 50%; min-width: 40px; block-size: 40px;">
+          <span class="theme-icon-light" style="display:none;">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="btn btn-secondary lang-toggle-btn" data-lang-target="en" style="font-size: 0.85rem; font-weight: 700; padding: 0.5rem 0.8rem;">
+          <span lang="ar">English</span>
+          <span lang="en">العربية</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <main class="site-container">
+
+    <!-- Hero Gallery Header -->
+    <section class="text-center">
+      <div class="section-label">
+        <span lang="ar">معرض المشروعات</span>
+        <span lang="en">Project Showcase</span>
+      </div>
+      <h1 class="section-title">
+        <span lang="ar">شغل حقيقي، عملاء حقيقيون</span>
+        <span lang="en">Real Work, Real Clients</span>
+      </h1>
+      <p lang="ar" class="section-sub" style="margin-inline: auto;">
+        مش مجرد نماذج وهمية أو تصميمات نظرية. دي مشاريع حية، أسماء حقيقية، ونتائج موثقة بالأرقام.
+      </p>
+      <p lang="en" class="section-sub" style="margin-inline: auto;">
+        No mockups or theoretical case studies. These are live projects, real client names, and documented results.
+      </p>
+    </section>
+
+    <!-- Project Hub Grid -->
+    <section style="padding-block-start: 0;">
+      <div class="hub-grid">
+        <!-- Card 1: Hedyet -->
+        <a href="./hedyet/index.html" class="card-glass hub-card">
+          <div class="hub-card__thumb-wrapper">
+            <img class="hub-card__thumb" src="../assets/hedyet/a+-module-1---hero-brand-banner.jpg" alt="هدية المطور" loading="lazy">
+          </div>
+          <span lang="ar" class="hub-card__type">إطلاق منتجات · تجارة إلكترونية</span>
+          <span lang="en" class="hub-card__type">Product Launch · E-commerce</span>
+          <h2 lang="ar" class="hub-card__title">هدية المطور</h2>
+          <h2 lang="en" class="hub-card__title">Hedyet el Developer</h2>
+          <p lang="ar" class="hub-card__tagline">إثبات كيف يمكن لاستوديو AI واحد تسليم كامل Amazon Launch في جلسة عمل واحدة بالملفات الجاهزة.</p>
+          <p lang="en" class="hub-card__tagline">Proof of delivering a complete Amazon product launch in a single session using custom AI workflows.</p>
+          <span class="pill" style="align-self: flex-start;">Amazon Kit</span>
+        </a>
+
+        <!-- Card 2: Khem -->
+        <a href="./khem/index.html" class="card-glass hub-card">
+          <div class="hub-card__thumb-wrapper" style="background:#0d0a05; padding: 1rem;">
+            <img class="hub-card__thumb" src="../assets/khem/logo-Dark-Logo.png" alt="كيم" loading="lazy" style="object-fit:contain;">
+          </div>
+          <span lang="ar" class="hub-card__type">هوية البراند · أزياء مصرية</span>
+          <span lang="en" class="hub-card__type">Brand Identity · Fashion</span>
+          <h2 lang="ar" class="hub-card__title">كيم KHEM</h2>
+          <h2 lang="en" class="hub-card__title">KHEM Pharaonic Wear</h2>
+          <p lang="ar" class="hub-card__tagline">بناء هوية بصرية كاملة لبراند أزياء فرعوني من الإسكندرية بجماليات عصرية فاخرة.</p>
+          <p lang="en" class="hub-card__tagline">Bespoke brand system for a pharaonic streetwear brand in Alexandria with premium aesthetics.</p>
+          <span class="pill" style="align-self: flex-start;">Identity System</span>
+        </a>
+
+        <!-- Card 3: VentureCycle -->
+        <a href="./venturecycle/index.html" class="card-glass hub-card">
+          <div class="hub-card__thumb-wrapper">
+            <img class="hub-card__thumb" src="../assets/venturecycle/slide_1.png" alt="VentureCycle" loading="lazy">
+          </div>
+          <span lang="ar" class="hub-card__type">هوية الاستوديو · بناء ذاتي</span>
+          <span lang="en" class="hub-card__type">Studio Branding · Self-Build</span>
+          <h2 lang="ar" class="hub-card__title">VentureCycle Studio</h2>
+          <h2 lang="en" class="hub-card__title">VentureCycle Studio</h2>
+          <p lang="ar" class="hub-card__tagline">تطبيق نفس المنهجية التشغيلية لتصميم هوية وملف تعريف كامل وموقع الاستوديو الخاص بنا.</p>
+          <p lang="en" class="hub-card__tagline">Applying our own operational design methodology to build our studio's brand book and system.</p>
+          <span class="pill" style="align-self: flex-start;">Brand Book</span>
+        </a>
+
+        <!-- Card 4: Foul -->
+        <a href="./foul/index.html" class="card-glass hub-card">
+          <div class="hub-card__thumb-wrapper">
+            <img class="hub-card__thumb" src="../assets/foul/تصميم-ملصق-001.jpeg" alt="فول وفلافل" loading="lazy">
+          </div>
+          <span lang="ar" class="hub-card__type">تصميم بصري · براند أغذية</span>
+          <span lang="en" class="hub-card__type">Visual Design · Food Brand</span>
+          <h2 lang="ar" class="hub-card__title">فول وفلافل</h2>
+          <h2 lang="en" class="hub-card__title">Foul w Falafel</h2>
+          <p lang="ar" class="hub-card__tagline">إنتاج 55 تصميم ملصق وبوستر إعلاني لمطعم شعبي مصري عصري يتكلم لغة زبائنه.</p>
+          <p lang="en" class="hub-card__tagline">55 custom AI-generated designs and advertising graphics for a modern traditional Egyptian restaurant.</p>
+          <span class="pill" style="align-self: flex-start;">Graphics Library</span>
+        </a>
+
+        <!-- Card 5: Omar -->
+        <a href="./omar/index.html" class="card-glass hub-card">
+          <div class="hub-card__thumb-wrapper">
+            <img class="hub-card__thumb" src="../assets/omar/Create_a_personal_202604210734.png" alt="عمر نصر" loading="lazy">
+          </div>
+          <span lang="ar" class="hub-card__type">براند شخصي · تصميم شعار</span>
+          <span lang="en" class="hub-card__type">Personal Brand · Logo Design</span>
+          <h2 lang="ar" class="hub-card__title">عمر نصر</h2>
+          <h2 lang="en" class="hub-card__title">Omar Nasr Logo Labs</h2>
+          <p lang="ar" class="hub-card__tagline">توليد واستكشاف 24 اتجاه لتصميم شعار براند شخصي بـ 6 أساليب مختلفة في جلسة واحدة.</p>
+          <p lang="en" class="hub-card__tagline">Wide exploration generating 24 distinct logo concepts across 6 aesthetic styles in a single session.</p>
+          <span class="pill" style="align-self: flex-start;">Logo Explorations</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="site-container footer-inner">
+      <div>
+        <div class="logo" style="margin-block-end: var(--space-xs);">
+          <span class="logo-symbol">◈</span>
+          <span>أحمد عصام</span>
+        </div>
+        <p lang="ar" class="text-secondary font-size-sm">مستشار أنظمة ذكاء اصطناعي وتسويق رقمي</p>
+        <p lang="en" class="text-secondary font-size-sm">AI Systems & Digital Marketing Consultant</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: var(--space-xs); align-items: center;">
+        <div class="footer-links">
+          <a href="../index.html" class="nav-link">
+            <span lang="ar">الرئيسية</span>
+            <span lang="en">Home</span>
+          </a>
+          <a href="../about/index.html" class="nav-link">
+            <span lang="ar">عني</span>
+            <span lang="en">About</span>
+          </a>
+          <a href="../services/index.html" class="nav-link">
+            <span lang="ar">الخدمات</span>
+            <span lang="en">Services</span>
+          </a>
+          <a href="./index.html" class="nav-link active">
+            <span lang="ar">أعمالي</span>
+            <span lang="en">Work</span>
+          </a>
+          <a href="../contact/index.html" class="nav-link">
+            <span lang="ar">تواصل</span>
+            <span lang="en">Contact</span>
+          </a>
+        </div>
+        
+        <p class="text-secondary font-size-sm">
+          &copy; 2026 Ahmed Issam Ramadan — VentureCycle Studio. 
+          <span lang="ar">جميع الحقوق محفوظة.</span>
+          <span lang="en">All rights reserved.</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/main.js"></script>
+</body>
+</html>

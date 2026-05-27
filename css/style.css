@@ -1,0 +1,393 @@
+/* ==========================================================================
+   DESIGN SYSTEM & CORE STYLES
+   ========================================================================== */
+
+/* 1. Reset & Setup */
+@layer reset, base, theme, layout, components, utilities;
+
+@layer reset {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    min-block-size: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  img, picture, svg, video {
+    display: block;
+    max-inline-size: 100%;
+    block-size: auto;
+  }
+
+  input, button, textarea, select {
+    font: inherit;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  ul, ol {
+    list-style: none;
+  }
+}
+
+/* 2. Base Configuration & Typography */
+@layer base {
+  :root {
+    /* Fonts */
+    --font-ar: 'Cairo', system-ui, -apple-system, sans-serif;
+    --font-en: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+
+    /* Theme Colors (Dark Theme Default) */
+    --bg-dark-base: #08080a;
+    --bg-dark-surface: #101014;
+    --bg-dark-glass: rgba(16, 16, 20, 0.7);
+    --border-dark-glass: rgba(255, 255, 255, 0.07);
+    
+    --text-dark-primary: #f3f4f6;
+    --text-dark-secondary: #9ca3af;
+    --text-dark-muted: #6b7280;
+
+    --gold-primary: #e0a96d;
+    --gold-light: #f5d6b3;
+    --gold-dim: rgba(224, 169, 109, 0.1);
+    --purple-accent: #8e7ab5;
+    --purple-dim: rgba(142, 122, 181, 0.15);
+
+    /* Spacing Scales */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2.5rem;
+    --space-xl: 4rem;
+
+    /* Borders & Radius */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 24px;
+    --border-width: 1px;
+
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Native UI custom scrollbars */
+    --scrollbar-thumb: #33333b;
+    --scrollbar-track: #08080a;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+    scrollbar-width: thin;
+    
+    color-scheme: dark;
+    accent-color: var(--gold-primary);
+  }
+
+  body {
+    background-color: var(--bg-dark-base);
+    color: var(--text-dark-primary);
+    font-size: 1rem;
+  }
+
+  /* Set document fonts based on language direction */
+  html[lang="ar"] body {
+    font-family: var(--font-ar);
+  }
+  
+  html[lang="en"] body {
+    font-family: var(--font-en);
+  }
+
+  /* Focus styling */
+  *:focus-visible {
+    outline: 2px solid var(--gold-primary);
+    outline-offset: 4px;
+  }
+}
+
+/* 3. Multi-language Display Toggle (Pure CSS multilingual mechanism) */
+@layer base {
+  /* Default: Hide English elements in Arabic site */
+  html[lang="ar"] :lang(en) {
+    display: none !important;
+  }
+
+  /* Default: Hide Arabic elements in English site */
+  html[lang="en"] :lang(ar) {
+    display: none !important;
+  }
+}
+
+/* 4. Layout & Grid System */
+@layer layout {
+  .site-container {
+    max-inline-size: 1200px;
+    margin-inline: auto;
+    padding-inline: var(--space-sm);
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  @media (min-width: 768px) {
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  section {
+    padding-block: var(--space-xl);
+  }
+}
+
+/* 5. Components Styling */
+@layer components {
+  /* Navigation Bar */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--bg-dark-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-block-end: var(--border-width) solid var(--border-dark-glass);
+  }
+
+  .navbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    block-size: 80px;
+  }
+
+  .logo {
+    font-weight: 800;
+    font-size: 1.3rem;
+    letter-spacing: -0.03em;
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+
+  .logo-symbol {
+    color: var(--gold-primary);
+  }
+
+  .nav-links {
+    display: none;
+    gap: var(--space-md);
+  }
+
+  @media (min-width: 768px) {
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .nav-link {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-dark-secondary);
+    transition: var(--transition-fast);
+  }
+
+  .nav-link:hover, .nav-link.active {
+    color: var(--text-dark-primary);
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding-block: 0.75rem;
+    padding-inline: 1.5rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    border: none;
+  }
+
+  .btn-primary {
+    background-color: var(--gold-primary);
+    color: var(--bg-dark-base);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--gold-light);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: var(--text-dark-primary);
+    border: 1px solid var(--border-dark-glass);
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--border-dark-glass);
+    transform: translateY(-2px);
+  }
+
+  .btn-wa {
+    background-color: #25d366;
+    color: white;
+  }
+
+  .btn-wa:hover {
+    background-color: #20ba5a;
+    transform: translateY(-2px);
+  }
+
+  /* Glass Cards */
+  .card-glass {
+    background-color: var(--bg-dark-glass);
+    border: var(--border-width) solid var(--border-dark-glass);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    transition: var(--transition-normal);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-glass:hover {
+    border-color: rgba(224, 169, 109, 0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Headers */
+  .section-label {
+    color: var(--gold-primary);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-block-end: var(--space-xs);
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-block-end: var(--space-sm);
+  }
+
+  .section-title em {
+    font-style: normal;
+    color: var(--gold-primary);
+  }
+
+  .section-sub {
+    color: var(--text-dark-secondary);
+    font-size: 1.1rem;
+    max-inline-size: 600px;
+  }
+
+  /* Footer */
+  .footer {
+    border-block-start: var(--border-width) solid var(--border-dark-glass);
+    padding-block: var(--space-lg);
+    background-color: rgba(8, 8, 10, 0.8);
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .footer-inner {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: start;
+    }
+  }
+
+  .footer-links {
+    display: flex;
+    gap: var(--space-sm);
+  }
+
+  .social-icons {
+    display: flex;
+    gap: var(--space-sm);
+  }
+
+  .social-icon {
+    font-size: 1.2rem;
+    color: var(--text-dark-secondary);
+    transition: var(--transition-fast);
+  }
+
+  .social-icon:hover {
+    color: var(--gold-primary);
+  }
+}
+
+/* 6. Utility Rules */
+@layer utilities {
+  .text-gold { color: var(--gold-primary); }
+  .text-purple { color: var(--purple-accent); }
+  .text-center { text-align: center; }
+  
+  .font-size-sm { font-size: 0.9rem; }
+  .text-secondary { color: var(--text-dark-secondary); }
+
+  .pill {
+    display: inline-flex;
+    padding-block: 0.25rem;
+    padding-inline: 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background-color: var(--gold-dim);
+    color: var(--gold-primary);
+    border: 1px solid rgba(224, 169, 109, 0.2);
+  }
+
+  .pill-purple {
+    background-color: var(--purple-dim);
+    color: var(--purple-accent);
+    border: 1px solid rgba(142, 122, 181, 0.2);
+  }
+  
+  /* Logical properties for margins and paddings */
+  .margin-is-sm { margin-inline-start: var(--space-sm); }
+  .margin-ie-sm { margin-inline-end: var(--space-sm); }
+  .margin-bs-md { margin-block-start: var(--space-md); }
+  .margin-be-md { margin-block-end: var(--space-md); }
+  
+  /* Text wraps */
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+}

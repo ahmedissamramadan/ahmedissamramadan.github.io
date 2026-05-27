@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تواصل معي | Contact Ahmed Issam Ramadan</title>
+  <meta name="description" content="تواصل معي لتنفيذ مشروع، أو طلب استشارة، أو التعاون في بناء أنظمة ذكاء اصطناعي لبزنسك. Contact Ahmed Issam Ramadan to start a project.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" type="image/x-icon" href="../assets/general/favicon.ico">
+  
+  <!-- Inline FOUC avoidance scripts -->
+  <script>
+    {
+      const theme = localStorage.getItem('theme') || 'dark';
+      document.querySelector('meta[name="color-scheme"]').content = theme;
+      document.documentElement.setAttribute('data-theme', theme);
+      
+      const lang = localStorage.getItem('lang') || 'ar';
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    }
+  </script>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/style.css">
+  
+  <style>
+    /* Contact grid and form layout */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+      align-items: start;
+    }
+    
+    @media (min-width: 992px) {
+      .contact-grid {
+        grid-template-columns: 1.5fr 1fr;
+      }
+    }
+
+    .form-group {
+      margin-block-end: var(--space-sm);
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-block-end: 6px;
+    }
+
+    .form-control {
+      inline-size: 100%;
+      padding: 0.75rem;
+      border-radius: var(--radius-sm);
+      border: var(--border-width) solid var(--border-dark-glass);
+      background-color: rgba(255, 255, 255, 0.02);
+      color: var(--text-dark-primary);
+      transition: var(--transition-fast);
+    }
+
+    .form-control:focus {
+      outline: 2px solid var(--gold-primary);
+      border-color: transparent;
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    textarea.form-control {
+      min-block-size: 120px;
+      resize: vertical;
+    }
+
+    .contact-channels-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+
+    .channel-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: var(--space-sm);
+      border-radius: var(--radius-md);
+      border: var(--border-width) solid var(--border-dark-glass);
+      background-color: var(--bg-dark-surface);
+      transition: var(--transition-fast);
+    }
+
+    .channel-item:hover {
+      border-color: rgba(224, 169, 109, 0.2);
+    }
+
+    .channel-icon {
+      font-size: 1.8rem;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--gold-dim);
+      border-radius: var(--radius-sm);
+      color: var(--gold-primary);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="site-container navbar-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-symbol">◈</span>
+        <span>أحمد عصام</span>
+      </a>
+      
+      <!-- Nav Links -->
+      <div class="nav-links">
+        <a href="../index.html" class="nav-link">
+          <span lang="ar">الرئيسية</span>
+          <span lang="en">Home</span>
+        </a>
+        <a href="../about/index.html" class="nav-link">
+          <span lang="ar">عني</span>
+          <span lang="en">About</span>
+        </a>
+        <a href="../services/index.html" class="nav-link">
+          <span lang="ar">الخدمات</span>
+          <span lang="en">Services</span>
+        </a>
+        <a href="../work/index.html" class="nav-link">
+          <span lang="ar">أعمالي</span>
+          <span lang="en">Work</span>
+        </a>
+        <a href="./index.html" class="nav-link active">
+          <span lang="ar">تواصل</span>
+          <span lang="en">Contact</span>
+        </a>
+      </div>
+
+      <!-- Controls -->
+      <div style="display: flex; gap: var(--space-xs); align-items: center;">
+        <button id="theme-toggle" class="btn btn-secondary" style="padding: 0.5rem; border-radius: 50%; min-width: 40px; block-size: 40px;">
+          <span class="theme-icon-light" style="display:none;">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="btn btn-secondary lang-toggle-btn" data-lang-target="en" style="font-size: 0.85rem; font-weight: 700; padding: 0.5rem 0.8rem;">
+          <span lang="ar">English</span>
+          <span lang="en">العربية</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <main class="site-container">
+
+    <!-- Hero Header -->
+    <section class="text-center">
+      <div class="section-label">
+        <span lang="ar">قنوات التواصل</span>
+        <span lang="en">Connect</span>
+      </div>
+      <h1 class="section-title">
+        <span lang="ar">خلينا نبني مشروعك سوا</span>
+        <span lang="en">Let's Work Together</span>
+      </h1>
+      <p lang="ar" class="section-sub" style="margin-inline: auto;">
+        املأ استمارة الطلب السريعة أو تواصل معي مباشرة عبر القنوات المتاحة.
+      </p>
+      <p lang="en" class="section-sub" style="margin-inline: auto;">
+        Fill out the quick project intake form below or reach out directly through my verified contact channels.
+      </p>
+    </section>
+
+    <!-- Contact & Form Grid -->
+    <section style="padding-block-start: 0;">
+      <div class="contact-grid">
+        <!-- Form Column -->
+        <div class="card-glass">
+          <h2 lang="ar" style="font-size: 1.3rem; font-weight: 800; margin-block-end: var(--space-sm);">استمارة تفاصيل المشروع</h2>
+          <h2 lang="en" style="font-size: 1.3rem; font-weight: 800; margin-block-end: var(--space-sm);">Project Intake Form</h2>
+          
+          <form id="intake-form">
+            <!-- 1. Name -->
+            <div class="form-group">
+              <label for="form-name" class="form-label">
+                <span lang="ar">الاسم بالكامل</span>
+                <span lang="en">Full Name</span>
+              </label>
+              <input type="text" id="form-name" name="name" class="form-control" required 
+                     data-placeholder-ar="مثال: أحمد محمد" data-placeholder-en="e.g. John Doe">
+            </div>
+
+            <!-- 2. Business Name -->
+            <div class="form-group">
+              <label for="form-biz" class="form-label">
+                <span lang="ar">اسم النشاط التجاري (اختياري)</span>
+                <span lang="en">Business Name (Optional)</span>
+              </label>
+              <input type="text" id="form-biz" name="business-name" class="form-control"
+                     data-placeholder-ar="اسم شركتك أو متجرك" data-placeholder-en="e.g. Acme Corp">
+            </div>
+
+            <!-- 3. Service Needed -->
+            <div class="form-group">
+              <label for="form-service" class="form-label">
+                <span lang="ar">الخدمة المطلوبة</span>
+                <span lang="en">Service Needed</span>
+              </label>
+              <select id="form-service" name="service-needed" class="form-control" required style="appearance: auto;">
+                <option value="Brand Identity Systems" lang="ar">بناء هويات بصرية وأنظمة براند بالـ AI</option>
+                <option value="Brand Identity Systems" lang="en">Brand & Identity Systems (AI-native)</option>
+                <option value="Content & Market Strategy" lang="ar">المحتوى واستراتيجيات إطلاق المنتجات</option>
+                <option value="Content & Market Strategy" lang="en">Content & Market Launch Strategy</option>
+                <option value="AI Systems & Automation" lang="ar">بناء أنظمة ذكاء اصطناعي وأتمتة العمليات</option>
+                <option value="AI Systems & Automation" lang="en">AI Workflows & Process Automation</option>
+                <option value="Diagnostic Consultation" lang="ar">مكالمة استشارية تشخيصية سريعة</option>
+                <option value="Diagnostic Consultation" lang="en">Diagnostic Consulting Call</option>
+              </select>
+            </div>
+
+            <!-- 4. Budget Range -->
+            <div class="form-group">
+              <label for="form-budget" class="form-label">
+                <span lang="ar">الميزانية التقريبية للمشروع</span>
+                <span lang="en">Approximate Budget Range</span>
+              </label>
+              <select id="form-budget" name="budget-range" class="form-control" required style="appearance: auto;">
+                <option value="Less than $500" lang="ar">أقل من 500$</option>
+                <option value="Less than $500" lang="en">Less than $500</option>
+                <option value="$500 - $1,500" lang="ar">500$ - 1,500$</option>
+                <option value="$500 - $1,500" lang="en">$500 - $1,500</option>
+                <option value="$1,500 - $3,000" lang="ar">1,500$ - 3,000$</option>
+                <option value="$1,500 - $3,000" lang="en">$1,500 - $3,000</option>
+                <option value="More than $3,000" lang="ar">أكثر من 3,000$</option>
+                <option value="More than $3,000" lang="en">More than $3,000</option>
+              </select>
+            </div>
+
+            <!-- 5. Description -->
+            <div class="form-group">
+              <label for="form-desc" class="form-label">
+                <span lang="ar">وصف مختصر للمشروع أو التحدي</span>
+                <span lang="en">Brief Description of the Project or Challenge</span>
+              </label>
+              <textarea id="form-desc" name="description" class="form-control" required
+                        data-placeholder-ar="ما هو التحدي الذي تحاول حله؟ أو ما هي مواصفات مخرجات مشروعك..." 
+                        data-placeholder-en="Briefly detail what you are trying to build, solve, or automate..."></textarea>
+            </div>
+
+            <!-- 6. Preferred Contact -->
+            <div class="form-group">
+              <label for="form-contact-method" class="form-label">
+                <span lang="ar">طريقة التواصل المفضلة لمتابعة الطلب</span>
+                <span lang="en">Preferred Method of Contact</span>
+              </label>
+              <select id="form-contact-method" name="preferred-contact" class="form-control" required style="appearance: auto;">
+                <option value="WhatsApp" lang="ar">واتساب (WhatsApp)</option>
+                <option value="WhatsApp" lang="en">WhatsApp</option>
+                <option value="Email" lang="ar">البريد الإلكتروني (Email)</option>
+                <option value="Email" lang="en">Email</option>
+              </select>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary" style="inline-size: 100%; margin-block-start: var(--space-sm);">
+              <span lang="ar">إرسال تفاصيل الطلب عبر واتساب 💬</span>
+              <span lang="en">Send Details via WhatsApp 💬</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Sidebar Contact Channels -->
+        <div class="contact-channels-list">
+          <h2 lang="ar" style="font-size: 1.3rem; font-weight: 800; margin-block-end: var(--space-xs);">قنوات تواصل مباشرة</h2>
+          <h2 lang="en" style="font-size: 1.3rem; font-weight: 800; margin-block-end: var(--space-xs);">Direct Channels</h2>
+          
+          <!-- Channel 1: WhatsApp -->
+          <a href="https://wa.me/201501656010" target="_blank" class="channel-item">
+            <div class="channel-icon">💬</div>
+            <div>
+              <h4 lang="ar" style="font-weight: 700;">واتساب المباشر</h4>
+              <h4 lang="en" style="font-weight: 700;">Direct WhatsApp</h4>
+              <p class="text-secondary font-size-sm">+201501656010</p>
+            </div>
+          </a>
+
+          <!-- Channel 2: Email -->
+          <a href="mailto:ahmedissamramadan@gmail.com" class="channel-item">
+            <div class="channel-icon">✉️</div>
+            <div>
+              <h4 lang="ar" style="font-weight: 700;">البريد الإلكتروني الرسمي</h4>
+              <h4 lang="en" style="font-weight: 700;">Official Email Address</h4>
+              <p class="text-secondary font-size-sm">ahmedissamramadan@gmail.com</p>
+            </div>
+          </a>
+
+          <!-- Channel 3: LinkedIn -->
+          <a href="https://linkedin.com/in/ahmedissamramadan" target="_blank" class="channel-item">
+            <div class="channel-icon">👔</div>
+            <div>
+              <h4 lang="ar" style="font-weight: 700;">حساب لينكد إن المحدث</h4>
+              <h4 lang="en" style="font-weight: 700;">LinkedIn Profile</h4>
+              <p class="text-secondary font-size-sm">linkedin.com/in/ahmedissamramadan</p>
+            </div>
+          </a>
+
+          <!-- Channel 4: Linktree Link -->
+          <a href="https://linktr.ee/ahmedissamramadan" target="_blank" class="channel-item" style="border-color: rgba(142, 122, 181, 0.3); background-color: var(--purple-dim);">
+            <div class="channel-icon" style="color: var(--purple-accent); background-color: rgba(142, 122, 181, 0.15);">🔗</div>
+            <div>
+              <h4 lang="ar" style="font-weight: 700; color: var(--purple-accent);">جميع الحسابات (Linktree)</h4>
+              <h4 lang="en" style="font-weight: 700; color: var(--purple-accent);">All Social Links</h4>
+              <p class="text-secondary font-size-sm">linktr.ee/ahmedissamramadan</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="site-container footer-inner">
+      <div>
+        <div class="logo" style="margin-block-end: var(--space-xs);">
+          <span class="logo-symbol">◈</span>
+          <span>أحمد عصام</span>
+        </div>
+        <p lang="ar" class="text-secondary font-size-sm">مستشار أنظمة ذكاء اصطناعي وتسويق رقمي</p>
+        <p lang="en" class="text-secondary font-size-sm">AI Systems & Digital Marketing Consultant</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: var(--space-xs); align-items: center;">
+        <div class="footer-links">
+          <a href="../index.html" class="nav-link">
+            <span lang="ar">الرئيسية</span>
+            <span lang="en">Home</span>
+          </a>
+          <a href="../about/index.html" class="nav-link">
+            <span lang="ar">عني</span>
+            <span lang="en">About</span>
+          </a>
+          <a href="../services/index.html" class="nav-link">
+            <span lang="ar">الخدمات</span>
+            <span lang="en">Services</span>
+          </a>
+          <a href="../work/index.html" class="nav-link">
+            <span lang="ar">أعمالي</span>
+            <span lang="en">Work</span>
+          </a>
+          <a href="./index.html" class="nav-link active">
+            <span lang="ar">تواصل</span>
+            <span lang="en">Contact</span>
+          </a>
+        </div>
+        
+        <p class="text-secondary font-size-sm">
+          &copy; 2026 Ahmed Issam Ramadan — VentureCycle Studio. 
+          <span lang="ar">جميع الحقوق محفوظة.</span>
+          <span lang="en">All rights reserved.</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/main.js"></script>
+</body>
+</html>
