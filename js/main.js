@@ -11,9 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 3. Theme Toggle & prefers-color-scheme Management
   initTheme();
-
-  // 4. Contact Form Submission Handler
-  initContactForm();
 });
 
 /**
@@ -137,54 +134,4 @@ function initTheme() {
   }
 }
 
-/**
- * Handle professional intake form submission
- */
-function initContactForm() {
-  const form = document.getElementById('intake-form');
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      // Collect values
-      const name = form.elements['name'].value;
-      const businessName = form.elements['business-name'].value;
-      const service = form.elements['service-needed'].value;
-      const budget = form.elements['budget-range'].value;
-      const description = form.elements['description'].value;
-      const contactMethod = form.elements['preferred-contact'].value;
 
-      // Log input for local check
-      console.log('Intake form submitted:', { name, businessName, service, budget, description, contactMethod });
-
-      // Compose WhatsApp message text
-      const isArabic = document.documentElement.lang === 'ar';
-      let text = '';
-      
-      if (isArabic) {
-        text = `أهلاً أحمد، أرغب في العمل معك.\n\n` +
-               `*الاسم:* ${name}\n` +
-               `*النشاط التجاري:* ${businessName || 'غير محدد'}\n` +
-               `*الخدمة المطلوبة:* ${service}\n` +
-               `*الميزانية التقريبية:* ${budget}\n` +
-               `*الوصف:* ${description}\n` +
-               `*طريقة التواصل المفضلة:* ${contactMethod}`;
-      } else {
-        text = `Hello Ahmed, I would like to start a project with you.\n\n` +
-               `*Name:* ${name}\n` +
-               `*Business Name:* ${businessName || 'N/A'}\n` +
-               `*Service Needed:* ${service}\n` +
-               `*Budget Range:* ${budget}\n` +
-               `*Description:* ${description}\n` +
-               `*Preferred Contact:* ${contactMethod}`;
-      }
-
-      // Encode and open WhatsApp API
-      const whatsappUrl = `https://wa.me/201501656010?text=${encodeURIComponent(text)}`;
-      window.open(whatsappUrl, '_blank');
-      
-      // Reset form
-      form.reset();
-    });
-  }
-}

@@ -30,56 +30,61 @@
   <link rel="stylesheet" href="../css/style.css">
   
   <style>
-    /* Contact grid and form layout */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr;
+    /* Contact layout — form stacked above channels */
+    .contact-stack {
+      display: flex;
+      flex-direction: column;
       gap: var(--space-lg);
-      align-items: start;
-    }
-    
-    @media (min-width: 992px) {
-      .contact-grid {
-        grid-template-columns: 1.5fr 1fr;
-      }
+      max-inline-size: 720px;
+      margin-inline: auto;
     }
 
-    .form-group {
-      margin-block-end: var(--space-sm);
-    }
-
-    .form-label {
-      display: block;
-      font-size: 0.9rem;
-      font-weight: 700;
-      margin-block-end: 6px;
-    }
-
-    .form-control {
-      inline-size: 100%;
-      padding: 0.75rem;
-      border-radius: var(--radius-sm);
+    /* Tally embed container */
+    .tally-embed-wrapper {
+      border-radius: var(--radius-md);
       border: var(--border-width) solid var(--border-dark-glass);
-      background-color: rgba(255, 255, 255, 0.02);
-      color: var(--text-dark-primary);
+      background-color: var(--bg-dark-surface);
+      padding: var(--space-md);
+      overflow: hidden;
+      min-block-size: 520px;
       transition: var(--transition-fast);
     }
 
-    .form-control:focus {
-      outline: 2px solid var(--gold-primary);
-      border-color: transparent;
-      background-color: rgba(255, 255, 255, 0.05);
+    [data-theme="light"] .tally-embed-wrapper {
+      background-color: var(--bg-light-surface, #f8f8f8);
+      border-color: var(--border-light-glass, rgba(0,0,0,0.08));
     }
 
-    textarea.form-control {
-      min-block-size: 120px;
-      resize: vertical;
+    .tally-embed-wrapper iframe {
+      border: none;
+      inline-size: 100%;
+      min-block-size: 500px;
     }
 
-    .contact-channels-list {
+    /* Placeholder shown while user hasn't set the Tally form ID yet */
+    .tally-placeholder {
       display: flex;
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
       gap: var(--space-sm);
+      padding: var(--space-xl) var(--space-md);
+      text-align: center;
+      color: var(--text-dark-secondary);
+      opacity: 0.7;
+    }
+    .tally-placeholder .placeholder-icon { font-size: 3rem; }
+
+    .contact-channels-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-sm);
+    }
+
+    @media (min-width: 640px) {
+      .contact-channels-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
     .channel-item {
@@ -107,6 +112,7 @@
       background-color: var(--gold-dim);
       border-radius: var(--radius-sm);
       color: var(--gold-primary);
+      flex-shrink: 0;
     }
   </style>
 </head>
@@ -179,149 +185,93 @@
       </p>
     </section>
 
-    <!-- Contact & Form Grid -->
+    <!-- Contact Form & Channels (stacked) -->
     <section style="padding-block-start: 0;">
-      <div class="contact-grid">
-        <!-- Form Column -->
-        <div class="card-glass">
+      <div class="contact-stack">
+
+        <!-- Tally Embed Form -->
+        <div class="tally-embed-wrapper" id="tally-form-container">
           <h2 lang="ar" style="font-size: 1.3rem; font-weight: 800; margin-block-end: var(--space-sm);">استمارة تفاصيل المشروع</h2>
           <h2 lang="en" style="font-size: 1.3rem; font-weight: 800; margin-block-end: var(--space-sm);">Project Intake Form</h2>
-          
-          <form id="intake-form">
-            <!-- 1. Name -->
-            <div class="form-group">
-              <label for="form-name" class="form-label">
-                <span lang="ar">الاسم بالكامل</span>
-                <span lang="en">Full Name</span>
-              </label>
-              <input type="text" id="form-name" name="name" class="form-control" required 
-                     data-placeholder-ar="مثال: أحمد محمد" data-placeholder-en="e.g. John Doe">
-            </div>
 
-            <!-- 2. Business Name -->
-            <div class="form-group">
-              <label for="form-biz" class="form-label">
-                <span lang="ar">اسم النشاط التجاري (اختياري)</span>
-                <span lang="en">Business Name (Optional)</span>
-              </label>
-              <input type="text" id="form-biz" name="business-name" class="form-control"
-                     data-placeholder-ar="اسم شركتك أو متجرك" data-placeholder-en="e.g. Acme Corp">
-            </div>
+          <!--
+            ╔══════════════════════════════════════════════════════════╗
+            ║  IMPORTANT: Replace YOUR_FORM_ID below with your       ║
+            ║  actual Tally form ID after creating the form at       ║
+            ║  https://tally.so — e.g. "w2jR8m"                     ║
+            ╚══════════════════════════════════════════════════════════╝
+          -->
+          <iframe
+            data-tally-src="https://tally.so/embed/YOUR_FORM_ID?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            loading="lazy"
+            width="100%"
+            height="500"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            title="Project Intake Form"
+            id="tally-iframe"
+          ></iframe>
 
-            <!-- 3. Service Needed -->
-            <div class="form-group">
-              <label for="form-service" class="form-label">
-                <span lang="ar">الخدمة المطلوبة</span>
-                <span lang="en">Service Needed</span>
-              </label>
-              <select id="form-service" name="service-needed" class="form-control" required style="appearance: auto;">
-                <option value="Brand Identity Systems" lang="ar">بناء هويات بصرية وأنظمة براند بالـ AI</option>
-                <option value="Brand Identity Systems" lang="en">Brand & Identity Systems (AI-native)</option>
-                <option value="Content & Market Strategy" lang="ar">المحتوى واستراتيجيات إطلاق المنتجات</option>
-                <option value="Content & Market Strategy" lang="en">Content & Market Launch Strategy</option>
-                <option value="AI Systems & Automation" lang="ar">بناء أنظمة ذكاء اصطناعي وأتمتة العمليات</option>
-                <option value="AI Systems & Automation" lang="en">AI Workflows & Process Automation</option>
-                <option value="Diagnostic Consultation" lang="ar">مكالمة استشارية تشخيصية سريعة</option>
-                <option value="Diagnostic Consultation" lang="en">Diagnostic Consulting Call</option>
-              </select>
+          <!-- Fallback shown if Tally hasn't loaded yet -->
+          <noscript>
+            <div class="tally-placeholder">
+              <span class="placeholder-icon">📋</span>
+              <p lang="ar">يرجى تفعيل JavaScript لعرض الاستمارة، أو تواصل معنا مباشرة عبر واتساب.</p>
+              <p lang="en">Please enable JavaScript to view the form, or contact us directly via WhatsApp.</p>
+              <a href="https://wa.me/201501656010" class="btn btn-primary" style="margin-block-start: var(--space-sm);">💬 WhatsApp</a>
             </div>
-
-            <!-- 4. Budget Range -->
-            <div class="form-group">
-              <label for="form-budget" class="form-label">
-                <span lang="ar">الميزانية التقريبية للمشروع</span>
-                <span lang="en">Approximate Budget Range</span>
-              </label>
-              <select id="form-budget" name="budget-range" class="form-control" required style="appearance: auto;">
-                <option value="Less than $500" lang="ar">أقل من 500$</option>
-                <option value="Less than $500" lang="en">Less than $500</option>
-                <option value="$500 - $1,500" lang="ar">500$ - 1,500$</option>
-                <option value="$500 - $1,500" lang="en">$500 - $1,500</option>
-                <option value="$1,500 - $3,000" lang="ar">1,500$ - 3,000$</option>
-                <option value="$1,500 - $3,000" lang="en">$1,500 - $3,000</option>
-                <option value="More than $3,000" lang="ar">أكثر من 3,000$</option>
-                <option value="More than $3,000" lang="en">More than $3,000</option>
-              </select>
-            </div>
-
-            <!-- 5. Description -->
-            <div class="form-group">
-              <label for="form-desc" class="form-label">
-                <span lang="ar">وصف مختصر للمشروع أو التحدي</span>
-                <span lang="en">Brief Description of the Project or Challenge</span>
-              </label>
-              <textarea id="form-desc" name="description" class="form-control" required
-                        data-placeholder-ar="ما هو التحدي الذي تحاول حله؟ أو ما هي مواصفات مخرجات مشروعك..." 
-                        data-placeholder-en="Briefly detail what you are trying to build, solve, or automate..."></textarea>
-            </div>
-
-            <!-- 6. Preferred Contact -->
-            <div class="form-group">
-              <label for="form-contact-method" class="form-label">
-                <span lang="ar">طريقة التواصل المفضلة لمتابعة الطلب</span>
-                <span lang="en">Preferred Method of Contact</span>
-              </label>
-              <select id="form-contact-method" name="preferred-contact" class="form-control" required style="appearance: auto;">
-                <option value="WhatsApp" lang="ar">واتساب (WhatsApp)</option>
-                <option value="WhatsApp" lang="en">WhatsApp</option>
-                <option value="Email" lang="ar">البريد الإلكتروني (Email)</option>
-                <option value="Email" lang="en">Email</option>
-              </select>
-            </div>
-
-            <!-- Submit Button -->
-            <button type="submit" class="btn btn-primary" style="inline-size: 100%; margin-block-start: var(--space-sm);">
-              <span lang="ar">إرسال تفاصيل الطلب عبر واتساب 💬</span>
-              <span lang="en">Send Details via WhatsApp 💬</span>
-            </button>
-          </form>
+          </noscript>
         </div>
 
-        <!-- Sidebar Contact Channels -->
-        <div class="contact-channels-list">
-          <h2 lang="ar" style="font-size: 1.3rem; font-weight: 800; margin-block-end: var(--space-xs);">قنوات تواصل مباشرة</h2>
-          <h2 lang="en" style="font-size: 1.3rem; font-weight: 800; margin-block-end: var(--space-xs);">Direct Channels</h2>
-          
-          <!-- Channel 1: WhatsApp -->
-          <a href="https://wa.me/201501656010" target="_blank" class="channel-item">
-            <div class="channel-icon">💬</div>
-            <div>
-              <h4 lang="ar" style="font-weight: 700;">واتساب المباشر</h4>
-              <h4 lang="en" style="font-weight: 700;">Direct WhatsApp</h4>
-              <p class="text-secondary font-size-sm">+201501656010</p>
-            </div>
-          </a>
+        <!-- Direct Contact Channels (below the form) -->
+        <div>
+          <h2 lang="ar" style="font-size: 1.3rem; font-weight: 800; margin-block-end: var(--space-sm);">أو تواصل مباشرة</h2>
+          <h2 lang="en" style="font-size: 1.3rem; font-weight: 800; margin-block-end: var(--space-sm);">Or Reach Out Directly</h2>
 
-          <!-- Channel 2: Email -->
-          <a href="mailto:ahmedissamramadan@gmail.com" class="channel-item">
-            <div class="channel-icon">✉️</div>
-            <div>
-              <h4 lang="ar" style="font-weight: 700;">البريد الإلكتروني الرسمي</h4>
-              <h4 lang="en" style="font-weight: 700;">Official Email Address</h4>
-              <p class="text-secondary font-size-sm">ahmedissamramadan@gmail.com</p>
-            </div>
-          </a>
+          <div class="contact-channels-grid">
+            <!-- Channel 1: WhatsApp -->
+            <a href="https://wa.me/201501656010" target="_blank" class="channel-item">
+              <div class="channel-icon">💬</div>
+              <div>
+                <h4 lang="ar" style="font-weight: 700;">واتساب المباشر</h4>
+                <h4 lang="en" style="font-weight: 700;">Direct WhatsApp</h4>
+                <p class="text-secondary font-size-sm">+201501656010</p>
+              </div>
+            </a>
 
-          <!-- Channel 3: LinkedIn -->
-          <a href="https://linkedin.com/in/ahmedissamramadan" target="_blank" class="channel-item">
-            <div class="channel-icon">👔</div>
-            <div>
-              <h4 lang="ar" style="font-weight: 700;">حساب لينكد إن المحدث</h4>
-              <h4 lang="en" style="font-weight: 700;">LinkedIn Profile</h4>
-              <p class="text-secondary font-size-sm">linkedin.com/in/ahmedissamramadan</p>
-            </div>
-          </a>
+            <!-- Channel 2: Email -->
+            <a href="mailto:ahmedissamramadan@gmail.com" class="channel-item">
+              <div class="channel-icon">✉️</div>
+              <div>
+                <h4 lang="ar" style="font-weight: 700;">البريد الإلكتروني الرسمي</h4>
+                <h4 lang="en" style="font-weight: 700;">Official Email</h4>
+                <p class="text-secondary font-size-sm">ahmedissamramadan@gmail.com</p>
+              </div>
+            </a>
 
-          <!-- Channel 4: Linktree Link -->
-          <a href="https://linktr.ee/ahmedissamramadan" target="_blank" class="channel-item" style="border-color: rgba(142, 122, 181, 0.3); background-color: var(--purple-dim);">
-            <div class="channel-icon" style="color: var(--purple-accent); background-color: rgba(142, 122, 181, 0.15);">🔗</div>
-            <div>
-              <h4 lang="ar" style="font-weight: 700; color: var(--purple-accent);">جميع الحسابات (Linktree)</h4>
-              <h4 lang="en" style="font-weight: 700; color: var(--purple-accent);">All Social Links</h4>
-              <p class="text-secondary font-size-sm">linktr.ee/ahmedissamramadan</p>
-            </div>
-          </a>
+            <!-- Channel 3: LinkedIn -->
+            <a href="https://linkedin.com/in/ahmedissamramadan" target="_blank" class="channel-item">
+              <div class="channel-icon">👔</div>
+              <div>
+                <h4 lang="ar" style="font-weight: 700;">حساب لينكد إن</h4>
+                <h4 lang="en" style="font-weight: 700;">LinkedIn Profile</h4>
+                <p class="text-secondary font-size-sm">linkedin.com/in/ahmedissamramadan</p>
+              </div>
+            </a>
+
+            <!-- Channel 4: Linktree -->
+            <a href="https://linktr.ee/ahmedissamramadan" target="_blank" class="channel-item" style="border-color: rgba(142, 122, 181, 0.3); background-color: var(--purple-dim);">
+              <div class="channel-icon" style="color: var(--purple-accent); background-color: rgba(142, 122, 181, 0.15);">🔗</div>
+              <div>
+                <h4 lang="ar" style="font-weight: 700; color: var(--purple-accent);">جميع الحسابات (Linktree)</h4>
+                <h4 lang="en" style="font-weight: 700; color: var(--purple-accent);">All Social Links</h4>
+                <p class="text-secondary font-size-sm">linktr.ee/ahmedissamramadan</p>
+              </div>
+            </a>
+          </div>
         </div>
+
       </div>
     </section>
 
@@ -374,5 +324,17 @@
 
   <!-- Scripts -->
   <script src="../js/main.js"></script>
+
+  <!-- Tally Embed Loader -->
+  <script>
+    var d=document,w="https://tally.so/widgets/embed.js",
+    v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():
+    d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(
+    (function(e){e.src=e.dataset.tallySrc}))};
+    if("undefined"!=typeof Tally)v();
+    else if(d.querySelector('script[src="'+w+'"]')==null){
+    var s=d.createElement("script");s.src=w;s.onload=v;
+    s.onerror=v;d.body.appendChild(s)}
+  </script>
 </body>
 </html>
