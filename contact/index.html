@@ -1,376 +1,395 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl" data-theme="dark">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تواصل معي | Contact Ahmed Issam Ramadan</title>
-  <meta name="description" content="تواصل معي لتنفيذ مشروع، أو طلب استشارة، أو التعاون في بناء أنظمة ذكاء اصطناعي لبزنسك. Contact Ahmed Issam Ramadan to start a project.">
-  <meta name="color-scheme" content="light dark">
-  <link rel="icon" type="image/x-icon" href="../assets/general/favicon.ico">
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content="تواصل معي | Contact Ahmed Issam Ramadan">
-  <meta property="og:description" content="تواصل معي لتنفيذ مشروع أو طلب استشارة أو التعاون في بناء أنظمة ذكاء اصطناعي لبزنسك.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ahmedissamramadan.github.io/contact/">
-  <meta property="og:image" content="https://ahmedissamramadan.github.io/assets/general/hero_abstract_neural.jpg">
-  
-  <!-- Inline FOUC avoidance scripts -->
-  <script>
-    {
-      const theme = localStorage.getItem('theme') || 'dark';
-      document.querySelector('meta[name="color-scheme"]').content = theme;
-      document.documentElement.setAttribute('data-theme', theme);
-      
-      const lang = localStorage.getItem('lang') || 'ar';
-      document.documentElement.lang = lang;
-      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-    }
-  </script>
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="../css/style.css">
-  
-  <style>
-    /* Contact layout — form stacked above channels */
-    .contact-stack {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-lg);
-      max-inline-size: 720px;
-      margin-inline: auto;
-    }
-
-    /* Tally embed container */
-    .tally-embed-wrapper {
-      border-radius: var(--radius-md);
-      border: var(--border-width) solid var(--border-dark-glass);
-      background-color: var(--bg-dark-surface);
-      padding: var(--space-md);
-      overflow: hidden;
-      min-block-size: 520px;
-      transition: var(--transition-fast);
-    }
-
-    [data-theme="light"] .tally-embed-wrapper {
-      background-color: var(--bg-light-surface, #f8f8f8);
-      border-color: var(--border-light-glass, rgba(0,0,0,0.08));
-    }
-
-    .tally-embed-wrapper iframe {
-      border: none;
-      inline-size: 100%;
-      min-block-size: 500px;
-    }
-
-    /* Placeholder shown while user hasn't set the Tally form ID yet */
-    .tally-placeholder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: var(--space-sm);
-      padding: var(--space-xl) var(--space-md);
-      text-align: center;
-      color: var(--text-dark-secondary);
-      opacity: 0.7;
-    }
-    .tally-placeholder .placeholder-icon { font-size: 3rem; }
-
-    .contact-channels-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--space-sm);
-    }
-
-    @media (min-width: 640px) {
-      .contact-channels-grid {
-        grid-template-columns: 1fr 1fr;
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Ahmed Issam Ramadan | AI Systems Architect</title>
+    <meta
+      name="description"
+      content="Contact Ahmed Issam Ramadan to start a project or consult on AI systems."
+    />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" type="image/x-icon" href="../assets/general/favicon.ico" />
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Contact Ahmed Issam Ramadan | AI Systems Architect"
+    />
+    <meta
+      property="og:description"
+      content="Contact Ahmed Issam Ramadan to start a project or consult on AI systems."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://ahmedissamramadan.github.io/contact/"
+    />
+    <meta
+      property="og:image"
+      content="https://ahmedissamramadan.github.io/assets/general/hero_abstract_neural.jpg"
+    />
+    <!-- Inline FOUC avoidance scripts -->
+    <script>
+      {
+        const theme = localStorage.getItem("theme") || "dark";
+        document.querySelector('meta[name="color-scheme"]').content = theme;
+        document.documentElement.setAttribute("data-theme", theme);
       }
-    }
-
-    .channel-item {
-      display: flex;
-      align-items: center;
-      gap: var(--space-sm);
-      padding: var(--space-sm);
-      border-radius: var(--radius-md);
-      border: var(--border-width) solid var(--border-dark-glass);
-      background-color: var(--bg-dark-surface);
-      transition: var(--transition-fast);
-    }
-
-    .channel-item:hover {
-      border-color: rgba(224, 169, 109, 0.2);
-    }
-
-    .channel-icon {
-      font-size: 1.8rem;
-      width: 44px;
-      height: 44px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: var(--gold-dim);
-      border-radius: var(--radius-sm);
-      color: var(--gold-primary);
-      flex-shrink: 0;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="site-container navbar-inner">
-      <a href="../index.html" class="logo">
-        <span class="logo-symbol">◈</span>
-        <span>أحمد عصام</span>
-      </a>
-      
-      <!-- Nav Links -->
-      <div class="nav-links">
-        <a href="../index.html" class="nav-link">
-          <span lang="ar">الرئيسية</span>
-          <span lang="en">Home</span>
+    </script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      /* Contact layout — form stacked above channels */
+      .contact-stack {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-lg);
+        max-inline-size: 720px;
+        margin-inline: auto;
+      } /* Tally embed container */
+      .tally-embed-wrapper {
+        border-radius: var(--radius-md);
+        border: var(--border-width) solid var(--border-dark-glass);
+        background-color: var(--bg-dark-surface);
+        padding: var(--space-md);
+        overflow: hidden;
+        min-block-size: 520px;
+        transition: var(--transition-fast);
+      }
+      [data-theme="light"] .tally-embed-wrapper {
+        background-color: var(--bg-light-surface, #f8f8f8);
+        border-color: var(--border-light-glass, rgba(0, 0, 0, 0.08));
+      }
+      .tally-embed-wrapper iframe {
+        border: none;
+        inline-size: 100%;
+        min-block-size: 500px;
+      } /* Placeholder shown while user hasn't set the Tally form ID yet */
+      .tally-placeholder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-sm);
+        padding: var(--space-xl) var(--space-md);
+        text-align: center;
+        color: var(--text-dark-secondary);
+        opacity: 0.7;
+      }
+      .tally-placeholder .placeholder-icon {
+        font-size: 3rem;
+      }
+      .contact-channels-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+      }
+      @media (min-width: 640px) {
+        .contact-channels-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      .channel-item {
+        display: flex;
+        align-items: center;
+        gap: var(--space-sm);
+        padding: var(--space-sm);
+        border-radius: var(--radius-md);
+        border: var(--border-width) solid var(--border-dark-glass);
+        background-color: var(--bg-dark-surface);
+        transition: var(--transition-fast);
+      }
+      .channel-item:hover {
+        border-color: rgba(224, 169, 109, 0.2);
+      }
+      .channel-icon {
+        font-size: 1.8rem;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--gold-dim);
+        border-radius: var(--radius-sm);
+        color: var(--gold-primary);
+        flex-shrink: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="site-container navbar-inner">
+        <a href="../index.html" class="logo">
+          <span class="logo-symbol">◈</span> <span>Ahmed Issam</span>
         </a>
-        <a href="../about/index.html" class="nav-link">
-          <span lang="ar">عني</span>
-          <span lang="en">About</span>
-        </a>
-        <a href="../services/index.html" class="nav-link">
-          <span lang="ar">الخدمات</span>
-          <span lang="en">Services</span>
-        </a>
-        <a href="../work/index.html" class="nav-link">
-          <span lang="ar">أعمالي</span>
-          <span lang="en">Work</span>
-        </a>
-        <a href="./index.html" class="nav-link active">
-          <span lang="ar">تواصل</span>
-          <span lang="en">Contact</span>
-        </a>
-      </div>
-
-      <!-- Controls -->
-      <div style="display: flex; gap: var(--space-xs); align-items: center;">
-        <button id="theme-toggle" class="btn btn-secondary" style="padding: 0.5rem; border-radius: 50%; min-width: 40px; block-size: 40px;">
-          <span class="theme-icon-light" style="display:none;">☀️</span>
-          <span class="theme-icon-dark">🌙</span>
-        </button>
-        <button class="btn btn-secondary lang-toggle-btn" data-lang-target="en" style="font-size: 0.85rem; font-weight: 700; padding: 0.5rem 0.8rem;">
-          <span lang="ar">English</span>
-          <span lang="en">العربية</span>
-        </button>
-        <button id="menu-toggle" class="hamburger-btn" aria-expanded="false" aria-label="Toggle navigation menu">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
-      </div>
-    </div>
-    <div id="mobile-menu" class="mobile-menu">
-      <div class="site-container">
-        <a href="../index.html" class="mobile-nav-link">
-          <span lang="ar">الرئيسية</span>
-          <span lang="en">Home</span>
-        </a>
-        <a href="../about/index.html" class="mobile-nav-link">
-          <span lang="ar">عني</span>
-          <span lang="en">About</span>
-        </a>
-        <a href="../services/index.html" class="mobile-nav-link">
-          <span lang="ar">الخدمات</span>
-          <span lang="en">Services</span>
-        </a>
-        <a href="../work/index.html" class="mobile-nav-link">
-          <span lang="ar">أعمالي</span>
-          <span lang="en">Work</span>
-        </a>
-        <a href="./index.html" class="mobile-nav-link active">
-          <span lang="ar">تواصل</span>
-          <span lang="en">Contact</span>
-        </a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Main Container -->
-  <main class="site-container">
-
-    <!-- Hero Header -->
-    <section class="text-center">
-      <div class="section-label">
-        <span lang="ar">قنوات التواصل</span>
-        <span lang="en">Connect</span>
-      </div>
-      <h1 class="section-title">
-        <span lang="ar">خلينا نبني مشروعك سوا</span>
-        <span lang="en">Let's Work Together</span>
-      </h1>
-      <p lang="ar" class="section-sub" style="margin-inline: auto;">
-        املأ استمارة الطلب السريعة أو تواصل معي مباشرة عبر القنوات المتاحة.
-      </p>
-      <p lang="en" class="section-sub" style="margin-inline: auto;">
-        Fill out the quick project intake form below or reach out directly through my verified contact channels.
-      </p>
-    </section>
-
-    <!-- Contact Form & Channels (stacked) -->
-    <section style="padding-block-start: 0;">
-      <div class="contact-stack">
-
-        <!-- Tally Embed Form -->
-        <div class="tally-embed-wrapper" id="tally-form-container">
-          <h2 lang="ar" style="font-size: 1.3rem; font-weight: 800; margin-block-end: var(--space-sm);">استمارة تفاصيل المشروع</h2>
-          <h2 lang="en" style="font-size: 1.3rem; font-weight: 800; margin-block-end: var(--space-sm);">Project Intake Form</h2>
-
-          <!--
-            ╔══════════════════════════════════════════════════════════╗
-            ║  IMPORTANT: Replace YOUR_FORM_ID below with your       ║
-            ║  actual Tally form ID after creating the form at       ║
-            ║  https://tally.so — e.g. "w2jR8m"                     ║
-            ╚══════════════════════════════════════════════════════════╝
-          -->
-          <iframe
-            data-tally-src="https://tally.so/embed/q4vZJG?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-            loading="lazy"
-            width="100%"
-            height="500"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0"
-            title="Project Intake Form"
-            id="tally-iframe"
-          ></iframe>
-
-          <!-- Fallback shown if Tally hasn't loaded yet -->
-          <noscript>
-            <div class="tally-placeholder">
-              <span class="placeholder-icon">📋</span>
-              <p lang="ar">يرجى تفعيل JavaScript لعرض الاستمارة، أو تواصل معنا مباشرة عبر واتساب.</p>
-              <p lang="en">Please enable JavaScript to view the form, or contact us directly via WhatsApp.</p>
-              <a href="https://wa.me/201501656010" class="btn btn-primary" style="margin-block-start: var(--space-sm);">💬 WhatsApp</a>
-            </div>
-          </noscript>
-        </div>
-
-        <!-- Direct Contact Channels (below the form) -->
-        <div>
-          <h2 lang="ar" style="font-size: 1.3rem; font-weight: 800; margin-block-end: var(--space-sm);">أو تواصل مباشرة</h2>
-          <h2 lang="en" style="font-size: 1.3rem; font-weight: 800; margin-block-end: var(--space-sm);">Or Reach Out Directly</h2>
-
-          <div class="contact-channels-grid">
-            <!-- Channel 1: WhatsApp -->
-            <a href="https://wa.me/201501656010" target="_blank" class="channel-item">
-              <div class="channel-icon">💬</div>
-              <div>
-                <h4 lang="ar" style="font-weight: 700;">واتساب المباشر</h4>
-                <h4 lang="en" style="font-weight: 700;">Direct WhatsApp</h4>
-                <p class="text-secondary font-size-sm">+201501656010</p>
-              </div>
-            </a>
-
-            <!-- Channel 2: Email -->
-            <a href="mailto:ahmedissamramadan@gmail.com" class="channel-item">
-              <div class="channel-icon">✉️</div>
-              <div>
-                <h4 lang="ar" style="font-weight: 700;">البريد الإلكتروني الرسمي</h4>
-                <h4 lang="en" style="font-weight: 700;">Official Email</h4>
-                <p class="text-secondary font-size-sm">ahmedissamramadan@gmail.com</p>
-              </div>
-            </a>
-
-            <!-- Channel 3: LinkedIn -->
-            <a href="https://linkedin.com/in/ahmedissamramadan" target="_blank" class="channel-item">
-              <div class="channel-icon">👔</div>
-              <div>
-                <h4 lang="ar" style="font-weight: 700;">حساب لينكد إن</h4>
-                <h4 lang="en" style="font-weight: 700;">LinkedIn Profile</h4>
-                <p class="text-secondary font-size-sm">linkedin.com/in/ahmedissamramadan</p>
-              </div>
-            </a>
-
-            <!-- Channel 4: Linktree -->
-            <a href="https://linktr.ee/ahmedissamramadan" target="_blank" class="channel-item" style="border-color: rgba(142, 122, 181, 0.3); background-color: var(--purple-dim);">
-              <div class="channel-icon" style="color: var(--purple-accent); background-color: rgba(142, 122, 181, 0.15);">🔗</div>
-              <div>
-                <h4 lang="ar" style="font-weight: 700; color: var(--purple-accent);">جميع الحسابات (Linktree)</h4>
-                <h4 lang="en" style="font-weight: 700; color: var(--purple-accent);">All Social Links</h4>
-                <p class="text-secondary font-size-sm">linktr.ee/ahmedissamramadan</p>
-              </div>
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="site-container footer-inner">
-      <div>
-        <div class="logo" style="margin-block-end: var(--space-xs);">
-          <span class="logo-symbol">◈</span>
-          <span>أحمد عصام</span>
-        </div>
-        <p lang="ar" class="text-secondary font-size-sm">مستشار أنظمة ذكاء اصطناعي وتسويق رقمي</p>
-        <p lang="en" class="text-secondary font-size-sm">AI Systems & Digital Marketing Consultant</p>
-      </div>
-
-      <div style="display: flex; flex-direction: column; gap: var(--space-xs); align-items: center;">
-        <div class="footer-links">
-          <a href="../index.html" class="nav-link">
-            <span lang="ar">الرئيسية</span>
-            <span lang="en">Home</span>
-          </a>
+        <!-- Nav Links -->
+        <div class="nav-links">
+          <a href="../index.html" class="nav-link"> <span>Home</span> </a>
           <a href="../about/index.html" class="nav-link">
-            <span lang="ar">عني</span>
-            <span lang="en">About</span>
+            <span>About</span>
           </a>
           <a href="../services/index.html" class="nav-link">
-            <span lang="ar">الخدمات</span>
-            <span lang="en">Services</span>
+            <span>Services</span>
           </a>
-          <a href="../work/index.html" class="nav-link">
-            <span lang="ar">أعمالي</span>
-            <span lang="en">Work</span>
-          </a>
+          <a href="../work/index.html" class="nav-link"> <span>Work</span> </a>
           <a href="./index.html" class="nav-link active">
-            <span lang="ar">تواصل</span>
-            <span lang="en">Contact</span>
+            <span>Contact</span>
           </a>
         </div>
-        
-        <p class="text-secondary font-size-sm">
-          &copy; 2026 Ahmed Issam Ramadan — VentureCycle Studio. 
-          <span lang="ar">جميع الحقوق محفوظة.</span>
-          <span lang="en">All rights reserved.</span>
-        </p>
+        <!-- Controls -->
+        <div style="display: flex; gap: var(--space-xs); align-items: center">
+          <button
+            id="theme-toggle"
+            class="btn btn-secondary"
+            style="
+              padding: 0.5rem;
+              border-radius: 50%;
+              min-width: 40px;
+              block-size: 40px;
+            "
+          >
+            <span class="theme-icon-light" style="display: none">☀️</span>
+            <span class="theme-icon-dark">🌙</span>
+          </button>
+          <button
+            id="menu-toggle"
+            class="hamburger-btn"
+            aria-expanded="false"
+            aria-label="Toggle navigation menu"
+          >
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
       </div>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="../js/main.js"></script>
-
-  <!-- Tally Embed Loader -->
-  <script>
-    var d=document,w="https://tally.so/widgets/embed.js",
-    v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():
-    d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(
-    (function(e){e.src=e.dataset.tallySrc}))};
-    if("undefined"!=typeof Tally)v();
-    else if(d.querySelector('script[src="'+w+'"]')==null){
-    var s=d.createElement("script");s.src=w;s.onload=v;
-    s.onerror=v;d.body.appendChild(s)}
-  </script>
-</body>
+      <div id="mobile-menu" class="mobile-menu">
+        <div class="site-container">
+          <a href="../index.html" class="mobile-nav-link">
+            <span>Home</span>
+          </a>
+          <a href="../about/index.html" class="mobile-nav-link">
+            <span>About</span>
+          </a>
+          <a href="../services/index.html" class="mobile-nav-link">
+            <span>Services</span>
+          </a>
+          <a href="../work/index.html" class="mobile-nav-link">
+            <span>Work</span>
+          </a>
+          <a href="./index.html" class="mobile-nav-link active">
+            <span>Contact</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <!-- Main Container -->
+    <main class="site-container">
+      <!-- Hero Header -->
+      <section class="text-center">
+        <div class="section-label"><span>Connect</span></div>
+        <h1 class="section-title"><span>Let's Work Together</span></h1>
+        <p class="section-sub" style="margin-inline: auto">
+          Fill out the quick project intake form below or reach out directly
+          through my verified contact channels.
+        </p>
+      </section>
+      <!-- Contact Form & Channels (stacked) -->
+      <section style="padding-block-start: 0">
+        <div class="contact-stack">
+          <!-- Tally Embed Form -->
+          <div class="tally-embed-wrapper" id="tally-form-container">
+            <h2
+              style="
+                font-size: 1.3rem;
+                font-weight: 800;
+                margin-block-end: var(--space-sm);
+              "
+            >
+              Project Intake Form
+            </h2>
+            <!-- ╔══════════════════════════════════════════════════════════╗ ║ IMPORTANT: Replace YOUR_FORM_ID below with your ║ ║ actual Tally form ID after creating the form at ║ ║ https://tally.so — e.g. "w2jR8m" ║ ╚══════════════════════════════════════════════════════════╝ -->
+            <iframe
+              data-tally-src="https://tally.so/embed/q4vZJG?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+              loading="lazy"
+              width="100%"
+              height="500"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+              title="Project Intake Form"
+              id="tally-iframe"
+            ></iframe>
+            <!-- Fallback shown if Tally hasn't loaded yet -->
+            <noscript>
+              <div class="tally-placeholder">
+                <span class="placeholder-icon">📋</span>
+                <p>
+                  Please enable JavaScript to view the form, or contact us
+                  directly via WhatsApp.
+                </p>
+                <a
+                  href="https://wa.me/201501656010"
+                  class="btn btn-primary"
+                  style="margin-block-start: var(--space-sm)"
+                  >💬 WhatsApp</a
+                >
+              </div>
+            </noscript>
+          </div>
+          <!-- Direct Contact Channels (below the form) -->
+          <div>
+            <h2
+              style="
+                font-size: 1.3rem;
+                font-weight: 800;
+                margin-block-end: var(--space-sm);
+              "
+            >
+              Or Reach Out Directly
+            </h2>
+            <div class="contact-channels-grid">
+              <!-- Channel 1: WhatsApp -->
+              <a
+                href="https://wa.me/201501656010"
+                target="_blank"
+                class="channel-item"
+              >
+                <div class="channel-icon">💬</div>
+                <div>
+                  <h4 style="font-weight: 700">Direct WhatsApp</h4>
+                  <p class="text-secondary font-size-sm">+201501656010</p>
+                </div>
+              </a>
+              <!-- Channel 2: Email -->
+              <a href="mailto:ahmedissamramadan@gmail.com" class="channel-item">
+                <div class="channel-icon">✉️</div>
+                <div>
+                  <h4 style="font-weight: 700">Official Email</h4>
+                  <p class="text-secondary font-size-sm">
+                    ahmedissamramadan@gmail.com
+                  </p>
+                </div>
+              </a>
+              <!-- Channel 3: LinkedIn -->
+              <a
+                href="https://linkedin.com/in/ahmedissamramadan"
+                target="_blank"
+                class="channel-item"
+              >
+                <div class="channel-icon">👔</div>
+                <div>
+                  <h4 style="font-weight: 700">LinkedIn Profile</h4>
+                  <p class="text-secondary font-size-sm">
+                    linkedin.com/in/ahmedissamramadan
+                  </p>
+                </div>
+              </a>
+              <!-- Channel 4: Linktree -->
+              <a
+                href="https://linktr.ee/ahmedissamramadan"
+                target="_blank"
+                class="channel-item"
+                style="
+                  border-color: rgba(142, 122, 181, 0.3);
+                  background-color: var(--purple-dim);
+                "
+              >
+                <div
+                  class="channel-icon"
+                  style="
+                    color: var(--purple-accent);
+                    background-color: rgba(142, 122, 181, 0.15);
+                  "
+                >
+                  🔗
+                </div>
+                <div>
+                  <h4 style="font-weight: 700; color: var(--purple-accent)">
+                    All Social Links
+                  </h4>
+                  <p class="text-secondary font-size-sm">
+                    linktr.ee/ahmedissamramadan
+                  </p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="site-container footer-inner">
+        <div>
+          <div class="logo" style="margin-block-end: var(--space-xs)">
+            <span class="logo-symbol">◈</span> <span>Ahmed Issam</span>
+          </div>
+          <p class="text-secondary font-size-sm">
+            AI Systems & Digital Marketing Consultant
+          </p>
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs);
+            align-items: center;
+          "
+        >
+          <div class="footer-links">
+            <a href="../index.html" class="nav-link"> <span>Home</span> </a>
+            <a href="../about/index.html" class="nav-link">
+              <span>About</span>
+            </a>
+            <a href="../services/index.html" class="nav-link">
+              <span>Services</span>
+            </a>
+            <a href="../work/index.html" class="nav-link">
+              <span>Work</span>
+            </a>
+            <a href="./index.html" class="nav-link active">
+              <span>Contact</span>
+            </a>
+          </div>
+          <p class="text-secondary font-size-sm">
+            &copy; 2026 Ahmed Issam Ramadan — VentureCycle Studio.
+            <span>All rights reserved.</span>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <!-- Tally Embed Loader -->
+    <script>
+      var d = document,
+        w = "https://tally.so/widgets/embed.js",
+        v = function () {
+          "undefined" != typeof Tally
+            ? Tally.loadEmbeds()
+            : d
+                .querySelectorAll("iframe[data-tally-src]:not([src])")
+                .forEach(function (e) {
+                  e.src = e.dataset.tallySrc;
+                });
+        };
+      if ("undefined" != typeof Tally) v();
+      else if (d.querySelector('script[src="' + w + '"]') == null) {
+        var s = d.createElement("script");
+        s.src = w;
+        s.onload = v;
+        s.onerror = v;
+        d.body.appendChild(s);
+      }
+    </script>
+  </body>
 </html>

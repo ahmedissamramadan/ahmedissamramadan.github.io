@@ -3,61 +3,12 @@
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Language Swapping & Persistence
-  initLanguage();
-
-  // 2. Mobile Responsive Menu
+  // 1. Mobile Responsive Menu
   initMobileMenu();
 
-  // 3. Theme Toggle & prefers-color-scheme Management
+  // 2. Theme Toggle & prefers-color-scheme Management
   initTheme();
 });
-
-/**
- * Initialize Language Settings (Arabic-first default)
- */
-function initLanguage() {
-  const toggleButtons = document.querySelectorAll('.lang-toggle-btn');
-  const htmlEl = document.documentElement;
-
-  // Read saved preference or default to Arabic ('ar')
-  let currentLang = localStorage.getItem('lang') || 'ar';
-  applyLanguage(currentLang);
-
-  toggleButtons.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      currentLang = currentLang === 'ar' ? 'en' : 'ar';
-      applyLanguage(currentLang);
-    });
-  });
-
-  function applyLanguage(lang) {
-    htmlEl.lang = lang;
-    htmlEl.dir = lang === 'ar' ? 'rtl' : 'ltr';
-    localStorage.setItem('lang', lang);
-
-    // Update active class on toggle buttons
-    toggleButtons.forEach(btn => {
-      const btnLang = btn.getAttribute('data-lang-target');
-      if (btnLang === lang) {
-        btn.classList.add('active');
-      } else {
-        btn.classList.remove('active');
-      }
-    });
-
-    // Update HTML input placeholders dynamically
-    document.querySelectorAll('[data-placeholder-ar]').forEach(input => {
-      const arPlaceholder = input.getAttribute('data-placeholder-ar');
-      const enPlaceholder = input.getAttribute('data-placeholder-en');
-      input.placeholder = lang === 'ar' ? arPlaceholder : enPlaceholder;
-    });
-
-    // Dispatch custom event for layout adjustments if needed
-    window.dispatchEvent(new CustomEvent('langChanged', { detail: { lang } }));
-  }
-}
 
 /**
  * Mobile responsive menu logic

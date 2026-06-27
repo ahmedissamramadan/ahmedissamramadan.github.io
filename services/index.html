@@ -1,500 +1,459 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl" data-theme="dark">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>الخدمات والقدرات | Services & Pricing Packages</title>
-  <meta name="description" content="قدرات الاستوديو وخطط التسعير لتطوير أعمالك - هوية البراند، استراتيجيات المحتوى وأنظمة الأتمتة بالـ AI. Services, capabilities, and pricing packages by Ahmed Issam.">
-  <meta name="color-scheme" content="light dark">
-  <link rel="icon" type="image/x-icon" href="../assets/general/favicon.ico">
-  <meta property="og:title" content="الخدمات والقدرات | Services & Pricing Packages">
-  <meta property="og:description" content="قدرات الاستوديو وخطط التسعير لتطوير أعمالك.">
-  <meta property="og:url" content="https://ahmedissamramadan.github.io/services/">
-  <meta property="og:image" content="https://ahmedissamramadan.github.io/assets/general/hero_abstract_neural.jpg">
-  
-  <!-- Inline FOUC avoidance scripts -->
-  <script>
-    {
-      const theme = localStorage.getItem('theme') || 'dark';
-      document.querySelector('meta[name="color-scheme"]').content = theme;
-      document.documentElement.setAttribute('data-theme', theme);
-      
-      const lang = localStorage.getItem('lang') || 'ar';
-      document.documentElement.lang = lang;
-      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-    }
-  </script>
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="../css/style.css">
-  
-  <style>
-    /* Capabilities Grid customizations */
-    .cap-card-icon {
-      font-size: 1.5rem;
-      color: var(--gold-primary);
-      margin-block-end: var(--space-xs);
-    }
-    
-    .cap-tags-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-block-start: var(--space-xs);
-    }
-
-    /* Pricing Section Customizations */
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--space-md);
-      margin-block-start: var(--space-lg);
-    }
-    
-    @media (min-width: 992px) {
-      .pricing-grid {
-        grid-template-columns: repeat(3, 1fr);
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services & Capabilities | Ahmed Issam Ramadan</title>
+    <meta
+      name="description"
+      content="Services, capabilities, and pricing packages by Ahmed Issam."
+    />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" type="image/x-icon" href="../assets/general/favicon.ico" />
+    <meta
+      property="og:title"
+      content="Services & Capabilities | Ahmed Issam Ramadan"
+    />
+    <meta
+      property="og:description"
+      content="Services, capabilities, and pricing packages by Ahmed Issam."
+    />
+    <meta
+      property="og:url"
+      content="https://ahmedissamramadan.github.io/services/"
+    />
+    <meta
+      property="og:image"
+      content="https://ahmedissamramadan.github.io/assets/general/hero_abstract_neural.jpg"
+    />
+    <!-- Inline FOUC avoidance scripts -->
+    <script>
+      {
+        const theme = localStorage.getItem("theme") || "dark";
+        document.querySelector('meta[name="color-scheme"]').content = theme;
+        document.documentElement.setAttribute("data-theme", theme);
       }
-    }
-
-    .price-card {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      border: var(--border-width) solid var(--border-dark-glass);
-      background-color: var(--bg-dark-surface);
-      border-radius: var(--radius-md);
-      padding: var(--space-md);
-      transition: var(--transition-normal);
-    }
-
-    .price-card:hover {
-      border-color: var(--gold-primary);
-      transform: translateY(-4px);
-    }
-
-    .price-card.featured {
-      border: 2px solid var(--gold-primary);
-      position: relative;
-    }
-
-    .featured-label {
-      position: absolute;
-      top: -12px;
-      inset-inline-start: 50%;
-      transform: translateX(-50%);
-      background-color: var(--gold-primary);
-      color: var(--bg-dark-base);
-      font-size: 0.75rem;
-      font-weight: 800;
-      padding-block: 2px;
-      padding-inline: 12px;
-      border-radius: 9999px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .price-title {
-      font-size: 1.3rem;
-      font-weight: 800;
-      margin-block-end: var(--space-xs);
-    }
-
-    .price-amount {
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: var(--gold-primary);
-      margin-block-end: var(--space-sm);
-    }
-
-    .price-features {
-      margin-block-end: var(--space-md);
-      flex: 1;
-    }
-
-    .price-features li {
-      position: relative;
-      padding-inline-start: var(--space-md);
-      font-size: 0.9rem;
-      color: var(--text-dark-secondary);
-      margin-block-end: 8px;
-    }
-
-    .price-features li::before {
-      content: '✓';
-      position: absolute;
-      inset-inline-start: 0;
-      color: var(--gold-primary);
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="site-container navbar-inner">
-      <a href="../index.html" class="logo">
-        <span class="logo-symbol">◈</span>
-        <span>أحمد عصام</span>
-      </a>
-      
-      <!-- Nav Links -->
-      <div class="nav-links">
-        <a href="../index.html" class="nav-link">
-          <span lang="ar">الرئيسية</span>
-          <span lang="en">Home</span>
+    </script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      /* Capabilities Grid customizations */
+      .cap-card-icon {
+        font-size: 1.5rem;
+        color: var(--gold-primary);
+        margin-block-end: var(--space-xs);
+      }
+      .cap-tags-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-block-start: var(--space-xs);
+      } /* Pricing Section Customizations */
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+        margin-block-start: var(--space-lg);
+      }
+      @media (min-width: 992px) {
+        .pricing-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      .price-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border: var(--border-width) solid var(--border-dark-glass);
+        background-color: var(--bg-dark-surface);
+        border-radius: var(--radius-md);
+        padding: var(--space-md);
+        transition: var(--transition-normal);
+      }
+      .price-card:hover {
+        border-color: var(--gold-primary);
+        transform: translateY(-4px);
+      }
+      .price-card.featured {
+        border: 2px solid var(--gold-primary);
+        position: relative;
+      }
+      .featured-label {
+        position: absolute;
+        top: -12px;
+        inset-inline-start: 50%;
+        transform: translateX(-50%);
+        background-color: var(--gold-primary);
+        color: var(--bg-dark-base);
+        font-size: 0.75rem;
+        font-weight: 800;
+        padding-block: 2px;
+        padding-inline: 12px;
+        border-radius: 9999px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .price-title {
+        font-size: 1.3rem;
+        font-weight: 800;
+        margin-block-end: var(--space-xs);
+      }
+      .price-amount {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--gold-primary);
+        margin-block-end: var(--space-sm);
+      }
+      .price-features {
+        margin-block-end: var(--space-md);
+        flex: 1;
+      }
+      .price-features li {
+        position: relative;
+        padding-inline-start: var(--space-md);
+        font-size: 0.9rem;
+        color: var(--text-dark-secondary);
+        margin-block-end: 8px;
+      }
+      .price-features li::before {
+        content: "✓";
+        position: absolute;
+        inset-inline-start: 0;
+        color: var(--gold-primary);
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="site-container navbar-inner">
+        <a href="../index.html" class="logo">
+          <span class="logo-symbol">◈</span> <span>Ahmed Issam</span>
         </a>
-        <a href="../about/index.html" class="nav-link">
-          <span lang="ar">عني</span>
-          <span lang="en">About</span>
-        </a>
-        <a href="./index.html" class="nav-link active">
-          <span lang="ar">الخدمات</span>
-          <span lang="en">Services</span>
-        </a>
-        <a href="../work/index.html" class="nav-link">
-          <span lang="ar">أعمالي</span>
-          <span lang="en">Work</span>
-        </a>
-        <a href="../contact/index.html" class="nav-link">
-          <span lang="ar">تواصل</span>
-          <span lang="en">Contact</span>
-        </a>
-      </div>
-
-      <!-- Controls -->
-      <div style="display: flex; gap: var(--space-xs); align-items: center;">
-        <button id="theme-toggle" class="btn btn-secondary" style="padding: 0.5rem; border-radius: 50%; min-width: 40px; block-size: 40px;">
-          <span class="theme-icon-light" style="display:none;">☀️</span>
-          <span class="theme-icon-dark">🌙</span>
-        </button>
-        <button class="btn btn-secondary lang-toggle-btn" data-lang-target="en" style="font-size: 0.85rem; font-weight: 700; padding: 0.5rem 0.8rem;">
-          <span lang="ar">English</span>
-          <span lang="en">العربية</span>
-        </button>
-        <button id="menu-toggle" class="hamburger-btn" aria-label="القائمة" aria-expanded="false">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="mobile-menu">
-    <div class="site-container">
-      <a href="../index.html" class="mobile-nav-link">
-        <span lang="ar">الرئيسية</span>
-        <span lang="en">Home</span>
-      </a>
-      <a href="../about/index.html" class="mobile-nav-link">
-        <span lang="ar">عني</span>
-        <span lang="en">About</span>
-      </a>
-      <a href="./index.html" class="mobile-nav-link active">
-        <span lang="ar">الخدمات</span>
-        <span lang="en">Services</span>
-      </a>
-      <a href="../work/index.html" class="mobile-nav-link">
-        <span lang="ar">أعمالي</span>
-        <span lang="en">Work</span>
-      </a>
-      <a href="../contact/index.html" class="mobile-nav-link">
-        <span lang="ar">تواصل</span>
-        <span lang="en">Contact</span>
-      </a>
-    </div>
-  </div>
-
-  <!-- Main Container -->
-  <main class="site-container">
-
-    <!-- Hero / Capabilities Overview -->
-    <section class="text-center">
-      <div class="section-label">
-        <span lang="ar">القدرات والخدمات</span>
-        <span lang="en">Capabilities & Services</span>
-      </div>
-      <h1 class="section-title">
-        <span lang="ar">ست قدرات أساسية مدمجة</span>
-        <span lang="en">Six Integrated Capabilities</span>
-      </h1>
-      <p lang="ar" class="section-sub" style="margin-inline: auto;">
-        كل قدرة بتشتغل مع التانية كـ integrated system لخدمة نمو وتطوير البزنس الخاص بك.
-      </p>
-      <p lang="en" class="section-sub" style="margin-inline: auto;">
-        Six core disciplines acting together as a fully integrated execution system for your business.
-      </p>
-    </section>
-
-    <!-- Capabilities Grid -->
-    <section style="padding-block-start: 0;">
-      <div class="grid-3">
-        <!-- Cap 1 -->
-        <div class="card-glass">
-          <div class="cap-card-icon">◈</div>
-          <h3 lang="ar" style="font-size: 1.15rem; margin-block-end: var(--space-xs);">أنظمة هوية البراند</h3>
-          <h3 lang="en" style="font-size: 1.15rem; margin-block-end: var(--space-xs);">Brand Identity Systems</h3>
-          <p lang="ar" class="text-secondary font-size-sm">
-            بناء هوية بصرية كاملة وثنائية اللغة — من الشعار للتغليف لملف الهوية الجاهز للتسليم. مش أصول منفصلة، ده نظام (system) كامل وقابل للتكرار والتوسع.
-          </p>
-          <p lang="en" class="text-secondary font-size-sm">
-            Bilingual visual identity design — from logo systems to packaging and comprehensive brand books. Reusable and scalable asset systems.
-          </p>
-          <div class="cap-tags-wrapper">
-            <span class="pill">Brand Book</span>
-            <span class="pill">Visual Identity</span>
-            <span class="pill">Arabic Typography</span>
-          </div>
-        </div>
-
-        <!-- Cap 2 -->
-        <div class="card-glass">
-          <div class="cap-card-icon">◉</div>
-          <h3 lang="ar" style="font-size: 1.15rem; margin-block-end: var(--space-xs);">أصول إبداعية بالـ AI</h3>
-          <h3 lang="en" style="font-size: 1.15rem; margin-block-end: var(--space-xs);">AI Creative Assets</h3>
-          <p lang="ar" class="text-secondary font-size-sm">
-            تصميم بوسترات، محتوى بصري، وصور منتجات تسويقية بالذكاء الاصطناعي وبأسلوب بصري عربي ومحلي يناسب السوق المستهدف من اليوم الأول.
-          </p>
-          <p lang="en" class="text-secondary font-size-sm">
-            Posters, social creatives, and visual content produced via custom AI workflows with native Arabic-first aesthetics.
-          </p>
-          <div class="cap-tags-wrapper">
-            <span class="pill pill-purple">Posters</span>
-            <span class="pill pill-purple">Social Content</span>
-            <span class="pill pill-purple">AI-Generated</span>
-          </div>
-        </div>
-
-        <!-- Cap 3 -->
-        <div class="card-glass">
-          <div class="cap-card-icon">◎</div>
-          <h3 lang="ar" style="font-size: 1.15rem; margin-block-end: var(--space-xs);">حزم إطلاق المنتجات</h3>
-          <h3 lang="en" style="font-size: 1.15rem; margin-block-end: var(--space-xs);">Product Launch Kits</h3>
-          <p lang="ar" class="text-secondary font-size-sm">
-            تجهيز كل ما يلزم لإطلاق منتجك على المتاجر الإلكترونية مثل Amazon — محتوى A+، خطوط رسائل البريد، إعلانات السوشيال ميديا، والـ Copywriting في جلسة واحدة.
-          </p>
-          <p lang="en" class="text-secondary font-size-sm">
-            Everything needed to launch a product — including A+ e-commerce content, email automation flows, social ads, and copy.
-          </p>
-          <div class="cap-tags-wrapper">
-            <span class="pill">Amazon</span>
-            <span class="pill">E-commerce</span>
-            <span class="pill">Launch Ready</span>
-          </div>
-        </div>
-
-        <!-- Cap 4 -->
-        <div class="card-glass">
-          <div class="cap-card-icon">⟡</div>
-          <h3 lang="ar" style="font-size: 1.15rem; margin-block-end: var(--space-xs);">استراتيجية AI عربية</h3>
-          <h3 lang="en" style="font-size: 1.15rem; margin-block-end: var(--space-xs);">Arabic AI Strategy</h3>
-          <p lang="ar" class="text-secondary font-size-sm">
-            وضع خطط محتوى تسويقي ثنائي اللغة وهندسة سياق (Context Engineering) مصممة خصيصاً لجمهور الشرق الأوسط بناءً على فهم ثقافي عميق — وليس ترجمة آلية حرفية.
-          </p>
-          <p lang="en" class="text-secondary font-size-sm">
-            Bilingual marketing strategy and context engineering tailored for the MENA market using deep cultural logic — not translated English.
-          </p>
-          <div class="cap-tags-wrapper">
-            <span class="pill pill-purple">Arabic Content</span>
-            <span class="pill pill-purple">MENA Market</span>
-            <span class="pill pill-purple">Cultural Depth</span>
-          </div>
-        </div>
-
-        <!-- Cap 5 -->
-        <div class="card-glass">
-          <div class="cap-card-icon">⬡</div>
-          <h3 lang="ar" style="font-size: 1.15rem; margin-block-end: var(--space-xs);">أطر عمل قابلة للتكرار</h3>
-          <h3 lang="en" style="font-size: 1.15rem; margin-block-end: var(--space-xs);">Reusable Frameworks</h3>
-          <p lang="ar" class="text-secondary font-size-sm">
-            تسليمك أطر عمل وأنظمة (Prompt Systems) جاهزة للتكرار وفريقك يقدر يشغلها من غيري. لن تبدأ صناعة المحتوى أو العمليات من الصفر في كل مرة.
-          </p>
-          <p lang="en" class="text-secondary font-size-sm">
-            Deliverables formatted as documented, reusable workflows and systems. Scalable templates so you never start from scratch.
-          </p>
-          <div class="cap-tags-wrapper">
-            <span class="pill">Scalable</span>
-            <span class="pill">Ready-to-Deploy</span>
-            <span class="pill">System Handoff</span>
-          </div>
-        </div>
-
-        <!-- Cap 6 -->
-        <div class="card-glass">
-          <div class="cap-card-icon">◇</div>
-          <h3 lang="ar" style="font-size: 1.15rem; margin-block-end: var(--space-xs);">بحث وتصميم وكلاء الـ AI</h3>
-          <h3 lang="en" style="font-size: 1.15rem; margin-block-end: var(--space-xs);">Research & Agent Specs</h3>
-          <p lang="ar" class="text-secondary font-size-sm">
-            دراسة السوق وتحليل المنافسين (STP)، بالإضافة إلى كتابة وتوثيق مواصفات وكلاء ذكاء اصطناعي (AI Agents) مخصصة تلبي أهداف البزنس.
-          </p>
-          <p lang="en" class="text-secondary font-size-sm">
-            In-depth market research, competitive analysis, and design specifications for custom AI agents built for the MENA context.
-          </p>
-          <div class="cap-tags-wrapper">
-            <span class="pill pill-purple">Competitive Specs</span>
-            <span class="pill pill-purple">AI Agent Design</span>
-            <span class="pill pill-purple">Strategy Docs</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing / Packages Section -->
-    <section>
-      <div class="text-center" style="margin-block-end: var(--space-lg);">
-        <div class="section-label">
-          <span lang="ar">نماذج التعاقد</span>
-          <span lang="en">Engagement Models</span>
-        </div>
-        <h2 class="section-title">
-          <span lang="ar">الخطط ونماذج التسعير</span>
-          <span lang="en">Pricing & Engagement Packages</span>
-        </h2>
-        <p lang="ar" class="section-sub" style="margin-inline: auto;">
-          اختر الطريقة الأنسب لدمج هذه القدرات في عمليات شركتك.
-        </p>
-        <p lang="en" class="section-sub" style="margin-inline: auto;">
-          Choose the engagement model that best matches your immediate business requirements.
-        </p>
-      </div>
-
-      <div class="pricing-grid">
-        <!-- Package 1 -->
-        <div class="price-card">
-          <div>
-            <h3 lang="ar" class="price-title">حزمة البداية (Starter)</h3>
-            <h3 lang="en" class="price-title">Starter Pack</h3>
-            <div lang="ar" class="price-amount">أساسي</div>
-            <div lang="en" class="price-amount">Starter</div>
-            <ul class="price-features">
-              <li lang="ar">بناء الهوية البصرية الأساسية (الشعار والألوان)</li>
-              <li lang="en">Basic Brand Identity (Logo variations & colors)</li>
-              <li lang="ar">استراتيجية STP وتحليل منافسين أولي</li>
-              <li lang="en">Initial STP strategy & competitor audit</li>
-              <li lang="ar">تقويم محتوى لـ 30 بوست (كابشن + visual brief)</li>
-              <li lang="en">30-day content calendar (captions + visual briefs)</li>
-              <li lang="ar">أوامر prompt موثقة للهوية</li>
-              <li lang="en">Documented visual generator prompts</li>
-            </ul>
-          </div>
-          <a href="https://wa.me/201501656010?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B6%D9%8A%D9%81%20%D8%AD%D8%B2%D9%85%D8%A9%20%D8%A7%D9%84%D8%A8%D8%AF%D8%A7%D9%8A%D8%A9%20Starter" target="_blank" class="btn btn-secondary text-center">
-            <span lang="ar">ابدأ هنا</span>
-            <span lang="en">Get Started</span>
-          </a>
-        </div>
-
-        <!-- Package 2 -->
-        <div class="price-card featured">
-          <span class="featured-label">
-            <span lang="ar">الأكثر طلباً</span>
-            <span lang="en">Most Popular</span>
-          </span>
-          <div>
-            <h3 lang="ar" class="price-title">الحزمة الكاملة (Full Cycle)</h3>
-            <h3 lang="en" class="price-title">Full Cycle Bundle</h3>
-            <div lang="ar" class="price-amount">شامل</div>
-            <div lang="en" class="price-amount">Full Cycle</div>
-            <ul class="price-features">
-              <li lang="ar">هوية بصرية كاملة + Brand Guidelines Doc</li>
-              <li lang="en">Complete visual identity system & brand guidelines</li>
-              <li lang="ar">خطة إطلاق منتج تسويقي متكاملة (Launch Plan)</li>
-              <li lang="en">Integrated marketing Launch Plan (A+ & ads copy)</li>
-              <li lang="ar">تقويم محتوى لـ 90 بوست (كابشن + visual briefs)</li>
-              <li lang="en">90-day content calendar (captions & graphic specs)</li>
-              <li lang="ar">أتمتة workflows لإنتاج المحتوى لفريقك</li>
-              <li lang="en">Content automation workflows set up for your team</li>
-              <li lang="ar">أدوات (Toolkits) ذكاء اصطناعي مخصصة للمجال</li>
-              <li lang="en">Customized AI toolkits based on business niche</li>
-            </ul>
-          </div>
-          <a href="https://wa.me/201501656010?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B9%D8%B1%D9%81%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%AD%D8%B2%D9%85%D8%A9%20%D8%A7%D9%84%D9%83%D8%A7%D9%85%D9%84%D8%A9%20Full%20Cycle%20Bundle" target="_blank" class="btn btn-primary text-center">
-            <span lang="ar">احجز الحزمة الآن</span>
-            <span lang="en">Book Package</span>
-          </a>
-        </div>
-
-        <!-- Package 3 -->
-        <div class="price-card">
-          <div>
-            <h3 lang="ar" class="price-title">الاشتراك المستمر (Retainer)</h3>
-            <h3 lang="en" class="price-title">Monthly Retainer</h3>
-            <div lang="ar" class="price-amount">شهري</div>
-            <div lang="en" class="price-amount">Retainer</div>
-            <ul class="price-features">
-              <li lang="ar">تحديث وتطوير مستمر للمحتوى واستراتيجيات السوق</li>
-              <li lang="en">Continuous content strategy updates & optimization</li>
-              <li lang="ar">أتمتة العمليات وربط workflows للمبيعات وسلاسل التوريد</li>
-              <li lang="en">Operations & workflow automation (sales/inventory)</li>
-              <li lang="ar">صيانة وتدريب وتطوير أنظمة الـ AI الخاصة بشركتك</li>
-              <li lang="en">Regular maintenance & upgrades of custom AI systems</li>
-              <li lang="ar">دعم فني واستشاري مخصص لمدير العمليات أو المؤسس</li>
-              <li lang="en">Dedicated advisory & tech support for founders/managers</li>
-            </ul>
-          </div>
-          <a href="https://wa.me/201501656010?text=%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D8%B9%D8%A7%D9%82%D8%AF%20%D8%B9%D9%84%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D8%A7%D9%84%D8%B4%D9%87%D8%B1%D9%8A%20Retainer" target="_blank" class="btn btn-secondary text-center">
-            <span lang="ar">تكلم معنا</span>
-            <span lang="en">Contact Us</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="site-container footer-inner">
-      <div>
-        <div class="logo" style="margin-block-end: var(--space-xs);">
-          <span class="logo-symbol">◈</span>
-          <span>أحمد عصام</span>
-        </div>
-        <p lang="ar" class="text-secondary font-size-sm">مستشار أنظمة ذكاء اصطناعي وتسويق رقمي</p>
-        <p lang="en" class="text-secondary font-size-sm">AI Systems & Digital Marketing Consultant</p>
-      </div>
-
-      <div style="display: flex; flex-direction: column; gap: var(--space-xs); align-items: center;">
-        <div class="footer-links">
-          <a href="../index.html" class="nav-link">
-            <span lang="ar">الرئيسية</span>
-            <span lang="en">Home</span>
-          </a>
+        <!-- Nav Links -->
+        <div class="nav-links">
+          <a href="../index.html" class="nav-link"> <span>Home</span> </a>
           <a href="../about/index.html" class="nav-link">
-            <span lang="ar">عني</span>
-            <span lang="en">About</span>
+            <span>About</span>
           </a>
           <a href="./index.html" class="nav-link active">
-            <span lang="ar">الخدمات</span>
-            <span lang="en">Services</span>
+            <span>Services</span>
           </a>
-          <a href="../work/index.html" class="nav-link">
-            <span lang="ar">أعمالي</span>
-            <span lang="en">Work</span>
-          </a>
+          <a href="../work/index.html" class="nav-link"> <span>Work</span> </a>
           <a href="../contact/index.html" class="nav-link">
-            <span lang="ar">تواصل</span>
-            <span lang="en">Contact</span>
+            <span>Contact</span>
           </a>
         </div>
-        
-        <p class="text-secondary font-size-sm">
-          &copy; 2026 Ahmed Issam Ramadan — VentureCycle Studio. 
-          <span lang="ar">جميع الحقوق محفوظة.</span>
-          <span lang="en">All rights reserved.</span>
-        </p>
+        <!-- Controls -->
+        <div style="display: flex; gap: var(--space-xs); align-items: center">
+          <button
+            id="theme-toggle"
+            class="btn btn-secondary"
+            style="
+              padding: 0.5rem;
+              border-radius: 50%;
+              min-width: 40px;
+              block-size: 40px;
+            "
+          >
+            <span class="theme-icon-light" style="display: none">☀️</span>
+            <span class="theme-icon-dark">🌙</span>
+          </button>
+          <button
+            id="menu-toggle"
+            class="hamburger-btn"
+            aria-label="Menu"
+            aria-expanded="false"
+          >
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+      <div class="site-container">
+        <a href="../index.html" class="mobile-nav-link"> <span>Home</span> </a>
+        <a href="../about/index.html" class="mobile-nav-link">
+          <span>About</span>
+        </a>
+        <a href="./index.html" class="mobile-nav-link active">
+          <span>Services</span>
+        </a>
+        <a href="../work/index.html" class="mobile-nav-link">
+          <span>Work</span>
+        </a>
+        <a href="../contact/index.html" class="mobile-nav-link">
+          <span>Contact</span>
+        </a>
       </div>
     </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="../js/main.js"></script>
-</body>
+    <!-- Main Container -->
+    <main class="site-container">
+      <!-- Hero / Capabilities Overview -->
+      <section class="text-center">
+        <div class="section-label"><span>Capabilities & Services</span></div>
+        <h1 class="section-title"><span>Six Integrated Capabilities</span></h1>
+        <p class="section-sub" style="margin-inline: auto">
+          Six core disciplines acting together as a fully integrated execution
+          system for your business.
+        </p>
+      </section>
+      <!-- Capabilities Grid -->
+      <section style="padding-block-start: 0">
+        <div class="grid-3">
+          <!-- Cap 1 -->
+          <div class="card-glass">
+            <div class="cap-card-icon">◈</div>
+            <h3 style="font-size: 1.15rem; margin-block-end: var(--space-xs)">
+              Brand Identity Systems
+            </h3>
+            <p class="text-secondary font-size-sm">
+              Bilingual visual identity design — from logo systems to packaging
+              and comprehensive brand books. Reusable and scalable asset
+              systems.
+            </p>
+            <div class="cap-tags-wrapper">
+              <span class="pill">Brand Book</span>
+              <span class="pill">Visual Identity</span>
+              <span class="pill">Arabic Typography</span>
+            </div>
+          </div>
+          <!-- Cap 2 -->
+          <div class="card-glass">
+            <div class="cap-card-icon">◉</div>
+            <h3 style="font-size: 1.15rem; margin-block-end: var(--space-xs)">
+              AI Creative Assets
+            </h3>
+            <p class="text-secondary font-size-sm">
+              Posters, social creatives, and visual content produced via custom
+              AI workflows with native Arabic-first aesthetics.
+            </p>
+            <div class="cap-tags-wrapper">
+              <span class="pill pill-purple">Posters</span>
+              <span class="pill pill-purple">Social Content</span>
+              <span class="pill pill-purple">AI-Generated</span>
+            </div>
+          </div>
+          <!-- Cap 3 -->
+          <div class="card-glass">
+            <div class="cap-card-icon">◎</div>
+            <h3 style="font-size: 1.15rem; margin-block-end: var(--space-xs)">
+              Product Launch Kits
+            </h3>
+            <p class="text-secondary font-size-sm">
+              Everything needed to launch a product — including A+ e-commerce
+              content, email automation flows, social ads, and copy.
+            </p>
+            <div class="cap-tags-wrapper">
+              <span class="pill">Amazon</span>
+              <span class="pill">E-commerce</span>
+              <span class="pill">Launch Ready</span>
+            </div>
+          </div>
+          <!-- Cap 4 -->
+          <div class="card-glass">
+            <div class="cap-card-icon">⟡</div>
+            <h3 style="font-size: 1.15rem; margin-block-end: var(--space-xs)">
+              Arabic AI Strategy
+            </h3>
+            <p class="text-secondary font-size-sm">
+              Bilingual marketing strategy and context engineering tailored for
+              the MENA market using deep cultural logic — not translated
+              English.
+            </p>
+            <div class="cap-tags-wrapper">
+              <span class="pill pill-purple">Arabic Content</span>
+              <span class="pill pill-purple">MENA Market</span>
+              <span class="pill pill-purple">Cultural Depth</span>
+            </div>
+          </div>
+          <!-- Cap 5 -->
+          <div class="card-glass">
+            <div class="cap-card-icon">⬡</div>
+            <h3 style="font-size: 1.15rem; margin-block-end: var(--space-xs)">
+              Reusable Frameworks
+            </h3>
+            <p class="text-secondary font-size-sm">
+              Deliverables formatted as documented, reusable workflows and
+              systems. Scalable templates so you never start from scratch.
+            </p>
+            <div class="cap-tags-wrapper">
+              <span class="pill">Scalable</span>
+              <span class="pill">Ready-to-Deploy</span>
+              <span class="pill">System Handoff</span>
+            </div>
+          </div>
+          <!-- Cap 6 -->
+          <div class="card-glass">
+            <div class="cap-card-icon">◇</div>
+            <h3 style="font-size: 1.15rem; margin-block-end: var(--space-xs)">
+              Research & Agent Specs
+            </h3>
+            <p class="text-secondary font-size-sm">
+              In-depth market research, competitive analysis, and design
+              specifications for custom AI agents built for the MENA context.
+            </p>
+            <div class="cap-tags-wrapper">
+              <span class="pill pill-purple">Competitive Specs</span>
+              <span class="pill pill-purple">AI Agent Design</span>
+              <span class="pill pill-purple">Strategy Docs</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Pricing / Packages Section -->
+      <section>
+        <div class="text-center" style="margin-block-end: var(--space-lg)">
+          <div class="section-label"><span>Engagement Models</span></div>
+          <h2 class="section-title">
+            <span>Pricing & Engagement Packages</span>
+          </h2>
+          <p class="section-sub" style="margin-inline: auto">
+            Choose the engagement model that best matches your immediate
+            business requirements.
+          </p>
+        </div>
+        <div class="pricing-grid">
+          <!-- Package 1 -->
+          <div class="price-card">
+            <div>
+              <h3 class="price-title">Starter Pack</h3>
+              <div class="price-amount">Starter</div>
+              <ul class="price-features">
+                <li lang="en">
+                  Basic Brand Identity (Logo variations & colors)
+                </li>
+                <li lang="en">Initial STP strategy & competitor audit</li>
+                <li lang="en">
+                  30-day content calendar (captions + visual briefs)
+                </li>
+                <li lang="en">Documented visual generator prompts</li>
+              </ul>
+            </div>
+            <a
+              href="https://wa.me/201501656010?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B6%D9%8A%D9%81%20%D8%AD%D8%B2%D9%85%D8%A9%20%D8%A7%D9%84%D8%A8%D8%AF%D8%A7%D9%8A%D8%A9%20Starter"
+              target="_blank"
+              class="btn btn-secondary text-center"
+            >
+              <span>Get Started</span>
+            </a>
+          </div>
+          <!-- Package 2 -->
+          <div class="price-card featured">
+            <span class="featured-label"> <span>Most Popular</span> </span>
+            <div>
+              <h3 class="price-title">Full Cycle Bundle</h3>
+              <div class="price-amount">Full Cycle</div>
+              <ul class="price-features">
+                <li lang="en">
+                  Complete visual identity system & brand guidelines
+                </li>
+                <li lang="en">
+                  Integrated marketing Launch Plan (A+ & ads copy)
+                </li>
+                <li lang="en">
+                  90-day content calendar (captions & graphic specs)
+                </li>
+                <li lang="en">
+                  Content automation workflows set up for your team
+                </li>
+                <li lang="en">
+                  Customized AI toolkits based on business niche
+                </li>
+              </ul>
+            </div>
+            <a
+              href="https://wa.me/201501656010?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B9%D8%B1%D9%81%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%AD%D8%B2%D9%85%D8%A9%20%D8%A7%D9%84%D9%83%D8%A7%D9%85%D9%84%D8%A9%20Full%20Cycle%20Bundle"
+              target="_blank"
+              class="btn btn-primary text-center"
+            >
+              <span>Book Package</span>
+            </a>
+          </div>
+          <!-- Package 3 -->
+          <div class="price-card">
+            <div>
+              <h3 class="price-title">Monthly Retainer</h3>
+              <div class="price-amount">Retainer</div>
+              <ul class="price-features">
+                <li lang="en">
+                  Continuous content strategy updates & optimization
+                </li>
+                <li lang="en">
+                  Operations & workflow automation (sales/inventory)
+                </li>
+                <li lang="en">
+                  Regular maintenance & upgrades of custom AI systems
+                </li>
+                <li lang="en">
+                  Dedicated advisory & tech support for founders/managers
+                </li>
+              </ul>
+            </div>
+            <a
+              href="https://wa.me/201501656010?text=%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D8%B9%D8%A7%D9%82%D8%AF%20%D8%B9%D9%84%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D8%A7%D9%84%D8%B4%D9%87%D8%B1%D9%8A%20Retainer"
+              target="_blank"
+              class="btn btn-secondary text-center"
+            >
+              <span>Contact Us</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="site-container footer-inner">
+        <div>
+          <div class="logo" style="margin-block-end: var(--space-xs)">
+            <span class="logo-symbol">◈</span> <span>Ahmed Issam</span>
+          </div>
+          <p class="text-secondary font-size-sm">
+            AI Systems & Digital Marketing Consultant
+          </p>
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs);
+            align-items: center;
+          "
+        >
+          <div class="footer-links">
+            <a href="../index.html" class="nav-link"> <span>Home</span> </a>
+            <a href="../about/index.html" class="nav-link">
+              <span>About</span>
+            </a>
+            <a href="./index.html" class="nav-link active">
+              <span>Services</span>
+            </a>
+            <a href="../work/index.html" class="nav-link">
+              <span>Work</span>
+            </a>
+            <a href="../contact/index.html" class="nav-link">
+              <span>Contact</span>
+            </a>
+          </div>
+          <p class="text-secondary font-size-sm">
+            &copy; 2026 Ahmed Issam Ramadan — VentureCycle Studio.
+            <span>All rights reserved.</span>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+  </body>
 </html>

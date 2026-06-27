@@ -1,572 +1,580 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl" data-theme="dark">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>عن أحمد عصام رمضان | About Ahmed Issam Ramadan</title>
-  <meta name="description" content="قصة كفاح ومسيرة أحمد عصام من المبيعات الميدانية إلى تصميم أنظمة الذكاء الاصطناعي للبزنس العربي. Biography of Ahmed Issam, from street sales to AI operations.">
-  <meta name="color-scheme" content="light dark">
-  <link rel="icon" type="image/x-icon" href="../assets/general/favicon.ico">
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content="عن أحمد عصام رمضان | About Ahmed Issam Ramadan">
-  <meta property="og:description" content="قصة كفاح ومسيرة أحمد عصام من المبيعات الميدانية إلى تصميم أنظمة الذكاء الاصطناعي.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ahmedissamramadan.github.io/about/">
-  <meta property="og:image" content="https://ahmedissamramadan.github.io/assets/general/ahmed_portrait_6.png">
-  
-  <!-- Inline FOUC avoidance scripts -->
-  <script>
-    {
-      const theme = localStorage.getItem('theme') || 'dark';
-      document.querySelector('meta[name="color-scheme"]').content = theme;
-      document.documentElement.setAttribute('data-theme', theme);
-      
-      const lang = localStorage.getItem('lang') || 'ar';
-      document.documentElement.lang = lang;
-      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-    }
-  </script>
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="../css/style.css">
-  
-  <style>
-    /* Bio layout */
-    .bio-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--space-lg);
-      align-items: start;
-    }
-    
-    @media (min-width: 992px) {
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Ahmed Issam Ramadan | AI Systems Architect</title>
+    <meta
+      name="description"
+      content="Biography of Ahmed Issam, from street sales to AI operations."
+    />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" type="image/x-icon" href="../assets/general/favicon.ico" />
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="About Ahmed Issam Ramadan | AI Systems Architect"
+    />
+    <meta
+      property="og:description"
+      content="Biography of Ahmed Issam, from street sales to AI operations."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://ahmedissamramadan.github.io/about/"
+    />
+    <meta
+      property="og:image"
+      content="https://ahmedissamramadan.github.io/assets/general/ahmed_portrait_6.png"
+    />
+    <!-- Inline FOUC avoidance scripts -->
+    <script>
+      {
+        const theme = localStorage.getItem("theme") || "dark";
+        document.querySelector('meta[name="color-scheme"]').content = theme;
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    </script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      /* Bio layout */
       .bio-grid {
-        grid-template-columns: 1.2fr 1fr;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+        align-items: start;
       }
-    }
-
-    .portrait-wrapper {
-      position: relative;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      border: var(--border-width) solid var(--border-dark-glass);
-      background-color: var(--bg-dark-surface);
-      aspect-ratio: 4 / 5;
-    }
-
-    .portrait-img {
-      inline-size: 100%;
-      block-size: 100%;
-      object-fit: cover;
-    }
-
-    /* Timeline */
-    .timeline {
-      position: relative;
-      padding-inline-start: var(--space-md);
-      margin-block-start: var(--space-md);
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      inset-inline-start: 0;
-      top: 0;
-      block-size: 100%;
-      inline-size: 2px;
-      background-color: var(--border-dark-glass);
-    }
-
-    .timeline-item {
-      position: relative;
-      padding-block-end: var(--space-md);
-      padding-inline-start: var(--space-md);
-    }
-
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      inset-inline-start: -5px;
-      top: 6px;
-      block-size: 10px;
-      inline-size: 10px;
-      border-radius: 50%;
-      background-color: var(--gold-primary);
-      box-shadow: 0 0 0 4px rgba(224, 169, 109, 0.2);
-    }
-
-    .timeline-year {
-      font-size: 0.85rem;
-      font-weight: 800;
-      color: var(--gold-primary);
-      margin-block-end: var(--space-xs);
-    }
-
-    .timeline-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-block-end: var(--space-xs);
-    }
-
-    .timeline-role {
-      font-size: 0.9rem;
-      color: var(--text-dark-secondary);
-      margin-block-end: var(--space-xs);
-      font-style: italic;
-    }
-
-    .timeline-desc {
-      font-size: 0.9rem;
-      color: var(--text-dark-secondary);
-      line-height: 1.5;
-    }
-
-    /* Personality Trait Badges */
-    .trait-card {
-      border-block-start: 3px solid var(--gold-primary);
-    }
-
-    .trait-card-purple {
-      border-block-start: 3px solid var(--purple-accent);
-    }
-
-    /* Certification Grid */
-    .certs-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-sm);
-    }
-
-    @media (min-width: 768px) {
+      @media (min-width: 992px) {
+        .bio-grid {
+          grid-template-columns: 1.2fr 1fr;
+        }
+      }
+      .portrait-wrapper {
+        position: relative;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        border: var(--border-width) solid var(--border-dark-glass);
+        background-color: var(--bg-dark-surface);
+        aspect-ratio: 4 / 5;
+      }
+      .portrait-img {
+        inline-size: 100%;
+        block-size: 100%;
+        object-fit: cover;
+      } /* Timeline */
+      .timeline {
+        position: relative;
+        padding-inline-start: var(--space-md);
+        margin-block-start: var(--space-md);
+      }
+      .timeline::before {
+        content: "";
+        position: absolute;
+        inset-inline-start: 0;
+        top: 0;
+        block-size: 100%;
+        inline-size: 2px;
+        background-color: var(--border-dark-glass);
+      }
+      .timeline-item {
+        position: relative;
+        padding-block-end: var(--space-md);
+        padding-inline-start: var(--space-md);
+      }
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        inset-inline-start: -5px;
+        top: 6px;
+        block-size: 10px;
+        inline-size: 10px;
+        border-radius: 50%;
+        background-color: var(--gold-primary);
+        box-shadow: 0 0 0 4px rgba(224, 169, 109, 0.2);
+      }
+      .timeline-year {
+        font-size: 0.85rem;
+        font-weight: 800;
+        color: var(--gold-primary);
+        margin-block-end: var(--space-xs);
+      }
+      .timeline-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-block-end: var(--space-xs);
+      }
+      .timeline-role {
+        font-size: 0.9rem;
+        color: var(--text-dark-secondary);
+        margin-block-end: var(--space-xs);
+        font-style: italic;
+      }
+      .timeline-desc {
+        font-size: 0.9rem;
+        color: var(--text-dark-secondary);
+        line-height: 1.5;
+      } /* Personality Trait Badges */
+      .trait-card {
+        border-block-start: 3px solid var(--gold-primary);
+      }
+      .trait-card-purple {
+        border-block-start: 3px solid var(--purple-accent);
+      } /* Certification Grid */
       .certs-grid {
-        grid-template-columns: repeat(4, 1fr);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-sm);
       }
-    }
-
-    .cert-item {
-      text-align: center;
-      padding: var(--space-sm);
-    }
-
-    .cert-img-wrapper {
-      block-size: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-block-end: var(--space-xs);
-    }
-
-    .cert-img-wrapper img {
-      max-block-size: 100%;
-      max-inline-size: 100%;
-      object-fit: contain;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="site-container navbar-inner">
-      <a href="../index.html" class="logo">
-        <span class="logo-symbol">◈</span>
-        <span>أحمد عصام</span>
-      </a>
-      
-      <!-- Nav Links -->
-      <div class="nav-links">
-        <a href="../index.html" class="nav-link">
-          <span lang="ar">الرئيسية</span>
-          <span lang="en">Home</span>
+      @media (min-width: 768px) {
+        .certs-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+      .cert-item {
+        text-align: center;
+        padding: var(--space-sm);
+      }
+      .cert-img-wrapper {
+        block-size: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-block-end: var(--space-xs);
+      }
+      .cert-img-wrapper img {
+        max-block-size: 100%;
+        max-inline-size: 100%;
+        object-fit: contain;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="site-container navbar-inner">
+        <a href="../index.html" class="logo">
+          <span class="logo-symbol">◈</span> <span>Ahmed Issam</span>
         </a>
-        <a href="./index.html" class="nav-link active">
-          <span lang="ar">عني</span>
-          <span lang="en">About</span>
-        </a>
-        <a href="../services/index.html" class="nav-link">
-          <span lang="ar">الخدمات</span>
-          <span lang="en">Services</span>
-        </a>
-        <a href="../work/index.html" class="nav-link">
-          <span lang="ar">أعمالي</span>
-          <span lang="en">Work</span>
-        </a>
-        <a href="../contact/index.html" class="nav-link">
-          <span lang="ar">تواصل</span>
-          <span lang="en">Contact</span>
-        </a>
-      </div>
-
-      <!-- Controls -->
-      <div style="display: flex; gap: var(--space-xs); align-items: center;">
-        <button id="theme-toggle" class="btn btn-secondary" style="padding: 0.5rem; border-radius: 50%; min-width: 40px; block-size: 40px;">
-          <span class="theme-icon-light" style="display:none;">☀️</span>
-          <span class="theme-icon-dark">🌙</span>
-        </button>
-        <button class="btn btn-secondary lang-toggle-btn" data-lang-target="en" style="font-size: 0.85rem; font-weight: 700; padding: 0.5rem 0.8rem;">
-          <span lang="ar">English</span>
-          <span lang="en">العربية</span>
-        </button>
-        <button id="menu-toggle" class="hamburger-btn" aria-expanded="false" aria-label="Toggle navigation menu">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
-      </div>
-    </div>
-    <div id="mobile-menu" class="mobile-menu">
-      <div class="site-container">
-        <a href="../index.html" class="mobile-nav-link">
-          <span lang="ar">الرئيسية</span>
-          <span lang="en">Home</span>
-        </a>
-        <a href="./index.html" class="mobile-nav-link active">
-          <span lang="ar">عني</span>
-          <span lang="en">About</span>
-        </a>
-        <a href="../services/index.html" class="mobile-nav-link">
-          <span lang="ar">الخدمات</span>
-          <span lang="en">Services</span>
-        </a>
-        <a href="../work/index.html" class="mobile-nav-link">
-          <span lang="ar">أعمالي</span>
-          <span lang="en">Work</span>
-        </a>
-        <a href="../contact/index.html" class="mobile-nav-link">
-          <span lang="ar">تواصل</span>
-          <span lang="en">Contact</span>
-        </a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Main Container -->
-  <main class="site-container">
-
-    <!-- Bio Section -->
-    <section>
-      <div class="bio-grid">
-        <!-- Text Column -->
-        <div>
-          <div class="section-label">
-            <span lang="ar">البراند الشخصي</span>
-            <span lang="en">Personal Brand</span>
-          </div>
-          <h1 class="section-title text-pretty">
-            <span lang="ar">اتبنيت على الأرض.<br>وأتشبّك <em>بالأنظمة</em>.</span>
-            <span lang="en">Built on the ground.<br>Wired for <em>systems</em>.</span>
-          </h1>
-          
-          <div class="margin-bs-md">
-            <p lang="ar" class="text-pretty" style="margin-block-end: var(--space-sm);">
-              مش بدأت في التقنية. بدأت بيع ملابس حريمي من باب لباب في شوارع القاهرة — اتعلمت أقرأ الناس، أتعامل مع الرفض، وأقفل البيعة من غير ضغط. قبل ما أكمل العشرين، اشتغلت في محل كمبيوتر، وقهوة شعبية، واستوديو تصوير، وفريق تسويق ميداني ببيع خدمات موبينيل في كل محافظات مصر.
-            </p>
-            <p lang="en" class="text-pretty" style="margin-block-end: var(--space-sm);">
-              I didn't start in tech. I started selling women's clothing door-to-door in the streets of Cairo — learning how to read people, handle rejection, and close without pressure. Before I was 20, I'd worked in a computer repair shop, a coffee house, a photography studio, and a field marketing team running nationwide campaigns for Mobinil across every governorate in Egypt.
-            </p>
-            
-            <p lang="ar" class="text-pretty" style="margin-block-end: var(--space-md);">
-              العقد ده علّمني حاجة مش أي كورس يقدر يعلمها: البزنس مش بيفشل بسبب التكنولوجيا الوحشة — بيفشل لأن الناس اللي بتديره مش بتفهم اللي محتاجاه فعلاً. لما انتقلت لاستشارات الـ AI سنة 2024، جبت ده معايا. مش بوصي بأدوات. بابني أنظمة تتناسب مع الواقع الإنساني لـ SMEs العربية.
-            </p>
-            <p lang="en" class="text-pretty" style="margin-block-end: var(--space-md);">
-              That decade taught me something no course could: businesses don't fail because of bad technology — they fail because the people running them don't understand what they actually need. When I moved into AI consulting in 2024, I brought that with me. I don't recommend tools. I build systems that fit the human reality of Arabic SMEs.
-            </p>
-          </div>
-
-          <div style="border-block-start: 1px solid var(--border-dark-glass); padding-block-start: var(--space-md);">
-            <h3 lang="ar" style="font-size: 1.3rem; margin-block-end: var(--space-xs); font-weight: 700;">سنة ITI والانتقال الكامل للـ AI</h3>
-            <h3 lang="en" style="font-size: 1.3rem; margin-block-end: var(--space-xs); font-weight: 700;">The ITI Year & Going Full AI</h3>
-            
-            <p lang="ar" class="text-secondary font-size-sm" style="margin-block-end: var(--space-sm);">
-              في 2026، أتممت برنامج تسويق رقمي مكثف 438 ساعة في معهد تكنولوجيا المعلومات (ITI) — شامل SEO والإعلانات المدفوعة والتحليلات وتطبيقات AI في التسويق. مع شهادات من Anthropic وGoogle وALX وHubSpot وIBM والمشاركة في برنامج سفراء AI الوطني في مصر، دلوقتي بشتغل في التقاطع بين الخبرة البزنسية الحقيقية والتنفيذ العملي للـ AI.
-            </p>
-            <p lang="en" class="text-secondary font-size-sm" style="margin-block-end: var(--space-sm);">
-              In 2026, I completed a 438-hour intensive digital marketing program at ITI (Information Technology Institute) — covering SEO, paid media, analytics, and AI applications in marketing. Combined with certifications from Anthropic, Google, ALX, HubSpot, and IBM, and participation in Egypt's National AI Ambassadors Program, I now work at the intersection of real business experience and practical AI execution.
-            </p>
-            
-            <p lang="ar" class="text-secondary font-size-sm;">
-              ميزتي مش الأدوات — أي حد يقدر يوصل لنفس الأدوات. ميزتي هي 10 سنين فهم لطريقة عمل البيزنسات العربية فعلاً، والقدرة على تصميم أنظمة AI تتناسب مع هذا الواقع من غير ما تكسره.
-            </p>
-            <p lang="en" class="text-secondary font-size-sm;">
-              My edge isn't the tools — anyone can access the same tools. My edge is 10 years of understanding how Arabic businesses actually operate, and the ability to design AI systems that fit that reality without breaking it.
-            </p>
-          </div>
-        </div>
-
-        <!-- Visual / Portrait Column -->
-        <div style="display: flex; flex-direction: column; gap: var(--space-md);">
-          <div class="portrait-wrapper">
-            <!-- Source image ahmed_portrait_6.png is copied to assets/general/ -->
-            <img src="../assets/general/ahmed_portrait_6.png" alt="Ahmed Issam Ramadan" class="portrait-img" onerror="this.src='../assets/general/ahmed.jpg'">
-          </div>
-          
-          <div class="card-glass">
-            <h4 lang="ar" style="font-weight: 700; margin-block-end: var(--space-xs);">معلومات التواصل الرسمية</h4>
-            <h4 lang="en" style="font-weight: 700; margin-block-end: var(--space-xs);">Verified Contacts</h4>
-            <ul style="display: flex; flex-direction: column; gap: 8px;" class="font-size-sm text-secondary">
-              <li>📧 ahmedissamramadan@gmail.com</li>
-              <li>💬 <span lang="ar">واتساب:</span><span lang="en">WhatsApp:</span> +201501656010</li>
-              <li>📍 <span lang="ar">القاهرة، مصر (متاح للعمل عن بعد)</span><span lang="en">Cairo, Egypt (Available Remote)</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Timeline Section -->
-    <section>
-      <div class="text-center" style="margin-block-end: var(--space-lg);">
-        <div class="section-label">
-          <span lang="ar">مسيرتي المهنية</span>
-          <span lang="en">Career Timeline</span>
-        </div>
-        <h2 class="section-title">
-          <span lang="ar">مدارس الحياة</span>
-          <span lang="en">Schools of Life</span>
-        </h2>
-        <p lang="ar" class="section-sub" style="margin-inline: auto;">كل شغلانة اشتغلتها كانت بمثابة فصل دراسي علمني أصول العمليات والتنفيذ.</p>
-        <p lang="en" class="section-sub" style="margin-inline: auto;">Every job was a classroom that taught me operations, scale, and delivery.</p>
-      </div>
-
-      <div class="timeline">
-        <!-- Item 1 -->
-        <div class="timeline-item">
-          <div class="timeline-year">2010</div>
-          <h3 lang="ar" class="timeline-title">مساعد تقني في محل كمبيوتر</h3>
-          <h3 lang="en" class="timeline-title">Tech Apprentice @ The Rock Computer Shop</h3>
-          <div lang="ar" class="timeline-role">محل The Rock للكمبيوتر</div>
-          <div lang="en" class="timeline-role">The Rock Computer Shop</div>
-          <p lang="ar" class="timeline-desc">اتعلمت هارد وير وسوفت وير وإن الفضول والبحث الفعلي أقوى من أي شهادات أكاديمية. أول تعرض حقيقي لي للتفكير التقني والأنظمة.</p>
-          <p lang="en" class="timeline-desc">Learned hardware, software, and that curiosity beats credentials. First exposure to systems thinking.</p>
-        </div>
-
-        <!-- Item 2 -->
-        <div class="timeline-item">
-          <div class="timeline-year">2014</div>
-          <h3 lang="ar" class="timeline-title">مندوب مبيعات ميداني</h3>
-          <h3 lang="en" class="timeline-title">Field Sales &rarr; Senior Rep @ EMCO Marketing</h3>
-          <div lang="ar" class="timeline-role">شركة EMCO للتسويق</div>
-          <div lang="en" class="timeline-role">EMCO Marketing Company</div>
-          <p lang="ar" class="timeline-desc">نفذت وأدرت حملات تسويق ميداني لخدمات شبكة موبينيل في محافظات مصر المختلفة. اتعلمت التوسع الميداني (scale)، مهارات الإقناع، وكيفية إتمام الصفقات في الشارع.</p>
-          <p lang="en" class="timeline-desc">Ran nationwide campaigns for Mobinil across all Egypt governorates. Learned scale, persuasion, and how to close in the street.</p>
-        </div>
-
-        <!-- Item 3 -->
-        <div class="timeline-item">
-          <div class="timeline-year">2016</div>
-          <h3 lang="ar" class="timeline-title">مقدم خدمات وضيافة (قهوجي)</h3>
-          <h3 lang="en" class="timeline-title">Waiter @ Gardeniya Coffee House</h3>
-          <div lang="ar" class="timeline-role">قهوة جاردينيا</div>
-          <div lang="en" class="timeline-role">Gardeniya Coffee House</div>
-          <p lang="ar" class="timeline-desc">خدمت فئات متنوعة من البشر من الأكثر ثراءً إلى الأكثر تطلباً وصعوبة. اتعلمت الصبر، أصول الخدمة، وكيفية قراءة وفهم أمزجة وأجواء المكان والناس.</p>
-          <p lang="en" class="timeline-desc">Served everyone from the wealthiest to the most difficult. Learned patience, service, and how to read a room.</p>
-        </div>
-
-        <!-- Item 4 -->
-        <div class="timeline-item">
-          <div class="timeline-year">2017</div>
-          <h3 lang="ar" class="timeline-title">بائع شارع ← مدير عمليات مبيعات</h3>
-          <h3 lang="en" class="timeline-title">Street Seller &rarr; Operations Manager</h3>
-          <div lang="ar" class="timeline-role">مكة للأزياء وتجارة الملابس</div>
-          <div lang="en" class="timeline-role">Makkah Fashion Trading</div>
-          <p lang="ar" class="timeline-desc">بدأت بطرق الأبواب مباشرة للبيع في شوارع القاهرة. وتدرجت حتى أصبحت مديراً مسؤولاً عن إدارة المخزون، التسعير، التوريد، وقيادة فريق مبيعات كامل. دورتي التجارية الأولى بالكامل.</p>
-          <p lang="en" class="timeline-desc">Started knocking on doors in Cairo. Ended up managing inventory, pricing, suppliers, and a sales team. First full business cycle.</p>
-        </div>
-
-        <!-- Item 5 -->
-        <div class="timeline-item">
-          <div class="timeline-year">2023</div>
-          <h3 lang="ar" class="timeline-title">مسؤول إداري ودعم تنفيذي</h3>
-          <h3 lang="en" class="timeline-title">Office Admin &rarr; Executive Support</h3>
-          <div lang="ar" class="timeline-role">شركة التلال السبع للاستثمارات، سلطنة عُمان</div>
-          <div lang="en" class="timeline-role">Sevenhills Investments, Oman</div>
-          <p lang="ar" class="timeline-desc">عملت في المكتب الإداري مع الإدارة الهندية العليا. اتعلمت أساسيات المالية، القوانين المنظمة للعمل في سلطنة عمان، وكيفية تسيير وتشغيل الأعمال في دول الخليج العربي.</p>
-          <p lang="en" class="timeline-desc">Worked with Indian executives in Oman. Learned finance basics, Omani labor law, and how GCC businesses actually operate.</p>
-        </div>
-
-        <!-- Item 6 -->
-        <div class="timeline-item">
-          <div class="timeline-year">2023</div>
-          <h3 lang="ar" class="timeline-title">مساهم عام بالوكالة</h3>
-          <h3 lang="en" class="timeline-title">General Contributor @ Qutb Digital Agency</h3>
-          <div lang="ar" class="timeline-role">وكالة قطب الرقمية</div>
-          <div lang="en" class="timeline-role">Qutb Digital Agency</div>
-          <p lang="ar" class="timeline-desc">اتعلمت الدرس الصعب حول ما يحدث لبيئة العمل حين يشعر المدير المباشر بالتهديد من المبادرة والتطوير. خرجت بخمس قواعد أساسية ومهمة تحدد طبيعة ومواصفات من لن أعمل تحت إدارتهم أبداً.</p>
-          <p lang="en" class="timeline-desc">Learned what happens when a manager feels threatened by initiative. Left with 5 rules for who I'll never work under again.</p>
-        </div>
-
-        <!-- Item 7 -->
-        <div class="timeline-item">
-          <div class="timeline-year">2026</div>
-          <h3 lang="ar" class="timeline-title">طالب تسويق رقمي بـ ITI</h3>
-          <h3 lang="en" class="timeline-title">Student @ ITI (438 Hours)</h3>
-          <div lang="ar" class="timeline-role">معهد تكنولوجيا المعلومات (ITI)، مصر</div>
-          <div lang="en" class="timeline-role">Information Technology Institute (ITI), Egypt</div>
-          <p lang="ar" class="timeline-desc">أكثر فترات التعلم والتحصيل تركيزاً ومجهوداً في حياتي. درست وشملت الـ SEO، تحسين الحملات المدفوعة، التحليلات، وتطبيقات الذكاء الاصطناعي في التسويق وتطبيقها في مشاريع تخرج حقيقية.</p>
-          <p lang="en" class="timeline-desc">Most intensive learning period of my life. SEO, paid media, analytics, AI for marketing — applied in real graduation projects.</p>
-        </div>
-
-        <!-- Item 8 -->
-        <div class="timeline-item">
-          <div class="timeline-year">2024 &rarr; الآن</div>
-          <h3 lang="ar" class="timeline-title">استشاري وممارس أنظمة ذكاء اصطناعي</h3>
-          <h3 lang="en" class="timeline-title">AI Consulting & Creative Workflows</h3>
-          <div lang="ar" class="timeline-role">استشارات AI، منطقة الشرق الأوسط وشمال أفريقيا</div>
-          <div lang="en" class="timeline-role">AI Consulting, MENA</div>
-          <p lang="ar" class="timeline-desc">بناء وتدشين أكثر من 10 مواقع عملاء حية. إنتاج 30 حلقة فيديو لتبسيط ونشر الوعي بالـ AI بالعربي. تصميم وتطبيق أنظمة هوية البراند، و workflows للمحتوى وسلاسل التوريد للشركات العربية الناشئة والمتوسطة.</p>
-          <p lang="en" class="timeline-desc">Built 10+ client websites, produced 30 Arabic AI literacy videos, designed brand systems and AI content workflows for startups and SMEs.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Personality Traits Section -->
-    <section>
-      <div class="text-center" style="margin-block-end: var(--space-lg);">
-        <div class="section-label">
-          <span lang="ar">تحليل الشخصية</span>
-          <span lang="en">How I Think</span>
-        </div>
-        <h2 class="section-title">
-          <span lang="ar">المنهجية الفكرية</span>
-          <span lang="en">Mindset & Methodologies</span>
-        </h2>
-      </div>
-
-      <div class="grid-3">
-        <div class="card-glass trait-card">
-          <span class="pill" style="margin-block-end: var(--space-xs);">INTJ-A</span>
-          <h3 lang="ar" style="font-size: 1.15rem; margin-block-end: var(--space-xs);">المهندس الحازم</h3>
-          <h3 lang="en" style="font-size: 1.15rem; margin-block-end: var(--space-xs);">Assertive Architect</h3>
-          <p lang="ar" class="text-secondary font-size-sm">أرى الأنماط والفرص بوضوح قبل أن تظهر لغيري، أتحرك بفاعلية لبناء الأنظمة لتفادي المشاكل مسبقاً. أعمل بكفاءة ممتازة مع الأهداف والـ KPIs الواضحة ومباشر في تعاملاتي.</p>
-          <p lang="en" class="text-secondary font-size-sm">I see patterns before they are obvious, build systems proactively, and work best with clear goals. Direct and execution-focused.</p>
-        </div>
-
-        <div class="card-glass trait-card-purple">
-          <span class="pill pill-purple" style="margin-block-end: var(--space-xs);">DISC: D</span>
-          <h3 lang="ar" style="font-size: 1.15rem; margin-block-end: var(--space-xs);">الهيمنة وتوجيه النتائج</h3>
-          <h3 lang="en" style="font-size: 1.15rem; margin-block-end: var(--space-xs);">Dominance & Results</h3>
-          <p lang="ar" class="text-secondary font-size-sm">شخصية تركز على تحقيق النتائج والمخرجات الفعلية أولاً وبشكل حاسم. أتحرك وأقترب مباشرة لحل المشاكل والتحديات التشغيلية دون تردد أو تسويف.</p>
-          <p lang="en" class="text-secondary font-size-sm">Results-oriented and action-first. I move toward complex operational problems to resolve them directly rather than avoiding them.</p>
-        </div>
-
-        <div class="card-glass trait-card">
-          <span class="pill" style="margin-block-end: var(--space-xs);">Type 5</span>
-          <h3 lang="ar" style="font-size: 1.15rem; margin-block-end: var(--space-xs);">إنياغرام: المحقق والباحث</h3>
-          <h3 lang="en" style="font-size: 1.15rem; margin-block-end: var(--space-xs);">Enneagram: Investigator</h3>
-          <p lang="ar" class="text-secondary font-size-sm">ألتزم بتعلم وفهم كل تفاصيل وتحديات المجال المعني بعمق وشمول قبل اتخاذ القرارات. عندما أصمم أو أبني نظام AI لبزنسك، أكون قد استوعبت سياق سوقك بالكامل.</p>
-          <p lang="en" class="text-secondary font-size-sm">I dive deep to master a domain before acting. When I build an AI workflow for your company, I have already fully analyzed and mapped your market context.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section>
-      <div class="text-center" style="margin-block-end: var(--space-lg);">
-        <div class="section-label">
-          <span lang="ar">الاعتمادات</span>
-          <span lang="en">Certifications</span>
-        </div>
-        <h2 class="section-title">
-          <span lang="ar">شهادات وإثبات تعلم</span>
-          <span lang="en">Proof of Learning</span>
-        </h2>
-        <p lang="ar" class="section-sub" style="margin-inline: auto;">مدرجة هنا كإثبات على منهجية التطوير والتعلم المستمر، وليس مجرد جمع أوراق.</p>
-        <p lang="en" class="section-sub" style="margin-inline: auto;">Listed as evidence of continuous skill acquisition and methodology upgrade.</p>
-      </div>
-
-      <div class="certs-grid">
-        <div class="card-glass cert-item">
-          <div class="cert-img-wrapper">
-            <img src="../assets/general/cert-hubspot.png" alt="HubSpot Certificate" onerror="this.style.display='none'">
-          </div>
-          <h4 style="font-size: 0.95rem; font-weight: 700;">HubSpot</h4>
-          <p lang="ar" class="text-secondary font-size-sm">التسويق وتطبيقات الأعمال</p>
-          <p lang="en" class="text-secondary font-size-sm">Inbound Marketing</p>
-        </div>
-
-        <div class="card-glass cert-item">
-          <div class="cert-img-wrapper">
-            <img src="../assets/general/cert-alx.png" alt="ALX Tech Certificate" onerror="this.style.display='none'">
-          </div>
-          <h4 style="font-size: 0.95rem; font-weight: 700;">ALX Program</h4>
-          <p lang="ar" class="text-secondary font-size-sm">المهارات التقنية والقيادة</p>
-          <p lang="en" class="text-secondary font-size-sm">Tech & Leadership Cert</p>
-        </div>
-
-        <div class="card-glass cert-item">
-          <div class="cert-img-wrapper">
-            <img src="../assets/general/cert-itida.png" alt="ITIDA Certificate" onerror="this.style.display='none'">
-          </div>
-          <h4 style="font-size: 0.95rem; font-weight: 700;">ITIDA / ITI</h4>
-          <p lang="ar" class="text-secondary font-size-sm">برنامج التسويق الرقمي والـ AI</p>
-          <p lang="en" class="text-secondary font-size-sm">438-Hour Digital Marketing</p>
-        </div>
-
-        <div class="card-glass cert-item">
-          <div class="cert-img-wrapper" style="font-size: 2.2rem;">
-            🤖
-          </div>
-          <h4 style="font-size: 0.95rem; font-weight: 700;">National AI Ambassador</h4>
-          <p lang="ar" class="text-secondary font-size-sm">سفراء الذكاء الاصطناعي، مصر</p>
-          <p lang="en" class="text-secondary font-size-sm">Egypt AI Ambassadors Program</p>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="site-container footer-inner">
-      <div>
-        <div class="logo" style="margin-block-end: var(--space-xs);">
-          <span class="logo-symbol">◈</span>
-          <span>أحمد عصام</span>
-        </div>
-        <p lang="ar" class="text-secondary font-size-sm">مستشار أنظمة ذكاء اصطناعي وتسويق رقمي</p>
-        <p lang="en" class="text-secondary font-size-sm">AI Systems & Digital Marketing Consultant</p>
-      </div>
-
-      <div style="display: flex; flex-direction: column; gap: var(--space-xs); align-items: center;">
-        <div class="footer-links">
-          <a href="../index.html" class="nav-link">
-            <span lang="ar">الرئيسية</span>
-            <span lang="en">Home</span>
-          </a>
+        <!-- Nav Links -->
+        <div class="nav-links">
+          <a href="../index.html" class="nav-link"> <span>Home</span> </a>
           <a href="./index.html" class="nav-link active">
-            <span lang="ar">عني</span>
-            <span lang="en">About</span>
+            <span>About</span>
           </a>
           <a href="../services/index.html" class="nav-link">
-            <span lang="ar">الخدمات</span>
-            <span lang="en">Services</span>
+            <span>Services</span>
           </a>
-          <a href="../work/index.html" class="nav-link">
-            <span lang="ar">أعمالي</span>
-            <span lang="en">Work</span>
-          </a>
+          <a href="../work/index.html" class="nav-link"> <span>Work</span> </a>
           <a href="../contact/index.html" class="nav-link">
-            <span lang="ar">تواصل</span>
-            <span lang="en">Contact</span>
+            <span>Contact</span>
           </a>
         </div>
-        
-        <p class="text-secondary font-size-sm">
-          &copy; 2026 Ahmed Issam Ramadan — VentureCycle Studio. 
-          <span lang="ar">جميع الحقوق محفوظة.</span>
-          <span lang="en">All rights reserved.</span>
-        </p>
+        <!-- Controls -->
+        <div style="display: flex; gap: var(--space-xs); align-items: center">
+          <button
+            id="theme-toggle"
+            class="btn btn-secondary"
+            style="
+              padding: 0.5rem;
+              border-radius: 50%;
+              min-width: 40px;
+              block-size: 40px;
+            "
+          >
+            <span class="theme-icon-light" style="display: none">☀️</span>
+            <span class="theme-icon-dark">🌙</span>
+          </button>
+          <button
+            id="menu-toggle"
+            class="hamburger-btn"
+            aria-expanded="false"
+            aria-label="Toggle navigation menu"
+          >
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
       </div>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="../js/main.js"></script>
-</body>
+      <div id="mobile-menu" class="mobile-menu">
+        <div class="site-container">
+          <a href="../index.html" class="mobile-nav-link">
+            <span>Home</span>
+          </a>
+          <a href="./index.html" class="mobile-nav-link active">
+            <span>About</span>
+          </a>
+          <a href="../services/index.html" class="mobile-nav-link">
+            <span>Services</span>
+          </a>
+          <a href="../work/index.html" class="mobile-nav-link">
+            <span>Work</span>
+          </a>
+          <a href="../contact/index.html" class="mobile-nav-link">
+            <span>Contact</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <!-- Main Container -->
+    <main class="site-container">
+      <!-- Bio Section -->
+      <section>
+        <div class="bio-grid">
+          <!-- Text Column -->
+          <div>
+            <div class="section-label"><span>Personal Brand</span></div>
+            <h1 class="section-title text-pretty">
+              <span>Built on the ground.<br />Wired for <em>systems</em>.</span>
+            </h1>
+            <div class="margin-bs-md">
+              <p class="text-pretty" style="margin-block-end: var(--space-sm)">
+                I didn't start in tech. I started selling women's clothing
+                door-to-door in the streets of Cairo — learning how to read
+                people, handle rejection, and close without pressure. Before I
+                was 20, I'd worked in a computer repair shop, a coffee house, a
+                photography studio, and a field marketing team running
+                nationwide campaigns for Mobinil across every governorate in
+                Egypt.
+              </p>
+              <p class="text-pretty" style="margin-block-end: var(--space-md)">
+                That decade taught me something no course could: businesses
+                don't fail because of bad technology — they fail because the
+                people running them don't understand what they actually need.
+                When I moved into AI consulting in 2024, I brought that with me.
+                I don't recommend tools. I build systems that fit the human
+                reality of Arabic SMEs.
+              </p>
+            </div>
+            <div
+              style="
+                border-block-start: 1px solid var(--border-dark-glass);
+                padding-block-start: var(--space-md);
+              "
+            >
+              <h3
+                style="
+                  font-size: 1.3rem;
+                  margin-block-end: var(--space-xs);
+                  font-weight: 700;
+                "
+              >
+                The ITI Year & Going Full AI
+              </h3>
+              <p
+                class="text-secondary font-size-sm"
+                style="margin-block-end: var(--space-sm)"
+              >
+                In 2026, I completed a 438-hour intensive digital marketing
+                program at ITI (Information Technology Institute) — covering
+                SEO, paid media, analytics, and AI applications in marketing.
+                Combined with certifications from Anthropic, Google, ALX,
+                HubSpot, and IBM, and participation in Egypt's National AI
+                Ambassadors Program, I now work at the intersection of real
+                business experience and practical AI execution.
+              </p>
+              <p class="text-secondary font-size-sm;">
+                My edge isn't the tools — anyone can access the same tools. My
+                edge is 10 years of understanding how Arabic businesses actually
+                operate, and the ability to design AI systems that fit that
+                reality without breaking it.
+              </p>
+            </div>
+          </div>
+          <!-- Visual / Portrait Column -->
+          <div
+            style="display: flex; flex-direction: column; gap: var(--space-md)"
+          >
+            <div class="portrait-wrapper">
+              <!-- Source image ahmed_portrait_6.png is copied to assets/general/ -->
+              <img
+                src="../assets/general/ahmed_portrait_6.png"
+                alt="Ahmed Issam Ramadan"
+                class="portrait-img"
+                onerror="this.src = '../assets/general/ahmed.jpg'"
+              />
+            </div>
+            <div class="card-glass">
+              <h4 style="font-weight: 700; margin-block-end: var(--space-xs)">
+                Verified Contacts
+              </h4>
+              <ul
+                style="display: flex; flex-direction: column; gap: 8px"
+                class="font-size-sm text-secondary"
+              >
+                <li>📧 ahmedissamramadan@gmail.com</li>
+                <li>💬 <span>WhatsApp:</span> +201501656010</li>
+                <li>📍 <span>Cairo, Egypt (Available Remote)</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Timeline Section -->
+      <section>
+        <div class="text-center" style="margin-block-end: var(--space-lg)">
+          <div class="section-label"><span>Career Timeline</span></div>
+          <h2 class="section-title"><span>Schools of Life</span></h2>
+          <p class="section-sub" style="margin-inline: auto">
+            Every job was a classroom that taught me operations, scale, and
+            delivery.
+          </p>
+        </div>
+        <div class="timeline">
+          <!-- Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-year">2010</div>
+            <h3 class="timeline-title">
+              Tech Apprentice @ The Rock Computer Shop
+            </h3>
+            <div class="timeline-role">The Rock Computer Shop</div>
+            <p class="timeline-desc">
+              Learned hardware, software, and that curiosity beats credentials.
+              First exposure to systems thinking.
+            </p>
+          </div>
+          <!-- Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-year">2014</div>
+            <h3 class="timeline-title">
+              Field Sales &rarr; Senior Rep @ EMCO Marketing
+            </h3>
+            <div class="timeline-role">EMCO Marketing Company</div>
+            <p class="timeline-desc">
+              Ran nationwide campaigns for Mobinil across all Egypt
+              governorates. Learned scale, persuasion, and how to close in the
+              street.
+            </p>
+          </div>
+          <!-- Item 3 -->
+          <div class="timeline-item">
+            <div class="timeline-year">2016</div>
+            <h3 class="timeline-title">Waiter @ Gardeniya Coffee House</h3>
+            <div class="timeline-role">Gardeniya Coffee House</div>
+            <p class="timeline-desc">
+              Served everyone from the wealthiest to the most difficult. Learned
+              patience, service, and how to read a room.
+            </p>
+          </div>
+          <!-- Item 4 -->
+          <div class="timeline-item">
+            <div class="timeline-year">2017</div>
+            <h3 class="timeline-title">
+              Street Seller &rarr; Operations Manager
+            </h3>
+            <div class="timeline-role">Makkah Fashion Trading</div>
+            <p class="timeline-desc">
+              Started knocking on doors in Cairo. Ended up managing inventory,
+              pricing, suppliers, and a sales team. First full business cycle.
+            </p>
+          </div>
+          <!-- Item 5 -->
+          <div class="timeline-item">
+            <div class="timeline-year">2023</div>
+            <h3 class="timeline-title">
+              Office Admin &rarr; Executive Support
+            </h3>
+            <div class="timeline-role">Sevenhills Investments, Oman</div>
+            <p class="timeline-desc">
+              Worked with Indian executives in Oman. Learned finance basics,
+              Omani labor law, and how GCC businesses actually operate.
+            </p>
+          </div>
+          <!-- Item 6 -->
+          <div class="timeline-item">
+            <div class="timeline-year">2023</div>
+            <h3 class="timeline-title">
+              General Contributor @ Qutb Digital Agency
+            </h3>
+            <div class="timeline-role">Qutb Digital Agency</div>
+            <p class="timeline-desc">
+              Learned what happens when a manager feels threatened by
+              initiative. Left with 5 rules for who I'll never work under again.
+            </p>
+          </div>
+          <!-- Item 7 -->
+          <div class="timeline-item">
+            <div class="timeline-year">2026</div>
+            <h3 class="timeline-title">Student @ ITI (438 Hours)</h3>
+            <div class="timeline-role">
+              Information Technology Institute (ITI), Egypt
+            </div>
+            <p class="timeline-desc">
+              Most intensive learning period of my life. SEO, paid media,
+              analytics, AI for marketing — applied in real graduation projects.
+            </p>
+          </div>
+          <!-- Item 8 -->
+          <div class="timeline-item">
+            <div class="timeline-year">2024 &rarr; Present</div>
+            <h3 class="timeline-title">AI Consulting & Creative Workflows</h3>
+            <div class="timeline-role">AI Consulting, MENA</div>
+            <p class="timeline-desc">
+              Built 10+ client websites, produced 30 Arabic AI literacy videos,
+              designed brand systems and AI content workflows for startups and
+              SMEs.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Personality Traits Section -->
+      <section>
+        <div class="text-center" style="margin-block-end: var(--space-lg)">
+          <div class="section-label"><span>How I Think</span></div>
+          <h2 class="section-title"><span>Mindset & Methodologies</span></h2>
+        </div>
+        <div class="grid-3">
+          <div class="card-glass trait-card">
+            <span class="pill" style="margin-block-end: var(--space-xs)"
+              >INTJ-A</span
+            >
+            <h3 style="font-size: 1.15rem; margin-block-end: var(--space-xs)">
+              Assertive Architect
+            </h3>
+            <p class="text-secondary font-size-sm">
+              I see patterns before they are obvious, build systems proactively,
+              and work best with clear goals. Direct and execution-focused.
+            </p>
+          </div>
+          <div class="card-glass trait-card-purple">
+            <span
+              class="pill pill-purple"
+              style="margin-block-end: var(--space-xs)"
+              >DISC: D</span
+            >
+            <h3 style="font-size: 1.15rem; margin-block-end: var(--space-xs)">
+              Dominance & Results
+            </h3>
+            <p class="text-secondary font-size-sm">
+              Results-oriented and action-first. I move toward complex
+              operational problems to resolve them directly rather than avoiding
+              them.
+            </p>
+          </div>
+          <div class="card-glass trait-card">
+            <span class="pill" style="margin-block-end: var(--space-xs)"
+              >Type 5</span
+            >
+            <h3 style="font-size: 1.15rem; margin-block-end: var(--space-xs)">
+              Enneagram: Investigator
+            </h3>
+            <p class="text-secondary font-size-sm">
+              I dive deep to master a domain before acting. When I build an AI
+              workflow for your company, I have already fully analyzed and
+              mapped your market context.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Certifications Section -->
+      <section>
+        <div class="text-center" style="margin-block-end: var(--space-lg)">
+          <div class="section-label"><span>Certifications</span></div>
+          <h2 class="section-title"><span>Proof of Learning</span></h2>
+          <p class="section-sub" style="margin-inline: auto">
+            Listed as evidence of continuous skill acquisition and methodology
+            upgrade.
+          </p>
+        </div>
+        <div class="certs-grid">
+          <div class="card-glass cert-item">
+            <div class="cert-img-wrapper">
+              <img
+                src="../assets/general/cert-hubspot.png"
+                alt="HubSpot Certificate"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <h4 style="font-size: 0.95rem; font-weight: 700">HubSpot</h4>
+            <p class="text-secondary font-size-sm">Inbound Marketing</p>
+          </div>
+          <div class="card-glass cert-item">
+            <div class="cert-img-wrapper">
+              <img
+                src="../assets/general/cert-alx.png"
+                alt="ALX Tech Certificate"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <h4 style="font-size: 0.95rem; font-weight: 700">ALX Program</h4>
+            <p class="text-secondary font-size-sm">Tech & Leadership Cert</p>
+          </div>
+          <div class="card-glass cert-item">
+            <div class="cert-img-wrapper">
+              <img
+                src="../assets/general/cert-itida.png"
+                alt="ITIDA Certificate"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <h4 style="font-size: 0.95rem; font-weight: 700">ITIDA / ITI</h4>
+            <p class="text-secondary font-size-sm">
+              438-Hour Digital Marketing
+            </p>
+          </div>
+          <div class="card-glass cert-item">
+            <div class="cert-img-wrapper" style="font-size: 2.2rem">🤖</div>
+            <h4 style="font-size: 0.95rem; font-weight: 700">
+              National AI Ambassador
+            </h4>
+            <p class="text-secondary font-size-sm">
+              Egypt AI Ambassadors Program
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="site-container footer-inner">
+        <div>
+          <div class="logo" style="margin-block-end: var(--space-xs)">
+            <span class="logo-symbol">◈</span> <span>Ahmed Issam</span>
+          </div>
+          <p class="text-secondary font-size-sm">
+            AI Systems & Digital Marketing Consultant
+          </p>
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs);
+            align-items: center;
+          "
+        >
+          <div class="footer-links">
+            <a href="../index.html" class="nav-link"> <span>Home</span> </a>
+            <a href="./index.html" class="nav-link active">
+              <span>About</span>
+            </a>
+            <a href="../services/index.html" class="nav-link">
+              <span>Services</span>
+            </a>
+            <a href="../work/index.html" class="nav-link">
+              <span>Work</span>
+            </a>
+            <a href="../contact/index.html" class="nav-link">
+              <span>Contact</span>
+            </a>
+          </div>
+          <p class="text-secondary font-size-sm">
+            &copy; 2026 Ahmed Issam Ramadan — VentureCycle Studio.
+            <span>All rights reserved.</span>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+  </body>
 </html>
