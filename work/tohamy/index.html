@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أرشفة أصول التهامي هاوس — Ahmed Issam Case Study</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Cairo:wght@300;400;600;700&family=DM+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/cs.css">
+<style>
+  :root {
+    --gold: #7A4CFF; /* Custom violet brand color for Tohamy House */
+    --gold-glow: rgba(122,76,255,0.12);
+  }
+</style>
+</head>
+<body>
+
+<nav class="cs-nav">
+  <div class="cs-nav__inner">
+    <a href="../../index.html" class="cs-nav__logo"><span>Ahmed Issam</span>Case Studies</a>
+    <a href="../index.html" class="cs-nav__back">← كل المشاريع</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="cs-hero">
+  <div class="wrap">
+    <p class="cs-hero__type reveal">Asset Intelligence · Python Automation · 2026</p>
+    <h1 class="cs-hero__title reveal">أرشفة أصول <em>التهامي هاوس</em></h1>
+    <p class="cs-hero__tagline reveal">
+      تحويل 10.18 جيجابايت من الفوضى البصرية المتراكمة عبر 3.5 سنوات إلى أرشيف منظم وجاهز لصناعة المحتوى والتسويق الرقمي.
+    </p>
+    <div class="cs-kpis reveal">
+      <div><div class="cs-kpi__num">1,237</div><div class="cs-kpi__label">ملف تم تصنيفه</div></div>
+      <div><div class="cs-kpi__num">2.1 GB</div><div class="cs-kpi__label">مساحة مسترجعة (20.6%)</div></div>
+      <div><div class="cs-kpi__num">18</div><div class="cs-kpi__label">مشروع تم فرزه بالكامل</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN COVER IMAGE -->
+<div class="wrap reveal" style="margin-block-end: 4rem;">
+  <img src="../../assets/general/tohamy_cover.jpg" alt="Tohamy House Architectural Interior Archive" style="width: 100%; border-radius: 8px; border: 1px solid var(--border-hi);">
+</div>
+
+<!-- 01: المشكلة -->
+<section class="cs-section">
+  <div class="wrap-narrow">
+    <p class="cs-section__label reveal">01 · المشكلة</p>
+    <h2 class="cs-section__title reveal">فوضى الأصول <em>المدفونة حية</em></h2>
+    <div class="cs-body reveal">
+      <p>
+        كان مهندس التشطيبات والديكور في <strong>Tohamy House</strong> يمتلك أرشيفاً ضخماً وثرياً يوثق أعماله الميدانية الرائعة، ولكنه كان غير قابل للاستخدام العملي. 
+        تراكم 1,237 ملف (فيديو وصورة) على مدار 3.5 سنة في مجلد عشوائي واحد دون أي تنظيم أو تصنيف.
+      </p>
+      <ul>
+        <li>استحالة تحديد موقع ملفات مشروع معين (من بين 18 مشروعاً منفصلاً) عند الحاجة إليها.</li>
+        <li>عدم وجود تمييز بين الصور عالية الجودة، اللقطات المكررة، والملفات التالفة.</li>
+        <li>ضياع مئات الفرص التسويقية وأصول السوشيال ميديا لأنها ببساطة مدفونة ومبعثرة.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 02: الحل التقني -->
+<section class="cs-section">
+  <div class="wrap-narrow">
+    <p class="cs-section__label reveal">02 · الحل التقني والأتمتة</p>
+    <h2 class="cs-section__title reveal">قوة بايثون في <em>إدارة الأصول الرقمية</em></h2>
+    <div class="cs-body reveal">
+      <p>
+        بدلاً من الفرز اليدوي الذي يستغرق عشرات الساعات، قمت بتطوير وبناء نظام أتمتة محلي بلغة بايثون للقيام بالآتي:
+      </p>
+      <ol>
+        <li>
+          <strong>التصنيف ثلاثي المحاور (Smart Inventory):</strong> 
+          فرز تلقائي بناءً على الجودة (عالية/متوسطة)، مرحلة المشروع (قبل/أثناء/بعد التشطيب)، والاستخدام المخطط له (معرض أعمال/سوشيال ميديا/دراسة حالة).
+        </li>
+        <li>
+          <strong>أرشفة خالية من النسخ المكررة (Zero-Copy System):</strong> 
+          استخدام الروابط الرمزية (Symbolic Links) في نظام التشغيل لإظهار الملف الواحد في أكثر من مجلد تصنيفي دون أي استهلاك إضافي لمساحة القرص الصلب.
+        </li>
+        <li>
+          <strong>استخراج البيانات الجغرافية (EXIF & GPS):</strong> 
+          قراءة بيانات الميتا للأشعة الفوق بنفسجية وبيانات كاميرا Canon EOS R6 ومواقع الـ GPS الجغرافية لرسم خارطة انتشار الأعمال الجغرافية في القاهرة الكبرى وتوثيق مصداقيتها.
+        </li>
+        <li>
+          <strong>تنظيف البيانات (Deduplication):</strong> 
+          اكتشاف الصور المتطابقة تماماً باستخدام خوارزميات MD5 وعزل الفيديوهات القصيرة للغاية واللقطات التالفة لاسترجاع 2.1 جيجابايت من المساحة الضائعة.
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- 03: النتيجة -->
+<section class="cs-section">
+  <div class="wrap-narrow">
+    <p class="cs-section__label reveal">03 · النتيجة والجدوى الاستشارية</p>
+    <h2 class="cs-section__title reveal">من ملفات مهملة <em>إلى قمع تسويقي جاهز</em></h2>
+    <div class="cs-body reveal">
+      <p>
+        لم يكن هذا المشروع مجرد "ترتيب ملفات"، بل كان تحويلاً للأصول الرقمية المهملة إلى محتوى تسويقي جاهز للتشغيل والبيع. 
+        تلقى العميل تقريراً استشارياً نهائياً يوصي ويرتب أقوى المشاريع الجاهزة للنشر فوراً بناءً على كثافة ودقة توثيقها، وجاء في الصدارة مشروع (Bondok Apartment) بـ 46 صورة و162 فيديو عالي الجودة.
+      </p>
+      <blockquote>
+        "أدى استخدام أتمتة بايثون إلى ضغط أكثر من 10 ساعات عمل يدوية مرهقة إلى دقائق معدودة من المعالجة الفائقة والدقيقة."
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<footer style="padding: 4rem 0; text-align: center; border-block-start: 1px solid var(--subtle);">
+  <p class="font-size-sm" style="color: var(--muted); font-family: var(--font-mono);">
+    &copy; 2026 Ahmed Issam Ramadan · VentureCycle Studio
+  </p>
+</footer>
+
+</body>
+</html>

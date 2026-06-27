@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أداة الاستشاري الذكي (AI Consultant Suite) — Ahmed Issam Case Study</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Cairo:wght@300;400;600;700&family=DM+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/cs.css">
+<style>
+  :root {
+    --gold: #C9A840;
+    --gold-glow: rgba(201,168,64,0.12);
+  }
+</style>
+</head>
+<body>
+
+<nav class="cs-nav">
+  <div class="cs-nav__inner">
+    <a href="../../index.html" class="cs-nav__logo"><span>Ahmed Issam</span>Case Studies</a>
+    <a href="../index.html" class="cs-nav__back">← كل المشاريع</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="cs-hero">
+  <div class="wrap">
+    <p class="cs-hero__type reveal">Web Application · AI Integration · 2026</p>
+    <h1 class="cs-hero__title reveal">أداة <em>الاستشاري الذكي</em></h1>
+    <p class="cs-hero__tagline reveal">
+      تطوير وبناء لوحة تحكم ويب تفاعلية ومتكاملة لمعالجة تحليلات الأعمال وإنتاج تقارير استشارية فاخرة في دقائق معدودة.
+    </p>
+    <div class="cs-kpis reveal">
+      <div><div class="cs-kpi__num">100%</div><div class="cs-kpi__label">أتمتة لتوليد التقارير</div></div>
+      <div><div class="cs-kpi__num">Gemini</div><div class="cs-kpi__label">محرك معالجة مدمج</div></div>
+      <div><div class="cs-kpi__num">PDF</div><div class="cs-kpi__label">تصدير منسق للطباعة</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN COVER IMAGE -->
+<div class="wrap reveal" style="margin-block-end: 4rem;">
+  <img src="../../assets/general/ai_suite_cover.jpg" alt="AI Consultant Suite Dashboard Interface" style="width: 100%; border-radius: 8px; border: 1px solid var(--border-hi);">
+</div>
+
+<!-- 01: المشكلة -->
+<section class="cs-section">
+  <div class="wrap-narrow">
+    <p class="cs-section__label reveal">01 · المشكلة</p>
+    <h2 class="cs-section__title reveal">بطء التقييم والتحليل <em>اليدوي</em></h2>
+    <div class="cs-body reveal">
+      <p>
+        يحتاج مستشارو الأعمال والذكاء الاصطناعي إلى قضاء ساعات طويلة في جمع بيانات أداء الشركات، فرز مؤشرات الأداء (KPIs)، ومن ثم كتابة تقارير تشخيصية يدوية. 
+        هذه العملية غير قابلة للتوسع وتستهلك وقداً ثميناً يمكن استغلاله في التنفيذ الفعلي والتخطيط الاستراتيجي العالي المستوى.
+      </p>
+      <ul>
+        <li>الوقت المستغرق في كتابة وتنسيق التقرير الاستشاري الواحد يتجاوز 4 ساعات عمل متصلة.</li>
+        <li>صعوبة توحيد شكل وجودة المخرجات المنسقة للعملاء.</li>
+        <li>الاحتياج لأداة محلية سريعة تعمل بكفاءة حتى بدون اتصال بالإنترنت أو مفاتيح API مدفوعة.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 02: الحل التقني -->
+<section class="cs-section">
+  <div class="wrap-narrow">
+    <p class="cs-section__label reveal">02 · الحل البرمجي</p>
+    <h2 class="cs-section__title reveal">بناء لوحة عمل <em>AI Consultant Suite</em></h2>
+    <div class="cs-body reveal">
+      <p>
+        قمت بتصميم وتطوير تطبيق ويب مستقل من صفحة واحدة (Single Page Application) بأحدث التقنيات البصرية وسير العمل الذكي:
+      </p>
+      <ol>
+        <li>
+          <strong>لوحة تحكم تفاعلية (Interactive Dashboard):</strong> 
+          تم تصميم واجهة مستخدم داكنة (Dark UI) راقية باستخدام جماليات الـ Glassmorphism و CSS Layers لتقديم لمسة عصرية جذابة وسهولة كبيرة في التنقل.
+        </li>
+        <li>
+          <strong>محرك المعالجة الثنائي (API + local simulation):</strong>
+          يتصل التطبيق مباشرة بـ Gemini API لتوليد توصيات مخصصة للعملاء بناءً على معطيات أعمالهم. وفي حال عدم توافر مفتاح API، يقوم التطبيق بمحاكاة ذكية للتحليلات (Simulation Mode) معتمداً على البيانات المحلية لضمان عدم توقف العمل.
+        </li>
+        <li>
+          <strong>تنسيقات طباعة متقدمة (Smart Print CSS):</strong>
+          برمجة أكواد CSS مخصصة للطباعة `@media print` تعمل على إخفاء لوحة التحكم، الأزرار، والمدخلات التفاعلية تلقائياً عند ضغط العميل على "حفظ كـ PDF"، ليقوم المتصفح بتصدير تقرير نظيف، فاخر، ومرتب يظهر كوثيقة رسمية مطبوعة جاهزة للتسليم المباشر.
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- 03: النتيجة -->
+<section class="cs-section">
+  <div class="wrap-narrow">
+    <p class="cs-section__label reveal">03 · النتيجة</p>
+    <h2 class="cs-section__title reveal">سير عمل فائق <em>وقيمة استشارية مضافة</em></h2>
+    <div class="cs-body reveal">
+      <p>
+        تم تشغيل الأداة محلياً في مسار التطوير بنجاح كامل، مما أدى إلى ضغط زمن إنتاج التقرير الاستشاري الشامل من 4 ساعات إلى **أقل من دقيقتين**. 
+        يمنح هذا التطبيق المستشار القدرة على خدمة عدد أكبر من العملاء وتوفير مخرجات احترافية للغاية وموحدة الجودة والشكل البصري.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer style="padding: 4rem 0; text-align: center; border-block-start: 1px solid var(--subtle);">
+  <p class="font-size-sm" style="color: var(--muted); font-family: var(--font-mono);">
+    &copy; 2026 Ahmed Issam Ramadan · VentureCycle Studio
+  </p>
+</footer>
+
+</body>
+</html>
