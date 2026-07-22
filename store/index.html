@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Ahmed Issam Ramadan" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>متجر المنتجات الرقمية وحزم الأتمتة | أحمد عصام رمضان</title>
+    <meta
+      name="description"
+      content="احصل على أفضل المنتجات البرمجية، قوالب لوحات التحكم بلغة Next.js، وسير عمل n8n لأتمتة الواتساب ومبيعات الشركات."
+    />
+    <meta name="color-scheme" content="dark" />
+    <link rel="canonical" href="https://ahmedissamramadan.github.io/store/" />
+    <link rel="icon" type="image/x-icon" href="../assets/general/favicon.ico" />
+    <script>
+      {
+        const theme = localStorage.getItem("theme") || "dark";
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Outfit:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      .store-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 28px;
+        margin-top: 40px;
+      }
+      .product-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(12px);
+      }
+      .product-card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      }
+      .badge-glow {
+        display: inline-block;
+        padding: 6px 14px;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        background: rgba(56, 189, 248, 0.15);
+        color: #38bdf8;
+        border: 1px solid rgba(56, 189, 248, 0.3);
+        margin-bottom: 16px;
+      }
+      .price-tag {
+        font-size: 2.2rem;
+        font-weight: 900;
+        color: #fff;
+        margin: 20px 0;
+      }
+      .price-currency {
+        font-size: 1rem;
+        color: #94a3b8;
+      }
+      .btn-buy {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 14px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #06b6d4, #8b5cf6);
+        color: #fff;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 0 10px 25px rgba(6, 182, 212, 0.3);
+        transition: all 0.2s ease;
+      }
+      .btn-buy:hover {
+        opacity: 0.95;
+        transform: scale(1.02);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="../" class="logo">أحمد عصام <span>رمضان</span></a>
+        <nav class="nav">
+          <a href="../">الرئيسية</a>
+          <a href="../services/">الخدمات</a>
+          <a href="./" class="active">المتجر الرقمي</a>
+          <a href="../work/">الأعمال</a>
+          <a href="../contact/">التواصل</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container" style="padding-top: 120px; padding-bottom: 80px;">
+      <div style="text-align: center; max-width: 750px; margin: 0 auto;">
+        <span class="badge-glow">🚀 المنتجات الرقمية وحزم الأتمتة</span>
+        <h1 style="font-size: 2.8rem; font-weight: 900; margin-top: 10px;">حلول برمجية وقوالب جاهزة للإنتاج والتشفير</h1>
+        <p style="color: #94a3b8; font-size: 1.1rem; margin-top: 16px; line-height: 1.8;">
+          وفر مئات الساعات من التطوير واستخدم سير العمل وقوالب الواجهات المصممة بدقة عالية للارتقاء بمشروعك وتحقيق عوائد مباشرة.
+        </p>
+      </div>
+
+      <div class="store-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+          <div>
+            <span class="badge-glow">n8n + WhatsApp Cloud API</span>
+            <h3 style="font-size: 1.5rem; font-weight: 800; color: #fff;">Enterprise WhatsApp Automation Kit</h3>
+            <p style="color: #94a3b8; font-size: 0.95rem; margin-top: 12px; line-height: 1.6;">
+              حزمة متكاملة لأتمتة الردود وجلب المبيعات وحفظ الرسائل في قاعدة بيانات SQLite محلياً، مع خادم Express.js المدمج ومسارات n8n الجاهزة.
+            </p>
+            <div class="price-tag">$49 <span class="price-currency">/ ترخيص دائم</span></div>
+            <ul style="color: #cbd5e1; font-size: 0.9rem; margin-bottom: 24px; padding-right: 20px; line-height: 2;">
+              <li>شامل ملفات n8n Workflows JSON.</li>
+              <li>خادم Node.js / Express Webhook Bridge.</li>
+              <li>دليل تثبيت مفصل باللغتين العربية والإنجليزية.</li>
+              <li>استجابة آليّة ذكية وتحديد نية العميل (Intent Detection).</li>
+            </ul>
+          </div>
+          <a href="https://gumroad.com" target="_blank" class="btn-buy">شراء وتحميل فوراً ⚡</a>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+          <div>
+            <span class="badge-glow">Next.js 14 + Glassmorphism</span>
+            <h3 style="font-size: 1.5rem; font-weight: 800; color: #fff;">Next.js Glassmorphism Admin Dashboard</h3>
+            <p style="color: #94a3b8; font-size: 0.95rem; margin-top: 12px; line-height: 1.6;">
+              قالب لوحة تحكم فاخر وبدائي مخصص لتطبيقات Next.js 14 App Router مع أنظمة ألوان HSL ومؤثرات زجاجية تضمن تجربة مستخدم خيالية.
+            </p>
+            <div class="price-tag">$29 <span class="price-currency">/ ترخيص المشروع</span></div>
+            <ul style="color: #cbd5e1; font-size: 0.9rem; margin-bottom: 24px; padding-right: 20px; line-height: 2;">
+              <li>مكونات Sidebar, Header, MetricCards, DataTables.</li>
+              <li>دعم كامل للوضع الداكن والمتجاوب على الشاشات.</li>
+              <li>CSS Pure Tokens بدون الاعتماد على مكتبات ثقيلة.</li>
+              <li>جاهز للتشغيل المباشر عبر npm run dev.</li>
+            </ul>
+          </div>
+          <a href="https://gumroad.com" target="_blank" class="btn-buy">شراء وتحميل فوراً ⚡</a>
+        </div>
+      </div>
+    </main>
+
+    <footer style="text-align: center; padding: 40px; border-top: 1px solid rgba(255,255,255,0.08); color: #64748b;">
+      <p>© 2026 أحمد عصام رمضان (Ahmed Issam Ramadan). جميع الحقوق محفوظة.</p>
+    </footer>
+  </body>
+</html>
