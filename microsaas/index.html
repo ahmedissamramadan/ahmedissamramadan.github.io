@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artelligence OS | منصة إطارات الذكاء الاصطناعي وإدارة المعرفة للمؤسسات</title>
+  <meta name="description" content="منصة Micro-SaaS السحابية الأولى لإدارة المعرفة وأتمتة وكلاء الذكاء الاصطناعي للمؤسسات والشركات الناشئة.">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #07090e;
+      --card-glass: rgba(255, 255, 255, 0.03);
+      --border-glass: rgba(255, 255, 255, 0.08);
+      --primary-cyan: #38bdf8;
+      --primary-purple: #c084fc;
+      --accent-gold: #fbbf24;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', 'Outfit', sans-serif; }
+    body { background: var(--bg-dark); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
+    
+    .navbar { display: flex; justify-content: space-between; align-items: center; padding: 24px 8%; border-bottom: 1px solid var(--border-glass); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; background: rgba(7, 9, 14, 0.8); }
+    .logo { font-size: 1.4rem; font-weight: 900; background: linear-gradient(135deg, var(--primary-cyan), var(--primary-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    
+    .hero { text-align: center; padding: 80px 8% 60px; position: relative; }
+    .hero-badge { display: inline-block; background: rgba(56, 189, 248, 0.1); border: 1px solid var(--primary-cyan); padding: 6px 18px; border-radius: 30px; font-size: 0.85rem; color: var(--primary-cyan); font-weight: 700; margin-bottom: 24px; }
+    .hero-title { font-size: 3rem; font-weight: 900; line-height: 1.25; margin-bottom: 20px; max-width: 900px; margin-inline: auto; }
+    .hero-title span { background: linear-gradient(135deg, var(--primary-cyan), var(--primary-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-sub { font-size: 1.15rem; color: var(--text-muted); max-width: 700px; margin-inline: auto; margin-bottom: 36px; }
+    
+    .hero-img { width: 100%; max-width: 1000px; border-radius: 24px; border: 1px solid var(--border-glass); box-shadow: 0 20px 50px rgba(0,0,0,0.8); margin-top: 30px; }
+
+    .pricing-section { padding: 80px 8%; text-align: center; }
+    .toggle-wrapper { display: inline-flex; align-items: center; background: rgba(255,255,255,0.05); padding: 6px; border-radius: 30px; margin-bottom: 40px; border: 1px solid var(--border-glass); }
+    .toggle-btn { padding: 8px 24px; border-radius: 20px; border: none; background: transparent; color: var(--text-muted); cursor: pointer; font-weight: 700; }
+    .toggle-btn.active { background: var(--primary-cyan); color: #000; }
+
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 1100px; margin-inline: auto; }
+    .price-card { background: var(--card-glass); border: 1px solid var(--border-glass); border-radius: 24px; padding: 36px; text-align: right; position: relative; backdrop-filter: blur(16px); }
+    .price-card.popular { border-color: var(--primary-cyan); box-shadow: 0 0 30px rgba(56, 189, 248, 0.2); }
+    .price-amount { font-size: 2.5rem; font-weight: 900; color: #fff; margin: 16px 0; }
+
+    .btn-buy { display: block; width: 100%; text-align: center; background: linear-gradient(135deg, var(--primary-cyan), #2563eb); color: #fff; padding: 14px; border-radius: 14px; font-weight: 800; text-decoration: none; margin-top: 24px; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">◈ Artelligence OS</div>
+    <div>
+      <a href="#pricing" style="color: var(--text-main); text-decoration: none; font-weight: 700; margin-left: 20px;">الأسعار</a>
+      <a href="https://ahmedissamramadan.github.io/store/" target="_blank" style="color: var(--primary-cyan); text-decoration: none; font-weight: 700;">المتجر الرقمي ⚡</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-badge">🚀 الجيل الجديد من أنظمة المعرفة والذكاء الاصطناعي للمؤسسات</div>
+    <h1 class="hero-title">نظام التشغيل الذكي <span>Artelligence OS</span> لإدارة المعرفة وأتمتة وكلاء الذكاء الاصطناعي</h1>
+    <p class="hero-sub">منصة Micro-SaaS متكاملة تتيح للمؤسسات والشركات تحويل ملفاتها وقواعد بياناتها إلى وكلاء ذكاء اصطناعي تفاعليين (AI Agents) يتواصلون ويؤتمتون المهام 24/7.</p>
+    
+    <img src="../assets/store/artelligence_microsaas_cover.jpg" alt="Artelligence OS Dashboard Mockup" class="hero-img" />
+  </header>
+
+  <section class="pricing-section" id="pricing">
+    <h2 style="font-size: 2rem; font-weight: 900; margin-bottom: 12px;">خطط الاشتراكات السحابية 💎</h2>
+    <p style="color: var(--text-muted); margin-bottom: 30px;">اختر الخطة المناسبة لنشاطك أو شركتك واستمتع بإمكانيات أتمتة المعرفة فوراً</p>
+
+    <div class="pricing-grid">
+      <!-- Plan 1 -->
+      <div class="price-card">
+        <h3 style="font-size: 1.3rem; font-weight: 800;">خطة المبتكرين (Pro Builder)</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">للمطورين وصناع المحتوى والشركات الناشئة الصغرى</p>
+        <div class="price-amount">$19 <span style="font-size: 1rem; color: var(--text-muted);">/ شهرياً</span></div>
+        <ul style="color: #cbd5e1; font-size: 0.9rem; line-height: 2; padding-right: 20px;">
+          <li>ربط حتى 3 وكلاء ذكاء اصطناعي (AI Agents).</li>
+          <li>معالجة 50,000 استعلام معرفي شهرياً.</li>
+          <li>تكامل كامل مع n8n و Webhooks.</li>
+          <li>دعم قواعد البيانات المحلية والـ Cloud.</li>
+        </ul>
+        <a href="https://ahmedissamramadan.gumroad.com/l/qklmv" target="_blank" class="btn-buy">اشترك الآن ⚡</a>
+      </div>
+
+      <!-- Plan 2 -->
+      <div class="price-card popular">
+        <div style="position: absolute; top: -12px; left: 24px; background: var(--primary-cyan); color: #000; padding: 4px 14px; border-radius: 12px; font-weight: 800; font-size: 0.75rem;">الأكثر طلباً</div>
+        <h3 style="font-size: 1.3rem; font-weight: 800;">خطة المؤسسات (Enterprise OS)</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">للشركات والوكالات التي تتطلب سعة معالجة عالية</p>
+        <div class="price-amount">$49 <span style="font-size: 1rem; color: var(--text-muted);">/ شهرياً</span></div>
+        <ul style="color: #cbd5e1; font-size: 0.9rem; line-height: 2; padding-right: 20px;">
+          <li>عدد لا محدود من وكلاء الذكاء الاصطناعي.</li>
+          <li>معالجة 500,000 استعلام معرفي شهرياً.</li>
+          <li>ربط Meta WhatsApp Cloud API أوتوماتيكياً.</li>
+          <li>لوحة تحكم وتحليلات فاخرة بتأثيرات Glassmorphism.</li>
+          <li>دعم رمزي واستشارة أتمتة مخصصة.</li>
+        </ul>
+        <a href="https://ahmedissamramadan.gumroad.com/l/qklmv" target="_blank" class="btn-buy" style="background: linear-gradient(135deg, var(--primary-cyan), var(--primary-purple));">ابدأ تجربة المؤسسات 🚀</a>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
