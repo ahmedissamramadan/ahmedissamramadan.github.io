@@ -1,0 +1,755 @@
+<!doctype html>
+<html dir="rtl" lang="ar">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>أحمد عصام رمضان × أوتوكلاو — الذكاء الاصطناعي اللي بيفعل حاجات</title>
+  <meta name="description" content="أحمد عصام رمضان، رائد أعمال تقني ومؤسس VentureCycle Studio، يقدم أوتوكلاو — المساعد الذكي المفتوح المصدر اللي بيشتغل على جهازك وبيعمل حاجات فعلاً. اتعرف إزاي الذكاء الاصطناعي بيغيّر شكل الشغل في مصر والشرق الأوسط والعالم.">
+  <meta name="keywords" content="أحمد عصام رمضان, Ahmed Issam Ramadan, أوتوكلاو, AutoClaw, OpenClaw, ذكاء اصطناعي, AI, مساعد ذكي, أتمتة, أتمتة ذكاء اصطناعي, AI automation, AI agent, رائد أعمال تقني, مصر, VentureCycle Studio, AI-Native Entrepreneur">
+  <meta name="author" content="Ahmed Issam Ramadan">
+  <meta property="og:title" content="أحمد عصام رمضان × أوتوكلاو — الذكاء الاصطناعي اللي بيفعل حاجات">
+  <meta property="og:description" content="من مصر للعالم: رائد أعمال تقني يقدم المساعد الذكي اللي بيشتغل على جهازك وبيعمل حاجات فعلاً — مش مجرد شات بوت.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://ahmedissam.com/autoclaw">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F7F6F3;
+      --surface: #FFFFFF;
+      --ink: #1A1A1F;
+      --ink-soft: #4A4A52;
+      --muted: #8A857A;
+      --border: #E5E0D6;
+      --accent: #C2410C;
+      --accent-soft: rgba(194, 65, 12, 0.07);
+      --display: 'Noto Kufi Arabic', 'IBM Plex Sans Arabic', sans-serif;
+      --body: 'IBM Plex Sans Arabic', -apple-system, system-ui, sans-serif;
+      --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+      --body-en: 'Inter', -apple-system, system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-feature-settings: "tnum" 1; scroll-behavior: smooth; }
+    body {
+      font-family: var(--body);
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.8;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+
+    /* ─── language switcher ─── */
+    .lang-switch {
+      display: flex;
+      gap: 4px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 3px;
+      font-size: 12px;
+    }
+    .lang-btn {
+      padding: 5px 14px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      background: transparent;
+      color: var(--muted);
+      transition: all 120ms ease;
+    }
+    .lang-btn.active {
+      background: var(--ink);
+      color: var(--bg);
+    }
+    .lang-btn:hover:not(.active) { color: var(--ink); }
+
+    /* ─── language sections ─── */
+    .lang-section { display: none; }
+    .lang-section.active { display: block; }
+    [dir="ltr"] .lang-section { direction: ltr; text-align: left; }
+
+    /* ─── typography ─── */
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .lede { color: var(--ink-soft); line-height: 1.8; }
+    .accent-word { color: var(--accent); }
+
+    /* ─── header ─── */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-family: var(--display);
+      font-size: 22px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .logo b { color: var(--accent); font-weight: 900; }
+    .header-right { display: flex; gap: 16px; align-items: center; }
+    .header-links { display: flex; gap: 20px; align-items: center; }
+    .header-links a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      transition: color 120ms ease;
+    }
+    .header-links a:hover { color: var(--ink); }
+
+    /* ─── buttons ─── */
+    .btn {
+      display: inline-block;
+      font: inherit;
+      cursor: pointer;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      border: 1px solid transparent;
+      transition: opacity 120ms ease, background 120ms ease;
+    }
+    .btn-primary { background: var(--ink); color: var(--bg); }
+    .btn-primary:hover { opacity: 0.88; }
+    .btn-secondary { background: transparent; color: var(--ink); border-color: var(--border); }
+    .btn-secondary:hover { background: var(--surface); }
+    .btn-accent { background: var(--accent); color: #FFF; }
+    .btn-accent:hover { opacity: 0.9; }
+    .btn-sm { padding: 10px 20px; font-size: 13px; }
+    .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+    /* ─── hero ─── */
+    section { padding: 80px 0; }
+    .hero { padding: 120px 0 80px; position: relative; }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      left: -180px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, var(--accent-soft) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero h1 {
+      font-family: var(--display);
+      font-size: clamp(36px, 5.5vw, 68px);
+      line-height: 1.25;
+      font-weight: 900;
+      max-width: 18ch;
+      margin-bottom: 20px;
+    }
+    .hero .lede {
+      font-size: 17px;
+      max-width: 54ch;
+      margin-bottom: 36px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    /* ─── about ahmed (inline card) ─── */
+    .about-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 20px;
+      align-items: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+      max-width: 600px;
+      margin-top: 40px;
+    }
+    .about-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--display);
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--accent);
+    }
+    .about-info h3 {
+      font-family: var(--display);
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .about-info p {
+      color: var(--ink-soft);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .about-info .about-links {
+      display: flex;
+      gap: 14px;
+      margin-top: 8px;
+    }
+    .about-info .about-links a {
+      font-size: 12px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .about-info .about-links a:hover { text-decoration: underline; }
+
+    /* ─── section shared ─── */
+    .surface-section {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .section-header { margin-bottom: 48px; max-width: 620px; }
+    .section-header h2 {
+      font-family: var(--display);
+      font-size: clamp(28px, 3.5vw, 40px);
+      line-height: 1.3;
+      font-weight: 800;
+      margin-top: 8px;
+      margin-bottom: 12px;
+    }
+    .section-header p { color: var(--ink-soft); font-size: 16px; max-width: 52ch; line-height: 1.8; }
+
+    /* ─── cards grid ─── */
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .card {
+      padding: 28px 22px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--surface);
+      transition: border-color 150ms ease;
+    }
+    .card:hover { border-color: var(--accent); }
+    .card .icon {
+      width: 42px; height: 42px; line-height: 42px;
+      text-align: center; font-size: 20px;
+      background: var(--accent-soft); border-radius: 10px;
+      color: var(--accent); margin-bottom: 14px;
+    }
+    .card h3 {
+      font-family: var(--display);
+      font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px;
+    }
+    .card p { color: var(--ink-soft); font-size: 14px; line-height: 1.75; }
+    .card ul { list-style: none; margin-top: 10px; }
+    .card ul li {
+      padding: 4px 0; color: var(--ink-soft); font-size: 13px;
+      display: flex; align-items: baseline; gap: 7px;
+    }
+    .card ul li::before { content: '◆'; color: var(--accent); font-size: 7px; flex-shrink: 0; }
+    @media (max-width: 820px) { .grid-3 { grid-template-columns: 1fr; } .grid-2 { grid-template-columns: 1fr; } }
+
+    /* ─── steps ─── */
+    .steps-list { max-width: 680px; }
+    .step {
+      display: flex; gap: 20px; padding: 24px 0;
+      border-bottom: 1px solid var(--border); align-items: flex-start;
+    }
+    .step:last-child { border-bottom: none; }
+    .step-num {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--accent); min-width: 50px; padding-top: 4px;
+    }
+    .step-content h4 { font-family: var(--display); font-size: 17px; font-weight: 700; margin-bottom: 5px; }
+    .step-content p { color: var(--ink-soft); font-size: 14px; line-height: 1.75; }
+    .step-content code {
+      font-family: var(--mono); font-size: 12px;
+      background: var(--accent-soft); padding: 2px 6px; border-radius: 4px; color: var(--accent);
+    }
+
+    /* ─── early adopter dark ─── */
+    .dark-section {
+      background: var(--ink); color: var(--bg); padding: 88px 0;
+    }
+    .dark-section h2 {
+      font-family: var(--display); font-size: clamp(28px, 3.8vw, 40px);
+      font-weight: 800; line-height: 1.3; margin-bottom: 12px;
+    }
+    .dark-section .lede { color: rgba(255,255,255,0.55); margin-bottom: 40px; max-width: 52ch; }
+    .benefit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .benefit-card {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px; padding: 24px 20px;
+    }
+    .benefit-card h4 { font-family: var(--display); font-size: 16px; font-weight: 700; color: #FFF; margin-bottom: 6px; }
+    .benefit-card p { color: rgba(255,255,255,0.45); font-size: 13px; line-height: 1.7; }
+    .benefit-card .bi { font-size: 20px; margin-bottom: 10px; display: block; }
+    @media (max-width: 820px) { .benefit-grid { grid-template-columns: 1fr; } }
+
+    /* ─── channels ─── */
+    .channels-strip { text-align: center; padding: 48px 0; }
+    .channels-strip h2 { font-family: var(--display); font-size: clamp(26px, 3vw, 36px); font-weight: 800; margin-bottom: 24px; }
+    .channel-pills { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+    .channel-pill {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em;
+      padding: 7px 16px; border: 1px solid var(--border); border-radius: 100px;
+      color: var(--ink-soft); background: var(--surface);
+    }
+
+    /* ─── closing ─── */
+    .closing {
+      background: var(--accent); color: #FFF; text-align: center; padding: 100px 0;
+    }
+    .closing h2 {
+      font-family: var(--display); font-size: clamp(32px, 4.5vw, 48px);
+      line-height: 1.2; font-weight: 900; margin-bottom: 14px; max-width: 24ch; margin-inline: auto;
+    }
+    .closing p { opacity: 0.85; max-width: 48ch; margin: 0 auto 32px; font-size: 16px; line-height: 1.75; }
+    .closing .btn-accent { background: #FFF; color: var(--accent); }
+
+    /* ─── footer ─── */
+    footer {
+      padding: 32px 0; border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+      color: var(--muted); font-size: 12px; flex-wrap: wrap; gap: 12px;
+    }
+    footer .links { display: flex; gap: 20px; }
+    footer .links a { color: var(--muted); text-decoration: none; font-size: 12px; }
+    footer .links a:hover { color: var(--ink-soft); }
+    footer .mono { font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; }
+
+    @media (max-width: 600px) {
+      .wrap { padding: 0 18px; }
+      header { flex-direction: column; align-items: flex-start; }
+      .about-card { grid-template-columns: 1fr; text-align: center; }
+      .about-avatar { margin: 0 auto; }
+      .about-info .about-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── HEADER ─── -->
+<div class="wrap">
+  <header>
+    <span class="logo">أحمد عصام × <b>أوتوكلاو</b></span>
+    <div class="header-right">
+      <div class="header-links">
+        <a href="#why">ليه</a>
+        <a href="#who">لمين</a>
+        <a href="#steps">إزاي</a>
+        <a href="#early">الأوائل</a>
+      </div>
+      <div class="lang-switch">
+        <button class="lang-btn active" onclick="switchLang('eg')">مصري</button>
+        <button class="lang-btn" onclick="switchLang('ar')">عربي</button>
+        <button class="lang-btn" onclick="switchLang('en')">EN</button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- EGYPTIAN COLLOQUIAL — السوق المصري                      -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="lang-section active" id="lang-eg" dir="rtl" lang="ar">
+
+  <!-- HERO -->
+  <div class="wrap">
+    <section class="hero" data-od-id="hero-eg">
+      <h1>مش شات بوت — ده <span class="accent-word">شريك شغل حقيقي</span></h1>
+      <p class="lede">
+        أوتوكلاو هو مساعدك الذكي اللي بيشتغل على جهازك وبيوصللك من واتساب أو تليجرام أو أي حاجة بتستخدمها. يقرا إيميلاتك، يبعت عنك، يدير ميعادك، يكتب كود، يبني مواقع — وده مجرد أول الطريق. أنا <strong>أحمد عصام رمضان</strong>، رائد أعمال تقني من مصر، وبدعم من أوتوكلاو أقدر أقدم لك حلول أتمتة وذكاء اصطناعي حقيقية مش بس كلام.
+      </p>
+      <div class="hero-actions">
+        <a href="#steps" class="btn btn-primary">ابدأ دلوقتي — 5 دقايق</a>
+        <a href="#why" class="btn btn-secondary">إيه الفرق؟</a>
+      </div>
+
+      <div class="about-card" data-od-id="about-eg">
+        <div class="about-avatar">أع</div>
+        <div class="about-info">
+          <h3>أحمد عصام رمضان</h3>
+          <p>رائد أعمال تقني × مؤسس VentureCycle Studio — من الزقازيق للعالم. بني أنظمة أتمتة وذكاء اصطناعي لعملاء في مصر والشرق الأوسط. مهاراتي مكتسبة بالممارسة — مش بورقة.</p>
+          <div class="about-links">
+            <a href="mailto:ahmedissam.work@gmail.com">إيميل</a>
+            <a href="https://t.me/ahmedissam_bot">تليجرام</a>
+            <a href="https://github.com/openclaw/openclaw">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- WHY DIFFERENT -->
+  <section class="surface-section" id="why" data-od-id="why-eg">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="eyebrow">إيه الفرق</span>
+        <h2>ليه أوتوكلاو <span class="accent-word">مش زي ChatGPT</span></h2>
+        <p>ChatGPT بيرد عليك. أوتوكلاو <strong>بيعمل حاجات</strong>. بيشتغل على جهازك مش على سيرفر بعيد. عنده وصول للشيل والملفات والمتصفح والإيميل والتقويم — وذاكرة مستمرة مش بتمسح كل مرة.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card"><div class="icon">⌨</div><h3>وصول حقيقي للماك</h3><p>بيشتغل كـ process من الدرجة الأولى — مش sandbox. يقدر يشغل أوامر، يعدل ملفات، يبني مشاريع، يثبت حزم.</p></div>
+        <div class="card"><div class="icon">🧠</div><h3>بيفتكر — فعلاً</h3><p>مش بينسي. ذاكرته بتكبر مع كل محادثة. تفضيلاتك، مشاريعك، أسلوبك — محفوظة بين الجلسات.</p></div>
+        <div class="card"><div class="icon">💓</div><h3>بيفضي عيش 24/7</h3><p>الـ heartbeat بيفحص إيميلاتك، يراجع ميعادك، يبعتلك ملخص — من غير ما تفتح حاجة.</p></div>
+        <div class="card"><div class="icon">💬</div><h3>من واتساب أو تليجرام</h3><p>مش محتاج تطبيق جديد. أوتوكلاو بيشتغل من أي تطبيق محادثة بتستخدمه — أكتر من 50 منصة.</p></div>
+        <div class="card"><div class="icon">⚡</div><h3>5,400+ Skill جاهزة</h3><p>ClawHub — سوق مهارات مفتوح. بحث ويب، إيميل، تحليل بيانات، أتمتة متصفح — تثبيت بكلمة واحدة.</p></div>
+        <div class="card"><div class="icon">🔓</div><h3>مفتوح المصدر</h3><p>على جهازك. بياناتك مبقاش على سيرفرات حد تاني. تقدر تعدله وتتحكم فيه بالكامل.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO FOR -->
+  <section id="who" data-od-id="who-eg" style="background:var(--bg);">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="eyebrow">لمين</span>
+        <h2>أوتوكلاو <span class="accent-word">مفيد لمين</span> بالظبط؟</h2>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>🏢 رجل الأعمال والمؤسس</h3>
+          <p>إدارة الإيميلات، متابعة عملاء، جدولة ميعاد، كتابة محتوى تسويقي — كل ده من واتساب.</p>
+          <ul><li>فرز إيميلات تلقائي</li><li>مساعد مبيعات وبحث عملاء</li><li>تقارير أسبوعية لوحده</li></ul>
+        </div>
+        <div class="card">
+          <h3>⌨ المطور والمهندس</h3>
+          <p>كتابة كود، مراجعة PRs، بناء سيرفرات، تشخيص مشاكل — من التليفون أو التيرمنال.</p>
+          <ul><li>بناء مشاريع كاملة من الوصف</li><li>CI/CD وإدارة infrastructure</li><li>كتابة كود من واتساب</li></ul>
+        </div>
+        <div class="card">
+          <h3>🎨 صانع المحتوى والمستقل</h3>
+          <p>كتابة مقالات، تصميم عروض، إدارة سوشيال — وكيل شخصي بيغنيك عن 3 موظفين.</p>
+          <ul><li>بناء مواقع و landing pages</li><li>تقارير PDF و PPT و XLSX</li><li>جدولة بوستات وتحليل أداء</li></ul>
+        </div>
+        <div class="card">
+          <h3>📊 مدير العمليات</h3>
+          <p>مراقبة سيرفرات، تذكيرات، متابعة فرق العمل — أوتوكلاو بيعمل ده 24/7 لوحده.</p>
+          <ul><li>Heartbeat كل 15 دقيقة</li><li>تنبيهات ذكية مش spam</li><li>إدارة Jira/ClickUp تلقائية</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section class="surface-section" id="steps" data-od-id="steps-eg">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="eyebrow">إزاي تبدأ</span>
+        <h2>من <span class="accent-word">صفر</span> لنتيجة — خطوة خطوة</h2>
+      </div>
+      <div class="steps-list">
+        <div class="step"><div class="step-num">خطوة 1</div><div class="step-content"><h4>نزّل أوتوكلاو</h4><p>افتح OpenClaw.app أو شغّل: <code>npm i -g openclaw && openclaw</code> — 2 دقيقة وبخلاص.</p></div></div>
+        <div class="step"><div class="step-num">خطوة 2</div><div class="step-content"><h4>أكمل الـ Onboarding</h4><p>Quick Start → اختر نموذج AI (مجاني أو بالـ API) → وافق على الصلاحيات. الـ Gateway يشتغل تلقائي.</p></div></div>
+        <div class="step"><div class="step-num">خطوة 3</div><div class="step-content"><h4>وصّل واتساب أو تليجرام</h4><p>وصّل أي منصة من الـ 50+ المتاحة. دلوقتي تقدر تكلم أوتوكلاو من التطبيق اللي بتستخدمه كل يوم.</p></div></div>
+        <div class="step"><div class="step-num">خطوة 4</div><div class="step-content"><h4>ثبّت Skills</h4><p>من ClawHub: بحث ويب، إيميل، تحليل بيانات، تصميم — تثبيت بكلمة. جرب: "اقرالي آخر 5 إيميلات".</p></div></div>
+        <div class="step"><div class="step-num">خطوة 5</div><div class="step-content"><h4>فعّل الـ Heartbeat</h4><p>ضبط يفحص إيميلاتك كل 30 دقيقة، يراجع ميعادك، يبعتلك ملخص — من غير ما تسأله.</p></div></div>
+        <div class="step"><div class="step-num">خطوة 6</div><div class="step-content"><h4>ابدأ حقق نتائج</h4><p>أوتوكلاو دلوقتي شريكك. كل ما تستخدمه أكتر، كل ما يبقى أقوى — وكل ما ذاكرته بتكبر معاك.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EARLY ADOPTER -->
+  <section class="dark-section" id="early" data-od-id="early-eg">
+    <div class="wrap">
+      <span class="eyebrow" style="color:var(--accent);">فرصة الأوائل</span>
+      <h2 style="margin-top:8px;">كون من الأوائل — <span style="color:var(--accent);">واخد المكافأة</span></h2>
+      <p class="lede">اللي يدخل دلوقتي مش بس بيحصل على مساعد AI — بيحصل على موقع في مجتمع بيكبر. أنا أحمد عصام، وبدعمي كـ رائد أعمال تقني من مصر، أقدر أساعدك توصل للنتيجة أسرع.</p>
+      <div class="benefit-grid">
+        <div class="benefit-card"><span class="bi">🔑</span><h4>وصول مبكر كامل</h4><p>Beta features وskills حصرية وتحديثات قبل أي حد.</p></div>
+        <div class="benefit-card"><span class="bi">💰</span><h4>رصيد AI مجاني</h4><p>Credits أكتر للنماذج — أكتر تجارب، أقل تكلفة.</p></div>
+        <div class="benefit-card"><span class="bi">🔗</span><h4>برنامج إحالة بعائد</h4><p>كل حد تدعوه بياخد مكافأة — وأنت بتحصل كمان. 10% recurring لـ 12 شهر.</p></div>
+        <div class="benefit-card"><span class="bi">👑</span><h4>سلطة وتأثير</h4><p>الأوائل بيشكّلوا المنتج. طلباتك بتتنفذ أسرع.</p></div>
+        <div class="benefit-card"><span class="bi">🤝</span><h4>شبكة مؤسسين</h4><p>مجتمع أوائل — خبرات مشتركة وفرص تعاون.</p></div>
+        <div class="benefit-card"><span class="bi">⚡</span><h4>Skills حصرية مبكرة</h4><p>أدوات مش متاحة للعامة بعد.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHANNELS -->
+  <section class="channels-strip" data-od-id="channels-eg">
+    <div class="wrap">
+      <h2>بيشتغل من التطبيقات <span class="accent-word">اللي بتستخدمها</span></h2>
+      <div class="channel-pills">
+        <span class="channel-pill">WhatsApp</span><span class="channel-pill">Telegram</span><span class="channel-pill">Discord</span><span class="channel-pill">Slack</span><span class="channel-pill">iMessage</span><span class="channel-pill">Signal</span><span class="channel-pill">MS Teams</span><span class="channel-pill">Feishu</span><span class="channel-pill">Google Chat</span><span class="channel-pill">+42 أكتر</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="closing" data-od-id="cta-eg">
+    <div class="wrap">
+      <h2>أنت من الأوائل — <em>ماتضيعش الفرصة</em></h2>
+      <p>5 دقايق عشان تبدأ. مع دعم أحمد عصام، توصل لنتيجة حقيقية أسرع — والأوائل دايماً بيحققوا أكتر.</p>
+      <a href="https://autoclaw.z.ai/" class="btn btn-accent">ابدأ دلوقتي — مجاني</a>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- FUSHA — السوق الخليجي                                      -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="lang-section" id="lang-ar" dir="rtl" lang="ar">
+
+  <div class="wrap">
+    <section class="hero" data-od-id="hero-ar">
+      <h1>ليس روبوت محادثة — بل <span class="accent-word">شريك عمل حقيقي</span></h1>
+      <p class="lede">
+        أوتوكلاو هو مساعدك الذكي مفتوح المصدر الذي يعمل على جهازك ويتواصل معك عبر تطبيقات المحادثة التي تستخدمها بالفعل. يقرأ بريدك الإلكتروني، يُرسل بالنيابة عنك، يُدير تق! تقويمك، يكتب تعليمات برمجية، يبني مواقع — وهذا غيض من فيض. أنا <strong>أحمد عصام رمضان</strong>، رائد أعمال تقني ومؤسس VentureCycle Studio، وأقدم لك حلول أتمتة حقيقية مدعومة بالذكاء الاصطناعي.
+      </p>
+      <div class="hero-actions">
+        <a href="#steps" class="btn btn-primary">ابدأ الآن — 5 دقائق فقط</a>
+        <a href="#why" class="btn btn-secondary">ما الفرق؟</a>
+      </div>
+      <div class="about-card" data-od-id="about-ar">
+        <div class="about-avatar">أع</div>
+        <div class="about-info">
+          <h3>أحمد عصام رمضان</h3>
+          <p>رائد أعمال تقني ومؤسس VentureCycle Studio — مِن مصر إلى العالم. نبني أنظمة أتمتة وذكاء اصطناعي لعملاء في منطقة الشرق الأوسط وشمال أفريقيا.</p>
+          <div class="about-links">
+            <a href="mailto:ahmedissam.work@gmail.com">البريد الإلكتروني</a>
+            <a href="https://t.me&me/ahmedissam_bot">تيليجرام</a>
+            <a href="https://github.com/openclaw/openclaw">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="surface-section" id="why" data-od-id="why-ar">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="eyebrow">ما الفرق</span>
+        <h2>لماذا أوتوكلاو <span class="accent-word">ليس كـ ChatGPT</span></h2>
+        <p>ChatGPT يُجيبك. أوتوكلاو <strong>يُنفّذ</strong>. يعمل على جهازك لا على خادم بعيد. له وصول كامل إلى سطر الأوامر والملفات والمتصفح والبريد والتقويم — وذاكرة مستمرة لا تُمحى.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card"><div class="icon">⌨</div><h3>وصول حقيقي للنظام</h3><p>يعمل كعملية من الدرجة الأولى — لا في بيئة معزولة. يقدر على تنفيذ أوامر وتعديل ملفات وبناء مشاريع.</p></div>
+        <div class="*card"><div class="icon">🧠</div><h3>ذاكرة مستمرة</h3><p>لا ينسى. تفضيلاتك ومشاريعك وأسلوبك — محفوظة بين الجلسات جميعها.</p></div>
+        <div class="card"><div class="icon">💓</div><h3>نبض القلب — عمل متواصل</h3><p>يفحص بريدك ويراجع تقويمك ويُرسل لك ملخصًا — دون أن تطلبه.</p></div>
+        <div class="card"><div class="icon">💬</div><h3>من واتساب وتيليجرام</h3><p>لا حاجة لتطبيق جديد. يعمل من أكثر من 50 منصة محادثة تستخدمها بالفعل.</p></div>
+        <div class="card"><div class="icon">⚡</div><h3>5,400+ مهارة جاهزة</h3><p>ClawHub — سوق مهارات مفتوح. بحث ويب وبريد وتحليل بيانات وأتمتة — تثبيت بكلمة واحدة.</p></div>
+        <div class="card"><div class="icon">🔓</div><h3>مفتوح المصدر</h3><p>على جهازك. بياناتك لا تُرسل إلى خوادم طرف ثالث. تتحكم فيه بالكامل.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="who" data-od-id="who-ar" style="background:var(--bg);">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="eyebrow">لمن</span>
+        <h2>أوتوكلاو <span class="accent-word#word">مفيد لمن</span> بالتحديد؟</h2>
+      </div>
+      <div class="grid-2">
+        <div class="card"><h3>🏢 رجل الأعمال والمؤسس</h3><p>إدارة البريد ومتابعة العملاء وجدولة الم3 المواعيد وكتابة محتوى تسويقي — كل ذلك من واتساب.</p><ul><li>فرز بريد تلقائي</li><li>مساعد مبيعات وبحث عملاء</li><li>تقارير أسبوعية ذاتية</li></ul></div>
+        <div class="card"><h3>⌨ المطور والمهندس</h3><p>كتابة تعليمات برمجية ومراجعة طلبات سحب وبناء خوادم — من الهاتف أو سطر الأوامر.</p><ul><li>بناء مشاريع كاملة من الوصف</li><li>CI/CD وإدارة البنية التحتية</li></ul></div>
+        <div class="card"><h3>🎨 صانع المحتوى</h3><p>كتابة مقالات وتصميم عروض وإدارة وسائل التواصل — وكيل شخصي يُغنيك عن فريق.</p><ul><li>بناء مواقع وصفحات هبوط</li><li>تقارير PDF وPPT وXLSX</li></ul></div>
+        <div class="card"><h3>📊 مدير العمليات</h3><p>مراقبة خوادم وتنبيهات ومتابعة فرق العمل — أوتوكلاو يفعل ذلك على مدار الساعة.</p><ul><li>نبض القلب كل 15 دقيقة</li><li>تنبيهات ذكية</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="surface-section" id="steps" data-od-id="steps-ar">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="eyebrow">كيف تبدأ</span>
+        <h2>من <span class="accent-word">الصفر</span> إلى النتيجة</h2>
+      </div>
+      <div class="steps-list">
+        <div class="step"><div class="step-num">خطوة 1</div><div class="step-content"><h4>ثبِّت أوتوكلاو</h4><p>افتح OpenClaw.app أو نفِّذ: <code>npm i -g openclaw && openclaw</code></p></div></div>
+        <div class="step"><div class="step-num">خطوة 2</div><div class="step-content"><h4>أكمل الإعداد</h4><p>اختر Quick Start → اختر نموذج الذكاء الاصطناعي → وافق على الصلاحيات</p></div></div>
+        <div class="step"><div class="step-num">خطوة 3</div><div class="step-content"><h4>صِل تطبيق المحادثة</h4><p>وصِّل واتساب أو تيليجرام أو أي منصة من أكثر من 50 متاحة</p></div></div>
+        <div class="step"><div class="step-num">خطوة 4</div><div class="step-content"><h4>ثبِّت المهارات</h4><p>من ClawHub: بحث ويب وبريد وتحليل بيانات — تثبيت بكلمة واحدة</p></div></div>
+        <div class="step"><div class="step-num">خطوة 5</div><div class="step-content"><h4>فعِّل نبض القلب</h4><p>ضبطه ليفحص بريدك كل 30 دقيقة ويراجع تقويمك — دون أن تطلبه</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark-section" id="early" data-od-id="early-ar">
+    <div class="wrap">
+      <span class="eyebrow" style="color:var(--accent);">فرصة الرواد</span>
+      <h2 style="margin-top:8px;">كن من الأوائل — <span style="color:var(--accent);">واكسب المكافأة</span></h2>
+      <p class="lede">من يدخل الآن لا يحصل على مساعد ذكي فحسب، بل على موقع في مجتمع ينمو. بفضل دعم أحمد عصام رمضان كرائد أعمال تقني، نُساعدك على الوصول للنتيجة أسرع.</p>
+      <div class="benefit-grid">
+        <div class="benefit-card"><span class="bi">🔑</span><h4>وصول مبكر كامل</h4><p>ميزات تجريبية ومهارات حصرية وتحديثات قبل الجميع.</p></div>
+        <div class="benefit-card"><span class="bi">💰</span><h4>رصيد ذكاء اصطناعي مجاني</h4><p>أرصدة أكبر للنماذج — تجارب أكثر وتكلفة أقل.</p></div>
+        <div class="benefit-card"><span class="bi">🔗</span><h4>برنامج إحالة بعائد</h4><p>10% عائد متكرر لـ 12 شهرًا على كل إحالة ناجحة.</p></div>
+        <div class="benefit-card"><span class="bi">👑</span><h4>سلطة وتأثير</h4><p>الرواد يُشكِّلون المنتج.Bج. طلباتهم تُنفَّذ أسرع.</p></div>
+        <div class="benefit-card"><span class="bi">🤝</span><h4>شبكة مؤسسين</h4><p>مجتمع رواد — خبرات مشتركة وفرص تعاون.</p></div>
+        <div class="benefit-card"><span class="bi">⚡</span><h4>مهارات حصرية</h4><p>أدوات غير متاحة للعامة بعد.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing" data-od-id="cta-ar">
+    <div class="wrap">
+      <h2>أنت من الرواد — <em>لا تضيِّع الفرصة</em></h2>
+      <p>5 دقائق للبدء. بدعم أحمد عصام رمضان، تصل إلى نتيجة حقيقية أسرع — والرواد دائمًا يحققون أكثر.</p>
+      <a href="https://autoclaw.z.ai/" class="btn btn-accent">ابدأ الآن — مجانًا</a>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- ENGLISH — International / SEO                               -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="lang-section" id="lang-en" dir="ltr" lang="en" style="font-family:var(--body-en);">
+
+  <div class="wrap">
+    <section class="hero" data-od-id="hero-en">
+      <h1>Not a chatbot — a <span class="accent-word">real work partner</span></h1>
+      <p class="lede" style="font-family:var(--body-en);">
+        AutoClaw is your open-source AI assistant that runs on your machine and reaches you through the chat apps you already use. It reads your email, sends on your behalf, manages your calendar, writes code, builds websites — and that's just the start. I'm <strong>Ahmed Issam Ramadan</strong>, an AI-native entrepreneur from Egypt, and withCrawith AutoClaw I deliver real automation and AI solutions — not just talk.
+      </p>
+      <div class="hero-actions">
+        <a href="#steps" class="btn btn-primary">Get started — 5 minutes</a>
+        <a href="#why" class="btn btn-secondary">What's different?</a>
+      </div>
+      <div class="about-card" data-od-id="about-en">
+        <div class="about-avatar" style="font-family:var(--body-en);">AR</div>
+        <div class="about-info">
+          <h3 style="font-family:var(--body-en);">Ahmed Issam Ramadan</h3>
+          <p style="font-family:var(--body-en);">AI-Native Entrepreneur & Founder of VentureCycle Studio — from Zagazig to the world. Building AI automation systems for clients across MENA and beyond. Self-taught, practice-proven.</p>
+          <div class="about-links">
+            <a href="mailto:ahmedissam.work@gmail.com">Email</a>
+            <a href="https://t.me/ahmedissam_bot">Telegram</a>
+            <a href="https://github.com/openclaw/openclaw">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="surface-section" id="why" data-od-id="why-en">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="eyebrow">The difference</span>
+        <h2>Why AutoClaw <span class="accent-word">isn't ChatGPT</span></h2>
+        <p style="font-family:var(--body-en);">ChatGPT answers you. AutoClaw <strong>does things</strong>. It runs on your hardware, not a remote server. Full access to shell, files, browser, email, calendar — and persistent memory that doesn't reset.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card"><div class="icon">⌨</div><h3>Real computer access</h3><p style="font-family:var(--body-en);">Runs as a first-class process — not a sandbox. Executes commands, edits files, builds projects, installs packages.</p></div>
+        <div class="card"><div class="icon">🧠</div><h3>It actually remembers</h3><p style="font-family:var(--body-en);">Grows with every conversation. Preferences, projects, your style — preserved across sessions.</p></div>
+        <div class="card"><div class="icon">💓</div><h3>Heartbeat — always on</h3><p style="font-family:var(--body-en);">Checks email, reviews calendar, sends briefings — without you asking. 24/7.</p></div>
+        <div class="card"><div class="icon">💬</div><h3>From WhatsApp or Telegram</h3><p style="font-family:var(--body-en);">No new app needed. Works from 50+ messaging platforms you already use.</p></div>
+        <div class="card"><div class="icon">⚡</div><h3>5,400+ ready-made Skills</h3><p style="font-family:var(--body-en);">ClawHub — open skills marketplace. Web search, email, data analysis, browser automation — one-command install.</p></div>
+        <div class="card"><div class="icon">🔓</div><h3>Open source</h3><p style="font-family:var(--body-en);">On your machine. Your data never leaves. Fully customizable and controllable.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="who" data-od-id="who-en" style="background:var(--bg);">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="eyebrow">Who it's for</span>
+        <h2>AutoClaw is <span class="accent-word">useful for whom</span> exactly?</h2>
+      </div>
+      <div class="grid-2">
+        <div class="card"><h3>🏢 Founders & Business Owners</h3><p style="font-family:var(--body-en);">Email management, client follow-ups, scheduling, marketing copy — all from WhatsApp.</p><ul><li>Auto email triage & draft-first replies</li><li>Sales assistant & pipeline research</li><li>Automated weekly reports</li></ul></div>
+        <div class="card"><h3>⌨ Developers & Engineers</h3><p style="font-family:var(--body-en);">Write code, review PRs, build servers, debug production — from your phone or terminal.</p><ul><li>Build complete projects from description</li><li>CI/CD & infrastructure management</li></ul></div>
+        <div class="card"><h3>🎨 Creators & Freelancers</h3><p style="font-family:var(--body-en);">Write articles, design decks, manage socials — a personal agent that replaces 3 employees.</p><ul><li>Build sites & landing pages</li><li>PDF, PPT, XLSX reports</li></ul></div>
+        <div class="card"><h3>📊 Operations Managers</h3><p style="font-family:var(--body-en);">Server monitoring, reminders, team tracking — AutoClaw does it 24/7 autonomously.</p><ul><li>Heartbeat every 15 minutes</li><li>Smart, non-spammy alerts</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="surface-section" id="steps" data-od-id="steps-en">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="eyebrow">How to start</span>
+        <h2>From <span class="accent-word">zero</span> to results</h2>
+      </div>
+      <div class="steps-list">
+        <div class="step"><div class="step-num">Step 1</div><div class="step-content"><h4>Install AutoClaw</h4><p style="font-family:var(--body-en);">Open OpenClaw.app or run: <code>npm i -g openclaw && openclaw</code> — 2 minutes, done.</p></div></div>
+        <div class="step"><div class="step-num">Step 2</div><div class="step-content"><h4>Complete onboarding</h4><p style="font-family:var(--body-en);">Quick Start → choose AI model (free or API key) → approve permissions. Gateway starts automatically.</p></div></div>
+        <div class="step"><div class="step-num">Step 3</div><div class="step-content"><h4>Connect your chat app</h4><p style="font-family:var(--body-en);">Link WhatsApp, Telegram, Discord, or any of 50+ platforms. Talk to AutoClaw from the app you use daily.</p></div></div>
+        <div class="step"><div class="step-num">Step 4</div><div class="step-content"><h4>Install Skills</h4><p style="font-family:var(--body-en);">From ClawHub: web search, email, data analysis, design — one command each. Try: "Read my last 5 emails".</p></div></div>
+        <div class="step"><div class="step-num">Step 5</div><div class="step-content"><h4>Enable Heartbeat</h4><p style="font-family:var(--body-en);">Set it to check email every 30 min, review calendar, send briefing — without you asking.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark-section" id="early" data-od-id="early-en">
+    <div class="wrap">
+      <span class="eyebrow" style="color:var(--accent);">Early adopter advantage</span>
+      <h2 style="margin-top:8px;">Be first — <span style="color:var(--accent);">and earn the reward</span></h2>
+      <p class="lede" style="font-family:var(--body-en);">Joining now isn't just about getting an AI assistant — it's about securing a position in a growing ecosystem. With Ahmed Issam Ramadan's support as an AI-native entrepreneur, you reach real results faster.</p>
+      <div class="benefit-grid">
+        <div class="benefit-card"><span class="bi">🔑</span><h4>Full early access</h4><p style="font-family:var(--body-en);">Beta features, exclusive skills, updates before anyone else.</p></div>
+        <div class="benefit-card"><span class="bi">💰</span><h4>Free AI credits</h4><p style="font-family:var(--body-en);">More credits for models — more experiments, less cost.</p></div>
+        <div class="benefit-card"><span class="bi">🔗</span><h4>Recurring referral revenue</h4><p style="font-family:var(--body-en);">10% recurring for 12 months on every successful referral.</p></div>
+        <div class="benefit-card"><span class="bi">👑</span><h4>Influence & authority</h4><p style="font-family:var(--body-en);">Early adopters shape the product. Your feature requests ship faster.</p></div>
+        <div class="benefit-card"><span class="bi">🤝</span><h4>Founder network</h4><p style="font-family:var(--body-en);">Early community — shared knowledge and collaboration opportunities.</p></div>
+        <div class="benefit-card"><span class="bi">⚡</span><h4>Exclusive early skills</h4><p style="font-family:var(--body-en);">Tools not yet available to the public.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing" data-od-id="cta-en">
+    <div class="wrap">
+      <h2>You're early — <em>don't waste it</em></h2>
+      <p style="font-family:var(--body-en);">5 minutes to start. With Ahmed Issam Ramadan's support, you reach real results faster — and early adopters always come out ahead.</p>
+      <a href="https://autoclaw.z.ai/" class="btn btn-accent">Get started — free</a>
+    </div>
+  </section>
+</div>
+
+<!-- ─── FOOTER (shared) ─── -->
+<div class="wrap">
+  <footer data-od-id="footer">
+    <span class="mono">أحمد عصام رمضان × أوتوكلاو · OPENCLAW · مفتوح المصدر</span>
+    <div class="links">
+      <a href="mailto:ahmedissam.work@gmail.com">إيميل</a>
+      <a href="https://t.me/ahmedissam_bot">تليجرام</a>
+      <a href="https://docs.openclaw.ai/">المستندات</a>
+      <a href="https://openclaw.ai/showcase/">أمثلة</a>
+      <a href="https://github.com/openclaw/openclaw">GitHub</a>
+      <a href="https://autoclaw.z.ai/">AutoClaw</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+function switchLang(lang) {
+  document.querySelectorAll('.lang-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('lang-' + lang).classList.add('active');
+  document.querySelector('.lang-btn[onclick*="' + lang + '"]').classList.add('active');
+  if (lang === 'en') {
+    document.documentElement.setAttribute('dir', 'ltr');
+    document.documentElement.setAttribute('lang', 'en');
+  } else {
+    document.documentElement.setAttribute('dir', 'rtl');
+    document.documentElement.setAttribute('lang', 'ar');
+  }
+  window.location.hash = lang;
+}
+// Restore from hash
+if (window.location.hash) {
+  var h = window.location.hash.slice(1);
+  if (['eg','ar','en'].indexOf(h) !== -1) switchLang(h);
+}
+</script>
+</body>
+</html>
