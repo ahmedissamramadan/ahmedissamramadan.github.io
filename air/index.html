@@ -1,80 +1,267 @@
 <!doctype html>
-<html lang="en" dir="ltr" data-theme="dark">
+<html lang="ar" dir="rtl" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AIR Platform | Coming Soon</title>
+    <title>AIR Platform — حاسبة وجاهزية الذكاء الاصطناعي للأعمال | أحمد عصام رمضان</title>
     <meta
       name="description"
-      content="AIR Platform for AI Knowledge Systems - Coming Soon."
+      content="منصة الذكاء الاصطناعي العملي (AIR) — احسب مدى جاهزية شركتك لاستخدام وكلاء الذكاء الاصطناعي وساعات العمل التي سيوفرها لك أوتوكلاو."
     />
-    <meta http-equiv="refresh" content="5; url=../index.html" />
     <link rel="icon" type="image/x-icon" href="../assets/general/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Outfit:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     />
     <style>
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
+      :root {
+        --bg: #08080a;
+        --surface: rgba(255, 255, 255, 0.04);
+        --surface-border: rgba(255, 255, 255, 0.1);
+        --accent-blue: #00b4d8;
+        --accent-gold: #e0a96d;
+        --text-primary: #f3f4f6;
+        --text-muted: #9ca3af;
       }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
       body {
         min-height: 100vh;
+        background: var(--bg);
+        background-image: 
+          radial-gradient(at 0% 0%, rgba(0, 180, 216, 0.15) 0, transparent 45%),
+          radial-gradient(at 100% 100%, rgba(224, 169, 109, 0.12) 0, transparent 45%);
+        color: var(--text-primary);
+        font-family: "Cairo", "Outfit", system-ui, sans-serif;
+        line-height: 1.7;
+        padding: 3rem 1.5rem;
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #08080a;
-        color: #f3f4f6;
-        font-family: "Outfit", system-ui, sans-serif;
-        text-align: center;
-        padding: 2rem;
       }
-      .wrap {
-        max-width: 480px;
+      .container {
+        width: 100%;
+        max-width: 680px;
+        background: var(--surface);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid var(--surface-border);
+        border-radius: 24px;
+        padding: 3rem 2.5rem;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+      }
+      .badge {
+        display: inline-block;
+        padding: 4px 14px;
+        background: rgba(0, 180, 216, 0.12);
+        border: 1px solid rgba(0, 180, 216, 0.3);
+        color: var(--accent-blue);
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 700;
+        margin-bottom: 1rem;
       }
       h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         font-weight: 800;
-        margin-bottom: 0.5rem;
+        line-height: 1.3;
+        margin-bottom: 0.75rem;
       }
       h1 em {
-        color: #e0a96d;
+        color: var(--accent-gold);
         font-style: normal;
       }
-      p {
-        color: #9ca3af;
-        font-size: 1.1rem;
-        margin-bottom: 1.5rem;
-        line-height: 1.6;
+      p.subtitle {
+        color: var(--text-muted);
+        font-size: 1.05rem;
+        margin-bottom: 2rem;
       }
-      a {
-        display: inline-block;
-        padding: 0.75rem 2rem;
-        background: #e0a96d;
-        color: #08080a;
-        text-decoration: none;
-        border-radius: 6px;
+      .calc-step {
+        margin-bottom: 1.75rem;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 14px;
+        padding: 1.25rem;
+      }
+      .calc-step label {
+        display: block;
         font-weight: 700;
-        transition: 0.15s ease;
+        font-size: 15px;
+        margin-bottom: 10px;
+        color: #ffffff;
       }
-      a:hover {
-        background: #f5d6b3;
+      .options-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 10px;
+      }
+      .opt-btn {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--text-primary);
+        padding: 10px 14px;
+        border-radius: 10px;
+        font-family: inherit;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-align: center;
+      }
+      .opt-btn:hover, .opt-btn.selected {
+        background: var(--accent-blue);
+        color: #08080a;
+        border-color: var(--accent-blue);
+        transform: translateY(-1px);
+      }
+      .result-box {
+        display: none;
+        margin-top: 2rem;
+        padding: 1.75rem;
+        background: rgba(0, 180, 216, 0.08);
+        border: 1px solid rgba(0, 180, 216, 0.25);
+        border-radius: 16px;
+        text-align: center;
+      }
+      .result-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin: 1.25rem 0;
+      }
+      .metric-card {
+        background: rgba(8, 8, 10, 0.6);
+        padding: 1rem;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .metric-card .val {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--accent-gold);
+      }
+      .metric-card .lbl {
+        font-size: 12px;
+        color: var(--text-muted);
+      }
+      .cta-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        padding: 1rem;
+        background: #25d366;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 700;
+        border-radius: 12px;
+        font-size: 16px;
+        transition: 0.2s ease;
+        margin-top: 1rem;
+      }
+      .cta-btn:hover {
+        background: #1eb956;
         transform: translateY(-2px);
       }
+      .footer-note {
+        margin-top: 2rem;
+        font-size: 12px;
+        color: var(--text-muted);
+        border-top: 1px solid rgba(255,255,255,0.08);
+        padding-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+      }
+      .footer-note a { color: var(--accent-blue); text-decoration: none; }
     </style>
   </head>
   <body>
-    <div class="wrap">
-      <h1>AIR <em>Platform</em></h1>
-      <p>
-        The platform is currently under active development. You will be
-        redirected to the homepage in 5 seconds.
-      </p>
-      <a href="../index.html">Back to Home</a>
+    <div class="container">
+      <span class="badge">AIR Platform × Practical AI</span>
+      <h1>حاسبة وجاهزية <em>الذكاء الاصطناعي للأعمال</em></h1>
+      <p class="subtitle">استكشف الساعات والتكاليف التي يمكنك توفيرها أسبوعياً باستخدام وكلاء أوتوكلاو لمهام شركتك.</p>
+
+      <div class="calc-step">
+        <label>1. ما هو حجم فريقك أو مشروعك الحالي؟</label>
+        <div class="options-grid" id="q1">
+          <button type="button" class="opt-btn selected" onclick="selectOpt('q1', this, 1)">مؤسس منفرد (1)</button>
+          <button type="button" class="opt-btn" onclick="selectOpt('q1', this, 2)">فريق صغير (2-10)</button>
+          <button type="button" class="opt-btn" onclick="selectOpt('q1', this, 3)">شركة / فريق (10+)</button>
+        </div>
+      </div>
+
+      <div class="calc-step">
+        <label>2. كم ساعة تستهلك أسبوعياً في البريد، المتابعة، والمهام التكرارية؟</label>
+        <div class="options-grid" id="q2">
+          <button type="button" class="opt-btn" onclick="selectOpt('q2', this, 10)">أقل من 10 ساعات</button>
+          <button type="button" class="opt-btn selected" onclick="selectOpt('q2', this, 20)">10 - 25 ساعة</button>
+          <button type="button" class="opt-btn" onclick="selectOpt('q2', this, 35)">أكثر من 25 ساعة</button>
+        </div>
+      </div>
+
+      <div class="calc-step">
+        <label>3. ما هي منصات التواصل والتطبيق الأكثر استخداماً في عملك؟</label>
+        <div class="options-grid" id="q3">
+          <button type="button" class="opt-btn selected" onclick="selectOpt('q3', this, 'whatsapp')">واتساب وتيليجرام</button>
+          <button type="button" class="opt-btn" onclick="selectOpt('q3', this, 'email')">البريد الإلكتروني</button>
+          <button type="button" class="opt-btn" onclick="selectOpt('q3', this, 'hybrid')">منظومة هجينة</button>
+        </div>
+      </div>
+
+      <button type="button" class="opt-btn" style="width:100%; padding:14px; background:var(--accent-blue); color:#08080a; font-size:16px; font-weight:800;" onclick="calculateROI()">احسب نسبة الجاهزية والعائد الآن ⚡</button>
+
+      <div class="result-box" id="result-box">
+        <h3 style="color:#ffffff;">🎉 نتيجة تحليل الجاهزية لمشروعك</h3>
+        <div class="result-grid">
+          <div class="metric-card">
+            <div class="val" id="score-val">94%</div>
+            <div class="lbl">نسبة جاهزية العمل للوكلاء</div>
+          </div>
+          <div class="metric-card">
+            <div class="val" id="hours-val">16 ساعة</div>
+            <div class="lbl">توفير أسبوعي متوقع</div>
+          </div>
+        </div>
+        <p style="font-size:13px; color:var(--text-muted);" id="result-desc">يمكن لوكلاء أوتوكلاو استلام متابعة البريد، إعداد تقارير العمليات، والرد الفوري عبر واتساب بكفاءة تامة.</p>
+
+        <a href="https://wa.me/201027885408?text=%D9%87%D9%84%D8%A7%20%D8%A3%D8%AD%D9%85%D8%AF%D8%8C%20%D9%82%D9%85%D8%AA%20%D8%A8%D8%AD%D8%B3%D8%A7%D8%A8%20%D8%AC%D8%A7%D9%87%D8%B2%D9%8A%D8%A9%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D9%8A%20%D8%B9%D9%84%D9%89%20%D9%85%D9%86%D8%B5%D8%A9%20AIR%20%D9%88%D8%A3%D9%88%D8%AF%20%D8%B7%D9%84%D8%A9%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D8%A3%D8%AA%D9%85%D8%AA%D8%A9" target="_blank" class="cta-btn" id="wa-btn">
+          💬 تواصل مع أحمد عصام مباشرة لتطبيق الأتمتة
+        </a>
+      </div>
+
+      <div class="footer-note">
+        <span>© 2026 أحمد عصام رمضان · VentureCycle Studio</span>
+        <a href="../index.html">العودة للرئيسية ←</a>
+      </div>
     </div>
+
+    <script>
+      var state = { q1: 1, q2: 20, q3: 'whatsapp' };
+
+      function selectOpt(group, btn, val) {
+        var parent = document.getElementById(group);
+        parent.querySelectorAll('.opt-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        state[group] = val;
+      }
+
+      function calculateROI() {
+        var baseHours = state.q2;
+        var savedHours = Math.round(baseHours * 0.75);
+        var score = 85 + (state.q1 * 3);
+        if (score > 98) score = 98;
+
+        document.getElementById('score-val').innerText = score + '%';
+        document.getElementById('hours-val').innerText = savedHours + ' ساعة/أسبوعياً';
+        document.getElementById('result-box').style.display = 'block';
+
+        var msg = encodeURIComponent("مرحباً أستاذ أحمد، قمت بحساب جاهزية مشروعي على منصة AIR وكانت النتيجة " + score + "% وتوفير " + savedHours + " ساعة أسبوعياً. حابب أستفسر عن استشارة الأتمتة بكلاو.");
+        document.getElementById('wa-btn').href = "https://wa.me/201027885408?text=" + msg;
+
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+      }
+    </script>
   </body>
 </html>
