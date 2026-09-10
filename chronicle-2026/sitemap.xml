@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://ahmedissamramadan.github.io/</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ahmedissamramadan.github.io/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ahmedissamramadan.github.io/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ahmedissamramadan.github.io/" />
+    <image:image>
+      <image:loc>https://ahmedissamramadan.github.io/og-preview.png</image:loc>
+      <image:title>The 2026 Grand Chronicle — السجل الموسوعي السنوي | أحمد عصام رمضان</image:title>
+      <image:caption>The Unified Living Ecosystem and Master Chronicle of AI Systems Architect &amp; Tech Entrepreneur Ahmed Issam Ramadan</image:caption>
+    </image:image>
+  </url>
+</urlset>

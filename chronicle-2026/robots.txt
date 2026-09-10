@@ -1,0 +1,65 @@
+# Robots.txt for Ahmed Issam Ramadan's Unified Living Ecosystem & 2026 Grand Chronicle
+# URL: https://ahmedissamramadan.github.io/
+
+User-agent: *
+Allow: /
+
+# Dedicated Permissions for Leading Search Engine Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# Full Indexing & Grounding Permissions for AI & Answer Engines (AEO / GEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+# Crawl Delay & Sitemap Reference
+Crawl-delay: 1
+Sitemap: https://ahmedissamramadan.github.io/sitemap.xml
