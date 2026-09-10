@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Artelligence Personal Operating System — المؤسسة الرقمية العالمية للذكاء الاصطناعي</title>
+  <meta name="description" content="Artelligence Personal Operating System — منظومة التشغيل والذكاء الاصطناعي المؤسسي المستقل بقيادة أحمد عصام رمضان. بناء وتطوير أنظمة وكلاء الذكاء الاصطناعي، الأتمتة المحلية، والحلول الرقمية عالية الهامش." />
+  <meta name="keywords" content="Artelligence OS, Artelligence Personal Operating System, أحمد عصام رمضان, Ahmed Issam Ramadan, AutoClaw, VentureCycle Studio, AI Operating System, AI Agents, أتمتة الأعمال, الذكاء الاصطناعي المؤسسي">
+  <meta name="author" content="Ahmed Issam Ramadan">
+  <meta property="og:title" content="Artelligence Personal Operating System — Global Digital Enterprise">
+  <meta property="og:description" content="Sovereign AI Operating System & Enterprise Agentic Solutions from Egypt to the World. Founded by Ahmed Issam Ramadan.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://ahmedissamramadan.github.io/artelligence">
+  <link rel="icon" type="image/x-icon" href="../assets/general/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --art-bg: #0A0612;
+      --art-surface: #120B20;
+      --art-glass: rgba(22, 14, 38, 0.65);
+      --art-glass-border: rgba(168, 85, 247, 0.22);
+      --art-purple-core: #7C3AED;
+      --art-purple-vivid: #A855F7;
+      --art-indigo: #6366F1;
+      --art-gold: #E0A96D;
+      --art-emerald: #10B981;
+      --art-ink-primary: #F3F4F6;
+      --art-ink-muted: #9CA3AF;
+      --art-display: 'Cairo', sans-serif;
+      --art-body: 'IBM Plex Sans Arabic', -apple-system, system-ui, sans-serif;
+      --art-mono: 'IBM Plex Mono', monospace;
+      --art-body-en: 'Inter', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-feature-settings: "tnum" 1; }
+    body {
+      background: var(--art-bg);
+      background-image: 
+        radial-gradient(at 10% 0%, rgba(124, 58, 237, 0.22) 0, transparent 50%),
+        radial-gradient(at 90% 100%, rgba(99, 102, 241, 0.15) 0, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(224, 169, 109, 0.08) 0, transparent 60%);
+      background-attachment: fixed;
+      color: var(--art-ink-primary);
+      font-family: var(--art-body);
+      font-size: 16px;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap { max-width: 1140px; margin: 0 auto; padding: 0 28px; }
+
+    /* ─── NAV & HEADER ─── */
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(16px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 6, 18, 0.85);
+    }
+    .nav-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--art-ink-primary);
+    }
+    .logo-symbol {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--art-purple-core), var(--art-purple-vivid));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 18px;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+    }
+    .brand-name {
+      font-family: var(--art-display);
+      font-weight: 800;
+      font-size: 17px;
+      letter-spacing: -0.02em;
+    }
+    .brand-tag { font-size: 11px; color: var(--art-gold); display: block; font-weight: 600; }
+    
+    .nav-links { display: flex; gap: 24px; align-items: center; list-style: none; }
+    .nav-links a {
+      color: var(--art-ink-muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+    .nav-links a:hover { color: var(--art-purple-vivid); }
+    .btn-cta {
+      background: linear-gradient(135deg, var(--art-purple-core), var(--art-indigo));
+      color: #fff;
+      padding: 9px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
+      transition: all 0.2s ease;
+    }
+    .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(168, 85, 247, 0.5); }
+
+    /* ─── HERO SECTION ─── */
+    .hero {
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+    .pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 30px;
+      background: rgba(168, 85, 247, 0.12);
+      border: 1px solid var(--art-glass-border);
+      color: var(--art-purple-vivid);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: var(--art-display);
+      font-size: clamp(34px, 4.5vw, 56px);
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 span.gradient-text {
+      background: linear-gradient(135deg, #ffffff, var(--art-purple-vivid), var(--art-gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p.lede {
+      font-size: clamp(16px, 1.8vw, 20px);
+      color: var(--art-ink-muted);
+      max-width: 780px;
+      margin: 0 auto 36px;
+    }
+
+    /* ─── GLASS CARDS & GRID ─── */
+    .glass-card {
+      background: var(--art-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--art-glass-border);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .glass-card:hover {
+      border-color: rgba(168, 85, 247, 0.45);
+      transform: translateY(-2px);
+    }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+
+    /* ─── TERMINAL SIMULATOR WIDGET ─── */
+    .terminal-container {
+      margin: 40px 0;
+      background: #090510;
+      border: 1px solid var(--art-glass-border);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+      text-align: left;
+      direction: ltr;
+      font-family: var(--art-mono);
+    }
+    .term-bar {
+      background: #140d24;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .term-dots { display: flex; gap: 8px; }
+    .term-dot { width: 11px; height: 11px; border-radius: 50%; }
+    .term-dot.r { background: #ff5f56; }
+    .term-dot.y { background: #ffbd2e; }
+    .term-dot.g { background: #27c93f; }
+    .term-title { font-size: 12px; color: var(--art-ink-muted); font-weight: 600; }
+    .term-body {
+      padding: 20px;
+      min-height: 190px;
+      font-size: 13.5px;
+      line-height: 1.7;
+    }
+    .term-btn-group {
+      display: flex;
+      gap: 10px;
+      padding: 12px 18px;
+      background: #100a1c;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      flex-wrap: wrap;
+    }
+    .term-btn {
+      background: rgba(168, 85, 247, 0.15);
+      border: 1px solid rgba(168, 85, 247, 0.3);
+      color: var(--art-purple-vivid);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-family: var(--art-mono);
+      font-size: 12px;
+      cursor: pointer;
+      transition: 0.15s ease;
+    }
+    .term-btn:hover { background: var(--art-purple-core); color: #fff; }
+
+    /* ─── EXECUTIVE COUNCIL CARDS ─── */
+    .exec-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 32px;
+    }
+    .exec-card {
+      background: rgba(18, 11, 32, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .exec-role { font-size: 12px; color: var(--art-gold); font-weight: 700; text-transform: uppercase; }
+    .exec-title { font-family: var(--art-display); font-size: 16px; font-weight: 800; margin: 4px 0 8px; color: #fff; }
+    .exec-desc { font-size: 13px; color: var(--art-ink-muted); line-height: 1.6; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 40px 0;
+      margin-top: 80px;
+      font-size: 13px;
+      color: var(--art-ink-muted);
+    }
+    .footer-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+    .footer-links { display: flex; gap: 18px; }
+    .footer-links a { color: var(--art-purple-vivid); text-decoration: none; font-weight: 600; }
+
+    @media (max-width: 768px) {
+      .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="wrap">
+      <div class="nav-flex">
+        <a href="#" class="brand-logo">
+          <div class="logo-symbol">A</div>
+          <div>
+            <div class="brand-name">Artelligence OS</div>
+            <span class="brand-tag">Personal Operating System</span>
+          </div>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#council">مجلس الإدارة</a></li>
+          <li><a href="#solutions">الحلول المؤسسية</a></li>
+          <li><a href="#calculator">حاسبة الجاهزية</a></li>
+          <li><a href="https://ahmedissamramadan.github.io/autoclaw">AutoClaw</a></li>
+        </ul>
+        <a href="https://wa.me/201027885408?text=%D9%87%D9%84%D8%A7%20%D8%A3%D8%AD%D9%85%D8%AF%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AD%D9%84%D9%88%D9%84%20Artelligence%20OS" class="btn-cta">تواصل مع المؤسس</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="pill-badge">⚡ Sovereign Digital Enterprise & AI Architecture</div>
+      <h1>منظومة التشغيل الإبداعية و<span class="gradient-text">الذكاء الاصطناعي المؤسسي</span></h1>
+      <p class="lede">
+        نحول المعرفة المتقدمة، الوكلاء الذاتيين (AutoClaw / OpenClaw)، والأنظمة المحلية إلى حلول رقمية ومؤسسية عالية الهامش — من مصر والشرق الأوسط إلى العالم. قيادة وإشراف <strong>أحمد عصام رمضان</strong>.
+      </p>
+
+      <!-- LIVE TERMINAL SIMULATOR WIDGET -->
+      <div class="terminal-container">
+        <div class="term-bar">
+          <div class="term-dots">
+            <span class="term-dot r"></span>
+            <span class="term-dot y"></span>
+            <span class="term-dot g"></span>
+          </div>
+          <span class="term-title">artelligence-os-kernel v3.0 (Local Node)</span>
+        </div>
+        <div class="term-btn-group">
+          <button class="term-btn" onclick="execCmd('orchestrate')">artelligence orchestrate --swarms</button>
+          <button class="term-btn" onclick="execCmd('audit')">artelligence audit --security</button>
+          <button class="term-btn" onclick="execCmd('metrics')">artelligence status --roi</button>
+        </div>
+        <div class="term-body" id="term-out">
+          <div style="color:#7C3AED;">❯ artelligence status --roi</div>
+          <div style="color:#10B981;">● Artelligence Core Kernel: Online & Active</div>
+          <div style="color:#9CA3AF;">  ├─ Executive Council: 14 Coordinated Virtual Executives</div>
+          <div style="color:#9CA3AF;">  ├─ Agent Swarm: 13 Active Agents (AutoClaw Node: Synced)</div>
+          <div style="color:#E0A96D;">  └─ Enterprise ROI Protection: 85%+ Gross Margin Guaranteed</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXECUTIVE COUNCIL SECTION -->
+    <section id="council" style="margin-top: 60px;">
+      <div style="text-align: center; margin-bottom: 30px;">
+        <span style="color:var(--art-purple-vivid); font-size:13px; font-weight:700; text-transform:uppercase;">الهيكلية القيادية</span>
+        <h2 style="font-family:var(--art-display); font-size:32px; font-weight:900;">مجلس الإدارة التنفيذي الافتراضي (Executive Council)</h2>
+      </div>
+
+      <div class="exec-grid">
+        <div class="exec-card">
+          <div class="exec-role">CEO — أحمد عصام رمضان</div>
+          <div class="exec-title">الرئيس التنفيذي للمنظومة</div>
+          <div class="exec-desc">الرؤية الاستراتيجية العامة، تخصيص رأس المال، وقيادة التوسع الدولي للمجموعة.</div>
+        </div>
+        <div class="exec-card">
+          <div class="exec-role">CSO — Chief Strategy Officer</div>
+          <div class="exec-title">رئيس الاستراتيجية</div>
+          <div class="exec-desc">بناء الميزات التنافسية (Moats)، دراسة الأسواق، والتخطيط للنمو التراكمي.</div>
+        </div>
+        <div class="exec-card">
+          <div class="exec-role">CTO — Chief Technology Officer</div>
+          <div class="exec-title">رئيس التكنولوجيا</div>
+          <div class="exec-desc">هندسة الأنظمة المحلية (Local-First AI)، الجسر السحابي، وبنية بروتوكول MCP.</div>
+        </div>
+        <div class="exec-card">
+          <div class="exec-role">CMO & CDAIO — Marketing & AI</div>
+          <div class="exec-title">رئيس تسويق والذكاء الاصطناعي</div>
+          <div class="exec-desc">إدارة محرك SEO/GEO/AEO الموحد، وتوجيه النماذج (Model Routing) متعددة الطبقات.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUTIONS MATRIX -->
+    <section id="solutions" style="margin-top: 80px;">
+      <div style="text-align: center; margin-bottom: 40px;">
+        <span style="color:var(--art-gold); font-size:13px; font-weight:700; text-transform:uppercase;">محفظة المنتجات والخدمات</span>
+        <h2 style="font-family:var(--art-display); font-size:32px; font-weight:900;">حلول مؤسسية عالية الهامش</h2>
+      </div>
+
+      <div class="grid-3">
+        <div class="glass-card">
+          <div style="font-size:28px; margin-bottom:12px;">🤖</div>
+          <h3 style="font-family:var(--art-display); font-size:20px; font-weight:800; margin-bottom:8px;">AutoClaw / OpenClaw</h3>
+          <p style="font-size:14px; color:var(--art-ink-muted);">بنية وكلاء الذكاء الاصطناعي المحلية الشغالة على أجهزتك بخصوصية كاملة وأتمتة 24/7 عبر واتساب وتيليجرام.</p>
+        </div>
+        <div class="glass-card">
+          <div style="font-size:28px; margin-bottom:12px;">📊</div>
+          <h3 style="font-family:var(--art-display); font-size:20px; font-weight:800; margin-bottom:8px;">AIR Platform</h3>
+          <p style="font-size:14px; color:var(--art-ink-muted);">منصة الذكاء الاصطناعي العملي وتطبيقات الأتمتة المباشرة للشركات والمؤسسين لقياس وتقليل تكاليف التشغيل.</p>
+        </div>
+        <div class="glass-card">
+          <div style="font-size:28px; margin-bottom:12px;">🤝</div>
+          <h3 style="font-family:var(--art-display); font-size:20px; font-weight:800; margin-bottom:8px;">WASL Network</h3>
+          <p style="font-size:14px; color:var(--art-ink-muted);">منصة مطابقة المؤسسين ورأس المال والاستثمار الجريء المخصصة لمنطقة الشرق الأوسط وشمال أفريقيا.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALCULATOR -->
+    <section id="calculator" class="glass-card" style="margin-top: 80px; text-align: center;">
+      <span style="color:var(--art-emerald); font-size:13px; font-weight:700; text-transform:uppercase;">أداة التقييم المؤسسي</span>
+      <h2 style="font-family:var(--art-display); font-size:28px; font-weight:900; margin:10px 0 20px;">احسب جاهزية وعائد الذكاء الاصطناعي لمؤسستك</h2>
+      <p style="color:var(--art-ink-muted); max-width:600px; margin:0 auto 30px;">احصل على تحليل فوري لنسبة التوفير التشغيلي المتوقع عند تطبيق حلول وكلاء Artelligence OS في عملك.</p>
+      
+      <a href="https://ahmedissamramadan.github.io/air/" class="btn-cta" style="padding:14px 32px; font-size:16px;">افتح حاسبة العائد والتقييم الفوري ←</a>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap footer-flex">
+      <div>© 2026 Artelligence Personal Operating System · تأسيس وتطوير أحمد عصام رمضان</div>
+      <div class="footer-links">
+        <a href="https://ahmedissamramadan.github.io">الرئيسية</a>
+        <a href="https://ahmedissamramadan.github.io/autoclaw">AutoClaw</a>
+        <a href="https://ahmedissamramadan.github.io/air">AIR Platform</a>
+        <a href="https://ahmedissamramadan.github.io/links">Links</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    var demoCmds = {
+      orchestrate: [
+        { t: '❯ artelligence orchestrate --swarms', c: '#7C3AED' },
+        { t: '[Orchestrator] Initializing 13 Autonomous Agent Nodes...', c: '#6366F1' },
+        { t: '[Security] Sandbox Zero-Trust Verification: Passed.', c: '#10B981' },
+        { t: '[Marketing] SEO/GEO/AEO Engines Active on ahmedissamramadan.github.io', c: '#E0A96D' },
+        { t: '✓ Swarm sync complete. Operating System nominal.', c: '#10B981' }
+      ],
+      audit: [
+        { t: '❯ artelligence audit --security', c: '#7C3AED' },
+        { t: '🛡️ Running Security & Credentials Audit...', c: '#6366F1' },
+        { t: '✓ Hardcoded credentials sweep: Clean (0 leaks)', c: '#10B981' },
+        { t: '✓ SSL Verification & SQLite Vault Backup: Encrypted.', c: '#10B981' }
+      ],
+      metrics: [
+        { t: '❯ artelligence status --roi', c: '#7C3AED' },
+        { t: '● Artelligence Core Kernel: Online & Active', c: '#10B981' },
+        { t: '  ├─ Executive Council: 14 Coordinated Virtual Executives', c: '#9CA3AF' },
+        { t: '  ├─ Agent Swarm: 13 Active Agents (AutoClaw Node: Synced)', c: '#9CA3AF' },
+        { t: '  └─ Enterprise ROI Protection: 85%+ Gross Margin Guaranteed', c: '#E0A96D' }
+      ]
+    };
+
+    function execCmd(type) {
+      var box = document.getElementById('term-out');
+      if (!box || !demoCmds[type]) return;
+      box.innerHTML = '';
+      demoCmds[type].forEach(function(item, idx) {
+        setTimeout(function() {
+          var d = document.createElement('div');
+          d.style.color = item.c;
+          d.innerText = item.t;
+          box.appendChild(d);
+        }, idx * 280);
+      });
+    }
+  </script>
+</body>
+</html>
