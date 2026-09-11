@@ -28,6 +28,12 @@ document.addEventListener("DOMContentLoaded", () => {
   renderEngineeringHub();
   renderVaultCertifications();
 
+  // 6.5 Render V3 Hyper-Edition Interactive Modules
+  renderWaslSimulator();
+  renderSmhRoiCalculator();
+  initTopologyPacketFlow();
+  setupTerminal();
+
   // 7. Setup Event Listeners (Search, Sound, Modals)
   setupEventListeners();
 
@@ -775,6 +781,7 @@ function setupEventListeners() {
     if (e.key === "Escape") {
       closeDetailModal();
       closePartnershipModal();
+      closeTerminalModal();
     }
   });
 
@@ -792,6 +799,552 @@ function setupEventListeners() {
       if (e.target === pModal) closePartnershipModal();
     });
   }
+
+  const tModal = document.getElementById("terminal-modal");
+  if (tModal) {
+    tModal.addEventListener("click", e => {
+      if (e.target === tModal) closeTerminalModal();
+    });
+  }
+}
+
+// ==========================================================================
+// V3.0 HYPER-EDITION ENRICHMENTS IMPLEMENTATION
+// ==========================================================================
+
+// 1. WASL Network Investor Matchmaking Simulator
+let currentWaslFilters = {
+  sector: "b2b_ai",
+  stage: "seed",
+  country: "sa"
+};
+
+function renderWaslSimulator() {
+  const container = document.getElementById("wasl-simulator-container");
+  if (!container || !window.WASL_SIMULATOR_DATA) return;
+
+  const { sectors, stages, countries } = window.WASL_SIMULATOR_DATA;
+
+  container.innerHTML = `
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+      <div>
+        <label class="block text-xs font-bold text-slate-300 font-heading mb-2">قطاع المشروع (Sector):</label>
+        <select id="wasl-sim-sector" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-purple-800/60 text-xs text-white focus:outline-none focus:border-purple-500 transition-all">
+          ${sectors.map(s => `<option value="${s.id}" ${s.id === currentWaslFilters.sector ? "selected" : ""}>${s.labelAr}</option>`).join("")}
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold text-slate-300 font-heading mb-2">مرحلة التمويل (Funding Stage):</label>
+        <select id="wasl-sim-stage" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-purple-800/60 text-xs text-white focus:outline-none focus:border-purple-500 transition-all">
+          ${stages.map(s => `<option value="${s.id}" ${s.id === currentWaslFilters.stage ? "selected" : ""}>${s.labelAr}</option>`).join("")}
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold text-slate-300 font-heading mb-2">السوق المستهدف (Target Market):</label>
+        <select id="wasl-sim-country" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-purple-800/60 text-xs text-white focus:outline-none focus:border-purple-500 transition-all">
+          ${countries.map(c => `<option value="${c.id}" ${c.id === currentWaslFilters.country ? "selected" : ""}>${c.labelAr}</option>`).join("")}
+        </select>
+      </div>
+    </div>
+
+    <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-purple-900/40">
+      <div class="flex items-center gap-2">
+        <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="text-xs text-slate-300 font-heading" id="wasl-sim-status">نتائج المطابقة الاستثمارية التلقائية:</span>
+      </div>
+      <button onclick="triggerWaslSimulate()" class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-heading font-bold transition-all shadow-md shadow-purple-600/30 flex items-center gap-1.5 btn-press">
+        <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
+        <span>إعادة المطابقة</span>
+      </button>
+    </div>
+
+    <div id="wasl-sim-results" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"></div>
+  `;
+
+  // Attach change events
+  const sectorEl = document.getElementById("wasl-sim-sector");
+  const stageEl = document.getElementById("wasl-sim-stage");
+  const countryEl = document.getElementById("wasl-sim-country");
+
+  const onFilterChange = () => {
+    currentWaslFilters.sector = sectorEl.value;
+    currentWaslFilters.stage = stageEl.value;
+    currentWaslFilters.country = countryEl.value;
+    runWaslSimulation();
+  };
+
+  if (sectorEl) sectorEl.addEventListener("change", onFilterChange);
+  if (stageEl) stageEl.addEventListener("change", onFilterChange);
+  if (countryEl) countryEl.addEventListener("change", onFilterChange);
+
+  runWaslSimulation();
+}
+
+function runWaslSimulation() {
+  const resultsContainer = document.getElementById("wasl-sim-results");
+  if (!resultsContainer || !window.WASL_SIMULATOR_DATA) return;
+
+  if (window.soundFX) window.soundFX.click();
+
+  const { investors } = window.WASL_SIMULATOR_DATA;
+  const { sector, stage, country } = currentWaslFilters;
+
+  // Matching algorithm
+  const matched = investors.map(inv => {
+    let score = 70;
+    if (inv.sectors.includes(sector)) score += 15;
+    if (inv.stages.includes(stage)) score += 10;
+    if (inv.countries.includes(country) || inv.countries.includes("mena")) score += 5;
+    return { ...inv, calculatedScore: Math.min(score, 99) };
+  }).sort((a, b) => b.calculatedScore - a.calculatedScore);
+
+  resultsContainer.innerHTML = matched.slice(0, 3).map(inv => `
+    <div class="p-4 rounded-xl bg-slate-900/90 border border-purple-700/40 flex flex-col justify-between transition-all hover:border-purple-400/60 hover:translate-y-[-2px] shadow-lg shadow-purple-950/20">
+      <div>
+        <div class="flex items-center justify-between gap-2 mb-2">
+          <span class="text-xs font-bold text-white font-heading">${inv.name}</span>
+          <span class="px-2 py-0.5 rounded-full text-[10px] font-mono-num font-bold match-score-badge">
+            ${inv.calculatedScore}% تطابق
+          </span>
+        </div>
+        <p class="text-[11px] text-purple-300 font-heading mb-2">حجم التذكرة: <strong class="text-white font-mono-num">${inv.ticket}</strong></p>
+        <p class="text-[11px] text-slate-400 line-clamp-2 leading-relaxed mb-3">${inv.thesis}</p>
+      </div>
+      <div class="pt-2 border-t border-slate-800/80 flex items-center justify-between text-[10px] text-slate-500">
+        <span>مستثمر معتمد بدليل WASL</span>
+        <span class="text-emerald-400 flex items-center gap-1 font-heading">
+          <i data-lucide="check-circle" class="w-3 h-3"></i> مؤهل للمراسلة
+        </span>
+      </div>
+    </div>
+  `).join("");
+
+  if (window.lucide) window.lucide.createIcons();
+}
+
+function triggerWaslSimulate() {
+  runWaslSimulation();
+  showToast("تم تحديث مطابقة المستثمرين بنجاح!", "refresh-cw");
+}
+
+// 2. SMH Engineering & Vilorax Medical ROI Calculator
+let currentSmhDevice = "ultrasound_4d";
+
+function renderSmhRoiCalculator() {
+  const container = document.getElementById("smh-roi-container");
+  if (!container || !window.SMH_MEDICAL_EQUIPMENT_DATA) return;
+
+  const { devices } = window.SMH_MEDICAL_EQUIPMENT_DATA;
+  const current = devices.find(d => d.id === currentSmhDevice) || devices[0];
+
+  container.innerHTML = `
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <!-- Controls Column -->
+      <div class="lg:col-span-6 space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-slate-300 font-heading mb-2">اختر الجهاز الطبي المراد تقييمه:</label>
+          <div class="grid grid-cols-2 gap-2">
+            ${devices.map(d => `
+              <button type="button" onclick="selectSmhDevice('${d.id}')" class="p-2.5 rounded-xl text-right text-xs font-heading border transition-all ${d.id === currentSmhDevice ? 'bg-emerald-950/60 border-emerald-500 text-white font-bold shadow-md shadow-emerald-500/20' : 'bg-slate-900/60 border-slate-800 text-slate-300 hover:border-slate-700'}">
+                <span class="block truncate">${d.nameAr}</span>
+                <span class="text-[10px] text-emerald-400 font-mono-num">${(d.defaultPrice).toLocaleString()} EGP</span>
+              </button>
+            `).join("")}
+          </div>
+        </div>
+
+        <div>
+          <div class="flex justify-between items-center text-xs font-heading mb-1">
+            <span class="text-slate-300">متوسط عدد الفحوصات / العمليات اليومية:</span>
+            <span class="text-emerald-400 font-mono-num font-bold text-sm" id="smh-daily-scans-val">${current.defaultDailyScans} فحص/يوم</span>
+          </div>
+          <input type="range" id="smh-daily-scans" min="4" max="60" value="${current.defaultDailyScans}" class="custom-range" oninput="updateSmhCalculations()">
+          <div class="flex justify-between text-[10px] text-slate-500 font-mono mt-1">
+            <span>4 فحوصات</span>
+            <span>30 فحص</span>
+            <span>60 فحص</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex justify-between items-center text-xs font-heading mb-1">
+            <span class="text-slate-300">سعر الفحص التشخيصي للمريض (EGP):</span>
+            <span class="text-emerald-400 font-mono-num font-bold text-sm" id="smh-scan-fee-val">${current.scanPrice} EGP</span>
+          </div>
+          <input type="range" id="smh-scan-fee" min="100" max="3000" step="50" value="${current.scanPrice}" class="custom-range" oninput="updateSmhCalculations()">
+          <div class="flex justify-between text-[10px] text-slate-500 font-mono mt-1">
+            <span>100 ج.م</span>
+            <span>1,500 ج.م</span>
+            <span>3,000 ج.م</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Financial Metrics Summary Column -->
+      <div class="lg:col-span-6 flex flex-col justify-between bg-slate-900/90 border border-emerald-800/40 p-5 rounded-2xl">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs text-slate-400 font-heading">التحليل المالي الشهري والسنوي التقديري</span>
+            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono-num font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30" id="smh-roi-badge">
+              فترة الاسترداد: 6.2 شهر
+            </span>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 mb-4">
+            <div class="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800">
+              <span class="text-[11px] text-slate-400 font-heading block mb-1">الإيراد الشهري الصافي:</span>
+              <div class="text-lg md:text-xl font-bold text-white font-mono-num" id="smh-monthly-net">-- EGP</div>
+              <span class="text-[10px] text-slate-500">26 يوم عمل شهرياً</span>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800">
+              <span class="text-[11px] text-slate-400 font-heading block mb-1">التدفق النقدي السنوي الصافي:</span>
+              <div class="text-lg md:text-xl font-bold text-emerald-400 font-mono-num" id="smh-annual-net">-- EGP</div>
+              <span class="text-[10px] text-slate-500">بعد خصم الصيانة والمستهلكات</span>
+            </div>
+          </div>
+
+          <div class="p-3 rounded-xl bg-emerald-950/30 border border-emerald-800/30 text-xs text-slate-300 leading-relaxed font-readex">
+            <span class="text-emerald-400 font-bold font-heading block mb-1">مؤشر جدوى الاستثمار:</span>
+            <p id="smh-insight-text">يعتبر هذا الجهاز من أعلى الأصول الطبية كفاءة تشغيلية وسرعة في استرداد رأس المال وفق معايير المستشفيات الخاصة بالدلتا والقاهرة.</p>
+          </div>
+        </div>
+
+        <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-xs">
+          <span class="text-slate-400 font-heading">توريد وتشغيل وضمان SMH Engineering</span>
+          <button onclick="openPartnershipModal('SMH Medical Equipment')" class="text-emerald-400 hover:text-emerald-300 font-bold font-heading flex items-center gap-1">
+            طلب مقايسة طبية رسمية <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
+
+  updateSmhCalculations();
+}
+
+function selectSmhDevice(deviceId) {
+  currentSmhDevice = deviceId;
+  const { devices } = window.SMH_MEDICAL_EQUIPMENT_DATA;
+  const current = devices.find(d => d.id === deviceId);
+  if (!current) return;
+
+  const scansInput = document.getElementById("smh-daily-scans");
+  const feeInput = document.getElementById("smh-scan-fee");
+  if (scansInput) scansInput.value = current.defaultDailyScans;
+  if (feeInput) feeInput.value = current.scanPrice;
+
+  renderSmhRoiCalculator();
+  if (window.soundFX) window.soundFX.click();
+}
+
+function updateSmhCalculations() {
+  const { devices } = window.SMH_MEDICAL_EQUIPMENT_DATA;
+  const current = devices.find(d => d.id === currentSmhDevice) || devices[0];
+
+  const scansInput = document.getElementById("smh-daily-scans");
+  const feeInput = document.getElementById("smh-scan-fee");
+
+  const dailyScans = parseInt(scansInput?.value || current.defaultDailyScans, 10);
+  const feePerScan = parseInt(feeInput?.value || current.scanPrice, 10);
+
+  const dailyScansVal = document.getElementById("smh-daily-scans-val");
+  const feeVal = document.getElementById("smh-scan-fee-val");
+  if (dailyScansVal) dailyScansVal.textContent = `${dailyScans} فحص/يوم`;
+  if (feeVal) feeVal.textContent = `${feePerScan.toLocaleString()} EGP`;
+
+  const monthlyDays = 26;
+  const monthlyGross = dailyScans * feePerScan * monthlyDays;
+  const monthlyOpCost = (monthlyGross * 0.12) + ((current.defaultPrice * current.maintenanceRatio) / 12);
+  const monthlyNet = Math.max(0, monthlyGross - monthlyOpCost);
+  const annualNet = monthlyNet * 12;
+
+  const paybackMonths = monthlyNet > 0 ? (current.defaultPrice / monthlyNet).toFixed(1) : "N/A";
+
+  const monthlyNetEl = document.getElementById("smh-monthly-net");
+  const annualNetEl = document.getElementById("smh-annual-net");
+  const roiBadgeEl = document.getElementById("smh-roi-badge");
+  const insightEl = document.getElementById("smh-insight-text");
+
+  if (monthlyNetEl) monthlyNetEl.textContent = `${Math.round(monthlyNet).toLocaleString()} EGP`;
+  if (annualNetEl) annualNetEl.textContent = `${Math.round(annualNet).toLocaleString()} EGP`;
+
+  if (roiBadgeEl) {
+    roiBadgeEl.textContent = `فترة الاسترداد: ${paybackMonths} شهر`;
+    if (parseFloat(paybackMonths) <= 12) {
+      roiBadgeEl.className = "px-2.5 py-0.5 rounded-full text-[11px] font-mono-num font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30";
+    } else {
+      roiBadgeEl.className = "px-2.5 py-0.5 rounded-full text-[11px] font-mono-num font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30";
+    }
+  }
+
+  if (insightEl) {
+    if (parseFloat(paybackMonths) < 8) {
+      insightEl.textContent = `عائد استثنائي فائق: يسترد الجهاز كامل قيمته الرأسمالية في غضون ${paybackMonths} أشهر، محققاً صافي ربح سنوي يتجاوز ${Math.round(annualNet).toLocaleString()} جنيه مصري.`;
+    } else {
+      insightEl.textContent = `عائد استثماري آمن: تدفق نقدي دوري مستقر ومستدام مع تغطية كامل مصاريف الصيانة والاستهلاك الدوري.`;
+    }
+  }
+}
+
+// 3. Live Animated Packet Stream Canvas
+function initTopologyPacketFlow() {
+  const canvas = document.getElementById("topology-packet-canvas");
+  if (!canvas) return;
+
+  const ctx = canvas.getContext("2d");
+  let width, height;
+
+  const resize = () => {
+    width = canvas.parentElement.clientWidth;
+    height = canvas.parentElement.clientHeight || 176;
+    canvas.width = width * (window.devicePixelRatio || 1);
+    canvas.height = height * (window.devicePixelRatio || 1);
+    ctx.scale(window.devicePixelRatio || 1, window.devicePixelRatio || 1);
+  };
+
+  resize();
+  window.addEventListener("resize", resize);
+
+  // Logical network node positions
+  const nodes = [
+    { x: 0.15, y: 0.5, label: "AIR Core" },
+    { x: 0.35, y: 0.25, label: "AGY (Next.js)" },
+    { x: 0.35, y: 0.75, label: "Dia Intelligence" },
+    { x: 0.65, y: 0.5, label: "Unified Memory" },
+    { x: 0.85, y: 0.25, label: "Supabase Cloud" },
+    { x: 0.85, y: 0.75, label: "ClickUp OS" }
+  ];
+
+  const connections = [
+    { from: 0, to: 1, color: "#38bdf8" },
+    { from: 0, to: 2, color: "#818cf8" },
+    { from: 1, to: 3, color: "#38bdf8" },
+    { from: 2, to: 3, color: "#a855f7" },
+    { from: 3, to: 4, color: "#34d399" },
+    { from: 3, to: 5, color: "#f59e0b" }
+  ];
+
+  // Packets
+  const packets = [];
+  for (let i = 0; i < 20; i++) {
+    packets.push({
+      connIdx: Math.floor(Math.random() * connections.length),
+      progress: Math.random(),
+      speed: 0.003 + Math.random() * 0.005,
+      size: 2.5 + Math.random() * 1.5
+    });
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+
+    // Draw connection lines
+    connections.forEach(conn => {
+      const n1 = nodes[conn.from];
+      const n2 = nodes[conn.to];
+      ctx.beginPath();
+      ctx.moveTo(n1.x * width, n1.y * height);
+      ctx.lineTo(n2.x * width, n2.y * height);
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.08)";
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+    });
+
+    // Draw nodes
+    nodes.forEach(node => {
+      const nx = node.x * width;
+      const ny = node.y * height;
+
+      ctx.beginPath();
+      ctx.arc(nx, ny, 6, 0, Math.PI * 2);
+      ctx.fillStyle = "#0f172a";
+      ctx.fill();
+      ctx.strokeStyle = "rgba(56, 189, 248, 0.6)";
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      ctx.font = "10px JetBrains Mono, monospace";
+      ctx.fillStyle = "#94a3b8";
+      ctx.textAlign = "center";
+      ctx.fillText(node.label, nx, ny - 10);
+    });
+
+    // Draw and update moving packets
+    packets.forEach(p => {
+      p.progress += p.speed;
+      if (p.progress > 1) {
+        p.progress = 0;
+        p.connIdx = Math.floor(Math.random() * connections.length);
+      }
+
+      const conn = connections[p.connIdx];
+      const n1 = nodes[conn.from];
+      const n2 = nodes[conn.to];
+
+      const px = n1.x * width + (n2.x * width - n1.x * width) * p.progress;
+      const py = n1.y * height + (n2.y * height - n1.y * height) * p.progress;
+
+      ctx.beginPath();
+      ctx.arc(px, py, p.size, 0, Math.PI * 2);
+      ctx.fillStyle = conn.color;
+      ctx.shadowColor = conn.color;
+      ctx.shadowBlur = 8;
+      ctx.fill();
+      ctx.shadowBlur = 0;
+    });
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+}
+
+// 4. AIR-CLI Interactive Terminal HUD
+function openTerminalModal() {
+  const modal = document.getElementById("terminal-modal");
+  if (modal) {
+    modal.classList.add("active", "modal-open", "terminal-open");
+    const input = document.getElementById("terminal-input");
+    if (input) {
+      setTimeout(() => input.focus(), 100);
+    }
+  }
+  if (window.soundFX && window.soundFX.openModal) window.soundFX.openModal();
+}
+
+function closeTerminalModal() {
+  const modal = document.getElementById("terminal-modal");
+  if (modal) {
+    modal.classList.remove("active", "modal-open", "terminal-open");
+  }
+  if (window.soundFX && window.soundFX.closeModal) window.soundFX.closeModal();
+}
+
+function runCliQuick(cmd) {
+  const input = document.getElementById("terminal-input");
+  if (input) {
+    input.value = cmd;
+    executeCliCommand(cmd);
+    input.value = "";
+    input.focus();
+  }
+}
+
+function executeCliCommand(rawCmd) {
+  const cmd = (rawCmd || "").trim().toLowerCase();
+  const output = document.getElementById("terminal-output");
+  const body = document.getElementById("terminal-body");
+  if (!output) return;
+
+  if (window.soundFX && window.soundFX.mechanicalClick) {
+    window.soundFX.mechanicalClick();
+  } else if (window.soundFX) {
+    window.soundFX.click();
+  }
+
+  // Echo command
+  const cmdLine = document.createElement("div");
+  cmdLine.className = "terminal-line flex items-center gap-2";
+  cmdLine.innerHTML = `<span class="terminal-prompt-prefix">air@2026:~$</span> <span class="text-white font-bold">${rawCmd}</span>`;
+  output.appendChild(cmdLine);
+
+  if (cmd === "clear") {
+    output.innerHTML = "";
+    return;
+  }
+
+  const resLine = document.createElement("div");
+  resLine.className = "terminal-line text-slate-300 pb-2 border-b border-slate-900";
+
+  if (cmd === "help") {
+    resLine.innerHTML = `<span class="text-amber-400 font-bold">${CLI_COMMANDS_DATA.help}</span>`;
+  } else if (CLI_COMMANDS_DATA[cmd]) {
+    resLine.innerHTML = `<pre class="text-xs text-slate-300 font-mono whitespace-pre-wrap leading-relaxed">${CLI_COMMANDS_DATA[cmd]}</pre>`;
+  } else if (cmd === "metrics") {
+    const metricsStr = CHRONICLE_DATA.globalMetrics.map(m => `• ${m.label}: ${m.value} (${m.change})`).join("\n");
+    resLine.innerHTML = `<pre class="text-xs text-emerald-400 font-mono whitespace-pre-wrap leading-relaxed">[SYSTEM TELEMETRY 2026]\n${metricsStr}</pre>`;
+  } else if (cmd === "contact") {
+    openPartnershipModal();
+    resLine.innerHTML = `<span class="text-indigo-400">Opening B2B Executive Contact Drawer...</span>`;
+  } else if (cmd === "lang") {
+    toggleLanguage();
+    resLine.innerHTML = `<span class="text-cyan-400">Language switched to: ${currentLanguage.toUpperCase()}</span>`;
+  } else if (cmd === "") {
+    return;
+  } else {
+    resLine.innerHTML = `<span class="text-rose-400">Command not found: '${rawCmd}'. Type <strong class="text-white">'help'</strong> for available system commands.</span>`;
+  }
+
+  output.appendChild(resLine);
+  if (body) {
+    body.scrollTop = body.scrollHeight;
+  }
+}
+
+function setupTerminal() {
+  const input = document.getElementById("terminal-input");
+  if (input) {
+    input.addEventListener("keydown", e => {
+      if (e.key === "Enter") {
+        executeCliCommand(input.value);
+        input.value = "";
+      }
+    });
+  }
+
+  // Global Cmd+K / Ctrl+K shortcut
+  window.addEventListener("keydown", e => {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+      e.preventDefault();
+      const modal = document.getElementById("terminal-modal");
+      if (modal && modal.classList.contains("modal-open")) {
+        closeTerminalModal();
+      } else {
+        openTerminalModal();
+      }
+    }
+  });
+}
+
+// 5. Bilingual Engine (Arabic RTL ⟷ English LTR)
+let currentLanguage = "ar";
+
+function setLanguage(lang) {
+  if (!window.BILINGUAL_TRANSLATIONS || !window.BILINGUAL_TRANSLATIONS[lang]) return;
+  currentLanguage = lang;
+  const t = window.BILINGUAL_TRANSLATIONS[lang];
+
+  document.documentElement.lang = lang === "ar" ? "ar-EG" : "en-US";
+  document.body.dir = lang === "ar" ? "rtl" : "ltr";
+
+  // Update label on navbar and dock
+  const langLabel = document.getElementById("lang-label");
+  if (langLabel) langLabel.textContent = lang === "ar" ? "EN" : "عربي";
+
+  const dockTooltip = document.getElementById("dock-lang-tooltip");
+  if (dockTooltip) dockTooltip.textContent = lang === "ar" ? "English (LTR)" : "العربية (RTL)";
+
+  // Update elements with data-i18n
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    if (t[key]) el.textContent = t[key];
+  });
+
+  // Update placeholders
+  const searchInput = document.getElementById("search-input");
+  if (searchInput && t.searchPlaceholder) {
+    searchInput.placeholder = t.searchPlaceholder;
+  }
+
+  showToast(lang === "ar" ? "تم تحويل الواجهة إلى العربية (RTL)" : "Interface switched to English (LTR)", "globe");
+  if (window.soundFX) window.soundFX.click();
+}
+
+function toggleLanguage() {
+  setLanguage(currentLanguage === "ar" ? "en" : "ar");
 }
 
 // Global functions for inline HTML calls
@@ -806,3 +1359,12 @@ window.sendViaEmail = sendViaEmail;
 window.copyExecutiveEmail = copyExecutiveEmail;
 window.toggleSoundFromDock = toggleSoundFromDock;
 window.showToast = showToast;
+window.openTerminalModal = openTerminalModal;
+window.closeTerminalModal = closeTerminalModal;
+window.runCliQuick = runCliQuick;
+window.executeCliCommand = executeCliCommand;
+window.triggerWaslSimulate = triggerWaslSimulate;
+window.selectSmhDevice = selectSmhDevice;
+window.updateSmhCalculations = updateSmhCalculations;
+window.setLanguage = setLanguage;
+window.toggleLanguage = toggleLanguage;

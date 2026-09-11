@@ -631,3 +631,188 @@ const CHRONICLE_DATA = {
 if (typeof window !== "undefined") {
   window.CHRONICLE_DATA = CHRONICLE_DATA;
 }
+// ==========================================================================
+// V3.0 HYPER-EDITION ENRICHMENTS (SIMULATOR, MEDICAL ROI, CLI & BILINGUAL)
+// ==========================================================================
+
+const BILINGUAL_TRANSLATIONS = {
+  ar: {
+    brandSubtitle: "المنظومة البيئية الموحدة",
+    navIdentity: "الهوية والبيانات",
+    navTimeline: "السجل الزمني",
+    navProjects: "عالم المشاريع",
+    navSimulator: "محاكي WASL",
+    navROI: "حاسبة SMH الطبية",
+    navTopology: "خريطة الوكلاء",
+    navVault: "الشهادات والاعتمادات",
+    navServices: "الخدمات والاستشارات",
+    navFAQ: "الأسئلة الشائعة",
+    navContact: "بوابة التعاقد",
+    btnExplore: "استكشاف الجرد",
+    btnTerminal: "سطر الأوامر AIR-CLI ⚡",
+    metricsTitle: "لوحة المؤشرات والقياسات السنوية المعتمدة (2026 Key Metrics)",
+    metricsSubtitle: "قياسات حية وموثقة",
+    timelineSubtitle: "الرحلة السنوية خطوة بخطوة",
+    timelineTitle: "السجل الزمني الفصلي لعام 2026",
+    timelineBadge: "3 فصول • محطات حاسمة",
+    domainsSubtitle: "المستودع الرقمي الموسوعي",
+    domainsTitle: "جرد المشاريع والأنظمة والأصول",
+    searchPlaceholder: "ابحث في الكود، المشاريع، أو الشهادات...",
+    btnTerminalHelp: "اضغط Cmd+K لفتح سطر الأوامر",
+    funnelTitle: "جاهز لنقل أعمالك إلى عصر النظم المؤتمتة والذكاء الاصطناعي؟",
+    funnelSubtitle: "نحن لا نبيع حلولاً مؤقتة أو نصائح نظرية. نقوم بهندسة وبناء نظم تشغيلية مؤتمتة، واجهات SaaS سحابية، ومحركات استقطاب عملاء B2B تعمل على مدار الساعة.",
+    track1Title: "الاستشارات والتوجيه المعماري",
+    track2Title: "هندسة النظم وتطوير الويب و AI",
+    track3Title: "أتمتة العمليات والوكلاء المؤسسية",
+    ctaConsult: "حجز جلسة استشارية معمارية ⚡",
+    ctaProposal: "طلب عرض شراكة B2B / حلول مخصصة 📄",
+    ctaEmail: "مراسلة عبر البريد التنفيذي ✉️",
+    ctaCopyEmail: "نسخ البريد الرسمي",
+    copiedToast: "تم نسخ البريد بنجاح!",
+    dockTelegram: "تيليجرام مباشر",
+    dockCopyEmail: "نسخ البريد",
+    dockProjects: "عالم المشاريع",
+    dockAudio: "التحكم بالصوت",
+    dockConsult: "حجز استشارة ⚡",
+    waslSimTitle: "محاكي التوفيق الاستثماري لشبكة وصل (WASL Matchmaking Simulator)",
+    waslSimDesc: "جرب بنفسك خوارزمية الربط الذكي بين الشركات الناشئة ودليل الـ 141 مستثمراً وصناديق الـ VC الإقليمية وفق القطاع ومرحلة التمويل والبلد:",
+    smhRoiTitle: "حاسبة عائد الاستثمار وتجهيز المراكز الطبية (SMH & Vilorax Medical ROI)",
+    smhRoiDesc: "أداة تفاعلية موجهة لمديري المستشفيات الخاصة ومراكز الأشعة بالدلتا والقاهرة لحساب أرباح الأجهزة وفترة الاسترداد:"
+  },
+  en: {
+    brandSubtitle: "Unified Ecosystem OS",
+    navIdentity: "Identity & Profile",
+    navTimeline: "Quarterly Timeline",
+    navProjects: "Projects Catalog",
+    navSimulator: "WASL Simulator",
+    navROI: "SMH Medical ROI",
+    navTopology: "Agent Topology",
+    navVault: "Certifications Vault",
+    navServices: "Advisory Services",
+    navFAQ: "Knowledge FAQ",
+    navContact: "Executive Contact",
+    btnExplore: "Explore Inventory",
+    btnTerminal: "AIR-CLI Terminal ⚡",
+    metricsTitle: "Annual Audited Telemetry & Key Metrics (2026)",
+    metricsSubtitle: "Direct System Telemetry",
+    timelineSubtitle: "Step-by-step Annual Progression",
+    timelineTitle: "The 2026 Quarterly Chronicle",
+    timelineBadge: "3 Quarters • Master Milestones",
+    domainsSubtitle: "Encyclopedic Digital Repository",
+    domainsTitle: "Software, Systems & Digital Assets Audit",
+    searchPlaceholder: "Search code, systems, or verified credentials...",
+    btnTerminalHelp: "Press Cmd+K to toggle terminal",
+    funnelTitle: "Ready to Scale with Autonomous Systems & AI Architecture?",
+    funnelSubtitle: "We do not deliver temporary fixes or theoretical consulting. We architect, build, and deploy automated operating systems, cloud SaaS web apps, and autonomous B2B growth engines operating 24/7.",
+    track1Title: "Consulting & Systems Advisory",
+    track2Title: "AI SaaS & Web Architecture",
+    track3Title: "Enterprise Workflow Automation",
+    ctaConsult: "Book Architectural Advisory ⚡",
+    ctaProposal: "Request Bespoke B2B Proposal 📄",
+    ctaEmail: "Direct Executive Email ✉️",
+    ctaCopyEmail: "Copy Official Email",
+    copiedToast: "Email successfully copied!",
+    dockTelegram: "Direct Telegram",
+    dockCopyEmail: "Copy Email",
+    dockProjects: "Browse Systems",
+    dockAudio: "Sound Control",
+    dockConsult: "Book Session ⚡",
+    waslSimTitle: "WASL Network Investor Matchmaking Simulator",
+    waslSimDesc: "Experience the proprietary matchmaking logic connecting regional startups with our curated 141 investor directory across MENA:",
+    smhRoiTitle: "SMH Engineering & Vilorax Medical Equipment ROI Calculator",
+    smhRoiDesc: "Interactive diagnostic tool for private hospital directors & diagnostic radiology centers across the Delta & Cairo to project cashflow & payback:"
+  }
+};
+
+const WASL_SIMULATOR_DATA = {
+  sectors: [
+    { id: "fintech", labelAr: "التكنولوجيا المالية (FinTech)", labelEn: "FinTech" },
+    { id: "healthtech", labelAr: "التكنولوجيا الطبية (HealthTech)", labelEn: "HealthTech" },
+    { id: "b2b_ai", labelAr: "الذكاء الاصطناعي و SaaS للشركات", labelEn: "B2B AI & Enterprise SaaS" },
+    { id: "logistics", labelAr: "اللوجستيات وسلاسل الإمداد", labelEn: "Logistics & Supply Chain" },
+    { id: "ecommerce", labelAr: "التجارة الإلكترونية والمنصات", labelEn: "E-Commerce & Marketplaces" }
+  ],
+  stages: [
+    { id: "pre_seed", labelAr: "ما قبل التأسيس (Pre-Seed: $50k - $250k)", labelEn: "Pre-Seed ($50k - $250k)" },
+    { id: "seed", labelAr: "مرحلة التأسيس (Seed: $250k - $1.5M)", labelEn: "Seed ($250k - $1.5M)" },
+    { id: "series_a", labelAr: "الجولة الأولى (Series A: $1.5M - $5M)", labelEn: "Series A ($1.5M - $5M)" }
+  ],
+  countries: [
+    { id: "sa", labelAr: "المملكة العربية السعودية 🇸🇦", labelEn: "Saudi Arabia 🇸🇦" },
+    { id: "ae", labelAr: "الإمارات العربية المتحدة 🇦🇪", labelEn: "United Arab Emirates 🇦🇪" },
+    { id: "eg", labelAr: "جمهورية مصر العربية 🇪🇬", labelEn: "Egypt 🇪🇬" },
+    { id: "mena", labelAr: "شمال أفريقيا والخليج (Regional MENA) 🌐", labelEn: "Regional MENA 🌐" }
+  ],
+  investors: [
+    { name: "500 Global MENA", sectors: ["fintech", "b2b_ai", "logistics"], stages: ["pre_seed", "seed"], countries: ["sa", "ae", "eg", "mena"], ticket: "$100K - $500K", thesis: "High-growth software & AI models across MENA", matchRate: 98 },
+    { name: "Shorooq Partners", sectors: ["fintech", "b2b_ai", "logistics"], stages: ["seed", "series_a"], countries: ["sa", "ae", "eg", "mena"], ticket: "$500K - $3M", thesis: "Foundational technologies and B2B infrastructure", matchRate: 95 },
+    { name: "Flat6Labs Seed Fund", sectors: ["fintech", "healthtech", "ecommerce", "b2b_ai"], stages: ["pre_seed", "seed"], countries: ["eg", "sa", "mena"], ticket: "$50K - $150K", thesis: "Early-stage acceleration and institutional governance", matchRate: 94 },
+    { name: "Sanabil 500 MENA", sectors: ["b2b_ai", "logistics", "fintech"], stages: ["seed", "series_a"], countries: ["sa", "mena"], ticket: "$250K - $1.5M", thesis: "Saudi Vision 2030 tech expansion & digital leadership", matchRate: 93 },
+    { name: "Nuwa Capital", sectors: ["ecommerce", "b2b_ai", "fintech"], stages: ["seed", "series_a"], countries: ["ae", "sa", "eg"], ticket: "$500K - $2M", thesis: "Digital transformation and platform economics", matchRate: 91 },
+    { name: "Disruptech Ventures", sectors: ["fintech", "b2b_ai"], stages: ["pre_seed", "seed"], countries: ["eg", "mena"], ticket: "$200K - $1M", thesis: "Fintech enablement and financial inclusion infrastructure", matchRate: 92 },
+    { name: "Global Ventures", sectors: ["healthtech", "b2b_ai", "fintech"], stages: ["seed", "series_a"], countries: ["ae", "sa", "eg"], ticket: "$1M - $4M", thesis: "Enterprise software, healthcare and emerging markets", matchRate: 96 }
+  ]
+};
+
+const SMH_MEDICAL_EQUIPMENT_DATA = {
+  devices: [
+    { id: "ultrasound_4d", nameAr: "جهاز سونار تشخيصي رباعي الأبعاد (4D Ultrasound)", nameEn: "4D Diagnostic Ultrasound System", defaultPrice: 650000, scanPrice: 400, defaultDailyScans: 16, maintenanceRatio: 0.05 },
+    { id: "digital_xray", nameAr: "نظام أشعة رقمي متكامل (Digital Radiology / X-Ray)", nameEn: "Digital Radiography (DR) System", defaultPrice: 1200000, scanPrice: 300, defaultDailyScans: 25, maintenanceRatio: 0.06 },
+    { id: "c_arm", nameAr: "جهاز أشعة وتصوير جراحي (C-Arm Surgical Fluoroscopy)", nameEn: "C-Arm Surgical Imaging System", defaultPrice: 1600000, scanPrice: 1200, defaultDailyScans: 8, maintenanceRatio: 0.07 },
+    { id: "portable_echo", nameAr: "جهاز إيكو وسونار محمول للرعاية المركزة", nameEn: "Portable Echocardiography & ICU Ultrasound", defaultPrice: 420000, scanPrice: 500, defaultDailyScans: 10, maintenanceRatio: 0.04 }
+  ]
+};
+
+const CLI_COMMANDS_DATA = {
+  help: "الأوامر المتاحة: profile, wasl, corelink, tohamy, smh, skills, metrics, certs, contact, lang, clear",
+  profile: `[VERIFIED PROFILE — AHMED ISSAM RAMADAN]
+* Name: أحمد عصام رمضان (Ahmed Issam Ramadan)
+* Role: مهندس معماري لنظم الذكاء الاصطناعي ورائد أعمال تقني
+* Education: ليسانس حقوق جامعة الزقازيق 2022 (لم يعمل بالمحاماة ولا يحمل عضوية النقابة).
+* Credentials: المهارات البرمجية والأتمتة وقواعد البيانات مكتسبة ذاتياً 100% بالممارسة العملية.
+* ALX Certified: AI Career Essentials (AiCE) + Project Management Crash Course.
+* Active Ventures: VentureCycle Studio, WASL Network, OTB Agency, SMH & Vilorax JV.`,
+  wasl: `[WASL NETWORK STATUS]
+* Architecture: Next.js 16 + Supabase + PostgreSQL (RLS Enabled) + Tailwind CSS.
+* Directory: 141 Regional VC Funds & Angel Investors mapped and categorized.
+* Visual Assets: 299 production assets categorized across 8 SOSTAC marketing categories.
+* Staging Domain: wasl-network.com (Ready for launch).`,
+  corelink: `[CORELINK CRM AUDIT LOG]
+* Diagnosis: 78 overdue tasks across 23 projects identified with 35% rework waste.
+* Action Plan: Restructured ClickUp workspace into 4 dedicated operational spaces for 12 clients.
+* Target: Transitioned from passive logger into active event-driven workflow engine.`,
+  tohamy: `[TOHAMY HOUSE FIELD OPERATIONS]
+* Pizza Party (Nasr City): Official BOQ priced and approved under Tohamy House branding.
+* Villa Dr. Khaled: 9 Doors schedules certified with 30cm master frame adjustments.
+* Sites: Site 107, New Administrative Capital (As-Built), Madinaty 55/20, Al-Wesal.
+* Media Engine: 100% field video normalization & Whisper audio transcription pipeline.`,
+  smh: `[SMH ENGINEERING & VILORAX JV]
+* Partner: Eng. Hesham El-Qenawy (Ex-Unified Procurement Authority, $135M+ procurement lead).
+* Offering: Diagnostic Ultrasound, Digital X-Ray, Hospital Equipping, Automated B2B Outreach.
+* Status: Official Medical BOQ Template & Bulletproof Joint Venture Contract ready to sign.`,
+  skills: `[ANTIGRAVITY CUSTOM SKILLS — 60+ ACTIVE EXTENSIONS]
+1. Executive & Communication: telegram-hub, google-workspace-hub, executive-stakeholder-briefing.
+2. Growth & Distribution: linkedin-hub, meta-hub, tiktok-hub, daily-brand-content-engine.
+3. Operations & Finance: paypal-business-manager, high-stakes-pitch-engine, master-project-engine.
+4. System Integrity: antigravity-cleanup-and-reporting, unified-productivity-tracker.`,
+  certs: `[VERIFIED 2026 CREDENTIALS — 11+ CERTIFICATES]
+1. Anthropic Claude 101 (Mar 5, 2026)
+2. HubSpot Social Media Marketing II (Feb 27, 2026)
+3. HubSpot Digital Advertising (Mar 5, 2026)
+4. HubSpot Email Marketing (Apr 3, 2026)
+5. IBM SkillsBuild Chatbot (Apr 9, 2026)
+6. ITIDA Gigs Freelance Training (Jan 31, 2026)
+7. Digitera Tech for Non-Techies (Jan 5, 2026)
+8. MaharaTech Freelancing 4-Course Series (Mar 5, 2026)
+9. Coursera & Illinois Digital Marketing (Mar 16, 2026)
+10. Google Digital Marketing Fundamentals (Mar 16, 2026)
+11. NTI AI Ambassadors Program (Jun 29, 2026)`
+};
+
+// Expose on window
+if (typeof window !== "undefined") {
+  window.BILINGUAL_TRANSLATIONS = BILINGUAL_TRANSLATIONS;
+  window.WASL_SIMULATOR_DATA = WASL_SIMULATOR_DATA;
+  window.SMH_MEDICAL_EQUIPMENT_DATA = SMH_MEDICAL_EQUIPMENT_DATA;
+  window.CLI_COMMANDS_DATA = CLI_COMMANDS_DATA;
+}

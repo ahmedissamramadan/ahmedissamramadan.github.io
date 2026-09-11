@@ -760,32 +760,48 @@
           </div>
           <div>
             <span class="text-sm font-bold text-white font-heading tracking-wide">The 2026 Grand Chronicle</span>
-            <span class="hidden sm:inline-block text-[11px] text-slate-400 mr-2 border-r border-slate-700 pr-2 font-en-badge">Unified Ecosystem OS</span>
+            <span class="hidden sm:inline-block text-[11px] text-slate-400 mr-2 border-r border-slate-700 pr-2 font-en-badge" data-i18n="brandSubtitle">Unified Ecosystem OS</span>
           </div>
         </div>
 
         <!-- Navigation Jump Links -->
-        <nav class="hidden lg:flex items-center gap-5 text-xs text-slate-300 font-heading">
-          <a href="#hero-profile-content" class="hover:text-indigo-400 transition-colors">الهوية والبيانات</a>
-          <a href="#timeline-section" class="hover:text-indigo-400 transition-colors">السجل الزمني</a>
-          <a href="#domains-section" class="hover:text-indigo-400 transition-colors">عالم المشاريع</a>
-          <a href="#topology-section" class="hover:text-indigo-400 transition-colors">خريطة الوكلاء</a>
-          <a href="#vault-section" class="hover:text-indigo-400 transition-colors">الشهادات والاعتمادات</a>
+        <nav class="hidden lg:flex items-center gap-4 text-xs text-slate-300 font-heading">
+          <a href="#hero-profile-content" class="hover:text-indigo-400 transition-colors" data-i18n="navIdentity">الهوية والبيانات</a>
+          <a href="#timeline-section" class="hover:text-indigo-400 transition-colors" data-i18n="navTimeline">السجل الزمني</a>
+          <a href="#domains-section" class="hover:text-indigo-400 transition-colors" data-i18n="navProjects">عالم المشاريع</a>
+          <a href="#wasl-simulator-anchor" class="hover:text-purple-400 transition-colors" data-i18n="navSimulator">محاكي WASL</a>
+          <a href="#smh-roi-anchor" class="hover:text-emerald-400 transition-colors" data-i18n="navROI">حاسبة SMH</a>
+          <a href="#topology-section" class="hover:text-indigo-400 transition-colors" data-i18n="navTopology">خريطة الوكلاء</a>
+          <a href="#vault-section" class="hover:text-indigo-400 transition-colors" data-i18n="navVault">الشهادات</a>
           <a href="#consultation-section" class="text-indigo-400 hover:text-indigo-300 font-bold transition-colors flex items-center gap-1">
-            <span>الاستشارات والتعاقد</span>
+            <span data-i18n="navContact">الاستشارات والتعاقد</span>
             <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
           </a>
         </nav>
 
-        <!-- Live Clock & Status Badge -->
-        <div class="flex items-center gap-2.5">
-          <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 text-[11px] text-slate-300">
+        <!-- Live Clock, CLI HUD, Language & Action Buttons -->
+        <div class="flex items-center gap-2">
+          <!-- Terminal HUD Trigger -->
+          <button onclick="openTerminalModal()" class="px-2.5 py-1.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-cyan-500/30 text-cyan-400 text-xs font-mono flex items-center gap-1.5 transition-all shadow-sm shadow-cyan-500/20" title="AIR-CLI Terminal (Cmd+K)">
+            <i data-lucide="terminal" class="w-3.5 h-3.5"></i>
+            <span class="hidden md:inline">CLI</span>
+            <kbd class="hidden sm:inline-block px-1 py-0.2 rounded bg-slate-950 text-[10px] text-slate-400 border border-slate-700">⌘K</kbd>
+          </button>
+
+          <!-- Language Switcher -->
+          <button id="lang-toggle-btn" onclick="toggleLanguage()" class="px-2.5 py-1.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-slate-700 text-slate-300 text-xs font-heading font-medium flex items-center gap-1 transition-all" title="Toggle Arabic / English">
+            <i data-lucide="globe" class="w-3.5 h-3.5 text-indigo-400"></i>
+            <span id="lang-label">EN</span>
+          </button>
+
+          <div class="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 text-[11px] text-slate-300">
             <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
             <span id="live-clock" class="font-mono-num font-medium">القاهرة • 2026</span>
           </div>
+
           <a href="#consultation-section" class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs font-heading font-medium transition-all shadow-md shadow-indigo-600/25 btn-press flex items-center gap-1.5">
             <i data-lucide="zap" class="w-3.5 h-3.5"></i>
-            <span>حجز استشارة</span>
+            <span data-i18n="dockConsult">حجز استشارة</span>
           </a>
         </div>
       </div>
@@ -876,6 +892,21 @@
             نظام متكامل ومطابق بنسبة 100% لفحوصات التجزئة الرقمية، مهيكل بدقة متناهية ليخدم خطة التسويق والاستقطاب الاستثماري، مع 13 ورقة عمل استراتيجية إكسل وملفي موشن جرافيك احترافيين.
           </p>
           <div id="wasl-assets-summary" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3"></div>
+
+          <!-- Interactive Module 1.5: WASL Investor Matchmaking Simulator -->
+          <div id="wasl-simulator-anchor" class="mt-8 pt-8 border-t border-purple-900/50 scroll-mt-24">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+              <div>
+                <span class="text-xs font-bold text-purple-400 uppercase tracking-wider font-heading block mb-1">خوارزمية الربط الذكي المباشرة • Live Match Engine</span>
+                <h4 class="text-lg md:text-xl font-bold text-white font-heading" data-i18n="waslSimTitle">محاكي التوفيق الاستثماري لشبكة وصل (WASL Matchmaking Simulator)</h4>
+              </div>
+              <span class="text-xs px-3 py-1 rounded-full badge-purple font-mono-num">141 Investors Curated</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed mb-5 font-readex" data-i18n="waslSimDesc">
+              جرب بنفسك خوارزمية الربط الذكي بين الشركات الناشئة ودليل الـ 141 مستثمراً وصناديق الـ VC الإقليمية وفق القطاع ومرحلة التمويل والبلد:
+            </p>
+            <div id="wasl-simulator-container" class="bg-slate-950/70 p-5 rounded-2xl border border-purple-800/40"></div>
+          </div>
         </div>
 
         <!-- Module 2: CoreLink CRM & OTB Agency Diagnostic -->
@@ -899,6 +930,21 @@
             </div>
           </div>
           <div id="engineering-hub-content"></div>
+
+          <!-- Interactive Module 3.5: SMH Medical Equipment ROI Calculator -->
+          <div id="smh-roi-anchor" class="mt-8 pt-8 border-t border-emerald-900/50 scroll-mt-24">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+              <div>
+                <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider font-heading block mb-1">أداة المحاكاة المالية للمنشآت الصحية • Private Clinic & Hospital ROI</span>
+                <h4 class="text-lg md:text-xl font-bold text-white font-heading" data-i18n="smhRoiTitle">حاسبة عائد الاستثمار وتجهيز المراكز الطبية (SMH & Vilorax Medical ROI)</h4>
+              </div>
+              <span class="text-xs px-3 py-1 rounded-full badge-emerald font-mono-num">Diagnostic ROI Engine</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed mb-5 font-readex" data-i18n="smhRoiDesc">
+              أداة تفاعلية موجهة لمديري المستشفيات الخاصة ومراكز الأشعة بالدلتا والقاهرة لحساب أرباح الأجهزة وفترة الاسترداد:
+            </p>
+            <div id="smh-roi-container" class="bg-slate-950/70 p-5 rounded-2xl border border-emerald-800/40"></div>
+          </div>
         </div>
 
       </section>
@@ -908,7 +954,7 @@
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-6">
           <div>
             <span class="text-xs font-bold text-cyan-400 uppercase tracking-wider font-heading block mb-1">توزيع الاختصاصات والأدوار</span>
-            <h2 class="text-xl md:text-3xl font-bold text-white font-heading">خريطة وكلاء الذكاء الاصطناعي وتدفق البيانات</h2>
+            <h2 class="text-xl md:text-3xl font-bold text-white font-heading" data-i18n="navTopology">خريطة وكلاء الذكاء الاصطناعي وتدفق البيانات</h2>
           </div>
           <span class="text-xs text-slate-400 font-mono-num font-en-badge">Autonomous Multi-Agent Topology</span>
         </div>
@@ -916,6 +962,16 @@
           <p class="text-xs md:text-sm text-slate-300 leading-relaxed mb-6">
             يعتمد أحمد نظاماً متطوراً لمنع التشتت وتكرار المهام بتخصيص الأدوار بين الوكلاء؛ حيث يقود <strong>Antigravity</strong> هندسة البرمجيات والـ MCP، ويتولى <strong>Dia Browser</strong> الاستخبارات ومتابعة الإنتاجية بسياق 7 أيام، بينما ينفذ <strong>Hermes</strong> أوامر سطر الأوامر ومساحات ClickUp، ويختص <strong>AutoClaw</strong> بالعمليات الميدانية، وتلتقي البيانات كلها في الذاكرة المركزية الموحدة.
           </p>
+
+          <!-- Live Animated Packet Stream Canvas -->
+          <div class="relative w-full h-44 mb-6 rounded-2xl overflow-hidden bg-slate-950/80 border border-slate-800">
+            <canvas id="topology-packet-canvas" class="w-full h-full block"></canvas>
+            <div class="absolute bottom-2.5 left-3 text-[10px] text-cyan-400 font-mono bg-slate-950/90 px-3 py-1 rounded-lg border border-cyan-800/60 flex items-center gap-2 shadow-lg">
+              <span class="h-2 w-2 rounded-full bg-cyan-400 animate-ping"></span>
+              <span>DATA PACKET STREAM: AGENT MESH ⟷ MEMORY ⟷ SUPABASE CLOUD</span>
+            </div>
+          </div>
+
           <div id="topology-nodes-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3"></div>
         </div>
       </section>
@@ -1561,16 +1617,68 @@
       <span class="dock-tooltip" id="dock-sound-tooltip">المؤثرات: معطلة</span>
     </button>
 
+    <!-- AIR-CLI Terminal Trigger -->
+    <button type="button" onclick="openTerminalModal()" class="dock-btn group" title="سطر الأوامر AIR-CLI (Cmd+K)" aria-label="سطر الأوامر">
+      <i data-lucide="terminal" class="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform"></i>
+      <span class="dock-tooltip">AIR-CLI Terminal (⌘K)</span>
+    </button>
+
+    <!-- Language Toggle Dock -->
+    <button type="button" onclick="toggleLanguage()" class="dock-btn group" title="تبديل اللغة (عربي / English)" aria-label="تبديل اللغة">
+      <i data-lucide="globe" class="w-4 h-4 text-indigo-400 group-hover:scale-110 transition-transform"></i>
+      <span class="dock-tooltip" id="dock-lang-tooltip">English (LTR)</span>
+    </button>
+
     <div class="dock-divider"></div>
 
     <!-- Direct Consultation Action -->
     <a href="#consultation-section" class="dock-btn dock-btn-primary flex items-center gap-1.5 font-heading">
       <i data-lucide="zap" class="w-3.5 h-3.5"></i>
-      <span class="hidden sm:inline">حجز استشارة</span>
+      <span class="hidden sm:inline" data-i18n="dockConsult">حجز استشارة</span>
       <span class="sm:hidden">استشارة</span>
       <span>⚡</span>
     </a>
   </aside>
+
+  <!-- AIR-CLI Interactive Terminal Modal Drawer -->
+  <div id="terminal-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div class="terminal-window">
+      <div class="terminal-header">
+        <div class="terminal-dots">
+          <span class="terminal-dot dot-red cursor-pointer" onclick="closeTerminalModal()" title="إغلاق"></span>
+          <span class="terminal-dot dot-yellow"></span>
+          <span class="terminal-dot dot-green"></span>
+        </div>
+        <div class="text-xs text-slate-400 font-mono flex items-center gap-2">
+          <i data-lucide="terminal" class="w-3.5 h-3.5 text-cyan-400"></i>
+          <span>air-cli://unified-ecosystem-2026/terminal</span>
+        </div>
+        <button onclick="closeTerminalModal()" class="text-slate-400 hover:text-white text-xs font-mono px-2 py-0.5 rounded bg-slate-900 border border-slate-800">ESC</button>
+      </div>
+      <div class="terminal-body" id="terminal-body">
+        <div class="terminal-output" id="terminal-output">
+          <div class="terminal-line text-cyan-400 font-bold">AIR-CLI Terminal HUD v3.0 [Unified Ecosystem OS 2026]</div>
+          <div class="terminal-line text-slate-400">Type 'help' to view available system commands. Try: profile, wasl, smh, skills, certs, metrics.</div>
+        </div>
+      </div>
+      <div class="terminal-input-bar">
+        <span class="terminal-prompt-prefix">air@2026:~$</span>
+        <input type="text" id="terminal-input" placeholder="Type command here... (e.g. wasl, profile, smh)" autocomplete="off" spellcheck="false">
+        <span class="terminal-cursor"></span>
+      </div>
+      <div class="px-4 py-2 bg-slate-950/95 border-t border-slate-800/80 flex flex-wrap items-center gap-1.5 text-xs z-10">
+        <span class="text-[10px] text-slate-500 font-mono">Quick Run:</span>
+        <button type="button" class="terminal-chip" onclick="runCliQuick('help')">help</button>
+        <button type="button" class="terminal-chip" onclick="runCliQuick('profile')">profile</button>
+        <button type="button" class="terminal-chip" onclick="runCliQuick('wasl')">wasl</button>
+        <button type="button" class="terminal-chip" onclick="runCliQuick('smh')">smh</button>
+        <button type="button" class="terminal-chip" onclick="runCliQuick('skills')">skills</button>
+        <button type="button" class="terminal-chip" onclick="runCliQuick('certs')">certs</button>
+        <button type="button" class="terminal-chip" onclick="runCliQuick('metrics')">metrics</button>
+        <button type="button" class="terminal-chip" onclick="runCliQuick('clear')">clear</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Executive Toast Notification -->
   <div id="executive-toast" class="executive-toast">
