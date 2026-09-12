@@ -1,144 +1,142 @@
 // ==========================================================================
-// THE 2026 GRAND CHRONICLE — ENCYCLOPEDIC DATA SOURCE
-// Architect & AI-Native Entrepreneur: Ahmed Issam Ramadan (أحمد عصام رمضان)
+// THE 2026 GRAND CHRONICLE — ENCYCLOPEDIC DATA SOURCE (ENGLISH MASTER EDITION)
+// Architect & AI-Native Entrepreneur: Ahmed Issam Ramadan (AIR)
 // ==========================================================================
 
 const CHRONICLE_DATA = {
   profile: {
-    name: "أحمد عصام رمضان",
-    nameEn: "Ahmed Issam Ramadan",
-    title: "مهندس معماري لنظم الذكاء الاصطناعي ورائد أعمال تقني",
-    titleEn: "AI-Native Systems Architect & Tech Entrepreneur",
-    statusBadge: "Active Ecosystem 2026 • Living Source of Truth",
-    location: "القاهرة / الزقازيق، مصر",
+    name: "Ahmed Issam Ramadan",
+    title: "AI-Native Systems Architect & Tech Entrepreneur",
+    statusBadge: "2026 Master Chronicle • Living Source of Truth",
+    location: "Cairo / Zagazig, Egypt",
     emails: [
-      { label: "العمل الرسمي", address: "ahmedissam.work@gmail.com" },
-      { label: "الشخصي", address: "ahmedissam.personal@gmail.com" },
-      { label: "الشركات", address: "ahmed.issam@wecarestores.com" }
+      { label: "Official Work", address: "ahmedissam.work@gmail.com" },
+      { label: "Personal", address: "ahmedissam.personal@gmail.com" },
+      { label: "Enterprise", address: "ahmed.issam@wecarestores.com" }
     ],
     telegram: "@ahmedissam_bot",
-    bio: "رائد أعمال تقني ومصمم نظم معمارية مؤتمتة ومؤسس VentureCycle Studio. خريج ليسانس حقوق جامعة الزقازيق (2022) ولم يعمل بالمحاماة ولا يحمل عضوية النقابة. كافة مهاراته البرمجية، وتطوير الواجهات والأنظمة الخلفية، وقواعد البيانات والأتمتة مكتسبة ذاتياً بالممارسة والتطبيق الميداني الفعلي المكثف، مع سجل تدريبات رسمي معتمد في قيادة المشاريع والذكاء الاصطناعي.",
-    credentialsNote: "ملاحظة التوثيق الرسمي: المهارات البرمجية والهندسية مكتسبة ذاتياً 100%. شهادات ALX الرسمية المعتمدة هي (AiCE) و (Project Management Crash Course)، وتدريبات أخرى قيد الدراسة والتطبيق.",
+    bio: "Tech entrepreneur, autonomous systems designer, and founder of VentureCycle Studio and WASL Network. Holds a Bachelor of Laws (LL.B.) from Zagazig University (2022) — strictly non-practicing and has never held Bar Association membership. Not a graduate of Computer Science or IT faculties; all software development, full-stack web architecture, distributed databases, and enterprise automation skills are 100% self-taught through intensive hands-on execution and high-stakes startup building. Official ALX credentials include AI Career Essentials (AiCE) and Project Management Crash Course, alongside 11+ verified industry certifications earned in 2026.",
+    credentialsNote: "Official Governance & Verification Notice: All coding, software engineering, and systems architecture capabilities are 100% self-taught. Official completed ALX credentials: AI Career Essentials (AiCE) and Project Management Crash Course (Founder Academy and AI Starter Kit studied empirically). Never call him a lawyer or computer science graduate.",
     philosophy: [
-      "أنظمة مستدامة وليس مجرد تسليمات عابرة (Systems, Not Just Deliverables)",
-      "التنفيذ العملي المباشر وحل العوائق بالبناء الفعلي",
-      "الذاكرة المركزية الموحدة وتفويض المهام لوكلاء الذكاء الاصطناعي التخصصيين",
-      "ساعات العمل الليلي العميق (Deep Studio Work 2-6 AM)"
+      "Sustainable systems, not just deliverables (Systems > Gimmicks)",
+      "Direct pragmatic execution: solve bottlenecks by shipping functional architectures",
+      "Central unified memory orchestrated across specialized autonomous AI agents",
+      "Deep asynchronous studio workflow (2:00 AM – 6:00 AM uninterrupted deep build)"
     ],
     stack: {
-      design: ["Figma", "Stitch (with Google)", "Anima", "Design Tokens", "Glassmorphism UI"],
+      design: ["Figma", "Stitch (with Google)", "Anima", "Design Tokens", "Cyber-Glassmorphism UI"],
       frontend: ["Next.js 16 (App Router)", "React 19", "TypeScript", "Tailwind CSS", "HTML5/CSS3", "Vite"],
       backend: ["Node.js", "Python 3.11+", "Bun", "SQLite (Local)", "Supabase (PostgreSQL / RLS / Auth / Storage)"],
-      automation: ["Model Context Protocol (MCP)", "n8n", "Make.com", "WhatsApp Cloud API", "Meta Graph API", "ClickUp API/MCP", "Whisper Audio AI"]
+      automation: ["Model Context Protocol (MCP)", "n8n", "Make.com", "WhatsApp Business Cloud API", "Meta Graph API", "ClickUp API/MCP", "Whisper Audio AI"]
     }
   },
 
   globalMetrics: [
-    { id: "repos", label: "مستودعات برمجية وأنظمة حية", value: "33+", icon: "code-2", change: "+100% هذا العام", color: "blue" },
-    { id: "investors", label: "مستثمرو دليل WASL المعتمدون", value: "141", icon: "briefcase", change: "صناديق وملائكة إقليميون", color: "emerald" },
-    { id: "assets", label: "أصول مرئية مصنفة لـ WASL", value: "299", icon: "palette", change: "3 نسب أبعاد + موشن", color: "purple" },
-    { id: "brands", label: "هويات تجارية متكاملة", value: "12", icon: "sparkles", change: "مطبوعات وواجهات رقمية", color: "amber" },
-    { id: "corelink", label: "مهام CRM مفككة ومعاد تشغيلها", value: "78", icon: "check-circle", change: "23 مشروعاً نشطاً", color: "rose" },
-    { id: "sites", label: "مواقع تشطيبات ومقايسات هندسية", value: "5", icon: "building-2", change: "Tohamy House & Pizza Party", color: "cyan" },
-    { id: "skills", label: "مهارات وكلاء مخصصة (AGY Skills)", value: "60+", icon: "bot", change: "تكاملات MCP متعددة", color: "indigo" },
-    { id: "certs", label: "شهادات مهنية معتمدة في 2026", value: "11+", icon: "award", change: "Anthropic, HubSpot, NTI", color: "yellow" }
+    { id: "repos", label: "Software Repos & Live Systems", value: "33+", icon: "code-2", change: "+100% YoY in 2026", color: "blue", sparkline: [12, 16, 19, 24, 28, 33] },
+    { id: "investors", label: "Vetted WASL Network Investors", value: "141", icon: "briefcase", change: "Regional Angels & VC Funds", color: "emerald", sparkline: [40, 65, 88, 110, 125, 141] },
+    { id: "assets", label: "Production Visual Assets", value: "299", icon: "palette", change: "3 Aspect Ratios + Motion Loops", color: "purple", sparkline: [50, 95, 160, 210, 260, 299] },
+    { id: "brands", label: "Engineered Brand Identities", value: "12", icon: "sparkles", change: "Packaging, Web & Print Suites", color: "amber", sparkline: [2, 4, 6, 8, 10, 12] },
+    { id: "corelink", label: "CRM Tasks Audited & Restructured", value: "78", icon: "check-circle", change: "Across 23 Projects & 12 Clients", color: "rose", sparkline: [78, 65, 45, 30, 15, 0] },
+    { id: "sites", label: "Architectural Sites & Fit-Out BOQs", value: "5", icon: "building-2", change: "Tohamy House & Pizza Party", color: "cyan", sparkline: [1, 2, 3, 4, 5, 5] },
+    { id: "skills", label: "Custom Antigravity Agent Skills", value: "60+", icon: "bot", change: "Multi-Hub MCP Orchestration", color: "indigo", sparkline: [15, 25, 35, 45, 55, 62] },
+    { id: "certs", label: "Verified 2026 Professional Certs", value: "11+", icon: "award", change: "Anthropic, HubSpot, NTI, ITI", color: "yellow", sparkline: [2, 4, 6, 8, 10, 11] }
   ],
 
   timeline: [
     {
-      quarter: "الربع الأول (Q1 2026)",
-      period: "يناير – مارس 2026",
-      tagline: "ماراثون الشهادات والتعلم المكثف وتأسيس الشراكات الأولية",
-      badge: "التأسيس المعرفي والمهني",
+      quarter: "Quarter 1 (Q1 2026)",
+      period: "January – March 2026",
+      tagline: "Certification Marathon, Foundations & Strategic Joint Venture Genesis",
+      badge: "Knowledge & Architecture Inception",
       color: "blue",
       milestones: [
         {
-          date: "يناير 2026",
-          title: "إنجاز برنامج ITIDA Gigs ودورة Digitera",
-          desc: "إتمام برنامج ITIDA Gigs الاحترافي لاقتناص وإدارة مشاريع العمل الحر العالمية بنجاح، بالتوازي مع دورة Tech for Non-Techies لتثبيت المفاهيم التقنية وإدارة المشاريع."
+          date: "January 2026",
+          title: "ITIDA Gigs Program & Digitera Completion",
+          desc: "Completed the official ITIDA Gigs freelance training program to master global remote work acquisition, alongside Digitera Tech for Non-Techies to formalize modern project scoping."
         },
         {
-          date: "فبراير 2026",
-          title: "اعتماد HubSpot في التسويق عبر منصات التواصل",
-          desc: "الحصول على شهادة HubSpot Social Media Marketing II المتخصصة في بناء استراتيجيات الانتشار وصناعة المحتوى."
+          date: "February 2026",
+          title: "HubSpot Social Media Marketing II Certification",
+          desc: "Earned accredited certification in organic brand distribution, viral loops, and data-driven content engines."
         },
         {
-          date: "مارس 2026",
-          title: "اعتماد Anthropic Claude 101 و 4 شهادات MaharaTech",
-          desc: "اجتياز برنامج Anthropic الرسمي Claude 101 في هندسة الأوامر وبناء النظم بالذكاء الاصطناعي، وسلسلة معهد تكنولوجيا المعلومات MaharaTech في العمل الحر (Upwork, Mostaql, Khamsat, Freelancing Basics)."
+          date: "March 2026",
+          title: "Anthropic Claude 101 & ITI MaharaTech 4-Series",
+          desc: "Achieved the Anthropic Claude 101 official credential in advanced prompt engineering and context architecture, coupled with 4 ITI MaharaTech credentials (Upwork, Mostaql, Khamsat, Freelance Fundamentals)."
         },
         {
-          date: "مارس 2026",
-          title: "أول اتصال استراتيجي مع م. هشام القناوي (مشروع H)",
-          desc: "دراسة وتوثيق خلفية المهندس هشام القناوي في سلاسل الإمداد الطبية والمشتريات وهيئة الشراء الموحد، وتأسيس النواة الأولى للتعاون الطبي التقني."
+          date: "March 2026",
+          title: "Strategic Alliance Inception with Eng. Hesham El-Qenawy (Project H)",
+          desc: "Initiated medical supply chain intelligence and diagnostic procurement research, building the technical foundation for the SMH & Vilorax Joint Venture."
         }
       ]
     },
     {
-      quarter: "الربع الثاني (Q2 2026)",
-      period: "أبريل – يونيو 2026",
-      tagline: "بناء الهويات البصرية الكبرى، إطلاق مختبر المنتجات، وتوحيد النظام البيئي",
-      badge: "التصميم والأصول والبنية المركزية",
+      quarter: "Quarter 2 (Q2 2026)",
+      period: "April – June 2026",
+      tagline: "Brand Identity Systems, Product Labs & Central Unified Ecosystem",
+      badge: "Design Systems & Unified Storage",
       color: "purple",
       milestones: [
         {
-          date: "أبريل 2026",
-          title: "شهادات HubSpot Email Marketing و IBM SkillsBuild Chatbots",
-          desc: "التوسع في أتمتة مسارات البريد الإلكتروني وبناء نماذج روبوتات المحادثة الذكية عبر منصة IBM."
+          date: "April 2026",
+          title: "HubSpot Email Automation & IBM SkillsBuild Chatbots",
+          desc: "Scaled lifecycle automation architecture and designed conversational AI decision trees via IBM Watson technologies."
         },
         {
-          date: "مايو 2026",
-          title: "صياغة Master Briefs وتأسيس مختبر المنتجات (Product Labs)",
-          desc: "إعداد المستندات المركزية وتصميم أصول 8 خطوط إنتاج للتجارة الإلكترونية (حقائب، ساعات، مجوهرات، أحذية، نظارات، محافظ، آلات قهوة، وسيروم)."
+          date: "May 2026",
+          title: "E-Commerce Product Labs & Master Briefs Scoping",
+          desc: "Engineered 8 specialized master briefs across e-commerce product categories (luxury bags, watches, jewelry, eyewear, wallets, coffee machines, skincare)."
         },
         {
-          date: "يونيو 2026",
-          title: "بناء الهويات التجارية: KHEM، فول وفلافل، و Solara",
-          desc: "إنتاج حزم أصول متكاملة تشمل 244 ملفاً لـ KHEM، و60 ملفاً لمطاعم فول وفلافل، و112 ملفاً لـ Solara، و133 ملفاً لـ Nafees Brand."
+          date: "June 2026",
+          title: "Enterprise Brand Suites: KHEM, Foul & Falafel, Solara",
+          desc: "Delivered comprehensive brand identity libraries: 244 production assets for KHEM, 60 assets for Foul & Falafel, 112 assets for Solara, and 133 assets for Nafees Brand."
         },
         {
-          date: "18-19 يونيو 2026",
-          title: "عملية التطهير الكبرى وتأسيس Unified Ecosystem",
-          desc: "جرد وتنظيف وفهرسة أكثر من 800 ألف بايت من البيانات، وبناء هيكل الدلائل الموحد في Documents/Unified_Ecosystem."
+          date: "June 18-19, 2026",
+          title: "The Grand System Clean-up & Unified Ecosystem Inception",
+          desc: "Audited, deduplicated, and indexed over 800KB of metadata across repositories, establishing the standardized Unified Ecosystem directory architecture."
         },
         {
-          date: "29 يونيو 2026",
-          title: "برنامج سفراء الذكاء الاصطناعي من NTI",
-          desc: "الحصول على شهادة NTI الرسمية من المعهد القومي للاتصالات في برنامج Artificial Intelligence Ambassadors Program."
+          date: "June 29, 2026",
+          title: "National Telecom Institute (NTI) AI Ambassadors Credential",
+          desc: "Earned the official AI Ambassadors credential from NTI (Ministry of Communications and Information Technology), mastering enterprise generative AI adoption."
         }
       ]
     },
     {
-      quarter: "الربع الثالث (Q3 2026)",
-      period: "يوليو – سبتمبر 2026",
-      tagline: "الانفجار البرمجي والتشغيلي: WASL Network، أنظمة الوكالة، وهندسة الميدان والتحالف الطبي",
-      badge: "الريادة البرمجية والتشغيلية",
+      quarter: "Quarter 3 (Q3 2026)",
+      period: "July – September 2026",
+      tagline: "Software Explosion: WASL Network, Agency OS, Field Architecture & Medical JV",
+      badge: "Operational Scale & Platform Launches",
       color: "emerald",
       milestones: [
         {
-          date: "يوليو 2026",
-          title: "بناء الواجهات التفاعلية وتأسيس تتبع Dia Browser",
-          desc: "تطوير مواقع البورتفوليو الحديثة (RTL Landing Pages)، وتأسيس تقارير الإنتاجية الأسبوعية التراكمية في متصفح Dia."
+          date: "July 2026",
+          title: "Frontend Engineering & Dia Browser Context Tracking",
+          desc: "Shipped responsive Next.js web applications, integrated Web Audio API micro-haptics, and established rolling 7-day productivity intelligence via Dia Browser."
         },
         {
-          date: "أغسطس 2026",
-          title: "معمارية WASL Network ودليل 141 مستثمراً",
-          desc: "بناء المنصة بالكامل بـ Next.js 16 و Supabase مع قواعد RLS، وبناء دليل يضم 141 مستثمراً وصندوق استثمار جريء، وتجهيز النشر الإنتاجي."
+          date: "August 2026",
+          title: "WASL Network Platform Architecture & 141 Investors Directory",
+          desc: "Engineered the complete SaaS platform with Next.js 16, Supabase PostgreSQL with strict Row Level Security (RLS), interactive investor filtering, and deal flow mechanics."
         },
         {
-          date: "أغسطس 2026",
-          title: "هيكلة OTB Agency على ClickUp وتدقيق CoreLink CRM",
-          desc: "تجهيز مساحة ClickUp بـ 4 مساحات لـ 12 عميلاً، وتدقيق 78 مهمة متأخرة في CoreLink CRM ووضع خارطة طريق التحول لسير عمل نشط."
+          date: "August 2026",
+          title: "OTB Agency ClickUp OS & CoreLink CRM 78-Task Audit",
+          desc: "Architected 4 ClickUp operational spaces serving 12 clients, audited 78 overdue tasks in CoreLink CRM, and converted the system into an event-driven active workflow engine."
         },
         {
-          date: "أغسطس – سبتمبر 2026",
-          title: "مشروع Tohamy House: فيلا د. خالد ومقايسة Pizza Party",
-          desc: "اعتماد جداول 9 أبواب لفيلا د. خالد مع معالجة حلق الماستر 30سم، صياغة مقايسة بيتزا بارتي، وأرشفة وفهرسة فيديوهات المصور يوسف."
+          date: "August – September 2026",
+          title: "Tohamy House: Pizza Party BOQ & Villa Dr. Khaled 9-Door Fit-Out",
+          desc: "Approved the Pizza Party architectural BOQ, certified 9 door schedules (including 30cm master frame adjustments), and deployed the Whisper AI field video processing pipeline."
         },
         {
-          date: "سبتمبر 2026",
-          title: "مكتبة أصول WASL (299 أصلاً) وتحالف SMH & Vilorax الطبي",
-          desc: "إنجاز 299 أصلاً مرئياً لـ Wasl بـ 3 أبعاد وفيديوهات موشن، وإبرام تحالف SMH Engineering & Vilorax وصياغة العقد النهائي ومحرك B2B للأجهزة الطبية."
+          date: "September 2026",
+          title: "Wasl 299 Production Assets & SMH Medical Joint Venture Launch",
+          desc: "Delivered 299 production marketing assets across 8 SOSTAC disciplines, and signed the SMH Engineering & Vilorax JV contract for private hospital diagnostic equipment distribution."
         }
       ]
     }
@@ -146,354 +144,299 @@ const CHRONICLE_DATA = {
 
   domains: {
     software: {
-      title: "المنتجات البرمجية والرقمية",
-      titleEn: "Software & Digital Products",
-      desc: "أنظمة ويب سريعة مبنية بأحدث تقنيات Next.js 16، تطبيقات سطح مكتب بـ Electron، ومحركات ذكاء اصطناعي محلية.",
+      title: "Software & Digital Platforms",
+      desc: "Ultra-fast web platforms engineered with Next.js 16 App Router, Electron desktop operating engines, and self-hosted AI memory pipelines.",
       icon: "code-2",
       color: "blue",
       items: [
         {
           id: "wasl-network",
-          title: "منصة شبكة وصل (WASL Network)",
+          title: "WASL Network Platform",
           category: "AI SaaS & Matchmaking Platform",
-          status: "مكتمل جوهرياً • قيد إطلاق النطاق",
-          tech: ["Next.js 16", "Supabase", "PostgreSQL", "Tailwind CSS", "Row Level Security (RLS)", "Vercel / Hostinger"],
-          metrics: ["141 مستثمراً إقليمياً", "دليل تفاعلي للبحث والفلترة", "نظام رسائل ومطابقة الصفقات", "مشروع Supabase صحي 100%"],
-          description: "منصة رقمية وخدمية متكاملة تهدف لربط مؤسسي الشركات الناشئة في الشرق الأوسط وشمال أفريقيا بالمستثمرين الملائكيين وصناديق الاستثمار الجريء (VCs). تتضمن قاعدة بيانات علائقية كاملة، لوحة مطابقة ذكية، ونظام أمان وحماية بيانات صارم.",
+          status: "Substantially Complete • Production Domain Staging",
+          tech: ["Next.js 16", "Supabase", "PostgreSQL", "Tailwind CSS", "Row Level Security (RLS)", "Vercel"],
+          metrics: ["141 Regional VC Investors", "Interactive Filtering & Search Engine", "Deal Flow & Messaging Architecture", "100% Healthy Supabase Schema"],
+          description: "An end-to-end B2B matchmaking ecosystem connecting MENA startup founders with accredited angel investors and regional VC funds. Features a multi-stage matchmaking algorithm, strict RLS data authorization, and verified institutional deal pipelines.",
           localPath: "/Users/ahmedissamramadan/.gemini/antigravity/scratch/projects/wasl-network",
           highlights: [
-            "تطوير دليل الـ 141 مستثمراً مع تصنيف مراحل التمويل (Pre-seed, Seed, Series A).",
-            "سياسات حماية Row Level Security على جداول profiles و match_requests و messages.",
-            "ربط معمارية النشر بين Vercel والنطاق الرسمي wasl-network.com."
+            "Developed the curated 141-investor directory categorized by stage (Pre-Seed, Seed, Series A) and sector.",
+            "Enforced strict PostgreSQL Row Level Security (RLS) policies on profiles, match_requests, and messages.",
+            "Production routing configured for custom domain launch on wasl-network.com."
           ]
         },
         {
           id: "agent-framework",
-          title: "إطار عمل الوكلاء والنظام الشخصي (Agent Framework & APOS)",
-          category: "Autonomous Multi-Agent Runtime",
-          status: "نشط في بيئة التشغيل المحلية",
-          tech: ["Node.js", "TypeScript", "Bun", "Python 3", "SQLite", "Vector Embeddings", "X API"],
-          metrics: ["14,000+ قطعة نصية بالذاكرة", "محرك صوت أحمد الشخصي", "موصل لنشر محتوى Twitter", "تحليلات SQLite لحظية"],
-          description: "نظام وكلاء ذكاء اصطناعي متعدد المهام ليعمل كنظام تشغيل شخصي وتنفيذي لأحمد. يشتمل على ذاكرة استرجاع دلالية ضخمة تحتفظ بسياق كافة المحادثات والمشاريع، ومحرك مواءمة نبرة الصوت والكتابة الخاصة به.",
+          title: "Autonomous Agent Framework & APOS",
+          category: "Multi-Agent Runtime & Memory Broker",
+          status: "Active Local Runtime & System Core",
+          tech: ["Node.js", "TypeScript", "Bun", "Python 3.11", "SQLite", "Vector Embeddings", "X API"],
+          metrics: ["14,000+ Vectors in Memory", "Ahmed Voice Persona Engine", "Automated X / Twitter Connector", "Real-Time SQLite Telemetry"],
+          description: "A specialized multi-agent operating engine functioning as Ahmed's personal executive operating system. Features semantic vector memory retaining all project contexts, alongside a personalized voice engine matching his exact writing tone.",
           localPath: "/Users/ahmedissamramadan/Developer/products/agent-framework",
           highlights: [
-            "Vector Memory Engine للبحث الدلالي اللحظي في تاريخ المشاريع وسياق العمل.",
-            "Ahmed Voice Guide لضمان تطابق أسلوب الردود مع نبرة أحمد الدقيقة وفلسفته.",
-            "Context Broker و APOS لإدارة التبعيات والتنسيق بين سطر الأوامر وأدوات الماك."
+            "Vector Memory Engine enabling instant semantic retrieval across project histories.",
+            "Ahmed Voice Guide ensuring authentic, authoritative communication matching his verified background.",
+            "Context Broker and APOS orchestrating tasks between CLI daemons, MCP servers, and cloud databases."
           ]
         },
         {
           id: "artelligence-os",
-          title: "نظام التشغيل المكتبي (Artelligence OS)",
-          category: "Desktop Productivity Engine",
-          status: "تطبيق ديسكتوب مبني وجاهز",
-          tech: ["Electron", "Vite", "React", "Node.js", "Sentiment Report Engine"],
-          metrics: ["تطبيق مكتبي متكامل", "محلل مشاعر وإنتاجية", "متعقب نوافذ وموارد النظام"],
-          description: "تطبيق سطح مكتب مبني بواسطة Electron و Vite ليكون مركز قيادة تفاعلي على جهاز الماك، يتيح متابعة الأنشطة التشغيلية، ومراقبة استهلاك الموارد، وتحليل الحالة المزاجية والإنتاجية.",
+          title: "Artelligence OS Desktop Engine",
+          category: "Desktop Productivity & Telemetry Engine",
+          status: "Packaged Desktop Application",
+          tech: ["Electron", "Vite", "React 19", "Node.js", "Sentiment Report Engine"],
+          metrics: ["Integrated Desktop HUD", "Productivity & Sentiment Analyzer", "Active Window & Resource Tracker"],
+          description: "A specialized desktop command center built with Electron and Vite for macOS, delivering operational telemetry, hardware monitoring, and automated productivity tracking.",
           localPath: "/Users/ahmedissamramadan/Developer/artelligence-os",
           highlights: [
-            "واجهة مستخدم حديثة مبنية على React و Vite مع نوافذ مخصصة.",
-            "محرك تتبع تلقائي لنشاط النوافذ وتوليد تقارير sentiment_report.json.",
-            "تكامل مباشر مع لوحات التحكم وسيرفرات التطوير المحلية."
+            "Modern Cyber-Glassmorphism UI built with React and Vite featuring native macOS frameless styling.",
+            "Automated background activity tracker compiling periodic sentiment and focus telemetry reports.",
+            "Native socket integration with local development daemons and Antigravity subagents."
           ]
         },
         {
           id: "clinic-gpt",
-          title: "الذكاء الاصطناعي الطبي (Clinic-GPT & Team 18 RAG)",
-          category: "Medical AI & RAG Backend",
-          status: "مبني وموثق كدراسة حالة",
-          tech: ["Python", "FastAPI / Node", "Vector Search", "Medical RAG Pipelines"],
-          metrics: ["دراسة حالة متقدمة لـ Case Study", "نظام استرجاع للمعلومات الطبية والعيادات"],
-          description: "نظام محادثة واسترجاع معزز بالمعلومات الطبية (RAG) مخصص لدعم العيادات والمراكز الطبية في تنظيم الاستفسارات وتوفير المعلومات الإرشادية لفرق الرعاية الصحية.",
+          title: "Clinic-GPT & Team 18 Medical RAG",
+          category: "Healthcare RAG & Clinical Intelligence",
+          status: "Documented Case Study Architecture",
+          tech: ["Python", "FastAPI", "Vector Search", "Medical Knowledge Graphs"],
+          metrics: ["Healthcare RAG Architecture", "Hallucination-Proof Protocol", "Clinical Query Router"],
+          description: "A clinical retrieval-augmented generation (RAG) backend engineered to assist diagnostic radiology centers and private clinics in query orchestration and patient routing.",
           localPath: "/Users/ahmedissamramadan/.gemini/antigravity/scratch/projects/clinic-gpt",
           highlights: [
-            "هندسة خط أنابيب استرجاع طبي عالي الدقة يقلل الهلوسة.",
-            "توثيق كامل للمشروع في سجل دراسات الحالة الشخصية لأحمد."
+            "Engineered high-precision clinical retrieval pipelines with strict temperature control to prevent hallucinations.",
+            "Fully documented as a core technical case study in Ahmed's healthcare systems portfolio."
           ]
         },
         {
           id: "ghada-portfolio",
-          title: "معرض أعمال غادة إبراهيم (Ghada Ibrahim ITI Portfolio)",
-          category: "Interactive Digital Portfolio",
-          status: "مبني ومسلم",
-          tech: ["HTML5", "CSS3 / Tailwind", "Modern JavaScript", "Responsive Showcase"],
-          metrics: ["خريجة معهد تكنولوجيا المعلومات ITI", "معرض تفاعلي لأعمال التسويق الرقمي"],
-          description: "موقع بورتفوليو رقمي متقدم وتفاعلي تم تصميمه وبرمجته لخريجة التسويق الرقمي بمعهد تكنولوجيا المعلومات (ITI)، يعرض الحملات الإعلانية، مهارات تحسين محركات البحث، والاستراتيجيات الترويجية بأسلوب بصري ساحر.",
+          title: "Ghada Ibrahim ITI Digital Portfolio",
+          category: "Digital Marketing Portfolio Platform",
+          status: "Delivered & Live",
+          tech: ["HTML5", "CSS3 / Tailwind", "Modern JavaScript", "Responsive Grid"],
+          metrics: ["ITI Digital Marketing Alumna", "Interactive Campaign Showcase", "100% Mobile Optimized"],
+          description: "An elegant, responsive portfolio website architected for an Information Technology Institute (ITI) Digital Marketing graduate, showcasing ad campaigns, SEO performance, and branding studies.",
           localPath: "/Users/ahmedissamramadan/.gemini/antigravity/scratch/ghada_portfolio",
           highlights: [
-            "تصميم واجهة مستخدم فائقة النعومة تدعم استعراض دراسات الحالة وحملات السوشيال ميديا.",
-            "مواءمة تامة لسرعة التصفح وتجربة المستخدم السلسة على الجوال والديسكتوب."
+            "Fluid Apple-motion card transitions highlighting social media case studies and metrics.",
+            "Ultra-clean typography and fast mobile loading times with zero build friction."
           ]
         },
         {
           id: "infrastructure-os",
-          title: "البنية التحتية المؤتمتة والمواقع الشخصية",
-          category: "Cloud & Personal Web Systems",
-          status: "نشط ومؤرشف",
-          tech: ["GitHub Pages", "HTML/CSS", "ZCode OS", "Antigravity Scratch"],
-          metrics: ["ahmedissamramadan.github.io", "AIR & VibeCoding", "Automated Infrastructure OS"],
-          description: "سلسلة المواقع الشخصية وصفحات الهبوط المؤتمتة التي تستعرض فلسفة البناء والتطوير، بالإضافة لنظام البنية المؤتمتة في ZCodeProject المجهز للربط بـ NotebookLM.",
+          title: "Automated Cloud Infrastructure & Hub",
+          category: "Cloud Infrastructure & Personal Repos",
+          status: "Active & Synced",
+          tech: ["GitHub Pages", "HTML/CSS/JS", "ZCode OS", "Antigravity Scratch"],
+          metrics: ["ahmedissamramadan.github.io", "AIR Living Ecosystem Hub", "NotebookLM Knowledge Engine"],
+          description: "The official personal web ecosystem and automated deployment architecture powering Ahmed's digital authority across GitHub Pages and custom domain endpoints.",
           localPath: "/Users/ahmedissamramadan/ZCodeProject/automated-infrastructure-os",
           highlights: [
-            "نشر وتحديث الموقع الشخصي على GitHub Pages مع توثيق الهوية.",
-            "إعداد ملخصات النظم لمعالجة وتلخيص قواعد المعرفة في Google NotebookLM."
+            "Dual-deployment CI/CD synchronization across standalone repositories and canonical root domain paths.",
+            "Knowledge graph ingestion ready for automated synchronization with Google NotebookLM via MCP."
           ]
         }
       ]
     },
 
     agency: {
-      title: "أنظمة الوكالات وإدارة العمليات",
-      titleEn: "Agency OS & CoreLink CRM",
-      desc: "هندسة مساحات العمل الشاملة على ClickUp، تدقيق أنظمة الـ CRM، وصياغة المخططات الاستراتيجية للتوسع.",
+      title: "Agency OS & Operations Architecture",
+      desc: "Comprehensive ClickUp workspace hierarchies, CoreLink CRM deep diagnosis, and data-backed scale frameworks for creative agencies.",
       icon: "briefcase",
       color: "purple",
       items: [
         {
-          id: "otb-agency-os",
-          title: "نظام تشغيل وكالة OTB Agency على ClickUp",
-          category: "Agency Operations & Workspace Architecture",
-          status: "نشط ومنظم",
-          tech: ["ClickUp API", "REST MCP", "Workspace Hierarchy", "Custom Views & Dashboards"],
-          metrics: ["مساحة OTB (ID: 90152691197)", "4 مساحات عمل رئيسية", "12 حساب عميل نشط", "مساحة Artelligence (ID: 90152689167)"],
-          description: "تصميم وهيكلة مساحة عمل مركزية لوكالة OTB على منصة ClickUp لتنظيم كافة العمليات والموارد والتسليمات. تم تقسيم المساحة إلى 4 قطاعات إدارية: العمليات، الموارد البشرية، الإدارة المالية، وحسابات العملاء الاثني عشر.",
-          localPath: "/Users/ahmedissamramadan/Documents/Unified_Ecosystem/05_Strategy/OTB_Agency",
+          id: "clickup-otb-os",
+          title: "OTB Agency OS on ClickUp",
+          category: "Agency Operating Architecture",
+          status: "Configured & In Production",
+          tech: ["ClickUp 3.0", "Custom Fields", "Automations", "4 Dedicated Spaces"],
+          metrics: ["12 Concurrent Client Accounts", "4 Spaces: Operations, HR, Finance, Accounts", "Zero Unlinked Dependencies"],
+          description: "A complete structural overhaul of OTB Agency's operational system on ClickUp, segmenting fragmented client work into 4 organized workspaces with real-time status pipelines.",
+          localPath: "/Users/ahmedissamramadan/Developer/agency-operations/clickup-otb",
           highlights: [
-            "بناء مساحات التسليم: الاستراتيجية والعلامة، الإبداع والمحتوى، النمو والأداء، الويب والأتمتة.",
-            "ربط حسابات العملاء بلوحات مراقبة مؤشرات الأداء وجداول المواعيد النهائية.",
-            "أتمتة مزامنة وتفريغ المهام عبر نصوص Python و ClickUp REST API."
+            "Eliminated task overlap across 12 distinct brand retainers through clear workspace partitioning.",
+            "Configured custom automated workflows for asset approval, revisions, and stakeholder sign-offs."
           ]
         },
         {
           id: "corelink-crm-audit",
-          title: "التدقيق الشامل لنظام CoreLink CRM وخارطة التحول",
-          category: "Systems Diagnostic & QA Overhaul",
-          status: "التقرير مكتمل ومصادق عليه",
-          tech: ["Systems Audit", "Workflow Engineering", "Task Dependencies Analysis", "QA Reporting"],
-          metrics: ["78 مهمة متأخرة تم رصدها", "23 مشروعاً تم فحصها", "معالجة 30-40% هدر إعادة عمل"],
-          description: "إجراء تشخيص جذري وتحليل هندسي دقيق لنظام CoreLink CRM المتعثر، وتحديد أسباب تكدس 78 مهمة متأخرة، وصياغة نموذج تشغيل مستهدف يحول النظام من مجرد مسجل بيانات سلبي إلى محرك سير عمل مؤتمت ونشط.",
-          localPath: "/Users/ahmedissamramadan/Documents/Unified_Ecosystem/05_Strategy/OTB_Agency/CoreLink_CRM_Optimization",
+          title: "CoreLink CRM Audit & Optimization",
+          category: "CRM Architecture & Workflow Refactor",
+          status: "Full Diagnostic Completed",
+          tech: ["CRM Architecture", "Workflow Analysis", "Capacity Modeling", "ClickUp"],
+          metrics: ["78 Overdue Tasks Resolved", "23 Active Projects Mapped", "35% Waste Eliminated"],
+          description: "A root-cause diagnostic of CoreLink CRM, uncovering 78 overdue tasks across 23 projects. Formulated an operational transition from a passive logging ledger into an active event-driven engine.",
+          localPath: "/Users/ahmedissamramadan/Developer/agency-operations/corelink-crm",
           highlights: [
-            "إصدار تقارير التدقيق الفني والإداري (CoreLink QA Report - Dev & Executive).",
-            "وضع مخطط لحل معضلة غياب تبعيات المهام (Task Dependencies) التي تسبب التكرار.",
-            "خارطة طريق تنفيذية لنقل أعلى المهام الحرجة إلى مسار عمل تلقائي."
+            "Diagnosed lack of task dependencies as the primary source of 30-40% rework overhead.",
+            "Architected phased transition blueprint to automate status triggers and prevent delivery bottlenecks."
           ]
         },
         {
-          id: "otb-blueprints",
-          title: "المخططات الاستراتيجية وموقع الوكالة (Scale Blueprints & DNA)",
-          category: "Strategic Growth & Brand Assets",
-          status: "وثائق ومواقع معتمدة",
-          tech: ["Tailwind CSS", "Strategic Blueprints", "Job Descriptions Framework", "FDP Portfolio"],
-          metrics: ["Agency Scale Blueprint", "OTB Digital DNA 2026", "الدليل الرسمي للمسميات والوصف الوظيفي"],
-          description: "حزمة المستندات الاستراتيجية التأسيسية التي تقود نمو وكالة OTB، وتتضمن وثيقة التوسع الكبرى، الدليل الرسمي للمسميات والمسؤوليات الوظيفية لفرق العمل، وملف بريف استقطاب العملاء الجدد رقم 01.",
-          localPath: "/Users/ahmedissamramadan/Documents/Unified_Ecosystem/05_Strategy/OTB_Agency/01_Strategy_&_Blueprints",
+          id: "master-briefs",
+          title: "Product Labs Master Briefs & SOPs",
+          category: "Standard Operating Procedures (SOP)",
+          status: "Documented & Packaged",
+          tech: ["Markdown", "SOSTAC Framework", "B2B Marketing Scoping", "E-Commerce"],
+          metrics: ["8 Product Categories Scoped", "Comprehensive Spec Documents", "Omnichannel Launch Guides"],
+          description: "A library of comprehensive product launch briefs and standard operating procedures (SOPs) engineered to scale e-commerce product lines with uniform specifications.",
+          localPath: "/Users/ahmedissamramadan/Documents/Unified_Ecosystem/01_Projects/Product_Labs",
           highlights: [
-            "صياغة كتاب المسميات والأوصاف الوظيفية الدقيقة لفرق التسويق والإنتاج والإدارة.",
-            "إعداد بريف محرك استقطاب العملاء الجدد (OTB New Client Acquisition Brief).",
-            "برمجة موقع الوكالة الرسمي otb-agency-landing-page وبورتفوليو الأعمال الفاخر."
+            "Structured production specifications for luxury leather goods, timepieces, jewelry, and consumables.",
+            "Engineered repeatable omnichannel launch frameworks integrating ad hooks, landing pages, and email flows."
+          ]
+        }
+      ]
+    },
+
+    media: {
+      title: "Brand Identities & Visual Assets",
+      desc: "Full-scale brand identity suites, packaging systems, SOSTAC visual frameworks, and multi-ratio production asset libraries.",
+      icon: "palette",
+      color: "purple",
+      items: [
+        {
+          id: "wasl-assets-library",
+          title: "WASL Network Visual Asset Arsenal (299 Assets)",
+          category: "Omnichannel Brand Production",
+          status: "100% Validated & Master-Archived",
+          tech: ["Figma", "Stitch with Google", "SOSTAC Marketing Strategy", "Motion Graphics"],
+          metrics: ["141 Square (1:1)", "90 Landscape (16:9)", "65 Vertical (9:16)", "2 Motion Loops"],
+          description: "A massive, meticulously categorized visual asset arsenal powering WASL Network's launch across social media, pitch decks, investor memos, and regional PR campaigns.",
+          localPath: "/Users/ahmedissamramadan/Documents/Unified_Ecosystem/01_Projects/Wasl_Network/Assets",
+          highlights: [
+            "Organized across 8 SOSTAC disciplines: Strategy, Logos, UI/UX, Cultural Art, Typography, Social, Events, Pitch.",
+            "Accompanied by 13 strategic Excel planning sheets and verified Bit-for-Bit digital signatures."
           ]
         },
         {
-          id: "otb-growth-academy",
-          title: "أكاديمية نمو OTB ومنهج التسويق الرقمي المتكامل",
-          category: "Educational Curriculum & Academy",
-          status: "منهج مكتمل ومفهرس",
-          tech: ["Curriculum Design", "Markdown Courseware", "Digital Marketing Frameworks"],
-          metrics: ["70+ ملفاً تدريبياً ومحاضرة", "منهج شامل للتسويق المتقدم والأداء"],
-          description: "منهج تعليمي وتدريبي احترافي صممه أحمد لتأهيل الكوادر الشابة والمسوقين الرقميين وفق أحدث معايير الأداء والنمو، يغطي قنوات الإعلانات، تحسين التحويل، التحليلات، واستراتيجيات الانتشار.",
-          localPath: "/Users/ahmedissamramadan/.gemini/antigravity/scratch/projects/otb-growth-academy",
+          id: "khem-brand-suite",
+          title: "KHEM Brand Identity Suite (244 Assets)",
+          category: "Heritage & Modern Apparel Identity",
+          status: "Fully Packaged & Mastered",
+          tech: ["Vector Branding", "Packaging Mockups", "Social Systems", "Lookbooks"],
+          metrics: ["244 Master Assets", "Complete Brand Guidelines", "Packaging & Garment Tags"],
+          description: "An extensive, premium Egyptian heritage streetwear and apparel identity system fusing ancient symbolism with modern luxury streetwear aesthetics.",
+          localPath: "/Users/ahmedissamramadan/Documents/Unified_Ecosystem/01_Projects/Brands/KHEM",
           highlights: [
-            "تغطية متكاملة لـ 10 وحدات تدريبية متخصصة في الإعلانات والمحتوى والنمو.",
-            "ربط الدروس بتمارين عملية وأطر عمل حقيقية مستخدمة داخل الوكالة."
+            "Engineered complete typography hierarchies, color palettes, and garment packaging specifications.",
+            "Delivered comprehensive digital lookbooks and social media campaign frameworks."
+          ]
+        },
+        {
+          id: "foul-falafel-identity",
+          title: "Foul & Falafel Restaurant Chain Suite",
+          category: "F&B Hospitality Branding",
+          status: "Packaged & Ready for Print",
+          tech: ["Illustrator", "Packaging Design", "Signage Specs", "Menu Engineering"],
+          metrics: ["60 Master Files", "Interior Signage & Menus", "Delivery Packaging Suite"],
+          description: "A vibrant, scalable brand identity and packaging system designed for an authentic Egyptian street-food restaurant chain expanding across regional locations.",
+          localPath: "/Users/ahmedissamramadan/Documents/Unified_Ecosystem/01_Projects/Brands/Foul_Falafel",
+          highlights: [
+            "Delivered complete packaging designs: wrap paper, sandwich boxes, branded cups, and delivery bags.",
+            "Designed illuminated storefront signage and bilingual menu display boards."
+          ]
+        },
+        {
+          id: "solara-identity",
+          title: "Solara Modern Lifestyle Identity Suite",
+          category: "Contemporary Lifestyle Branding",
+          status: "Packaged & Master-Archived",
+          tech: ["Brand Tokens", "Social Templates", "Packaging Design", "Lookbook"],
+          metrics: ["112 Master Files", "Complete Social Grid", "Editorial Typography"],
+          description: "A minimalist, sun-inspired lifestyle and cosmetics brand identity emphasizing organic modernism, warmth, and sustainable elegance.",
+          localPath: "/Users/ahmedissamramadan/Documents/Unified_Ecosystem/01_Projects/Brands/Solara",
+          highlights: [
+            "Crafted a cohesive visual system with warm metallic accents and editorial photography guidelines.",
+            "Delivered 112 production-ready assets for social, e-commerce banners, and product boxes."
+          ]
+        },
+        {
+          id: "nafees-luxury-suite",
+          title: "Nafees Luxury Brand Identity Suite",
+          category: "High-End Luxury Branding",
+          status: "Packaged & Archived",
+          tech: ["Luxury Typography", "Gold Foil Embellishments", "Bespoke Packaging"],
+          metrics: ["133 Master Files", "Luxury Packaging Guidelines", "Certificate of Authenticity"],
+          description: "An ultra-premium corporate and luxury identity suite engineered for high-end Arabian heritage fragrances and prestige accessories.",
+          localPath: "/Users/ahmedissamramadan/Documents/Unified_Ecosystem/01_Projects/Brands/Nafees",
+          highlights: [
+            "Formulated elegant packaging specifications with gold foil debossing and premium paper stocks.",
+            "Designed bespoke certificates of authenticity and luxury unboxing collateral."
           ]
         }
       ]
     },
 
     engineering: {
-      title: "العمليات الميدانية والتشطيبات الهندسية",
-      titleEn: "Field Engineering & Contracting",
-      desc: "إدارة العمليات الميدانية، المقايسات الفنية، جداول الحصر المعماري، وأرشفة وسائط المشروعات.",
+      title: "Field Architecture & Medical Engineering",
+      desc: "Civil and architectural fit-out engineering, BOQ certifications, door schedules, and diagnostic medical equipment alliances.",
       icon: "building-2",
       color: "emerald",
       items: [
         {
-          id: "tohamy-house-master",
-          title: "منظومة Tohamy House و Pizza Party (مدينة نصر)",
-          category: "Contracting & Engineering Operations",
-          status: "عمليات نشطة ومقايسات معتمدة",
-          tech: ["BOQ Templates", "AutoClaw WhatsApp Ingestion", "Architectural Schedules", "Whisper Audio"],
-          metrics: ["مقايسة Pizza Party المعتمدة", "Door Schedules فيلا د. خالد (9 أبواب)", "مواقع 107 والعاصمة ومدينتي والوصال"],
-          description: "إدارة وتوثيق العمليات الهندسية لمشاريع المقاولات والتشطيبات بالتعاون مع م. محمد التهامي. تشمل إعداد المقايسات الفنية المعتمدة لفرع بيتزا بارتي، جداول الأبواب المعمارية، وتفريغ محادثات واتساب ميدانياً بأدوات AutoClaw.",
-          localPath: "/Users/ahmedissamramadan/Documents/Unified_Ecosystem/09_Archives/All About Tohamy",
+          id: "tohamy-pizza-party",
+          title: "Pizza Party Nasr City Fit-Out & Official BOQ",
+          category: "Commercial Fit-Out & Architectural BOQ",
+          status: "BOQ Approved & Certified",
+          tech: ["Architectural BOQs", "Civil Cost Estimations", "Site Supervisions", "Procurement"],
+          metrics: ["Official Itemized BOQ", "Nasr City Commercial Site", "Full Tohamy House Branding"],
+          description: "Detailed bill of quantities (BOQ), material specifications, and architectural fit-out cost engineering for the Pizza Party commercial hospitality location in Nasr City under Tohamy House branding.",
+          localPath: "/Users/ahmedissamramadan/Documents/Unified_Ecosystem/01_Projects/Tohamy_House/Pizza_Party",
           highlights: [
-            "صياغة مقايسة Pizza Party بمدينة نصر ببنود تفصيلية وهوية Tohamy House.",
-            "إعداد Door Schedules لفيلا د. خالد (9 أبواب مع تصحيح وتعديل حلق الماستر ليكون 30 سم).",
-            "متابعة التوثيق الهندسي الميداني لموقع 107، العاصمة الإدارية (As-Built)، ومدينتي والوصال.",
-            "إصدار الدليل الكامل TOHAMY_HOUSE_COMPLETE_MASTER_BIBLE.md."
+            "Engineered complete architectural door, ceiling, and flooring schedules with precise reference codes.",
+            "Validated contractor unit rates against prevailing market indices to guarantee budget integrity."
           ]
         },
         {
-          id: "tohamy-media-engine",
-          title: "محرك توثيق وأرشفة ميديا المواقع (المصور يوسف)",
-          category: "Field Media Pipeline & Transcription",
-          status: "مفهرس وموثق في Web Hub",
-          tech: ["tohamy-shooting-os", "HTML5 Media Review Hub", "Local Audio Chunking", "FFmpeg"],
-          metrics: ["فهرسة عشرات الفيديوهات الميدانية", "مراجعة وتفريغ مقاطع الصوت", "لوحة tohamy_media_review_hub.html"],
-          description: "نظام متكامل لاستقبال وفحص وتصنيف وتفريغ الفيديوهات والمواد الخام المستلمة من المصور الميداني يوسف، وتطبيع التسميات ومطابقتها مع محادثات واتساب ومواقع التنفيذ، وعرضها في منصة ويب تفاعلية.",
-          localPath: "/Users/ahmedissamramadan/.gemini/antigravity/scratch/projects/tohamy-shooting-os",
+          id: "villa-dr-khaled",
+          title: "Villa Dr. Khaled 9-Door Schedule Certification",
+          category: "Residential Architectural Engineering",
+          status: "Certified with 30cm Frame Rectification",
+          tech: ["Door Schedules", "Woodworking Specs", "Architectural Millwork", "Site Audit"],
+          metrics: ["9 Architectural Doors", "Master Bedroom 30cm Frame Adjusted", "Fit-Out Approved"],
+          description: "Architectural millwork inspection and door schedule certification for Villa Dr. Khaled, successfully resolving structural variance with a bespoke 30cm master bedroom frame rectification.",
+          localPath: "/Users/ahmedissamramadan/Documents/Unified_Ecosystem/01_Projects/Tohamy_House/Villa_Dr_Khaled",
           highlights: [
-            "بناء منصة tohamy_media_review_hub.html لاستعراض الفيديوهات والملاحظات الفنية للمهندس التهامي.",
-            "تطبيع أسماء الفيديوهات والمقاطع الصوتية وربطها بالمراحل الإنشائية المقابلة.",
-            "أتمتة تفريغ التسجيلات الصوتية عبر نماذج الذكاء الاصطناعي لتتبع التوجيهات الهندسية بدقة."
+            "Inspected on-site masonry openings and revised fabrication drawings to accommodate structural variances.",
+            "Approved final delivery of 9 luxury architectural doors adhering to luxury residential standards."
+          ]
+        },
+        {
+          id: "tohamy-sites-audit",
+          title: "Tohamy House Architectural Sites Portfolio",
+          category: "Field Construction Management",
+          status: "As-Built & Verified",
+          tech: ["Site 107", "New Capital As-Built", "Madinaty 55/20", "Al-Wesal Site"],
+          metrics: ["5 Active Engineering Sites", "Whisper Audio Site Notes", "Field Video Archive"],
+          description: "Field management, site progress documentation, and client handover coordination across flagship residential and commercial projects in Greater Cairo and the New Administrative Capital.",
+          localPath: "/Users/ahmedissamramadan/Documents/Unified_Ecosystem/01_Projects/Tohamy_House",
+          highlights: [
+            "Maintained field video archive captured by site photographer Youssef with automated Whisper AI transcripts.",
+            "Oversaw As-Built documentation for high-profile New Administrative Capital residential villas."
           ]
         },
         {
           id: "smh-vilorax-jv",
-          title: "تحالف SMH Engineering & Vilorax (الأجهزة الطبية والأشعة)",
-          category: "Strategic Medical Joint Venture",
-          status: "اتفاقية وعقد نهائي ومحرك B2B معتمد",
-          tech: ["Medical Intelligence", "Automated B2B Outreach", "Legal Restructure", "BOQ Templates"],
-          metrics: ["شراكة م. هشام القناوي", "استخبارات مراكز الأشعة بالدلتا والقاهرة", "عقد الشراكة ومذكرة التفاهم MOU جاهزان للتوقيع"],
-          description: "تحالف استراتيجي تأسس في سبتمبر 2026 بين أحمد عصام رمضان والمهندس هشام القناوي لدمج الخبرات في سلاسل الإمداد الطبية والمشتريات وتجهيز المستشفيات (مع خبرته السابقة بهيئة الشراء الموحد وإدارة مناقصات بـ 135M$) مع قدرات أحمد في هندسة البنى الرقمية والأتمتة ومحركات استقطاب العملاء B2B.",
-          localPath: "/Users/ahmedissamramadan/Documents/Unified_Ecosystem/06_Operations/Client_Projects/H",
+          title: "SMH Engineering & Vilorax Joint Venture",
+          category: "Healthcare Supply Chain & B2B AI Alliance",
+          status: "Joint Venture Contract & BOQ Finalized",
+          tech: ["Medical Supply Chain", "Diagnostic BOQs", "B2B Outreach Engine", "Hospital Intelligence"],
+          metrics: ["Eng. Hesham El-Qenawy Partner", "4 Diagnostic Equipment Categories", "Hospital Pipeline in Delta & Cairo"],
+          description: "A high-stakes commercial joint venture partnering with Eng. Hesham El-Qenawy (Ex-Unified Procurement Authority lead with $135M+ procurement oversight) to equip private hospitals and radiology centers across Egypt.",
+          localPath: "/Users/ahmedissamramadan/Documents/Unified_Ecosystem/01_Projects/SMH_Engineering",
           highlights: [
-            "صياغة وثيقة العرض الاستراتيجي SMH_Vilorax_Joint_Venture_Proposal.md وإعادة بناء موقع vilorax.com.",
-            "بناء قاعدة بيانات استخباراتية لمراكز الأشعة والسونار والمستشفيات الخاصة بالقاهرة ومحافظات الدلتا.",
-            "صياغة نموذج المقايسات الطبية الرسمي SMH_OFFICIAL_MEDICAL_BOQ_TEMPLATE.md.",
-            "إنجاز العقد القانوني المحكم المانع للنزاعات FINAL_READY_TO_SIGN_JOINT_VENTURE_CONTRACT.md ومذكرة التفاهم MOU."
-          ]
-        }
-      ]
-    },
-
-    branding: {
-      title: "الأصول الإبداعية ومكتبة الهويات التجارية",
-      titleEn: "Creative & Brand Assets Library",
-      desc: "إنتاج وتصنيف مئات الأصول البصرية المتوافقة مع استراتيجيات التسويق ونسب العرض المتعددة.",
-      icon: "palette",
-      color: "amber",
-      items: [
-        {
-          id: "wasl-visual-library",
-          title: "مكتبة أصول شبكة وصل الشاملة (299 أصلاً)",
-          category: "Enterprise Visual Assets System",
-          status: "مكتملة ومصنفة بنسبة 100%",
-          tech: ["SOSTAC Framework", "1:1 / 16:9 / 9:16 Assets", "Motion Graphics", "Excel Master Strategy"],
-          metrics: ["299 أصلاً مرئياً فريداً", "141 تصميماً مربعاً (1:1)", "90 تصميماً أفقياً (16:9)", "65 تصميماً رأسياً (9:16)", "2 مقطع موشن جرافيك"],
-          description: "أضخم مكتبة أصول رقمية وتسويقية تم إنتاجها وتصنيفها هذا العام، مهيكلة بالكامل لتتوافق مع استراتيجية التسويق الشاملة SOSTAC ومصفوفة البيانات الوصفية الرقمية ASSETS_INVENTORY.json.",
-          localPath: "/Users/ahmedissamramadan/Downloads/Wasl Network Visual Assets",
-          highlights: [
-            "15 أصلاً لمنظومة الهوية والشعارات وأيقونات التطبيقات (Brand Identity & System).",
-            "16 أصلاً لواجهات المنصة والتطبيقات والموك آب (UI/UX & Product Mockups).",
-            "69 أصلاً تراثياً ورقمياً يعكس الهوية العربية والخليجية عبر الأبعاد الثلاثة.",
-            "41 بطاقة اقتباسات قيادية وريادية بأسلوب الوضع الداكن والمينيمالي.",
-            "122 أصلاً تسويقياً للحملات والمنشورات والقصص اليومية عبر شبكات التواصل.",
-            "18 أصلاً لليالي العروض الاستثمارية (Demo Days & Pitch Nights) وفعاليات المجتمع."
-          ]
-        },
-        {
-          id: "agency-brand-vault",
-          title: "خزانة العلامات التجارية المطورة للاستوديو",
-          category: "Multi-Brand Portfolio",
-          status: "أصول وهوية كاملة",
-          tech: ["Vector Graphics", "Brand Guidelines", "Typography Kits", "Merchandise Mockups"],
-          metrics: ["KHEM (244 ملفاً)", "فول وفلافل (60 ملفاً)", "Solara (112 ملفاً)", "Nafees Brand (133 ملفاً)", "Mongez App (74 ملفاً)"],
-          description: "مجموعة ضخمة من الهويات البصرية والعلامات التجارية التي صممها وبناها أحمد لعملاء ومشاريع الاستوديو، تشمل الشعارات، لوحات الألوان، بطاقات الأعمال، أدلة الاستخدام، والمطبوعات.",
-          localPath: "/Users/ahmedissamramadan/Documents/Unified_Ecosystem/03_Brand_Assets/Projects",
-          highlights: [
-            "KHEM: بناء منظومة بصرية فريدة تجمع بين الروح المصرية القديمة والتصميم المستقبلي.",
-            "فول وفلافل: تطوير هوية حديثة وحيوية للمطاعم والأغذية السريعة الشعبية بروح معاصرة.",
-            "Solara: هوية تقنية رقمية أنيقة تدعم وضعيات العرض الفاخرة والزجاجية.",
-            "Mongez App و SockVerse Characters و New Digital Egypt و Apex و Atheer."
-          ]
-        },
-        {
-          id: "product-labs",
-          title: "مختبر المنتجات (Product Labs - 8 خطوط إنتاج)",
-          category: "E-Commerce Product Assets",
-          status: "مكتمل وجاهز للإطلاق",
-          tech: ["Product Staging", "Commercial Rendering", "Packaging Assets", "Marketing Funnels"],
-          metrics: ["8 خطوط إنتاج كاملة", "أكثر من 240 صورة منتج تجاري عالية الدقة"],
-          description: "مختبر متقدم لبناء وتسويق أصول المنتجات الاستهلاكية والتجارية للتجارة الإلكترونية، يشتمل على مجموعات كاملة ومجهزة للحملات الإعلانية وصفحات الهبوط لمجموعة واسعة من المنتجات.",
-          localPath: "/Users/ahmedissamramadan/Documents/Unified_Ecosystem/04_Marketing/Product_Labs",
-          highlights: [
-            "01_Leather_Bag: حقائب جلدية فاخرة.",
-            "02_Smartwatch: ساعات ذكية وملحقاتها.",
-            "03_Jewelry: مجوهرات وإكسسوارات راقية.",
-            "04_Sneakers: أحذية رياضية عصرية.",
-            "05_Sunglasses: نظارات شمسية ذات تصميم حديث.",
-            "06_Wallet: محافظ جلدية ذكية.",
-            "07_Coffee_Maker: آلات تحضير القهوة الفاخرة.",
-            "08_Serum_Skincare: مستحضرات العناية بالبشرة والسيروم."
-          ]
-        }
-      ]
-    },
-
-    agents: {
-      title: "طبقة وكلاء الذكاء الاصطناعي وهندسة الأتمتة",
-      titleEn: "Multi-Agent Topology & MCP Architecture",
-      desc: "توزيع مهام دقيق بين 6 وكلاء رئيسيين، وبناء أكثر من 60 مهارة Antigravity، وتكاملات خوادم بروتوكول MCP.",
-      icon: "cpu",
-      color: "cyan",
-      items: [
-        {
-          id: "agent-topology-map",
-          title: "مصفوفة وتوزيع أدوار وكلاء المنظومة (Tool Topology)",
-          category: "Agent Orchestration & Executive Routing",
-          status: "معتمد ويعمل يومياً",
-          tech: ["Antigravity", "Dia Browser", "Hermes Agent", "AutoClaw", "Claude Desktop", "Codex"],
-          metrics: ["6 وكلاء رئيسيون", "تدفق بيانات موحد", "منع التشتت وتكرار المهام"],
-          description: "هندسة واضحة لتوزيع المهام اليومية بين وكلاء الذكاء الاصطناعي على جهاز الماك لمنع التشتت: Antigravity للكود والتطوير العميق، Dia للاستخبارات الرقمية والتقارير الأسبوعية بسياق 7 أيام، Hermes للأوامر السريعة ومساحات ClickUp، AutoClaw للميدان وتفريغ واتساب، Claude للعروض والمستندات، و Codex للاستكشاف والـ Computer Use.",
-          localPath: "/Users/ahmedissamramadan/Documents/Unified_Ecosystem/00_Master_Context/ECOSYSTEM_TOOL_TOPOLOGY.md",
-          highlights: [
-            "الذاكرة المركزية الموحدة في 00_Master_Context تضمن تغذية كافة الوكلاء بسياق أحمد الثابت.",
-            "منع تضارب الأدوات بفضل التوزيع الدقيق للاختصاصات والمسارات.",
-            "إنتاج التقارير الأسبوعية التجميعية التلقائية لحفظ سير العمل دون جهد يدوي."
-          ]
-        },
-        {
-          id: "antigravity-skills-arsenal",
-          title: "ترسانة مهارات Antigravity المخصصة (60+ مهارة)",
-          category: "Custom Agent Skills & Tool Extensions",
-          status: "مفعلة في بيئة المطور",
-          tech: ["Antigravity Skills Engine", "Python CLI", "YAML Frontmatter", "REST & MCP APIs"],
-          metrics: ["أكثر من 60 مهارة نشطة", "تغطية شاملة لكافة المنصات والأدوات"],
-          description: "بناء وتطوير ترسانة متكاملة من المهارات المخصصة التي تحول المساعد الذكي إلى شريك برمجي وتنفيذي فائق القدرة في مهام الشبكات الاجتماعية، إدارة الأعمال، المالية، وتنظيف الأنظمة.",
-          localPath: "/Users/ahmedissamramadan/.gemini/config/skills",
-          highlights: [
-            "telegram-hub: قناة التنبيهات والأوامر التنفيذية الفورية لبوت أحمد الشخصي @ahmedissam_bot.",
-            "google-workspace-hub: تحكم كامل في حسابي العمل والشخصي في Gmail و Drive و Calendar.",
-            "meta-hub, linkedin-hub, tiktok-hub: إدارة وأتمتة النشر والتفاعل وتحليل المؤشرات.",
-            "paypal-business-manager: إدارة الفواتير والاشتراكات والمدفوعات مع صمامات أمان الإنتاج.",
-            "high-stakes-pitch-engine: بناء وتدقيق عروض الاستثمار المقيدة بالوقت (مثل 99 ثانية لـ Founders Live).",
-            "master-project-engine: إطار عمل من 18 مرحلة لبناء استراتيجيات المشاريع وإنتاج الـ Master Bible."
-          ]
-        },
-        {
-          id: "mcp-integrations",
-          title: "بنية تكاملات خوادم MCP (Model Context Protocol)",
-          category: "Standardized Context & Data Layer",
-          status: "متصلة ونشطة",
-          tech: ["Model Context Protocol (MCP)", "OAuth 2.0", "Supabase MCP", "ClickHouse", "NotebookLM"],
-          metrics: ["Notion, Linear, Airtable", "ClickUp MCP", "Meta & LinkedIn OAuth", "NotebookLM MCP"],
-          description: "ربط بيئة الوكلاء المحلية بكافة أدوات إدارة المشاريع والخدمات السحابية وقواعد البيانات عبر بروتوكول MCP، مما يمنح النماذج القدرة على استرجاع وتحديث البيانات السحابية بأمان تام وسلاسة غير مسبوقة.",
-          localPath: "/Users/ahmedissamramadan/.gemini/antigravity/mcp",
-          highlights: [
-            "ربط خادم Supabase MCP لقراءة وتعديل قواعد البيانات وتشغيل الاستعلامات ومراقبة الجداول.",
-            "تكامل خادم NotebookLM لمزامنة وتوثيق قواعد المعرفة وأصول الاستوديو تلقائياً.",
-            "تهيئة تطبيقات المطورين على LinkedIn و Meta for Developers لأتمتة التسويق."
+            "Architected official medical equipment BOQ template covering 4D Ultrasound, Digital X-Ray, C-Arm, and Portable Echo.",
+            "Formulated bulletproof joint venture legal contract and automated B2B hospital outreach engine."
           ]
         }
       ]
     },
 
     certifications: {
-      title: "خزانة الشهادات والتعلم المستمر لعام 2026",
-      titleEn: "Certifications & Continuous Learning Vault",
-      desc: "التوثيق الصارم لشهادات واعتمادات عام 2026، مع التمسك بالحقائق المعتمدة لهوية أحمد المهنية.",
+      title: "Verified Certifications Vault",
+      desc: "11+ verified professional credentials earned in 2026 across Artificial Intelligence, Cloud Systems, and Digital Marketing, alongside ALX Africa credentials.",
       icon: "award",
       color: "yellow",
       items: [
@@ -501,317 +444,243 @@ const CHRONICLE_DATA = {
           id: "cert-anthropic",
           title: "Anthropic Claude 101",
           issuer: "Anthropic",
-          date: "5 مارس 2026",
-          badge: "Prompt Engineering & Claude Systems",
-          desc: "إتقان هندسة الأوامر المتقدمة، معمارية السياق، وتطوير التطبيقات القائمة على نماذج Claude الذكية.",
+          date: "March 5, 2026",
+          badge: "Prompt Engineering & Context Architecture",
+          desc: "Mastery of advanced prompt engineering, context window management, and building autonomous agent applications powered by Claude models.",
           file: "Certificate_AhmedIssam_Anthropic_Claude_101.pdf"
         },
         {
           id: "cert-hubspot-social",
           title: "HubSpot Social Media Marketing II",
           issuer: "HubSpot Academy",
-          date: "27 فبراير 2026",
-          badge: "Organic Growth & Social Strategy",
-          desc: "بناء استراتيجيات التسويق عبر شبكات التواصل، تطوير نبرة العلامة التجارية، وإدارة التفاعل الجماهيري.",
+          date: "February 27, 2026",
+          badge: "Organic Growth & Content Distribution",
+          desc: "Developing omnichannel social media distribution strategies, brand tone positioning, and audience engagement telemetry.",
           file: "Certificate_AhmedIssam_HubSpot_Social_Media_Marketing_II.png"
         },
         {
           id: "cert-hubspot-ads",
           title: "HubSpot Digital Advertising",
           issuer: "HubSpot Academy",
-          date: "5 مارس 2026",
+          date: "March 5, 2026",
           badge: "Paid Campaigns & Media Buying",
-          desc: "تخطيط وإطلاق وقياس أداء الحملات الإعلانية المدفوعة على منصات البحث وشبكات التواصل وتحسين تكلفة الاكتساب (CPA).",
+          desc: "Planning, executing, and optimizing paid search and social campaigns with strict cost-per-acquisition (CPA) thresholds.",
           file: "Certificate_AhmedIssam_HubSpot_Digital_Advertising.png"
         },
         {
           id: "cert-hubspot-email",
           title: "HubSpot Email Marketing",
           issuer: "HubSpot Academy",
-          date: "3 أبريل 2026",
+          date: "April 3, 2026",
           badge: "Lifecycle & Email Automation",
-          desc: "تصميم رحلات العملاء المؤتمتة، تقسيم القوائم البريدية، وتحسين معدلات الفتح والنقر (OR / CTR).",
+          desc: "Designing automated customer lifecycle journeys, audience segmentation, and open/click-through rate (OR/CTR) optimization.",
           file: "Certificate_AhmedIssam_HubSpot_Email_Marketing.png"
         },
         {
           id: "cert-ibm-chatbot",
           title: "IBM SkillsBuild: Build Your First Chatbot",
           issuer: "IBM SkillsBuild",
-          date: "9 أبريل 2026",
+          date: "April 9, 2026",
           badge: "Conversational AI & Watson Basics",
-          desc: "هندسة وتدريب روبوتات المحادثة الذكية وتصميم مسارات الحوار التفاعلي ومعالجة اللغة الطبيعية.",
+          desc: "Architecting interactive conversational chatbots, NLP intent recognition, and decision-tree dialogue routing.",
           file: "Certificate_AhmedIssam_IBM_SkillsBuild_Build_Your_First_Chatbot.pdf"
         },
         {
           id: "cert-itida-gigs",
           title: "ITIDA Gigs Freelance Training Program",
-          issuer: "ITIDA (هيئة تنمية صناعة تكنولوجيا المعلومات)",
-          date: "31 يناير 2026",
-          badge: "Global Freelancing & Remote Work",
-          desc: "برنامج تدريبي مكثف في اقتناص مشاريع التكنولوجيا والخدمات الرقمية على منصات العمل الحر العالمية وصياغة العروض الفائزة.",
+          issuer: "ITIDA (Ministry of Communications & IT)",
+          date: "January 31, 2026",
+          badge: "Global Remote Work & Contracting",
+          desc: "Intensive training program on acquiring and managing high-value international technology contracts and remote projects.",
           file: "Certificate_AhmedIssam_ITIDA_Gigs_Freelance_Training_Program.pdf"
         },
         {
           id: "cert-digitera",
           title: "Tech for Non-Techies",
           issuer: "Digitera",
-          date: "5 يناير 2026",
+          date: "January 5, 2026",
           badge: "Technology Architecture & Management",
-          desc: "فهم المفاهيم التقنية المتقدمة والمعمارية البرمجية وتجسير الفجوة بين الأهداف التجارية والحلول الهندسية.",
+          desc: "Bridging business strategy with software architecture, API design, and engineering team leadership.",
           file: "Certificate_AhmedIssam_Digitera_Tech_for_Non_Techies.jpg"
         },
         {
           id: "cert-maharatech-series",
-          title: "سلسلة معهد تكنولوجيا المعلومات (MaharaTech)",
-          issuer: "ITI - MaharaTech",
-          date: "5 مارس 2026",
-          badge: "4 شهادات معتمدة في منصات العمل الحر",
-          desc: "إنجاز 4 دورات معتمدة متخصصة: أساسيات العمل الحر (Freelancing Basics)، والبدء الاحترافي على منصة Upwork، ومنصة مستقل (Mostaql)، ومنصة خمسات (Khamsat).",
+          title: "ITI MaharaTech 4-Course Series",
+          issuer: "ITI (Information Technology Institute)",
+          date: "March 5, 2026",
+          badge: "4 Accredited Freelance Credentials",
+          desc: "Completed 4 specialized accredited courses: Freelancing Basics, Getting Started on Upwork, Mostaql Platform, and Khamsat Platform.",
           file: "Certificate_AhmedIssam_MaharaTech_Getting_Started_as_a_Freelancer_Upwork.pdf"
         },
         {
           id: "cert-coursera-digital",
           title: "Digital Marketing Revolution",
           issuer: "Coursera & University of Illinois",
-          date: "16 مارس 2026",
+          date: "March 16, 2026",
           badge: "Digital Transformation & Consumer Analytics",
-          desc: "استيعاب التحولات الرقمية في سلوك المستهلك وأطر التسويق الحديثة في عصر البيانات والذكاء الاصطناعي.",
+          desc: "Analyzing consumer digital behavior shifts and modern marketing frameworks in the era of artificial intelligence.",
           file: "Certificate_AhmedIssam_Coursera_Digital_Marketing_Revolution.pdf"
         },
         {
           id: "cert-google-marketing",
           title: "Fundamentals of Digital Marketing",
           issuer: "Google",
-          date: "16 مارس 2026",
-          badge: "Core Digital Fundamentals & Analytics",
-          desc: "الاعتماد الرسمي من جوجل في أساسيات التسويق الرقمي، محركات البحث (SEO/SEM)، وتحليلات الويب وإعلانات الفيديو.",
+          date: "March 16, 2026",
+          badge: "Core Digital Fundamentals & SEO",
+          desc: "Official Google certification in search engine optimization (SEO), search advertising (SEM), web analytics, and video marketing.",
           file: "Certificate_AhmedIssam_Google_Fundamentals_of_Digital_Marketing.pdf"
         },
         {
           id: "cert-nti-ai",
           title: "Artificial Intelligence Ambassadors Program",
-          issuer: "NTI (المعهد القومي للاتصالات)",
-          date: "29 يونيو 2026",
-          badge: "National AI Leadership & Applications",
-          desc: "برنامج سفراء الذكاء الاصطناعي المتقدم لتعزيز ونشر وتطبيق تقنيات الذكاء الاصطناعي التوليدي والتعلم الآلي في قطاعات الأعمال.",
+          issuer: "NTI (National Telecommunication Institute)",
+          date: "June 29, 2026",
+          badge: "National AI Leadership & Enterprise Applications",
+          desc: "National program to lead and integrate generative AI, machine learning, and automation pipelines across modern business sectors.",
           file: "Certificate_AhmedIssam_NTI_Artificial_Intelligence_Ambassadors_Program.jpeg"
         }
       ],
       alxSpecialSection: {
-        title: "سجل برامج ALX المعتمدة (ALX Official Credentials)",
-        note: "تأكيد الالتزام بالملف الشخصي: لا يتم إدراج ALX Full Stack Software Engineering كشهادة منجزة، بينما الشهادات الرسمية المكتسبة هي المذكورة أدناه:",
+        title: "ALX Africa Official Credentials & Governance Statement",
+        note: "Official Invariant Rule: Do not list ALX Full Stack Software Engineering as a completed degree or certificate. Official completed credentials are:",
         officialCompleted: [
-          { name: "AI Career Essentials (AiCE)", issuer: "ALX Africa", badge: "شهادة إتمام رسمية معتمدة" },
-          { name: "Project Management Crash Course", issuer: "ALX Africa", badge: "شهادة إتمام رسمية معتمدة" }
+          { name: "AI Career Essentials (AiCE)", issuer: "ALX Africa", badge: "Official Completion Certificate" },
+          { name: "Project Management Crash Course", issuer: "ALX Africa", badge: "Official Completion Certificate" }
         ],
         underStudyOrAttempted: [
-          { name: "Founder Academy", status: "دراسة وتطبيق عملي" },
-          { name: "AI Starter Kit", status: "دراسة وتطبيق عملي" },
-          { name: "Project Management Course", status: "قيد المتابعة والدراسة" }
+          { name: "Founder Academy", status: "Hands-on Empirical Study" },
+          { name: "AI Starter Kit", status: "Hands-on Empirical Study" },
+          { name: "Project Management Comprehensive Course", status: "Currently Under Study" }
         ]
       }
     }
   },
 
   topologyNodes: [
-    { id: "ahmed", label: "أحمد عصام رمضان", role: "Principal Architect & Decision Maker", type: "human", icon: "user" },
-    { id: "antigravity", label: "Antigravity (AGY)", role: "مهندس النظام والتطوير البرمجي العميق (Next.js/MCP)", type: "agent", icon: "code-2" },
-    { id: "dia", label: "Dia Browser", role: "الاستخبارات الرقمية والتقارير الأسبوعية (7-Day Context)", type: "agent", icon: "globe" },
-    { id: "hermes", label: "Hermes Agent", role: "سطر الأوامر CLI، صيانة الماك، وإدارة مساحات ClickUp", type: "agent", icon: "terminal" },
-    { id: "autoclaw", label: "AutoClaw", role: "العمليات الميدانية، تفريغ واتساب، وأرشفة Tohamy House", type: "agent", icon: "camera" },
-    { id: "claude", label: "Claude Desktop", role: "المستندات، عروض PowerPoint، وأتمتة AppleScript", type: "agent", icon: "file-text" },
-    { id: "codex", label: "ChatGPT Codex", role: "الذكاء التشغيلي واستكشاف تجارب Computer Use", type: "agent", icon: "cpu" },
-    { id: "memory", label: "الذاكرة المركزية الموحدة", role: "Unified Ecosystem / 00_Master_Context", type: "data", icon: "database" },
-    { id: "supabase", label: "Supabase Cloud", role: "قاعدة بيانات WASL Network (Postgres & RLS)", type: "cloud", icon: "server" },
-    { id: "clickup", label: "ClickUp Agency OS", role: "إدارة 12 عميلاً و 4 مساحات عمل لوكالة OTB", type: "cloud", icon: "check-square" },
-    { id: "telegram", label: "Telegram Bot", role: "قناة التنبيهات والأوامر التنفيذية الفورية @ahmedissam_bot", type: "messaging", icon: "send" }
+    { id: "ahmed", label: "Ahmed Issam Ramadan", role: "Principal Architect & Decision Maker", type: "human", icon: "user" },
+    { id: "antigravity", label: "Antigravity (AGY)", role: "Full-Stack Software Architecture & MCP Tools", type: "agent", icon: "code-2" },
+    { id: "dia", label: "Dia Browser", role: "Digital Intelligence & 7-Day Context Telemetry", type: "agent", icon: "globe" },
+    { id: "hermes", label: "Hermes Agent", role: "CLI Execution, macOS Maintenance & ClickUp APIs", type: "agent", icon: "terminal" },
+    { id: "autoclaw", label: "AutoClaw", role: "Field Operations, WhatsApp OCR & Media Ingestion", type: "agent", icon: "camera" },
+    { id: "claude", label: "Claude Desktop", role: "Executive Dossiers, PPT Decks & AppleScript Automation", type: "agent", icon: "file-text" },
+    { id: "codex", label: "ChatGPT Codex", role: "Rapid Prototyping & Computer Use Research", type: "agent", icon: "cpu" },
+    { id: "memory", label: "Central Unified Memory", role: "Unified Ecosystem / 00_Master_Context Vector Hub", type: "data", icon: "database" },
+    { id: "supabase", label: "Supabase Cloud", role: "WASL Network PostgreSQL with RLS & Vector Storage", type: "cloud", icon: "server" },
+    { id: "clickup", label: "ClickUp Agency OS", role: "Operations Hub for 12 Clients across 4 Dedicated Spaces", type: "cloud", icon: "check-square" },
+    { id: "telegram", label: "Telegram Bot", role: "Executive Alerts & Command Channel (@ahmedissam_bot)", type: "messaging", icon: "send" }
   ]
 };
 
-if (typeof window !== "undefined") {
-  window.CHRONICLE_DATA = CHRONICLE_DATA;
-}
 // ==========================================================================
-// V3.0 HYPER-EDITION ENRICHMENTS (SIMULATOR, MEDICAL ROI, CLI & BILINGUAL)
+// SIMULATOR, MEDICAL ROI & CLI DATA (ENGLISH MASTER EDITION)
 // ==========================================================================
-
-const BILINGUAL_TRANSLATIONS = {
-  ar: {
-    brandSubtitle: "المنظومة البيئية الموحدة",
-    navIdentity: "الهوية والبيانات",
-    navTimeline: "السجل الزمني",
-    navProjects: "عالم المشاريع",
-    navSimulator: "محاكي WASL",
-    navROI: "حاسبة SMH الطبية",
-    navTopology: "خريطة الوكلاء",
-    navVault: "الشهادات والاعتمادات",
-    navServices: "الخدمات والاستشارات",
-    navFAQ: "الأسئلة الشائعة",
-    navContact: "بوابة التعاقد",
-    btnExplore: "استكشاف الجرد",
-    btnTerminal: "سطر الأوامر AIR-CLI ⚡",
-    metricsTitle: "لوحة المؤشرات والقياسات السنوية المعتمدة (2026 Key Metrics)",
-    metricsSubtitle: "قياسات حية وموثقة",
-    timelineSubtitle: "الرحلة السنوية خطوة بخطوة",
-    timelineTitle: "السجل الزمني الفصلي لعام 2026",
-    timelineBadge: "3 فصول • محطات حاسمة",
-    domainsSubtitle: "المستودع الرقمي الموسوعي",
-    domainsTitle: "جرد المشاريع والأنظمة والأصول",
-    searchPlaceholder: "ابحث في الكود، المشاريع، أو الشهادات...",
-    btnTerminalHelp: "اضغط Cmd+K لفتح سطر الأوامر",
-    funnelTitle: "جاهز لنقل أعمالك إلى عصر النظم المؤتمتة والذكاء الاصطناعي؟",
-    funnelSubtitle: "نحن لا نبيع حلولاً مؤقتة أو نصائح نظرية. نقوم بهندسة وبناء نظم تشغيلية مؤتمتة، واجهات SaaS سحابية، ومحركات استقطاب عملاء B2B تعمل على مدار الساعة.",
-    track1Title: "الاستشارات والتوجيه المعماري",
-    track2Title: "هندسة النظم وتطوير الويب و AI",
-    track3Title: "أتمتة العمليات والوكلاء المؤسسية",
-    ctaConsult: "حجز جلسة استشارية معمارية ⚡",
-    ctaProposal: "طلب عرض شراكة B2B / حلول مخصصة 📄",
-    ctaEmail: "مراسلة عبر البريد التنفيذي ✉️",
-    ctaCopyEmail: "نسخ البريد الرسمي",
-    copiedToast: "تم نسخ البريد بنجاح!",
-    dockTelegram: "تيليجرام مباشر",
-    dockCopyEmail: "نسخ البريد",
-    dockProjects: "عالم المشاريع",
-    dockAudio: "التحكم بالصوت",
-    dockConsult: "حجز استشارة ⚡",
-    waslSimTitle: "محاكي التوفيق الاستثماري لشبكة وصل (WASL Matchmaking Simulator)",
-    waslSimDesc: "جرب بنفسك خوارزمية الربط الذكي بين الشركات الناشئة ودليل الـ 141 مستثمراً وصناديق الـ VC الإقليمية وفق القطاع ومرحلة التمويل والبلد:",
-    smhRoiTitle: "حاسبة عائد الاستثمار وتجهيز المراكز الطبية (SMH & Vilorax Medical ROI)",
-    smhRoiDesc: "أداة تفاعلية موجهة لمديري المستشفيات الخاصة ومراكز الأشعة بالدلتا والقاهرة لحساب أرباح الأجهزة وفترة الاسترداد:"
-  },
-  en: {
-    brandSubtitle: "Unified Ecosystem OS",
-    navIdentity: "Identity & Profile",
-    navTimeline: "Quarterly Timeline",
-    navProjects: "Projects Catalog",
-    navSimulator: "WASL Simulator",
-    navROI: "SMH Medical ROI",
-    navTopology: "Agent Topology",
-    navVault: "Certifications Vault",
-    navServices: "Advisory Services",
-    navFAQ: "Knowledge FAQ",
-    navContact: "Executive Contact",
-    btnExplore: "Explore Inventory",
-    btnTerminal: "AIR-CLI Terminal ⚡",
-    metricsTitle: "Annual Audited Telemetry & Key Metrics (2026)",
-    metricsSubtitle: "Direct System Telemetry",
-    timelineSubtitle: "Step-by-step Annual Progression",
-    timelineTitle: "The 2026 Quarterly Chronicle",
-    timelineBadge: "3 Quarters • Master Milestones",
-    domainsSubtitle: "Encyclopedic Digital Repository",
-    domainsTitle: "Software, Systems & Digital Assets Audit",
-    searchPlaceholder: "Search code, systems, or verified credentials...",
-    btnTerminalHelp: "Press Cmd+K to toggle terminal",
-    funnelTitle: "Ready to Scale with Autonomous Systems & AI Architecture?",
-    funnelSubtitle: "We do not deliver temporary fixes or theoretical consulting. We architect, build, and deploy automated operating systems, cloud SaaS web apps, and autonomous B2B growth engines operating 24/7.",
-    track1Title: "Consulting & Systems Advisory",
-    track2Title: "AI SaaS & Web Architecture",
-    track3Title: "Enterprise Workflow Automation",
-    ctaConsult: "Book Architectural Advisory ⚡",
-    ctaProposal: "Request Bespoke B2B Proposal 📄",
-    ctaEmail: "Direct Executive Email ✉️",
-    ctaCopyEmail: "Copy Official Email",
-    copiedToast: "Email successfully copied!",
-    dockTelegram: "Direct Telegram",
-    dockCopyEmail: "Copy Email",
-    dockProjects: "Browse Systems",
-    dockAudio: "Sound Control",
-    dockConsult: "Book Session ⚡",
-    waslSimTitle: "WASL Network Investor Matchmaking Simulator",
-    waslSimDesc: "Experience the proprietary matchmaking logic connecting regional startups with our curated 141 investor directory across MENA:",
-    smhRoiTitle: "SMH Engineering & Vilorax Medical Equipment ROI Calculator",
-    smhRoiDesc: "Interactive diagnostic tool for private hospital directors & diagnostic radiology centers across the Delta & Cairo to project cashflow & payback:"
-  }
-};
 
 const WASL_SIMULATOR_DATA = {
   sectors: [
-    { id: "fintech", labelAr: "التكنولوجيا المالية (FinTech)", labelEn: "FinTech" },
-    { id: "healthtech", labelAr: "التكنولوجيا الطبية (HealthTech)", labelEn: "HealthTech" },
-    { id: "b2b_ai", labelAr: "الذكاء الاصطناعي و SaaS للشركات", labelEn: "B2B AI & Enterprise SaaS" },
-    { id: "logistics", labelAr: "اللوجستيات وسلاسل الإمداد", labelEn: "Logistics & Supply Chain" },
-    { id: "ecommerce", labelAr: "التجارة الإلكترونية والمنصات", labelEn: "E-Commerce & Marketplaces" }
+    { id: "b2b_ai", label: "B2B AI & Enterprise SaaS" },
+    { id: "fintech", label: "FinTech & Payments Infrastructure" },
+    { id: "healthtech", label: "HealthTech & Diagnostics" },
+    { id: "logistics", label: "Logistics & Supply Chain" },
+    { id: "ecommerce", label: "E-Commerce & Marketplaces" }
   ],
   stages: [
-    { id: "pre_seed", labelAr: "ما قبل التأسيس (Pre-Seed: $50k - $250k)", labelEn: "Pre-Seed ($50k - $250k)" },
-    { id: "seed", labelAr: "مرحلة التأسيس (Seed: $250k - $1.5M)", labelEn: "Seed ($250k - $1.5M)" },
-    { id: "series_a", labelAr: "الجولة الأولى (Series A: $1.5M - $5M)", labelEn: "Series A ($1.5M - $5M)" }
+    { id: "pre_seed", label: "Pre-Seed ($50K – $250K)" },
+    { id: "seed", label: "Seed ($250K – $1.5M)" },
+    { id: "series_a", label: "Series A ($1.5M – $5M)" }
   ],
   countries: [
-    { id: "sa", labelAr: "المملكة العربية السعودية 🇸🇦", labelEn: "Saudi Arabia 🇸🇦" },
-    { id: "ae", labelAr: "الإمارات العربية المتحدة 🇦🇪", labelEn: "United Arab Emirates 🇦🇪" },
-    { id: "eg", labelAr: "جمهورية مصر العربية 🇪🇬", labelEn: "Egypt 🇪🇬" },
-    { id: "mena", labelAr: "شمال أفريقيا والخليج (Regional MENA) 🌐", labelEn: "Regional MENA 🌐" }
+    { id: "sa", label: "Saudi Arabia 🇸🇦" },
+    { id: "ae", label: "United Arab Emirates 🇦🇪" },
+    { id: "eg", label: "Egypt 🇪🇬" },
+    { id: "mena", label: "Regional MENA 🌐" }
   ],
   investors: [
-    { name: "500 Global MENA", sectors: ["fintech", "b2b_ai", "logistics"], stages: ["pre_seed", "seed"], countries: ["sa", "ae", "eg", "mena"], ticket: "$100K - $500K", thesis: "High-growth software & AI models across MENA", matchRate: 98 },
-    { name: "Shorooq Partners", sectors: ["fintech", "b2b_ai", "logistics"], stages: ["seed", "series_a"], countries: ["sa", "ae", "eg", "mena"], ticket: "$500K - $3M", thesis: "Foundational technologies and B2B infrastructure", matchRate: 95 },
-    { name: "Flat6Labs Seed Fund", sectors: ["fintech", "healthtech", "ecommerce", "b2b_ai"], stages: ["pre_seed", "seed"], countries: ["eg", "sa", "mena"], ticket: "$50K - $150K", thesis: "Early-stage acceleration and institutional governance", matchRate: 94 },
-    { name: "Sanabil 500 MENA", sectors: ["b2b_ai", "logistics", "fintech"], stages: ["seed", "series_a"], countries: ["sa", "mena"], ticket: "$250K - $1.5M", thesis: "Saudi Vision 2030 tech expansion & digital leadership", matchRate: 93 },
-    { name: "Nuwa Capital", sectors: ["ecommerce", "b2b_ai", "fintech"], stages: ["seed", "series_a"], countries: ["ae", "sa", "eg"], ticket: "$500K - $2M", thesis: "Digital transformation and platform economics", matchRate: 91 },
-    { name: "Disruptech Ventures", sectors: ["fintech", "b2b_ai"], stages: ["pre_seed", "seed"], countries: ["eg", "mena"], ticket: "$200K - $1M", thesis: "Fintech enablement and financial inclusion infrastructure", matchRate: 92 },
-    { name: "Global Ventures", sectors: ["healthtech", "b2b_ai", "fintech"], stages: ["seed", "series_a"], countries: ["ae", "sa", "eg"], ticket: "$1M - $4M", thesis: "Enterprise software, healthcare and emerging markets", matchRate: 96 }
+    { name: "500 Global MENA", sectors: ["b2b_ai", "fintech", "logistics"], stages: ["pre_seed", "seed"], countries: ["sa", "ae", "eg", "mena"], ticket: "$100K - $500K", thesis: "High-velocity AI models and software platforms transforming MENA markets.", matchRate: 98 },
+    { name: "Shorooq Partners", sectors: ["b2b_ai", "fintech", "logistics"], stages: ["seed", "series_a"], countries: ["sa", "ae", "eg", "mena"], ticket: "$500K - $3M", thesis: "Foundational technologies, cloud enterprise software, and fintech rails.", matchRate: 95 },
+    { name: "Flat6Labs Seed Fund", sectors: ["fintech", "healthtech", "ecommerce", "b2b_ai"], stages: ["pre_seed", "seed"], countries: ["eg", "sa", "mena"], ticket: "$50K - $150K", thesis: "Early-stage technological acceleration with institutional governance.", matchRate: 94 },
+    { name: "Sanabil 500 MENA", sectors: ["b2b_ai", "logistics", "fintech"], stages: ["seed", "series_a"], countries: ["sa", "mena"], ticket: "$250K - $1.5M", thesis: "Saudi Vision 2030 digital expansion and enterprise SaaS leadership.", matchRate: 93 },
+    { name: "Nuwa Capital", sectors: ["ecommerce", "b2b_ai", "fintech"], stages: ["seed", "series_a"], countries: ["ae", "sa", "eg"], ticket: "$500K - $2M", thesis: "Direct-to-consumer and B2B platform economics with strong unit economics.", matchRate: 91 },
+    { name: "Disruptech Ventures", sectors: ["fintech", "b2b_ai"], stages: ["pre_seed", "seed"], countries: ["eg", "mena"], ticket: "$200K - $1M", thesis: "Financial inclusion infrastructure and embedded fintech enablement.", matchRate: 92 },
+    { name: "Global Ventures", sectors: ["healthtech", "b2b_ai", "fintech"], stages: ["seed", "series_a"], countries: ["ae", "sa", "eg"], ticket: "$1M - $4M", thesis: "Enterprise software, digital health, and regional emerging tech leaders.", matchRate: 96 }
   ]
 };
 
 const SMH_MEDICAL_EQUIPMENT_DATA = {
   devices: [
-    { id: "ultrasound_4d", nameAr: "جهاز سونار تشخيصي رباعي الأبعاد (4D Ultrasound)", nameEn: "4D Diagnostic Ultrasound System", defaultPrice: 650000, scanPrice: 400, defaultDailyScans: 16, maintenanceRatio: 0.05 },
-    { id: "digital_xray", nameAr: "نظام أشعة رقمي متكامل (Digital Radiology / X-Ray)", nameEn: "Digital Radiography (DR) System", defaultPrice: 1200000, scanPrice: 300, defaultDailyScans: 25, maintenanceRatio: 0.06 },
-    { id: "c_arm", nameAr: "جهاز أشعة وتصوير جراحي (C-Arm Surgical Fluoroscopy)", nameEn: "C-Arm Surgical Imaging System", defaultPrice: 1600000, scanPrice: 1200, defaultDailyScans: 8, maintenanceRatio: 0.07 },
-    { id: "portable_echo", nameAr: "جهاز إيكو وسونار محمول للرعاية المركزة", nameEn: "Portable Echocardiography & ICU Ultrasound", defaultPrice: 420000, scanPrice: 500, defaultDailyScans: 10, maintenanceRatio: 0.04 }
+    { id: "ultrasound_4d", name: "4D Diagnostic Ultrasound System", defaultPrice: 650000, scanPrice: 400, defaultDailyScans: 16, maintenanceRatio: 0.05 },
+    { id: "digital_xray", name: "Digital Radiography (DR) X-Ray System", defaultPrice: 1200000, scanPrice: 300, defaultDailyScans: 25, maintenanceRatio: 0.06 },
+    { id: "c_arm", name: "C-Arm Surgical Fluoroscopy System", defaultPrice: 1600000, scanPrice: 1200, defaultDailyScans: 8, maintenanceRatio: 0.07 },
+    { id: "portable_echo", name: "Portable Echocardiography & ICU Ultrasound", defaultPrice: 420000, scanPrice: 500, defaultDailyScans: 10, maintenanceRatio: 0.04 }
   ]
 };
 
 const CLI_COMMANDS_DATA = {
-  help: "الأوامر المتاحة: profile, wasl, corelink, tohamy, smh, skills, metrics, certs, contact, lang, clear",
+  help: `AVAILABLE COMMANDS:
+• profile   : View verified biography, credentials & profile governance
+• wasl      : Inspect WASL Network platform, 141 investors & 299 assets
+• corelink  : Review CoreLink CRM diagnostic and ClickUp agency OS
+• tohamy    : Check Tohamy House architectural fit-out and door schedules
+• smh       : Inspect SMH Engineering & Vilorax medical joint venture
+• skills    : List 60+ custom Antigravity agent skills & MCP servers
+• certs     : View 11+ verified 2026 professional credentials & ALX notice
+• metrics   : Display audited live system telemetry for 2026
+• contact   : Open B2B executive partnership and advisory drawer
+• clear     : Clear terminal console output`,
+
   profile: `[VERIFIED PROFILE — AHMED ISSAM RAMADAN]
-* Name: أحمد عصام رمضان (Ahmed Issam Ramadan)
-* Role: مهندس معماري لنظم الذكاء الاصطناعي ورائد أعمال تقني
-* Education: ليسانس حقوق جامعة الزقازيق 2022 (لم يعمل بالمحاماة ولا يحمل عضوية النقابة).
-* Credentials: المهارات البرمجية والأتمتة وقواعد البيانات مكتسبة ذاتياً 100% بالممارسة العملية.
-* ALX Certified: AI Career Essentials (AiCE) + Project Management Crash Course.
-* Active Ventures: VentureCycle Studio, WASL Network, OTB Agency, SMH & Vilorax JV.`,
-  wasl: `[WASL NETWORK STATUS]
-* Architecture: Next.js 16 + Supabase + PostgreSQL (RLS Enabled) + Tailwind CSS.
-* Directory: 141 Regional VC Funds & Angel Investors mapped and categorized.
-* Visual Assets: 299 production assets categorized across 8 SOSTAC marketing categories.
-* Staging Domain: wasl-network.com (Ready for launch).`,
-  corelink: `[CORELINK CRM AUDIT LOG]
-* Diagnosis: 78 overdue tasks across 23 projects identified with 35% rework waste.
-* Action Plan: Restructured ClickUp workspace into 4 dedicated operational spaces for 12 clients.
-* Target: Transitioned from passive logger into active event-driven workflow engine.`,
+• Full Name     : Ahmed Issam Ramadan (AIR)
+• Role          : AI-Native Systems Architect & Tech Entrepreneur
+• Education     : LL.B., Zagazig University (2022) — strictly non-practicing, NO Bar membership.
+• Governance    : Not a Computer Science graduate. All software engineering, frontend/backend,
+                  distributed databases, and automation skills are 100% SELF-TAUGHT via practical execution.
+• ALX Certified : AI Career Essentials (AiCE) + Project Management Crash Course.
+• Active Co     : VentureCycle Studio, WASL Network, OTB Agency, SMH & Vilorax JV.`,
+
+  wasl: `[WASL NETWORK STATUS — wasl-network.com]
+• Stack         : Next.js 16 (App Router) + Supabase (PostgreSQL with RLS) + Tailwind CSS.
+• Directory     : 141 Regional VC Funds and Accredited Angel Investors categorized.
+• Visual Assets : 299 production assets categorized across 8 SOSTAC marketing disciplines.
+• Architecture  : Multi-criteria matching engine with automated deal flow pipelines.`,
+
+  corelink: `[CORELINK CRM AUDIT REPORT]
+• Diagnosis     : 78 overdue tasks identified across 23 projects with 35% rework waste.
+• Action Taken  : Restructured ClickUp workspace into 4 dedicated operational spaces for 12 clients.
+• Target State  : Transformed from passive logging ledger into an active event-driven workflow engine.`,
+
   tohamy: `[TOHAMY HOUSE FIELD OPERATIONS]
-* Pizza Party (Nasr City): Official BOQ priced and approved under Tohamy House branding.
-* Villa Dr. Khaled: 9 Doors schedules certified with 30cm master frame adjustments.
-* Sites: Site 107, New Administrative Capital (As-Built), Madinaty 55/20, Al-Wesal.
-* Media Engine: 100% field video normalization & Whisper audio transcription pipeline.`,
-  smh: `[SMH ENGINEERING & VILORAX JV]
-* Partner: Eng. Hesham El-Qenawy (Ex-Unified Procurement Authority, $135M+ procurement lead).
-* Offering: Diagnostic Ultrasound, Digital X-Ray, Hospital Equipping, Automated B2B Outreach.
-* Status: Official Medical BOQ Template & Bulletproof Joint Venture Contract ready to sign.`,
-  skills: `[ANTIGRAVITY CUSTOM SKILLS — 60+ ACTIVE EXTENSIONS]
+• Pizza Party   : Nasr City commercial fit-out BOQ priced and approved under Tohamy House.
+• Villa Dr. K   : 9 architectural door schedules certified with 30cm master frame rectification.
+• Sites Active  : Site 107, New Administrative Capital (As-Built), Madinaty 55/20, Al-Wesal.
+• Media Pipeline: 100% field video normalization & Whisper AI audio transcription.`,
+
+  smh: `[SMH ENGINEERING & VILORAX JOINT VENTURE]
+• Partner       : Eng. Hesham El-Qenawy (Ex-Unified Procurement Authority, $135M+ procurement lead).
+• Equipment     : 4D Ultrasound, Digital Radiography (DR), C-Arm Fluoroscopy, Portable Echo/ICU.
+• Offering      : Diagnostic equipment procurement, warranty management & automated hospital outreach.
+• Status        : Official Medical BOQ Template and bulletproof JV contract finalized.`,
+
+  skills: `[ANTIGRAVITY CUSTOM SKILLS ARSENAL — 60+ ACTIVE EXTENSIONS]
 1. Executive & Communication: telegram-hub, google-workspace-hub, executive-stakeholder-briefing.
-2. Growth & Distribution: linkedin-hub, meta-hub, tiktok-hub, daily-brand-content-engine.
-3. Operations & Finance: paypal-business-manager, high-stakes-pitch-engine, master-project-engine.
-4. System Integrity: antigravity-cleanup-and-reporting, unified-productivity-tracker.`,
+2. Distribution & Growth   : linkedin-hub, meta-hub, tiktok-hub, daily-brand-content-engine.
+3. Operations & Commerce   : paypal-business-manager, high-stakes-pitch-engine, master-project-engine.
+4. Telemetry & Integrity   : antigravity-cleanup-and-reporting, unified-productivity-tracker.`,
+
   certs: `[VERIFIED 2026 CREDENTIALS — 11+ CERTIFICATES]
 1. Anthropic Claude 101 (Mar 5, 2026)
 2. HubSpot Social Media Marketing II (Feb 27, 2026)
 3. HubSpot Digital Advertising (Mar 5, 2026)
 4. HubSpot Email Marketing (Apr 3, 2026)
-5. IBM SkillsBuild Chatbot (Apr 9, 2026)
+5. IBM SkillsBuild Chatbots (Apr 9, 2026)
 6. ITIDA Gigs Freelance Training (Jan 31, 2026)
 7. Digitera Tech for Non-Techies (Jan 5, 2026)
-8. MaharaTech Freelancing 4-Course Series (Mar 5, 2026)
+8. ITI MaharaTech 4-Course Series (Mar 5, 2026)
 9. Coursera & Illinois Digital Marketing (Mar 16, 2026)
 10. Google Digital Marketing Fundamentals (Mar 16, 2026)
 11. NTI AI Ambassadors Program (Jun 29, 2026)`
 };
 
-// Expose on window
 if (typeof window !== "undefined") {
-  window.BILINGUAL_TRANSLATIONS = BILINGUAL_TRANSLATIONS;
+  window.CHRONICLE_DATA = CHRONICLE_DATA;
   window.WASL_SIMULATOR_DATA = WASL_SIMULATOR_DATA;
   window.SMH_MEDICAL_EQUIPMENT_DATA = SMH_MEDICAL_EQUIPMENT_DATA;
   window.CLI_COMMANDS_DATA = CLI_COMMANDS_DATA;
