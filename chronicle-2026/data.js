@@ -157,7 +157,7 @@ const CHRONICLE_DATA = {
           tech: ["Next.js 16", "Supabase", "PostgreSQL", "Tailwind CSS", "Row Level Security (RLS)", "Vercel"],
           metrics: ["141 Regional VC Investors", "Interactive Filtering & Search Engine", "Deal Flow & Messaging Architecture", "100% Healthy Supabase Schema"],
           description: "An end-to-end B2B matchmaking ecosystem connecting MENA startup founders with accredited angel investors and regional VC funds. Features a multi-stage matchmaking algorithm, strict RLS data authorization, and verified institutional deal pipelines.",
-          localPath: "/Users/ahmedissamramadan/.gemini/antigravity/scratch/projects/wasl-network",
+          accessTier: "Confidential Enterprise System • Protected Architecture",
           highlights: [
             "Developed the curated 141-investor directory categorized by stage (Pre-Seed, Seed, Series A) and sector.",
             "Enforced strict PostgreSQL Row Level Security (RLS) policies on profiles, match_requests, and messages.",
@@ -172,7 +172,7 @@ const CHRONICLE_DATA = {
           tech: ["Node.js", "TypeScript", "Bun", "Python 3.11", "SQLite", "Vector Embeddings", "X API"],
           metrics: ["14,000+ Vectors in Memory", "Ahmed Voice Persona Engine", "Automated X / Twitter Connector", "Real-Time SQLite Telemetry"],
           description: "A specialized multi-agent operating engine functioning as Ahmed's personal executive operating system. Features semantic vector memory retaining all project contexts, alongside a personalized voice engine matching his exact writing tone.",
-          localPath: "/Users/ahmedissamramadan/Developer/products/agent-framework",
+          accessTier: "Confidential Enterprise System • Protected Architecture",
           highlights: [
             "Vector Memory Engine enabling instant semantic retrieval across project histories.",
             "Ahmed Voice Guide ensuring authentic, authoritative communication matching his verified background.",
@@ -187,7 +187,7 @@ const CHRONICLE_DATA = {
           tech: ["Electron", "Vite", "React 19", "Node.js", "Sentiment Report Engine"],
           metrics: ["Integrated Desktop HUD", "Productivity & Sentiment Analyzer", "Active Window & Resource Tracker"],
           description: "A specialized desktop command center built with Electron and Vite for macOS, delivering operational telemetry, hardware monitoring, and automated productivity tracking.",
-          localPath: "/Users/ahmedissamramadan/Developer/artelligence-os",
+          accessTier: "Confidential Enterprise System • Protected Architecture",
           highlights: [
             "Modern Cyber-Glassmorphism UI built with React and Vite featuring native macOS frameless styling.",
             "Automated background activity tracker compiling periodic sentiment and focus telemetry reports.",
@@ -202,7 +202,7 @@ const CHRONICLE_DATA = {
           tech: ["Python", "FastAPI", "Vector Search", "Medical Knowledge Graphs"],
           metrics: ["Healthcare RAG Architecture", "Hallucination-Proof Protocol", "Clinical Query Router"],
           description: "A clinical retrieval-augmented generation (RAG) backend engineered to assist diagnostic radiology centers and private clinics in query orchestration and patient routing.",
-          localPath: "/Users/ahmedissamramadan/.gemini/antigravity/scratch/projects/clinic-gpt",
+          accessTier: "Confidential Enterprise System • Protected Architecture",
           highlights: [
             "Engineered high-precision clinical retrieval pipelines with strict temperature control to prevent hallucinations.",
             "Fully documented as a core technical case study in Ahmed's healthcare systems portfolio."
@@ -216,7 +216,7 @@ const CHRONICLE_DATA = {
           tech: ["HTML5", "CSS3 / Tailwind", "Modern JavaScript", "Responsive Grid"],
           metrics: ["ITI Digital Marketing Alumna", "Interactive Campaign Showcase", "100% Mobile Optimized"],
           description: "An elegant, responsive portfolio website architected for an Information Technology Institute (ITI) Digital Marketing graduate, showcasing ad campaigns, SEO performance, and branding studies.",
-          localPath: "/Users/ahmedissamramadan/.gemini/antigravity/scratch/ghada_portfolio",
+          accessTier: "Confidential Enterprise System • Protected Architecture",
           highlights: [
             "Fluid Apple-motion card transitions highlighting social media case studies and metrics.",
             "Ultra-clean typography and fast mobile loading times with zero build friction."
@@ -230,7 +230,7 @@ const CHRONICLE_DATA = {
           tech: ["GitHub Pages", "HTML/CSS/JS", "ZCode OS", "Antigravity Scratch"],
           metrics: ["ahmedissamramadan.github.io", "AIR Living Ecosystem Hub", "NotebookLM Knowledge Engine"],
           description: "The official personal web ecosystem and automated deployment architecture powering Ahmed's digital authority across GitHub Pages and custom domain endpoints.",
-          localPath: "/Users/ahmedissamramadan/ZCodeProject/automated-infrastructure-os",
+          accessTier: "Confidential Enterprise System • Protected Architecture",
           highlights: [
             "Dual-deployment CI/CD synchronization across standalone repositories and canonical root domain paths.",
             "Knowledge graph ingestion ready for automated synchronization with Google NotebookLM via MCP."
@@ -253,7 +253,7 @@ const CHRONICLE_DATA = {
           tech: ["ClickUp 3.0", "Custom Fields", "Automations", "4 Dedicated Spaces"],
           metrics: ["12 Concurrent Client Accounts", "4 Spaces: Operations, HR, Finance, Accounts", "Zero Unlinked Dependencies"],
           description: "A complete structural overhaul of OTB Agency's operational system on ClickUp, segmenting fragmented client work into 4 organized workspaces with real-time status pipelines.",
-          localPath: "/Users/ahmedissamramadan/Developer/agency-operations/clickup-otb",
+          accessTier: "Confidential Enterprise System • Protected Architecture",
           highlights: [
             "Eliminated task overlap across 12 distinct brand retainers through clear workspace partitioning.",
             "Configured custom automated workflows for asset approval, revisions, and stakeholder sign-offs."
@@ -267,7 +267,7 @@ const CHRONICLE_DATA = {
           tech: ["CRM Architecture", "Workflow Analysis", "Capacity Modeling", "ClickUp"],
           metrics: ["78 Overdue Tasks Resolved", "23 Active Projects Mapped", "35% Waste Eliminated"],
           description: "A root-cause diagnostic of CoreLink CRM, uncovering 78 overdue tasks across 23 projects. Formulated an operational transition from a passive logging ledger into an active event-driven engine.",
-          localPath: "/Users/ahmedissamramadan/Developer/agency-operations/corelink-crm",
+          accessTier: "Confidential Enterprise System • Protected Architecture",
           highlights: [
             "Diagnosed lack of task dependencies as the primary source of 30-40% rework overhead.",
             "Architected phased transition blueprint to automate status triggers and prevent delivery bottlenecks."
@@ -281,7 +281,7 @@ const CHRONICLE_DATA = {
           tech: ["Markdown", "SOSTAC Framework", "B2B Marketing Scoping", "E-Commerce"],
           metrics: ["8 Product Categories Scoped", "Comprehensive Spec Documents", "Omnichannel Launch Guides"],
           description: "A library of comprehensive product launch briefs and standard operating procedures (SOPs) engineered to scale e-commerce product lines with uniform specifications.",
-          localPath: "/Users/ahmedissamramadan/Documents/Unified_Ecosystem/01_Projects/Product_Labs",
+          accessTier: "Confidential Enterprise System • Protected Architecture",
           highlights: [
             "Structured production specifications for luxury leather goods, timepieces, jewelry, and consumables.",
             "Engineered repeatable omnichannel launch frameworks integrating ad hooks, landing pages, and email flows."
@@ -304,7 +304,7 @@ const CHRONICLE_DATA = {
           tech: ["Figma", "Stitch with Google", "SOSTAC Marketing Strategy", "Motion Graphics"],
           metrics: ["141 Square (1:1)", "90 Landscape (16:9)", "65 Vertical (9:16)", "2 Motion Loops"],
           description: "A massive, meticulously categorized visual asset arsenal powering WASL Network's launch across social media, pitch decks, investor memos, and regional PR campaigns.",
-          localPath: "/Users/ahmedissamramadan/Documents/Unified_Ecosystem/01_Projects/Wasl_Network/Assets",
+          accessTier: "Confidential Enterprise System • Protected Architecture",
           highlights: [
             "Organized across 8 SOSTAC disciplines: Strategy, Logos, UI/UX, Cultural Art, Typography, Social, Events, Pitch.",
             "Accompanied by 13 strategic Excel planning sheets and verified Bit-for-Bit digital signatures."
@@ -318,7 +318,7 @@ const CHRONICLE_DATA = {
           tech: ["Vector Branding", "Packaging Mockups", "Social Systems", "Lookbooks"],
           metrics: ["244 Master Assets", "Complete Brand Guidelines", "Packaging & Garment Tags"],
           description: "An extensive, premium Egyptian heritage streetwear and apparel identity system fusing ancient symbolism with modern luxury streetwear aesthetics.",
-          localPath: "/Users/ahmedissamramadan/Documents/Unified_Ecosystem/01_Projects/Brands/KHEM",
+          accessTier: "Confidential Enterprise System • Protected Architecture",
           highlights: [
             "Engineered complete typography hierarchies, color palettes, and garment packaging specifications.",
             "Delivered comprehensive digital lookbooks and social media campaign frameworks."
@@ -332,7 +332,7 @@ const CHRONICLE_DATA = {
           tech: ["Illustrator", "Packaging Design", "Signage Specs", "Menu Engineering"],
           metrics: ["60 Master Files", "Interior Signage & Menus", "Delivery Packaging Suite"],
           description: "A vibrant, scalable brand identity and packaging system designed for an authentic Egyptian street-food restaurant chain expanding across regional locations.",
-          localPath: "/Users/ahmedissamramadan/Documents/Unified_Ecosystem/01_Projects/Brands/Foul_Falafel",
+          accessTier: "Confidential Enterprise System • Protected Architecture",
           highlights: [
             "Delivered complete packaging designs: wrap paper, sandwich boxes, branded cups, and delivery bags.",
             "Designed illuminated storefront signage and bilingual menu display boards."
@@ -346,7 +346,7 @@ const CHRONICLE_DATA = {
           tech: ["Brand Tokens", "Social Templates", "Packaging Design", "Lookbook"],
           metrics: ["112 Master Files", "Complete Social Grid", "Editorial Typography"],
           description: "A minimalist, sun-inspired lifestyle and cosmetics brand identity emphasizing organic modernism, warmth, and sustainable elegance.",
-          localPath: "/Users/ahmedissamramadan/Documents/Unified_Ecosystem/01_Projects/Brands/Solara",
+          accessTier: "Confidential Enterprise System • Protected Architecture",
           highlights: [
             "Crafted a cohesive visual system with warm metallic accents and editorial photography guidelines.",
             "Delivered 112 production-ready assets for social, e-commerce banners, and product boxes."
@@ -360,7 +360,7 @@ const CHRONICLE_DATA = {
           tech: ["Luxury Typography", "Gold Foil Embellishments", "Bespoke Packaging"],
           metrics: ["133 Master Files", "Luxury Packaging Guidelines", "Certificate of Authenticity"],
           description: "An ultra-premium corporate and luxury identity suite engineered for high-end Arabian heritage fragrances and prestige accessories.",
-          localPath: "/Users/ahmedissamramadan/Documents/Unified_Ecosystem/01_Projects/Brands/Nafees",
+          accessTier: "Confidential Enterprise System • Protected Architecture",
           highlights: [
             "Formulated elegant packaging specifications with gold foil debossing and premium paper stocks.",
             "Designed bespoke certificates of authenticity and luxury unboxing collateral."
@@ -383,7 +383,7 @@ const CHRONICLE_DATA = {
           tech: ["Architectural BOQs", "Civil Cost Estimations", "Site Supervisions", "Procurement"],
           metrics: ["Official Itemized BOQ", "Nasr City Commercial Site", "Full Tohamy House Branding"],
           description: "Detailed bill of quantities (BOQ), material specifications, and architectural fit-out cost engineering for the Pizza Party commercial hospitality location in Nasr City under Tohamy House branding.",
-          localPath: "/Users/ahmedissamramadan/Documents/Unified_Ecosystem/01_Projects/Tohamy_House/Pizza_Party",
+          accessTier: "Confidential Enterprise System • Protected Architecture",
           highlights: [
             "Engineered complete architectural door, ceiling, and flooring schedules with precise reference codes.",
             "Validated contractor unit rates against prevailing market indices to guarantee budget integrity."
@@ -397,7 +397,7 @@ const CHRONICLE_DATA = {
           tech: ["Door Schedules", "Woodworking Specs", "Architectural Millwork", "Site Audit"],
           metrics: ["9 Architectural Doors", "Master Bedroom 30cm Frame Adjusted", "Fit-Out Approved"],
           description: "Architectural millwork inspection and door schedule certification for Villa Dr. Khaled, successfully resolving structural variance with a bespoke 30cm master bedroom frame rectification.",
-          localPath: "/Users/ahmedissamramadan/Documents/Unified_Ecosystem/01_Projects/Tohamy_House/Villa_Dr_Khaled",
+          accessTier: "Confidential Enterprise System • Protected Architecture",
           highlights: [
             "Inspected on-site masonry openings and revised fabrication drawings to accommodate structural variances.",
             "Approved final delivery of 9 luxury architectural doors adhering to luxury residential standards."
@@ -411,7 +411,7 @@ const CHRONICLE_DATA = {
           tech: ["Site 107", "New Capital As-Built", "Madinaty 55/20", "Al-Wesal Site"],
           metrics: ["5 Active Engineering Sites", "Whisper Audio Site Notes", "Field Video Archive"],
           description: "Field management, site progress documentation, and client handover coordination across flagship residential and commercial projects in Greater Cairo and the New Administrative Capital.",
-          localPath: "/Users/ahmedissamramadan/Documents/Unified_Ecosystem/01_Projects/Tohamy_House",
+          accessTier: "Confidential Enterprise System • Protected Architecture",
           highlights: [
             "Maintained field video archive captured by site photographer Youssef with automated Whisper AI transcripts.",
             "Oversaw As-Built documentation for high-profile New Administrative Capital residential villas."
@@ -425,7 +425,7 @@ const CHRONICLE_DATA = {
           tech: ["Medical Supply Chain", "Diagnostic BOQs", "B2B Outreach Engine", "Hospital Intelligence"],
           metrics: ["Eng. Hesham El-Qenawy Partner", "4 Diagnostic Equipment Categories", "Hospital Pipeline in Delta & Cairo"],
           description: "A high-stakes commercial joint venture partnering with Eng. Hesham El-Qenawy (Ex-Unified Procurement Authority lead with $135M+ procurement oversight) to equip private hospitals and radiology centers across Egypt.",
-          localPath: "/Users/ahmedissamramadan/Documents/Unified_Ecosystem/01_Projects/SMH_Engineering",
+          accessTier: "Confidential Enterprise System • Protected Architecture",
           highlights: [
             "Architected official medical equipment BOQ template covering 4D Ultrasound, Digital X-Ray, C-Arm, and Portable Echo.",
             "Formulated bulletproof joint venture legal contract and automated B2B hospital outreach engine."

@@ -1,5 +1,25 @@
+# Operating System files
 .DS_Store
 Thumbs.db
 *.log
+
+# Sensitive environments, credentials and keys
+.env
+.env.*
+*.pem
+*.key
+*.cert
+*.p12
+*.id_rsa
+credentials.json
+client_secret*.json
+service_account*.json
+token.json
+tokens/
+
+# Local IDE and dev scratch
 .vscode/
 .idea/
+scratch/
+temp/
+*.tmp
