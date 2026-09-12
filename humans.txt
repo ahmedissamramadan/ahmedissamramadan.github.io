@@ -1,0 +1,16 @@
+/* TEAM & ARCHITECT */
+Architect & Lead Engineer: Ahmed Issam Ramadan (AIR)
+Role: AI Systems Architect & Tech Entrepreneur
+Canonical Profile: https://ahmedissamramadan.github.io/
+Living Chronicle: https://ahmedissamramadan.github.io/chronicle-2026/
+Telegram Command Bot: @ahmedissam_bot (https://t.me/ahmedissam_bot)
+Executive Contact: ahmedissam.work@gmail.com
+Location: Cairo, Egypt
+
+/* SYSTEM ARCHITECTURE & STANDARDS */
+Frontend Core: HTML5, Modern ECMAScript (ES2024), Tailwind CSS
+Typography: Space Grotesk, Inter, JetBrains Mono
+Design System: Cyber-Glassmorphism, Apple Fluid Motion Spring Curves
+Cognitive Mesh: Autonomous Multi-Agent Topology (Antigravity, Dia Browser, Hermes, AutoClaw)
+Protocol Integrations: Model Context Protocol (MCP), Supabase RLS, Vector Embeddings
+Security & Governance: Strict Zero-Trust State Management, NDA Protected Architectures
