@@ -12,35 +12,21 @@ document.addEventListener("DOMContentLoaded", () => {
   // 1. Initialize Living Topology Particle Canvas
   new ParticleCanvas("particle-canvas");
 
-  // 2. Initialize Clocks & Telemetry
+  // 2. Initialize Cairo Clock
   initLiveClock();
 
-  // 3. Render Profile & Metrics
+  // 3. Render Simplified Hero & Top 4 Metrics
   renderHeroProfile();
   renderGlobalMetrics();
 
-  // 4. Render Timeline
-  renderTimeline();
+  // 4. Render Top 6 Featured Projects
+  renderFeaturedProjects();
 
-  // 5. Render Domains & Items
-  renderDomainTabs();
-  renderDomainItems("all");
-
-  // 6. Render Sub-modules & Simulators
-  renderTopologyDiagram();
-  renderWaslAssetsExplorer();
-  renderWaslSimulator();
-  renderCorelinkDiagnostic();
-  renderEngineeringHub();
-  renderSmhRoiCalculator();
-  renderVaultCertifications();
-
-  // 7. Setup Interactivity & Terminals
-  setupTerminal();
+  // 5. Setup Interactivity & Scroll Reveal
   setupEventListeners();
   initScrollReveal();
 
-  // 8. Lucide Icons
+  // 6. Lucide Icons
   if (window.lucide) {
     window.lucide.createIcons();
   }
@@ -59,8 +45,7 @@ function initLiveClock() {
       month: "short",
       day: "numeric",
       hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit"
+      minute: "2-digit"
     };
     clockEl.textContent = "Cairo • " + now.toLocaleDateString("en-US", options) + " EEST";
   };
@@ -68,98 +53,68 @@ function initLiveClock() {
   setInterval(update, 1000);
 }
 
-// Hero Profile Section
+// Hero Profile Section (Simplified, Zero Redundancy)
 function renderHeroProfile() {
   const { profile } = CHRONICLE_DATA;
   const container = document.getElementById("hero-profile-content");
   if (!container) return;
 
   container.innerHTML = `
-    <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
-      <div class="flex items-center gap-4">
-        <div class="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-600 p-0.5 shadow-xl shadow-indigo-500/25">
-          <div class="flex h-full w-full items-center justify-center rounded-[14px] bg-slate-950 font-heading text-2xl font-bold text-white tracking-wider">
-            AIR
-          </div>
-          <span class="absolute -bottom-1 -right-1 flex h-4 w-4">
-            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
-            <span class="relative inline-flex h-4 w-4 rounded-full bg-emerald-500 border-2 border-slate-950"></span>
-          </span>
-        </div>
-        <div>
-          <div class="flex flex-wrap items-center gap-2.5">
-            <h1 class="text-2xl md:text-4xl font-extrabold tracking-tight text-white font-heading">${profile.name}</h1>
-            <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold badge-blue font-mono-num">${profile.statusBadge}</span>
-          </div>
-          <p class="text-sm md:text-base text-slate-400 mt-1 font-heading font-medium">${profile.title}</p>
-        </div>
+    <div class="flex flex-col items-center text-center max-w-3xl mx-auto pt-6 pb-2">
+      <!-- Status Pill -->
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/90 border border-slate-800 text-xs text-slate-300 mb-6 shadow-sm">
+        <span class="flex h-2 w-2 relative">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+        </span>
+        <span class="font-mono text-slate-400">Available:</span>
+        <span class="font-heading font-medium text-emerald-400">High-Stakes Advisory & AI Architecture</span>
       </div>
-      <div class="flex items-center gap-2">
-        <button id="btn-sound-toggle" class="glass-pill btn-press px-3.5 py-2 rounded-xl text-xs flex items-center gap-2 text-slate-300 hover:text-white font-mono">
-          <i data-lucide="volume-x" id="sound-icon" class="w-4 h-4 text-amber-400"></i>
-          <span id="sound-label">Audio: Muted</span>
-        </button>
-        <button onclick="window.print()" class="glass-pill btn-press px-3.5 py-2 rounded-xl text-xs flex items-center gap-2 text-slate-300 hover:text-white font-mono">
-          <i data-lucide="printer" class="w-4 h-4 text-cyan-400"></i>
-          <span>Print Record</span>
-        </button>
-      </div>
-    </div>
 
-    <!-- Official Profile Governance Notice -->
-    <div class="glass-panel rounded-2xl p-5 mb-6 border-slate-800/80 bg-slate-950/60">
-      <div class="flex items-start gap-3.5">
-        <i data-lucide="shield-alert" class="w-5 h-5 text-amber-400 shrink-0 mt-0.5"></i>
-        <div>
-          <h4 class="text-xs font-bold text-amber-300 font-heading uppercase tracking-wider mb-1">Official Governance & Profile Invariant Record</h4>
-          <p class="text-xs text-slate-300 leading-relaxed">
-            Zagazig University LL.B. graduate (2022) — <strong>strictly non-practicing</strong> and has never held Bar Association membership. Not a graduate of Computer Science or IT faculties; all software development, full-stack web architecture, distributed databases, and enterprise automation skills are <strong>100% self-taught</strong> through intensive hands-on execution and high-stakes startup building. Official ALX credentials: <strong>AI Career Essentials (AiCE)</strong> and <strong>Project Management Crash Course</strong>.
-          </p>
-        </div>
-      </div>
-    </div>
+      <!-- Main Headline -->
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white font-heading mb-4">
+        Ahmed Issam Ramadan
+      </h1>
+      <p class="text-lg sm:text-xl text-indigo-400 font-heading font-medium mb-6">
+        AI Systems Architect & Tech Entrepreneur
+      </p>
 
-    <p class="text-slate-300 text-sm md:text-base leading-relaxed mb-6 max-w-4xl font-normal">
-      ${profile.bio}
-    </p>
+      <!-- Single Concise Governance Disclaimer (Profile Invariant Compliance) -->
+      <div class="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs sm:text-sm font-sans mb-8 text-left sm:text-center leading-relaxed">
+        <i data-lucide="shield-check" class="w-4 h-4 text-amber-400 shrink-0"></i>
+        <span>
+          <strong>Zagazig University LL.B. (2022, non-practicing)</strong> • 100% self-taught software & systems engineer • Official ALX AiCE & Project Management certified.
+        </span>
+      </div>
 
-    <!-- Core Tech Stacks -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
-      <div class="glass-panel p-4 rounded-xl">
-        <span class="text-xs font-bold text-blue-400 block mb-2 font-heading">🎨 UI/UX Design</span>
-        <div class="flex flex-wrap gap-1.5">
-          ${profile.stack.design.map(s => `<span class="text-[11px] px-2 py-0.5 rounded bg-slate-900/80 text-slate-300 border border-slate-800 font-mono">${s}</span>`).join("")}
-        </div>
-      </div>
-      <div class="glass-panel p-4 rounded-xl">
-        <span class="text-xs font-bold text-indigo-400 block mb-2 font-heading">⚡ Frontend Systems</span>
-        <div class="flex flex-wrap gap-1.5">
-          ${profile.stack.frontend.map(s => `<span class="text-[11px] px-2 py-0.5 rounded bg-slate-900/80 text-slate-300 border border-slate-800 font-mono">${s}</span>`).join("")}
-        </div>
-      </div>
-      <div class="glass-panel p-4 rounded-xl">
-        <span class="text-xs font-bold text-purple-400 block mb-2 font-heading">⚙️ Backend & Data</span>
-        <div class="flex flex-wrap gap-1.5">
-          ${profile.stack.backend.map(s => `<span class="text-[11px] px-2 py-0.5 rounded bg-slate-900/80 text-slate-300 border border-slate-800 font-mono">${s}</span>`).join("")}
-        </div>
-      </div>
-      <div class="glass-panel p-4 rounded-xl">
-        <span class="text-xs font-bold text-emerald-400 block mb-2 font-heading">🤖 Automation & MCP</span>
-        <div class="flex flex-wrap gap-1.5">
-          ${profile.stack.automation.map(s => `<span class="text-[11px] px-2 py-0.5 rounded bg-slate-900/80 text-slate-300 border border-slate-800 font-mono">${s}</span>`).join("")}
-        </div>
+      <!-- Primary Action Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-3 w-full sm:w-auto">
+        <a href="#contact" class="w-full sm:w-auto px-6 py-3 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-500 hover:to-indigo-500 text-white font-heading font-bold text-sm transition-all shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2 btn-press">
+          <i data-lucide="zap" class="w-4 h-4"></i>
+          <span>Book Advisory</span>
+        </a>
+        <a href="./chronicle-2026/index.html" class="w-full sm:w-auto px-6 py-3 rounded-2xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 font-heading font-semibold text-sm transition-all flex items-center justify-center gap-2 btn-press">
+          <span>Explore 2026 Chronicle</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400"></i>
+        </a>
       </div>
     </div>
   `;
 }
 
-// Global Metrics with Count-Up and SVG Sparklines
+// Exactly 4 Key Impact Metrics Ribbon
 function renderGlobalMetrics() {
   const container = document.getElementById("global-metrics-grid");
   if (!container) return;
 
-  container.innerHTML = CHRONICLE_DATA.globalMetrics.map((m, idx) => {
-    // Generate mini sparkline path
+  const metrics = CHRONICLE_DATA.topMetrics || [
+    { id: "investors", value: "141", label: "Vetted Investors", subtext: "WASL Network Syndicate", icon: "briefcase", color: "emerald", sparkline: [40, 65, 88, 110, 125, 141] },
+    { id: "repos", value: "33+", label: "Systems & Repos", subtext: "Shipped in 2026", icon: "code-2", color: "blue", sparkline: [12, 16, 19, 24, 28, 33] },
+    { id: "assets", value: "299", label: "Production Assets", subtext: "Brand & Visual Systems", icon: "palette", color: "purple", sparkline: [50, 95, 160, 210, 260, 299] },
+    { id: "certs", value: "11+", label: "Verified Credentials", subtext: "Anthropic, HubSpot, IBM, ITI", icon: "award", color: "amber", sparkline: [2, 4, 6, 8, 10, 11] }
+  ];
+
+  container.innerHTML = metrics.map((m) => {
     const spark = m.sparkline || [10, 20, 15, 30, 25, 40];
     const minVal = Math.min(...spark);
     const maxVal = Math.max(...spark);
@@ -172,34 +127,59 @@ function renderGlobalMetrics() {
     }).join(" ");
 
     return `
-      <div class="glass-panel p-4 md:p-5 rounded-2xl card-interactive cursor-pointer border-slate-800/80 flex flex-col justify-between" onclick="showMetricDetails('${m.id}')">
-        <div class="flex items-center justify-between gap-2 mb-2">
-          <div class="w-9 h-9 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-center text-${m.color}-400 shadow-sm">
-            <i data-lucide="${m.icon}" class="w-4 h-4"></i>
+      <div class="glass-panel p-5 rounded-2xl border-slate-800/80 flex flex-col justify-between hover:border-slate-700 transition-all">
+        <div class="flex items-center justify-between gap-2 mb-3">
+          <div class="w-10 h-10 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-center text-${m.color}-400 shadow-sm">
+            <i data-lucide="${m.icon}" class="w-5 h-5"></i>
           </div>
-          <!-- Sparkline Live Telemetry -->
-          <svg class="sparkline-svg" viewBox="0 0 ${width} ${height}">
-            <polyline class="sparkline-path" stroke="var(--accent-${m.color === 'blue' ? 'primary' : m.color === 'emerald' ? 'emerald' : m.color === 'purple' ? 'primary' : 'amber'})" points="${points}" />
-            <circle cx="${width}" cy="${points.split(' ').pop().split(',')[1]}" r="2.5" fill="var(--accent-${m.color === 'blue' ? 'primary' : m.color === 'emerald' ? 'emerald' : 'amber'})" />
+          <svg class="sparkline-svg" width="64" height="24" viewBox="0 0 64 24" aria-hidden="true">
+            <polyline points="${points}" fill="none" stroke="currentColor" stroke-width="2" class="text-${m.color}-400/80" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </div>
         <div>
           <div class="font-mono-num text-2xl md:text-3xl font-extrabold text-white tracking-tight count-up-target" data-value="${m.value}">
             ${m.value}
           </div>
-          <h3 class="text-xs font-bold text-slate-300 font-heading mt-1 leading-snug">${m.label}</h3>
-          <p class="text-[11px] text-slate-400 mt-1 font-mono flex items-center gap-1.5">
-            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>${m.change}</span>
-          </p>
+          <h3 class="text-xs font-bold text-slate-200 font-heading mt-1 leading-snug">${m.label}</h3>
+          <p class="text-[11px] text-slate-400 font-sans mt-0.5">${m.subtext}</p>
         </div>
       </div>
     `;
   }).join("");
 
-  // Trigger count-up animation on viewport enter
   initCountUpObserver();
 }
+
+// Top 6 Featured Projects Grid
+function renderFeaturedProjects() {
+  const container = document.getElementById("featured-projects-grid");
+  if (!container || !CHRONICLE_DATA.featuredProjects) return;
+
+  container.innerHTML = CHRONICLE_DATA.featuredProjects.map(p => `
+    <div class="glass-panel p-6 rounded-3xl border-slate-800/80 flex flex-col justify-between hover:border-indigo-500/40 transition-all hover:-translate-y-1 shadow-lg group">
+      <div>
+        <div class="flex items-center justify-between gap-2 mb-3">
+          <span class="text-xs font-bold px-2.5 py-0.5 rounded-full badge-${p.badgeColor} font-mono">${p.badge}</span>
+          <span class="text-[11px] font-mono text-slate-400">${p.stat}</span>
+        </div>
+        <h3 class="text-lg font-bold text-white font-heading group-hover:text-indigo-300 transition-colors mb-1">${p.title}</h3>
+        <p class="text-xs text-indigo-400/90 font-mono mb-3">${p.tagline}</p>
+        <p class="text-xs text-slate-300 leading-relaxed font-sans mb-4">${p.desc}</p>
+      </div>
+
+      <div>
+        <div class="flex flex-wrap gap-1.5 mb-4">
+          ${p.tech.map(t => `<span class="text-[10px] px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-slate-400 font-mono">${t}</span>`).join("")}
+        </div>
+        <a href="${p.link}" class="text-xs font-heading font-bold text-indigo-400 hover:text-indigo-300 flex items-center gap-1 transition-colors">
+          <span>Explore System</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform"></i>
+        </a>
+      </div>
+    </div>
+  `).join("");
+}
+
 
 function initCountUpObserver() {
   const elements = document.querySelectorAll(".count-up-target");
@@ -1212,6 +1192,19 @@ function showMetricDetails(metricId) {
 // Staggered Scroll-Reveal Observer
 function initScrollReveal() {
   const targets = document.querySelectorAll(".reveal-on-scroll");
+
+  // Immediately reveal elements already inside or near viewport
+  const revealVisible = () => {
+    targets.forEach(t => {
+      const rect = t.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 1.15) {
+        t.classList.add("revealed");
+      }
+    });
+  };
+  revealVisible();
+  window.addEventListener("scroll", revealVisible, { passive: true });
+
   if (!("IntersectionObserver" in window)) {
     targets.forEach(t => t.classList.add("revealed"));
     return;
@@ -1223,7 +1216,7 @@ function initScrollReveal() {
         entry.target.classList.add("revealed");
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.05, rootMargin: "100px" });
 
   targets.forEach(t => observer.observe(t));
 }
@@ -1235,6 +1228,23 @@ function setupEventListeners() {
     searchInput.addEventListener("input", e => {
       currentSearchQuery = e.target.value;
       renderDomainItems(activeDomain);
+    });
+  }
+
+  const contactForm = document.getElementById("consultation-form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = document.getElementById("contact-name")?.value || "";
+      const contact = document.getElementById("contact-info")?.value || "";
+      const track = document.getElementById("contact-track")?.value || "Executive AI Advisory";
+      const message = document.getElementById("contact-message")?.value || "";
+
+      const subject = encodeURIComponent(`[Advisory Request] ${track} — ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nContact: ${contact}\nTrack: ${track}\n\nProject Scope:\n${message}`);
+
+      window.open(`mailto:ahmedissam.work@gmail.com?subject=${subject}&body=${body}`, "_blank");
+      showToast("Draft email prepared! Opening mail client...", "mail");
     });
   }
 

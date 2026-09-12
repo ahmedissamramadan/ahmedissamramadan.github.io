@@ -42,6 +42,82 @@ const CHRONICLE_DATA = {
     { id: "certs", label: "Verified 2026 Professional Certs", value: "11+", icon: "award", change: "Anthropic, HubSpot, NTI, ITI", color: "yellow", sparkline: [2, 4, 6, 8, 10, 11] }
   ],
 
+  topMetrics: [
+    { id: "investors", value: "141", label: "Vetted Investors", subtext: "WASL Network Syndicate", icon: "briefcase", color: "emerald", sparkline: [40, 65, 88, 110, 125, 141] },
+    { id: "repos", value: "33+", label: "Systems & Repos", subtext: "Shipped in 2026", icon: "code-2", color: "blue", sparkline: [12, 16, 19, 24, 28, 33] },
+    { id: "assets", value: "299", label: "Production Assets", subtext: "Brand & Visual Systems", icon: "palette", color: "purple", sparkline: [50, 95, 160, 210, 260, 299] },
+    { id: "certs", value: "11+", label: "Verified Credentials", subtext: "Anthropic, HubSpot, IBM, ITI", icon: "award", color: "amber", sparkline: [2, 4, 6, 8, 10, 11] }
+  ],
+
+  featuredProjects: [
+    {
+      id: "wasl-network",
+      title: "WASL Network Platform",
+      tagline: "Venture Matchmaking & Deal Syndicate Engine",
+      badge: "SaaS • Live",
+      badgeColor: "emerald",
+      desc: "End-to-end B2B matchmaking platform connecting MENA startup founders with 141 accredited angel investors and regional venture capital funds. Engineered with Next.js 16, Supabase PostgreSQL, and strict Row Level Security.",
+      tech: ["Next.js 16", "Supabase RLS", "PostgreSQL", "Tailwind CSS"],
+      stat: "141 Vetted Investors",
+      link: "./chronicle-2026/index.html#wasl-network"
+    },
+    {
+      id: "vibecoding",
+      title: "VibeCoding AKOS",
+      tagline: "Autonomous Knowledge Operating System",
+      badge: "AI Core • Case Study",
+      badgeColor: "blue",
+      desc: "Self-hosted AI cognitive operating system featuring local vector chunking, semantic retrieval, and memory trees. Delivers persistent context for AI agents with 100% data sovereignty and zero token indexing cost.",
+      tech: ["Python 3.11", "SQLite-VSS", "FastAPI", "Next.js"],
+      stat: "5,373 Chunks • $0 Cost",
+      link: "./work/vibecoding/index.html"
+    },
+    {
+      id: "corelink",
+      title: "CoreLink CRM & Agency OS",
+      tagline: "Multi-Tenant Enterprise Workflow CRM",
+      badge: "Enterprise • Operational",
+      badgeColor: "purple",
+      desc: "Operations engine consolidating 4 ClickUp agency workspaces across 12 active client accounts. Audited and converted 78 overdue tasks into automated event-driven delivery pipelines.",
+      tech: ["Next.js", "TypeScript", "ClickUp API", "n8n / Make"],
+      stat: "78 Tasks Restructured",
+      link: "./chronicle-2026/index.html#corelink-crm"
+    },
+    {
+      id: "antigravity",
+      title: "Antigravity AI Agent Suite",
+      tagline: "Autonomous Multi-Agent Orchestration Mesh",
+      badge: "Autonomous • AI",
+      badgeColor: "cyan",
+      desc: "Autonomous multi-agent orchestration architecture equipped with 60+ specialized agent skills and Model Context Protocol (MCP) hubs across code research, deployment pipelines, and messaging channels.",
+      tech: ["Python", "Node.js", "Model Context Protocol", "Vercel SDK"],
+      stat: "60+ Custom Skills & Hubs",
+      link: "./chronicle-2026/index.html#antigravity-suite"
+    },
+    {
+      id: "smh-medical",
+      title: "SMH Medical Supply JV",
+      tagline: "Healthcare Diagnostic Procurement & Financial Simulators",
+      badge: "Healthcare JV",
+      badgeColor: "emerald",
+      desc: "Strategic joint venture with Eng. Hesham El-Qenawy powering medical supply chain intelligence, automated hospital outreach, and interactive 12-month equipment ROI payback calculators.",
+      tech: ["Financial Modeling", "SVG Area Charts", "B2B Outreach", "Next.js"],
+      stat: "Diagnostic JV Alliance",
+      link: "./chronicle-2026/index.html#smh-roi-anchor"
+    },
+    {
+      id: "tohamy-house",
+      title: "Tohamy House Architectural Platform",
+      tagline: "As-Built Field Coordination & Commercial BOQs",
+      badge: "Engineering • Active Sites",
+      badgeColor: "amber",
+      desc: "Field engineering coordination platform managing Pizza Party commercial BOQs, Villa Dr. Khaled millwork schedules, active sites across Cairo & New Capital, and Whisper AI field video processing.",
+      tech: ["Field Engineering", "Whisper AI", "MD5 Bit-Audit", "BOQ Systems"],
+      stat: "5 Active Construction Sites",
+      link: "./chronicle-2026/index.html#tohamy-house"
+    }
+  ],
+
   timeline: [
     {
       quarter: "Quarter 1 (Q1 2026)",
