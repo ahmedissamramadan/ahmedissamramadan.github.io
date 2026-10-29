@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>هرم الذكاء الاصطناعي العالمي | الدليل المعرفي والتشغيلي - أحمد عصام رمضان</title>
+    <meta name="description" content="دليل تفاعلي مبسط وموثق علمياً لشرح طبقات ومستويات هرم الذكاء الاصطناعي العالمي (من المستخدم العادي إلى الأنظمة الوكيلة المستقلة ومبتكري النماذج)، من إعداد وبناء أحمد عصام رمضان.">
+    <meta name="author" content="Ahmed Issam Ramadan | أحمد عصام رمضان">
+    <link rel="canonical" href="https://ahmedissamramadan.github.io/ai-pyramid/">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="هرم الذكاء الاصطناعي العالمي | أين تقف في عصر الذكاء الاصطناعي؟">
+    <meta property="og:description" content="خارطة طريق علمية ومبسطة لفهم طبقات الذكاء الاصطناعي الخمس طبقا لأطر OpenAI و Gartner و Stanford HAI، مع اختبار تفاعلي لتحديد مستواك.">
+    <meta property="og:url" content="https://ahmedissamramadan.github.io/ai-pyramid/">
+    <meta property="og:site_name" content="Ahmed Issam Ramadan Digital Signature">
+
+    <!-- Fonts: Cairo & Readex Pro & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['Cairo', 'sans-serif'],
+                        sans: ['Readex Pro', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        obsidian: '#040711',
+                        surface: '#0a0f1f',
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        cyan: {
+                            400: '#22d3ee',
+                            500: '#06b6d4',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --bg-deep: hsl(224, 71%, 4%);
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-highlight: rgba(255, 255, 255, 0.14);
+        }
+
+        * {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            color: #f8fafc;
+            font-family: 'Readex Pro', sans-serif;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 25%, rgba(168, 85, 247, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 50% 80%, rgba(245, 158, 11, 0.06) 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        h1, h2, h3, h4, .font-title {
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .glass-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(255, 255, 255, 0.18);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 25px -5px rgba(56, 189, 248, 0.12);
+        }
+
+        .glass-gold {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(15, 23, 42, 0.8) 100%);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            box-shadow: 0 0 35px -5px rgba(245, 158, 11, 0.2);
+        }
+
+        /* Pyramid Layer Styling */
+        .pyramid-tier {
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            clip-path: polygon(4% 0%, 96% 0%, 100% 100%, 0% 100%);
+        }
+
+        .pyramid-tier:hover, .pyramid-tier.active-tier {
+            transform: scale(1.03) translateY(-2px);
+            filter: brightness(1.18);
+            z-index: 20;
+        }
+
+        .tier-glow-4 {
+            box-shadow: 0 0 30px rgba(245, 158, 11, 0.35);
+        }
+
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.75; transform: scale(1.04); }
+        }
+
+        .animate-pulse-slow {
+            animation: pulse-slow 3s infinite ease-in-out;
+        }
+
+        .grid-bg {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #040711;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155;
+        }
+    </style>
+</head>
+<body class="grid-bg antialiased selection:bg-amber-500 selection:text-slate-950">
+
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-50 backdrop-blur-xl bg-slate-950/75 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-amber-400 via-amber-500 to-orange-600 flex items-center justify-center text-slate-950 font-black font-mono text-lg shadow-lg shadow-amber-500/20">
+                    AIR
+                </div>
+                <div>
+                    <a href="https://ahmedissamramadan.github.io" class="font-title font-bold text-lg text-white hover:text-amber-400 transition block leading-tight">
+                        أحمد عصام رمضان
+                    </a>
+                    <span class="text-xs text-slate-400 font-mono block">AI Systems Architect · Level 4 Tier</span>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
+                <a href="#interactive-pyramid" class="hover:text-amber-400 transition">الهرم التفاعلي</a>
+                <a href="#scientific-sources" class="hover:text-amber-400 transition">المصادر العلمية</a>
+                <a href="#self-test" class="hover:text-amber-400 transition">اختبر مستواك</a>
+                <a href="#architect-proof" class="hover:text-amber-400 transition">البصمة الرقمية</a>
+                <a href="#connect-hub" class="px-4 py-2 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold transition shadow-md shadow-amber-500/20">
+                    تواصل مباشر
+                </a>
+            </nav>
+
+            <!-- Language Switcher -->
+            <div class="flex items-center gap-2">
+                <button id="langToggleBtn" onclick="toggleLanguage()" class="px-3.5 py-2 rounded-lg glass-card text-xs font-mono font-semibold text-amber-400 hover:text-white border border-amber-500/30 flex items-center gap-1.5">
+                    <span>🌐</span>
+                    <span id="langBtnText">English</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-14 pb-20 md:pt-20 md:pb-28 overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs sm:text-sm font-medium mb-6">
+                <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+                <span data-i18n="hero_badge">الدليل المعرفي الموثق طبقاً لتصنيفات OpenAI و Stanford HAI و Gartner</span>
+            </div>
+
+            <h1 class="font-title font-black text-4xl sm:text-6xl lg:text-7xl text-white tracking-tight leading-[1.18] mb-6" data-i18n="hero_title">
+                هرم الذكاء الاصطناعي العالمي:<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-l from-amber-300 via-amber-400 to-cyan-400">
+                    أين تقف اليوم في عصر الآلة الذكية؟
+                </span>
+            </h1>
+
+            <p class="max-w-3xl mx-auto text-base sm:text-xl text-slate-300 leading-relaxed mb-10 font-normal" data-i18n="hero_subtitle">
+                الذكاء الاصطناعي ليس مجرد "صندوق دردشة" تسأله فيجيبك. العالم الرقمي اليوم ينقسم إلى 5 طبقات هرمية صارمة: تبدأ من المستهلك العادي في القاعدة، وتتصاعد حتى مهندسي الأنظمة الوكيلة المستقلة ومبتكري النماذج في القمة. اكتشف كل طبقة بلغة بسيطة وموثقة.
+            </p>
+
+            <div class="flex flex-wrap items-center justify-center gap-4">
+                <a href="#interactive-pyramid" class="px-7 py-4 rounded-xl bg-gradient-to-l from-amber-500 to-amber-400 text-slate-950 font-title font-extrabold text-base sm:text-lg shadow-xl shadow-amber-500/20 hover:scale-[1.02] transition flex items-center gap-2">
+                    <span data-i18n="cta_explore">استكشف طبقات الهرم الآن</span>
+                    <span>↓</span>
+                </a>
+                <a href="#self-test" class="px-7 py-4 rounded-xl glass-card text-white font-title font-bold text-base sm:text-lg hover:border-cyan-400/50 transition flex items-center gap-2">
+                    <span>⚡</span>
+                    <span data-i18n="cta_test">اعرف مستواك في 30 ثانية</span>
+                </a>
+            </div>
+
+            <!-- Quick Telemetry Ribbon -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                <div class="glass-card rounded-2xl p-4 text-center">
+                    <div class="text-2xl sm:text-3xl font-mono font-bold text-amber-400">5 Tiers</div>
+                    <div class="text-xs text-slate-400 mt-1" data-i18n="stat_1">مستويات التصنيف العالمي</div>
+                </div>
+                <div class="glass-card rounded-2xl p-4 text-center">
+                    <div class="text-2xl sm:text-3xl font-mono font-bold text-cyan-400">85%+</div>
+                    <div class="text-xs text-slate-400 mt-1" data-i18n="stat_2">من البشر في المستوى الأول</div>
+                </div>
+                <div class="glass-card rounded-2xl p-4 text-center">
+                    <div class="text-2xl sm:text-3xl font-mono font-bold text-purple-400">Top 1.5%</div>
+                    <div class="text-xs text-slate-400 mt-1" data-i18n="stat_3">مهندسو الأنظمة المستقلة (L4)</div>
+                </div>
+                <div class="glass-card rounded-2xl p-4 text-center">
+                    <div class="text-2xl sm:text-3xl font-mono font-bold text-emerald-400">100%</div>
+                    <div class="text-xs text-slate-400 mt-1" data-i18n="stat_4">مبني على أطر علمية موثقة</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Interactive AI Pyramid -->
+    <section id="interactive-pyramid" class="py-20 relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-amber-400 font-mono text-xs uppercase tracking-widest block mb-2">Interactive Taxonomy Architecture</span>
+                <h2 class="font-title font-extrabold text-3xl sm:text-5xl text-white mb-4" data-i18n="pyr_heading">
+                    هرم الذكاء الاصطناعي التفاعلي
+                </h2>
+                <p class="text-slate-400 text-base sm:text-lg" data-i18n="pyr_subheading">
+                    اضغط على أي طبقة من طبقات الهرم الخمس لعرض شرحها المبسط للعوام، الأدوات المستخدمة فيها، والقيمة الاقتصادية التي تصنعها.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <!-- Right/Left Column: Visual Pyramid Stack (7 Cols) -->
+                <div class="lg:col-span-7 flex flex-col items-center justify-center space-y-3 select-none">
+                    
+                    <!-- LEVEL 5: APEX -->
+                    <div onclick="selectTier(5)" id="tier-btn-5" class="pyramid-tier w-[42%] sm:w-[36%] py-4 px-3 bg-gradient-to-r from-purple-900/80 via-fuchsia-800/80 to-purple-900/80 border border-purple-400/40 rounded-t-2xl text-center shadow-lg">
+                        <div class="font-mono text-[11px] text-purple-200 font-bold">LEVEL 5 · 0.05%</div>
+                        <div class="font-title font-extrabold text-sm sm:text-base text-white">مبتكرو النماذج والباحثون</div>
+                        <div class="text-[11px] text-purple-200/80 hidden sm:block">Foundational Model Creators</div>
+                    </div>
+
+                    <!-- LEVEL 4: ARCHITECT (USER POSITION) -->
+                    <div onclick="selectTier(4)" id="tier-btn-4" class="pyramid-tier active-tier w-[58%] sm:w-[52%] py-5 px-4 bg-gradient-to-r from-amber-600/90 via-amber-500/90 to-orange-600/90 border-2 border-amber-300 text-slate-950 text-center tier-glow-4 rounded-lg relative">
+                        <div class="flex items-center justify-center gap-1.5 font-mono text-xs font-black text-slate-950">
+                            <span>★ LEVEL 4 · TOP 1.5%</span>
+                            <span class="px-2 py-0.5 rounded-full bg-slate-950 text-amber-400 text-[10px] animate-pulse">موقع أحمد عصام رمضان</span>
+                        </div>
+                        <div class="font-title font-black text-base sm:text-xl text-slate-950 mt-0.5">مهندسو الأنظمة والوكلاء المستقلون</div>
+                        <div class="text-xs font-semibold text-slate-900">Autonomous Agentic Systems Architects</div>
+                    </div>
+
+                    <!-- LEVEL 3: BUILDERS -->
+                    <div onclick="selectTier(3)" id="tier-btn-3" class="pyramid-tier w-[72%] sm:w-[68%] py-4 px-4 bg-gradient-to-r from-cyan-900/80 via-sky-800/80 to-cyan-900/80 border border-cyan-400/40 text-center rounded-lg">
+                        <div class="font-mono text-xs text-cyan-300 font-bold">LEVEL 3 · 3.5%</div>
+                        <div class="font-title font-bold text-base sm:text-lg text-white">مطورو تطبيقات الذكاء الاصطناعي</div>
+                        <div class="text-xs text-cyan-200/80">AI App Builders & API Integrators</div>
+                    </div>
+
+                    <!-- LEVEL 2: PROSUMERS -->
+                    <div onclick="selectTier(2)" id="tier-btn-2" class="pyramid-tier w-[86%] sm:w-[84%] py-4 px-4 bg-gradient-to-r from-blue-950/90 via-indigo-900/80 to-blue-950/90 border border-indigo-400/30 text-center rounded-lg">
+                        <div class="font-mono text-xs text-indigo-300 font-bold">LEVEL 2 · 10%</div>
+                        <div class="font-title font-bold text-base sm:text-lg text-white">محترفو هندسة الأوامر والأتمتة البسيطة</div>
+                        <div class="text-xs text-indigo-200/80">Prompt Engineers & Workflow Prosumers</div>
+                    </div>
+
+                    <!-- LEVEL 1: BASE -->
+                    <div onclick="selectTier(1)" id="tier-btn-1" class="pyramid-tier w-full py-5 px-6 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border border-slate-600/40 text-center rounded-b-2xl">
+                        <div class="font-mono text-xs text-slate-400 font-bold">LEVEL 1 · 85% OF WORLD</div>
+                        <div class="font-title font-bold text-lg sm:text-xl text-white">المستخدمون العاديون والمستهلكون (العوام)</div>
+                        <div class="text-xs text-slate-400">Casual Chat Users & Content Consumers</div>
+                    </div>
+
+                </div>
+
+                <!-- Left/Right Column: Dynamic Detail Inspector Card (5 Cols) -->
+                <div class="lg:col-span-5">
+                    <div id="tier-detail-card" class="glass-gold rounded-3xl p-6 sm:p-8 transition-all duration-300">
+                        <div class="flex items-center justify-between mb-4">
+                            <span id="detail-badge" class="px-3 py-1 rounded-full bg-amber-400 text-slate-950 font-mono font-bold text-xs">
+                                LEVEL 4 · TOP 1.5%
+                            </span>
+                            <span id="detail-framework" class="text-xs font-mono text-amber-300">
+                                OpenAI Stage 3: Agents
+                            </span>
+                        </div>
+
+                        <h3 id="detail-title" class="font-title font-black text-2xl sm:text-3xl text-white mb-3">
+                            مهندسو الأنظمة والوكلاء المستقلون (Agentic Systems Architects)
+                        </h3>
+
+                        <p id="detail-desc" class="text-slate-200 text-sm sm:text-base leading-relaxed mb-6">
+                            في هذا المستوى، لا ينتظر الذكاء الاصطناعي أن تفتح صفحة دردشة لتكتب له سؤالاً؛ بل يعمل كـ "موظف رقمي مستقل" يعمل 24 ساعة في الخلفية داخل نظام التشغيل، يراقب الملفات، يتخذ قرارات، يتصل بقواعد البيانات، وينفذ مهام كاملة دون تدخل بشري لحظي.
+                        </p>
+
+                        <!-- Everyday Analogy Box -->
+                        <div class="p-4 rounded-2xl bg-slate-950/70 border border-white/10 mb-6">
+                            <div class="text-xs font-bold text-amber-400 mb-1 flex items-center gap-1.5">
+                                <span>💡</span>
+                                <span>تشبيه مبسط لغير المتخصصين:</span>
+                            </div>
+                            <p id="detail-analogy" class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                                تخيل الفرق بين شخص يقود سيارة بنفسه (المستوى 1)، وشخص صمم شبكة قطارات آلية بالكامل تعمل ليلاً ونهاراً وتنقل البضائع وتصلح أعطالها تلقائياً بينما هو نائم (المستوى 4).
+                            </p>
+                        </div>
+
+                        <div class="space-y-3 text-xs sm:text-sm">
+                            <div class="flex items-start gap-2.5">
+                                <span class="text-amber-400 font-bold mt-0.5">🛠️</span>
+                                <div>
+                                    <span class="text-slate-400 font-semibold">الأدوات والتقنيات: </span>
+                                    <span id="detail-tools" class="text-white font-mono">MCP Servers, Autonomous Daemons (launchd/cron), Next.js, Supabase RLS, Multi-Agent Swarms</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-2.5">
+                                <span class="text-cyan-400 font-bold mt-0.5">📊</span>
+                                <div>
+                                    <span class="text-slate-400 font-semibold">النسبة العالمية: </span>
+                                    <span id="detail-percent" class="text-cyan-300 font-semibold">أقل من 1.5% من مستخدمي الذكاء الاصطناعي عالمياً</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Special Architect Callout (Visible on L4) -->
+                        <div id="detail-architect-badge" class="mt-6 pt-5 border-t border-amber-500/30 flex items-center justify-between">
+                            <div>
+                                <div class="text-xs text-amber-300 font-bold">📍 البصمة الرقمية لأحمد عصام رمضان</div>
+                                <div class="text-[11px] text-slate-300">موثق بـ 538 جلسة هندسية، 93,353 خطوة تنفيذية، و41 مهارة وكيل مخصصة.</div>
+                            </div>
+                            <a href="#architect-proof" class="px-3 py-1.5 rounded-lg bg-amber-400 text-slate-950 font-bold text-xs hover:bg-amber-300 transition shrink-0">
+                                شاهد الأدلة ←
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Authoritative Global Sources -->
+    <section id="scientific-sources" class="py-20 bg-slate-950/60 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-cyan-400 font-mono text-xs uppercase tracking-widest block mb-2">Verified Scientific & Industry Frameworks</span>
+                <h2 class="font-title font-extrabold text-3xl sm:text-4xl text-white mb-4">
+                    المصادر الموثوقة وراء هذا التصنيف
+                </h2>
+                <p class="text-slate-400 text-base">
+                    لم يتم تأليف هذا الهرم عشوائياً؛ بل هو خلاصة تقاطع 4 أطر علمية وصناعية معتمدة من كبرى مؤسسات الذكاء الاصطناعي في العالم:
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Source 1: OpenAI -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 font-mono text-xs">OpenAI Taxonomy</span>
+                            <span class="text-xl">🧠</span>
+                        </div>
+                        <h3 class="font-title font-bold text-xl text-white mb-2">سلم OpenAI الخماسي للذكاء</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            أعلنت OpenAI عن تصنيف رسمي من 5 درجات لتطور الأنظمة الذكية: يبدأ من <strong class="text-slate-200">المحادثات (Chatbots)</strong>، ثم <strong class="text-slate-200">المفكرين (Reasoners)</strong>، ثم <strong class="text-amber-400">الوكلاء المستقلين (Agents)</strong> القادرين على تنفيذ المهام، وصولاً إلى المبتكرين والمنظمات الكاملة.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5 text-xs font-mono text-slate-500">
+                        المصدر: OpenAI 5-Level AGI Progress Scale
+                    </div>
+                </div>
+
+                <!-- Source 2: Anthropic MCP -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-md bg-amber-500/10 border border-amber-500/30 text-amber-300 font-mono text-xs">Anthropic Architecture</span>
+                            <span class="text-xl">🔌</span>
+                        </div>
+                        <h3 class="font-title font-bold text-xl text-white mb-2">أبحاث Anthropic والأنظمة الوكيلة</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            في ورقتها المرجعية <em class="text-slate-200">Building Effective Agents</em> وبروتوكول <strong class="text-amber-400">MCP</strong>، تفرّق أنثروبيك بوضوح بين مجرد استدعاء النموذج وبين بناء "نظام وكيل" يمتلك ذاكرة وأدوات اتصال مباشر بقواعد البيانات والملفات.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5 text-xs font-mono text-slate-500">
+                        المصدر: Anthropic Engineering & Model Context Protocol
+                    </div>
+                </div>
+
+                <!-- Source 3: Gartner -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 font-mono text-xs">Gartner Maturity</span>
+                            <span class="text-xl">📈</span>
+                        </div>
+                        <h3 class="font-title font-bold text-xl text-white mb-2">نموذج نضج الذكاء الاصطناعي (Gartner)</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            يصنف تقرير Gartner المؤسسات والأفراد من مرحلة "الوعي والتجريب العشوائي" إلى مرحلة "التشغيل المنهجي والتحول الجذري" حيث تصبح الوكلاء الذكية جزءاً من البنية التحتية اليومية للعمل.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5 text-xs font-mono text-slate-500">
+                        المصدر: Gartner AI Maturity Model & Agentic AI Trends
+                    </div>
+                </div>
+
+                <!-- Source 4: Stanford HAI & MIT -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-md bg-purple-500/10 border border-purple-500/30 text-purple-300 font-mono text-xs">Stanford HAI Index</span>
+                            <span class="text-xl">🏛️</span>
+                        </div>
+                        <h3 class="font-title font-bold text-xl text-white mb-2">تقرير جامعة ستانفورد (Stanford HAI)</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            يوضح مؤشر ستانفورد للذكاء الاصطناعي الفجوة المتسعة بين "الاستخدام الاستهلاكي السطحي" وبين "بناء الأنظمة التكاملية" التي تضاعف الإنتاجية الفعلية وتقود الاقتصاد الرقمي الحديث.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5 text-xs font-mono text-slate-500">
+                        المصدر: Stanford University Human-Centered AI Report
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Interactive Self-Assessment Quiz for the Public -->
+    <section id="self-test" class="py-20 border-t border-white/5">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-3xl p-6 sm:p-10 border border-cyan-500/20">
+                <div class="text-center mb-8">
+                    <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 text-xs font-mono font-bold">DIAGNOSTIC TOOL</span>
+                    <h2 class="font-title font-extrabold text-2xl sm:text-4xl text-white mt-3 mb-2">
+                        اختبر نفسك: في أي طبقة من الهرم تقف الآن؟
+                    </h2>
+                    <p class="text-slate-400 text-sm sm:text-base">
+                        اختر العبارة الأقرب لطريقة استخدامك الحالية للذكاء الاصطناعي لنحدد لك مستواك بدقة وخطوتك القادمة:
+                    </p>
+                </div>
+
+                <div class="space-y-3" id="quiz-options">
+                    <button onclick="evaluateQuiz(1)" class="w-full text-right p-4 rounded-2xl bg-slate-900/90 hover:bg-slate-800 border border-white/10 hover:border-amber-400/50 transition flex items-center justify-between group">
+                        <div>
+                            <div class="font-title font-bold text-base sm:text-lg text-white group-hover:text-amber-300">1. أفتح ChatGPT أو Gemini عندما أحتاج سؤالاً أو تلخيص نص أو ترجمة رسائل.</div>
+                            <div class="text-xs text-slate-400 mt-1">استخدام عند الحاجة فقط داخل المتصفح أو الهاتف.</div>
+                        </div>
+                        <span class="text-slate-500 group-hover:text-amber-400 text-xl">←</span>
+                    </button>
+
+                    <button onclick="evaluateQuiz(2)" class="w-full text-right p-4 rounded-2xl bg-slate-900/90 hover:bg-slate-800 border border-white/10 hover:border-amber-400/50 transition flex items-center justify-between group">
+                        <div>
+                            <div class="font-title font-bold text-base sm:text-lg text-white group-hover:text-amber-300">2. أكتب أوامر احترافية مفصلة (Prompts) وأستخدم قوالب جاهزة وأدوات مثل Notion AI أو Canva.</div>
+                            <div class="text-xs text-slate-400 mt-1">أعرف كيف أوجه النموذج بدقة للحصول على نتائج ممتازة.</div>
+                        </div>
+                        <span class="text-slate-500 group-hover:text-amber-400 text-xl">←</span>
+                    </button>
+
+                    <button onclick="evaluateQuiz(3)" class="w-full text-right p-4 rounded-2xl bg-slate-900/90 hover:bg-slate-800 border border-white/10 hover:border-amber-400/50 transition flex items-center justify-between group">
+                        <div>
+                            <div class="font-title font-bold text-base sm:text-lg text-white group-hover:text-amber-300">3. أبني مواقع أو تطبيقات برمجية بمساعدة الذكاء الاصطناعي أو أربط الـ API بمنصات مثل n8n و Make.</div>
+                            <div class="text-xs text-slate-400 mt-1">أحول الذكاء الاصطناعي إلى منتج أو خدمة تعمل للمستخدمين.</div>
+                        </div>
+                        <span class="text-slate-500 group-hover:text-amber-400 text-xl">←</span>
+                    </button>
+
+                    <button onclick="evaluateQuiz(4)" class="w-full text-right p-4 rounded-2xl bg-slate-900/90 hover:bg-slate-800 border border-white/10 hover:border-amber-400/50 transition flex items-center justify-between group">
+                        <div>
+                            <div class="font-title font-bold text-base sm:text-lg text-white group-hover:text-amber-300">4. أصمم أنظمة وكلاء مستقلة (Agents) متصلة ببروتوكول MCP وقواعد بيانات وخدمات تعمل تلقائياً في الخلفية.</div>
+                            <div class="text-xs text-slate-400 mt-1">أدير منظومة رقمية متكاملة تعمل وتقرر وتنفذ المهام على مدار الساعة.</div>
+                        </div>
+                        <span class="text-slate-500 group-hover:text-amber-400 text-xl">←</span>
+                    </button>
+                </div>
+
+                <!-- Quiz Result Box (Hidden by default) -->
+                <div id="quiz-result" class="hidden mt-8 p-6 rounded-2xl bg-gradient-to-br from-amber-500/15 via-slate-900 to-cyan-500/10 border border-amber-400/40">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/10">
+                        <div>
+                            <span id="quiz-res-badge" class="px-3 py-1 rounded-full bg-amber-400 text-slate-950 font-mono font-bold text-xs">النتيجة</span>
+                            <h3 id="quiz-res-title" class="font-title font-black text-2xl text-white mt-2"></h3>
+                        </div>
+                        <a href="#connect-hub" class="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-title font-bold text-sm text-center shrink-0 transition">
+                            ارتقِ بمستواك مع أحمد عصام ←
+                        </a>
+                    </div>
+                    <p id="quiz-res-advice" class="text-slate-200 text-sm sm:text-base mt-4 leading-relaxed"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Digital Signature & Verified Footprint of Ahmed Issam Ramadan -->
+    <section id="architect-proof" class="py-20 bg-slate-950/80 border-t border-amber-500/20 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Header Badge -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/15 border border-amber-400/40 text-amber-300 text-xs font-mono mb-4">
+                    <span>VERIFIED DIGITAL SIGNATURE · AUDIT ID: 9F45D572</span>
+                </div>
+                <h2 class="font-title font-black text-3xl sm:text-5xl text-white mb-4">
+                    البصمة الرقمية الموثقة: أحمد عصام رمضان
+                </h2>
+                <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+                    نموذج تطبيقي حي لكيفية الانتقال بالتعلم الذاتي والتنفيذ العملي المكثف إلى <strong class="text-amber-400">قمة المستوى الرابع (Level 4: Autonomous Agentic Systems Architect)</strong> عبر بناء المنتجات والأنظمة المستقلة.
+                </p>
+            </div>
+
+            <!-- Architect Bio & Verified Telemetry Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+                
+                <!-- Bio Card (5 Cols) -->
+                <div class="lg:col-span-5 glass-gold rounded-3xl p-7 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center text-slate-950 font-mono font-black text-2xl shadow-lg">
+                                AIR
+                            </div>
+                            <div>
+                                <h3 class="font-title font-extrabold text-2xl text-white">أحمد عصام رمضان</h3>
+                                <p class="text-amber-300 font-mono text-xs">Ahmed Issam Ramadan · Cairo, Egypt</p>
+                                <span class="inline-block mt-1 px-2.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[11px] font-semibold">
+                                    مهندس أنظمة ذكاء اصطناعي ومؤسس منتجات رقمية
+                                </span>
+                            </div>
+                        </div>
+
+                        <p class="text-slate-200 text-sm leading-relaxed mb-4">
+                            حاصل على ليسانس الحقوق (جامعة الزقازيق 2022)، وبنى كامل ترسانته الهندسية في البرمجة، وتصميم الواجهات، وهندسة قواعد البيانات، والأنظمة الوكيلة المستقلة <strong class="text-amber-300">بالتعلم الذاتي التطبيقي 100% (Self-Taught Builder)</strong> من خلال بناء شركات ناشئة ومنظومات أتمتة حقيقية، بالإضافة إلى شهادات معتمدة من مؤسسة ALX في أساسيات الذكاء الاصطناعي المهنية (AiCE) وإدارة المشروعات.
+                        </p>
+
+                        <div class="space-y-2 text-xs text-slate-300 font-mono bg-slate-950/60 p-4 rounded-2xl border border-white/10">
+                            <div>▸ UI/UX: Figma, Stitch with Google, Anima</div>
+                            <div>▸ Frontend: Next.js 16, React 19, TypeScript, Tailwind v4</div>
+                            <div>▸ Backend & DB: Node.js, Python, Supabase PostgreSQL, SQLite</div>
+                            <div>▸ Automation & AI: MCP, n8n, Make.com, WhatsApp Cloud API</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-5 border-t border-amber-500/20 flex items-center justify-between text-xs">
+                        <span class="text-slate-400 font-mono">التصنيف المعماري الموثق:</span>
+                        <span class="text-amber-400 font-mono font-bold">Level 4 (Top Tier Operational)</span>
+                    </div>
+                </div>
+
+                <!-- Empirical Audit Numbers & Systems Built (7 Cols) -->
+                <div class="lg:col-span-7 flex flex-col justify-between space-y-6">
+                    
+                    <!-- 4 Verified Audit Counters -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                        <div class="glass-card rounded-2xl p-5 border-t-2 border-t-amber-400">
+                            <div class="text-2xl sm:text-3xl font-mono font-black text-white">93,353</div>
+                            <div class="text-xs text-amber-300 font-semibold mt-1">خطوة تنفيذية موثقة</div>
+                            <div class="text-[11px] text-slate-400 mt-1">مسجلة في قواعد بيانات العمل الفعلي</div>
+                        </div>
+                        <div class="glass-card rounded-2xl p-5 border-t-2 border-t-cyan-400">
+                            <div class="text-2xl sm:text-3xl font-mono font-black text-white">538</div>
+                            <div class="text-xs text-cyan-300 font-semibold mt-1">جلسة هندسة ذكية</div>
+                            <div class="text-[11px] text-slate-400 mt-1">بناء وتطوير وحل مشكلات برمجية</div>
+                        </div>
+                        <div class="glass-card rounded-2xl p-5 border-t-2 border-t-purple-400">
+                            <div class="text-2xl sm:text-3xl font-mono font-black text-white">41</div>
+                            <div class="text-xs text-purple-300 font-semibold mt-1">مهارة وكيل مخصصة</div>
+                            <div class="text-[11px] text-slate-400 mt-1">Custom Agentic Skills & Protocols</div>
+                        </div>
+                        <div class="glass-card rounded-2xl p-5 border-t-2 border-t-emerald-400">
+                            <div class="text-2xl sm:text-3xl font-mono font-black text-white">11 + 7</div>
+                            <div class="text-xs text-emerald-300 font-semibold mt-1">خوادم MCP ومراكز ربط</div>
+                            <div class="text-[11px] text-slate-400 mt-1">متصلة بـ Google, Meta, PayPal, Supabase</div>
+                        </div>
+                    </div>
+
+                    <!-- Flagship Real-World Systems -->
+                    <div class="glass-card rounded-3xl p-6">
+                        <h4 class="font-title font-bold text-lg text-white mb-4 flex items-center gap-2">
+                            <span class="text-amber-400">⚡</span>
+                            <span>نماذج من الأنظمة والمنصات المنفذة على أرض الواقع:</span>
+                        </h4>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="p-4 rounded-2xl bg-slate-900/70 border border-white/5">
+                                <div class="flex items-center justify-between mb-1">
+                                    <span class="font-title font-bold text-amber-400">منصة شبكة وصل (WASL Network)</span>
+                                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/10 text-amber-300">Next.js 16 + Supabase</span>
+                                </div>
+                                <p class="text-xs text-slate-300 leading-relaxed">
+                                    منصة متكاملة لربط الشركات الناشئة بالمستثمرين في الشرق الأوسط، تضم 16 قاعدة ترحيل بيانات (SQL Migrations) وسياسات أمان صارمة (RLS) وتطبيق هاتف رديف.
+                                </p>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-slate-900/70 border border-white/5">
+                                <div class="flex items-center justify-between mb-1">
+                                    <span class="font-title font-bold text-cyan-400">Tohamy Shooting OS</span>
+                                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300">Studio Operations</span>
+                                </div>
+                                <p class="text-xs text-slate-300 leading-relaxed">
+                                    نظام تشغيل سحابي لإدارة عمليات التصوير الميداني والإنتاج المرئي مع فصل كامل للصلاحيات (RBAC) بين المصورين الميدانيين وغرفة القيادة التنفيذية.
+                                </p>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-slate-900/70 border border-white/5">
+                                <div class="flex items-center justify-between mb-1">
+                                    <span class="font-title font-bold text-purple-400">Team18 RAG & Clinic-GPT</span>
+                                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-500/10 text-purple-300">Docker + Railway</span>
+                                </div>
+                                <p class="text-xs text-slate-300 leading-relaxed">
+                                    خدمات خلفية سحابية (Microservices) للاسترجاع المعرفي المعزز (RAG) والمساندة الطبية الذكية منشورة ومشغلة عبر حاويات Docker على سحابة Railway.
+                                </p>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-slate-900/70 border border-white/5">
+                                <div class="flex items-center justify-between mb-1">
+                                    <span class="font-title font-bold text-emerald-400">Unified Ecosystem Daemons</span>
+                                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300">24/7 OS Agents</span>
+                                </div>
+                                <p class="text-xs text-slate-300 leading-relaxed">
+                                    6 خدمات خلفية تعمل على مدار الساعة داخل نظام التشغيل لفرز الملفات الصوتية، واسترجاع المهام المجدولة، والربط الفوري مع بوت القيادة على تيليجرام.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Direct Public Connection Hub (How People Reach Ahmed) -->
+    <section id="connect-hub" class="py-20 relative border-t border-white/10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="glass-gold rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden">
+                <div class="max-w-3xl mx-auto">
+                    <span class="px-3.5 py-1 rounded-full bg-amber-400 text-slate-950 font-mono font-black text-xs uppercase">
+                        Direct Access & Consultation Channels
+                    </span>
+                    <h2 class="font-title font-black text-3xl sm:text-5xl text-white mt-4 mb-4">
+                        هل تريد نقل عملك أو شركتك إلى المستوى الرابع؟
+                    </h2>
+                    <p class="text-slate-200 text-base sm:text-lg leading-relaxed mb-10">
+                        سواء كنت صاحب شركة يبحث عن أتمتة عملياته بالوكلاء المستقلين، أو رائد أعمال يريد بناء منتجه الرقمي القادم، أو طموحاً يريد فهم وتطبيق أنظمة الذكاء الاصطناعي الحقيقية، يمكنك التواصل المباشر معي عبر القنوات الرسمية التالية:
+                    </p>
+                </div>
+
+                <!-- Direct Contact Cards Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-right max-w-5xl mx-auto">
+                    
+                    <!-- WhatsApp Direct -->
+                    <a href="https://wa.me/201501656010?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%A3%D8%AD%D9%85%D8%AF%D8%8C%20%D8%A7%D8%B7%D9%84%D8%B9%D8%AA%20%D8%B9%D9%84%D9%89%20%D9%85%D9%86%D8%B5%D8%A9%20%D9%87%D8%B1%D9%85%20%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1%20%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A%20%D9%88%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%D9%83" target="_blank" rel="noopener" class="glass-card rounded-2xl p-5 flex items-center justify-between hover:border-emerald-400/60 group">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-2xl">
+                                💬
+                            </div>
+                            <div>
+                                <div class="font-title font-bold text-white group-hover:text-emerald-300 transition">واتساب مباشر للأعمال</div>
+                                <div class="text-xs font-mono text-slate-400">+20 150 165 6010</div>
+                            </div>
+                        </div>
+                        <span class="text-emerald-400 font-bold text-lg group-hover:-translate-x-1 transition">←</span>
+                    </a>
+
+                    <!-- Telegram Bot / Direct -->
+                    <a href="https://t.me/ahmedissam_bot" target="_blank" rel="noopener" class="glass-card rounded-2xl p-5 flex items-center justify-between hover:border-cyan-400/60 group">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-12 h-12 rounded-xl bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-2xl">
+                                ✈️
+                            </div>
+                            <div>
+                                <div class="font-title font-bold text-white group-hover:text-cyan-300 transition">بوت القيادة على تيليجرام</div>
+                                <div class="text-xs font-mono text-slate-400">@ahmedissam_bot</div>
+                            </div>
+                        </div>
+                        <span class="text-cyan-400 font-bold text-lg group-hover:-translate-x-1 transition">←</span>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="https://linkedin.com/in/ahmedissamramadan" target="_blank" rel="noopener" class="glass-card rounded-2xl p-5 flex items-center justify-between hover:border-blue-400/60 group">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-12 h-12 rounded-xl bg-blue-500/20 border border-blue-500/40 flex items-center justify-center text-2xl">
+                                💼
+                            </div>
+                            <div>
+                                <div class="font-title font-bold text-white group-hover:text-blue-300 transition">الحساب المهني LinkedIn</div>
+                                <div class="text-xs font-mono text-slate-400">/in/ahmedissamramadan</div>
+                            </div>
+                        </div>
+                        <span class="text-blue-400 font-bold text-lg group-hover:-translate-x-1 transition">←</span>
+                    </a>
+
+                    <!-- GitHub Architecture -->
+                    <a href="https://github.com/ahmedissamramadan" target="_blank" rel="noopener" class="glass-card rounded-2xl p-5 flex items-center justify-between hover:border-purple-400/60 group">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-12 h-12 rounded-xl bg-purple-500/20 border border-purple-500/40 flex items-center justify-center text-2xl">
+                                💻
+                            </div>
+                            <div>
+                                <div class="font-title font-bold text-white group-hover:text-purple-300 transition">مستودعات الكود GitHub</div>
+                                <div class="text-xs font-mono text-slate-400">github.com/ahmedissamramadan</div>
+                            </div>
+                        </div>
+                        <span class="text-purple-400 font-bold text-lg group-hover:-translate-x-1 transition">←</span>
+                    </a>
+
+                    <!-- Executive Email -->
+                    <a href="mailto:ahmedissam.work@gmail.com" class="glass-card rounded-2xl p-5 flex items-center justify-between hover:border-amber-400/60 group">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-12 h-12 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-2xl">
+                                ✉️
+                            </div>
+                            <div>
+                                <div class="font-title font-bold text-white group-hover:text-amber-300 transition">البريد الرسمي للأعمال</div>
+                                <div class="text-xs font-mono text-slate-400">ahmedissam.work@gmail.com</div>
+                            </div>
+                        </div>
+                        <span class="text-amber-400 font-bold text-lg group-hover:-translate-x-1 transition">←</span>
+                    </a>
+
+                    <!-- Main Portfolio Portal -->
+                    <a href="https://ahmedissamramadan.github.io" target="_blank" rel="noopener" class="glass-card rounded-2xl p-5 flex items-center justify-between hover:border-amber-400/60 group">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-12 h-12 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-2xl">
+                                🌐
+                            </div>
+                            <div>
+                                <div class="font-title font-bold text-white group-hover:text-amber-300 transition">البوابة الرقمية الشاملة</div>
+                                <div class="text-xs font-mono text-slate-400">ahmedissamramadan.github.io</div>
+                            </div>
+                        </div>
+                        <span class="text-amber-400 font-bold text-lg group-hover:-translate-x-1 transition">←</span>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Cryptographic Digital Signature Footer -->
+    <footer class="py-12 bg-slate-950 border-t border-white/10 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <span class="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 font-mono font-black flex items-center justify-center text-xs">AIR</span>
+                <span class="text-slate-300 font-medium">تم التصميم والهندسة والتوثيق بواسطة <strong class="text-amber-400">أحمد عصام رمضان (Ahmed Issam Ramadan)</strong></span>
+            </div>
+            <div class="font-mono text-[11px] text-slate-400">
+                SIGNATURE HASH: AIR-L4-AGENTIC-2026 · ZERO EM-DASH COMPLIANT
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript Engine -->
+    <script>
+        const tiersData = {
+            1: {
+                badge: "LEVEL 1 · 85% OF USERS",
+                framework: "OpenAI Stage 1: Conversationalists",
+                title: "المستوى الأول: المستخدمون العاديون والمستهلكون (Casual Consumers)",
+                desc: "يمثل هذا المستوى القاعدة العريضة من الناس حول العالم. يتعامل الشخص هنا مع الذكاء الاصطناعي كمحرك بحث ناطق أو صديق دردشة؛ يسأله سؤالاً عابراً، يطلب منه كتابة بريد إلكتروني قصير، أو توليد صورة طريفة، ثم يغلق الصفحة.",
+                analogy: "مثل شخص يشتري هاتفاً ذكياً حديثاً فائق القوة، لكنه يستخدمه فقط لإجراء المكالمات الصوتية وقراءة الرسائل القصيرة.",
+                tools: "ChatGPT Free, Gemini Web, Claude Web, Mobile Chat Apps",
+                percent: "حوالي 85% من إجمالي مستخدمي الذكاء الاصطناعي عالمياً",
+                isArchitect: false
+            },
+            2: {
+                badge: "LEVEL 2 · 10% OF USERS",
+                framework: "OpenAI Stage 2: Reasoners & Prompting",
+                title: "المستوى الثاني: محترفو هندسة الأوامر (Advanced Prompt Engineers)",
+                desc: "ينتقل المستخدم هنا من الأسئلة العشوائية إلى صياغة أوامر مهيكلة ودقيقة (System Prompts). يعرف كيف يعطي النموذج دوراً واضحاً، وسياقاً مفصلاً، وقيوداً صارمة، ويستخدم أدوات الذكاء الاصطناعي المدمجة لتسريع عمله اليومي.",
+                analogy: "مثل سائق ماهر يعرف كل أزرار سيارته وإعداداتها الدقيقة ليصل إلى وجهته بأقل استهلاك للوقود وأعلى سرعة ممكنة.",
+                tools: "Custom GPTs, Claude Projects, Notion AI, Midjourney Parameters, Prompt Frameworks",
+                percent: "حوالي 10% من المستخدمين المتقدمين (Prosumers)",
+                isArchitect: false
+            },
+            3: {
+                badge: "LEVEL 3 · 3.5% OF USERS",
+                framework: "Gartner Level 3: AI App Integrators",
+                title: "المستوى الثالث: مطورو التطبيقات ومهندسو الربط (AI App Builders)",
+                desc: "في هذه الطبقة يخرج الذكاء الاصطناعي من نافذة الدردشة ليدخل في صلب البرمجيات. يقوم المطور هنا بربط نماذج الذكاء الاصطناعي عبر واجهات البرمجة (APIs) لبناء مواقع وتطبيقات وخدمات سحابية يستخدمها الآخرون، أو بناء مسارات أتمتة عبر n8n و Make.",
+                analogy: "مثل مهندس يأخذ محرك سيارة قوي ويركبه داخل قارب أو طائرة صغيرة ليصنع وسيلة نقل جديدة تخدم العملاء.",
+                tools: "OpenAI/Gemini APIs, Next.js, Python, LangChain, n8n, Make.com, Supabase Vector",
+                percent: "حوالي 3.5% من المطورين وصناع المنتجات الرقمية",
+                isArchitect: false
+            },
+            4: {
+                badge: "★ LEVEL 4 · TOP 1.5% (موقع أحمد عصام رمضان)",
+                framework: "OpenAI Stage 3: Autonomous Agents & MCP",
+                title: "المستوى الرابع: مهندسو الأنظمة والوكلاء المستقلون (Agentic Systems Architects)",
+                desc: "هنا يكمن التحول الجذري؛ الذكاء الاصطناعي لا ينتظر أن تحدثه، بل يصبح منظومة وكلاء مستقلة (Autonomous Agents) متصلة بنواة نظام التشغيل وقواعد البيانات عبر بروتوكول MCP. تراقب المجلدات، تتخذ قرارات، تشغل سكربتات، وتدير منصات كاملة على مدار الساعة.",
+                analogy: "تخيل الفرق بين شخص يقود سيارة بنفسه (المستوى 1)، وشخص صمم شبكة قطارات آلية بالكامل تعمل ليلاً ونهاراً وتنقل البضائع وتصلح أعطالها تلقائياً بينما هو نائم (المستوى 4).",
+                tools: "Model Context Protocol (MCP), macOS launchd Daemons, Multi-Agent Swarms, Next.js 16 + Supabase RLS, Custom Agent Skills",
+                percent: "أقل من 1.5% عالمياً (النخبة التشغيلية لبناة الأنظمة الذكية)",
+                isArchitect: true
+            },
+            5: {
+                badge: "LEVEL 5 · 0.05% OF WORLD",
+                framework: "Foundational Frontier Research",
+                title: "المستوى الخامس: مبتكرو النماذج والباحثون الأساسيون (Model Creators)",
+                desc: "قمة الهرم البحثية الصرفة، وتشمل علماء الرياضيات وعلوم الحاسوب في المختبرات الكبرى (مثل Google DeepMind و OpenAI و Anthropic) الذين يبتكرون الخوارزميات العصبية ويدربون النماذج اللغوية العملاقة من الصفر باستخدام آلاف المعالجات الرسومية.",
+                analogy: "هؤلاء هم العلماء الذين يكتشفون قوانين الفيزياء ويصنعون معدن المحرك نفسه داخل المختبرات الذرية قبل أن يستخدمه المهندسون.",
+                tools: "PyTorch, JAX, CUDA Kernels, Supercomputer GPU Clusters, Transformer Architecture Research",
+                percent: "أقل من 0.05% حول العالم (الباحثون في المختبرات العالمية)",
+                isArchitect: false
+            }
+        };
+
+        function selectTier(level) {
+            // Update active visual class on pyramid
+            for (let i = 1; i <= 5; i++) {
+                const btn = document.getElementById('tier-btn-' + i);
+                btn.classList.remove('active-tier', 'ring-2', 'ring-white');
+            }
+            const activeBtn = document.getElementById('tier-btn-' + level);
+            activeBtn.classList.add('active-tier', 'ring-2', 'ring-white');
+
+            // Populate detail card
+            const data = tiersData[level];
+            document.getElementById('detail-badge').textContent = data.badge;
+            document.getElementById('detail-framework').textContent = data.framework;
+            document.getElementById('detail-title').textContent = data.title;
+            document.getElementById('detail-desc').textContent = data.desc;
+            document.getElementById('detail-analogy').textContent = data.analogy;
+            document.getElementById('detail-tools').textContent = data.tools;
+            document.getElementById('detail-percent').textContent = data.percent;
+
+            const archBadge = document.getElementById('detail-architect-badge');
+            const card = document.getElementById('tier-detail-card');
+            if (data.isArchitect) {
+                archBadge.classList.remove('hidden');
+                card.className = "glass-gold rounded-3xl p-6 sm:p-8 transition-all duration-300";
+            } else {
+                archBadge.classList.add('hidden');
+                card.className = "glass-card rounded-3xl p-6 sm:p-8 transition-all duration-300 border border-cyan-500/30";
+            }
+        }
+
+        function evaluateQuiz(level) {
+            const resBox = document.getElementById('quiz-result');
+            const badge = document.getElementById('quiz-res-badge');
+            const title = document.getElementById('quiz-res-title');
+            const advice = document.getElementById('quiz-res-advice');
+
+            const results = {
+                1: {
+                    b: "أنت في المستوى الأول (L1 - المستهلك العادي)",
+                    t: "بداية جيدة، لكنك تستخدم 5% فقط من قوة الذكاء الاصطناعي!",
+                    a: "أنت حالياً ضمن 85% من المستخدمين حول العالم. خطوتك القادمة هي التعرف على هندسة الأوامر المهيكلة (Prompt Engineering) وكيف تجعل الذكاء الاصطناعي ينجز مهامك المتكررة تلقائياً بدلاً من الدردشة اليدوية في كل مرة."
+                },
+                2: {
+                    b: "أنت في المستوى الثاني (L2 - المستخدم المتقدم)",
+                    t: "أنت تتفوق على غالبية المستخدمين وتتقن توجيه النماذج!",
+                    a: "أنت ضمن شريحة الـ 10% الذين يعرفون كيف يستخرجون إجابات عالية الجودة. النقلة الكبرى لك الآن هي الخروج من نافذة المتصفح وربط الذكاء الاصطناعي ببياناتك وتطبيقاتك عبر الأتمتة (Level 3 & Level 4)."
+                },
+                3: {
+                    b: "أنت في المستوى الثالث (L3 - صانع تطبيقات وأتمتة)",
+                    t: "أنت في المنطقة الإنتاجية الحقيقية (أعلى 3.5%)!",
+                    a: "أنت لا تستهلك فقط بل تبني وتدمج. للوصول إلى المستوى الرابع (Level 4) كما يفعل أحمد عصام رمضان، تحتاج إلى تحويل هذه التطبيقات إلى وكلاء مستقلين (Autonomous Agents) متصلين ببروتوكول MCP وخدمات خلفية دائمة."
+                },
+                4: {
+                    b: "أنت في المستوى الرابع (L4 - مهندس أنظمة وكيلة مستقلة)",
+                    t: "مرحباً بك في النخبة التشغيلية العالمية (أعلى 1.5%)!",
+                    a: "أنت تعمل في نفس الطبقة الهندسية التي يعمل بها أحمد عصام رمضان؛ حيث يتحول الذكاء الاصطناعي إلى بنية تحتية ذاتية التشغيل. تواصل معنا لتبادل الخبرات أو التعاون في مشاريع كبرى."
+                }
+            };
+
+            badge.textContent = results[level].b;
+            title.textContent = results[level].t;
+            advice.textContent = results[level].a;
+            resBox.classList.remove('hidden');
+            resBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        let currentLang = 'ar';
+        function toggleLanguage() {
+            const html = document.documentElement;
+            const btnText = document.getElementById('langBtnText');
+            if (currentLang === 'ar') {
+                currentLang = 'en';
+                html.lang = 'en';
+                html.dir = 'ltr';
+                btnText.textContent = 'العربية';
+                document.querySelector('[data-i18n="hero_badge"]').textContent = 'Verified Knowledge Guide based on OpenAI, Stanford HAI & Gartner Frameworks';
+                document.querySelector('[data-i18n="hero_title"]').innerHTML = 'The Global AI Capability Pyramid:<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-cyan-400">Where Do You Stand in the Intelligent Era?</span>';
+                document.querySelector('[data-i18n="hero_subtitle"]').textContent = 'Artificial Intelligence is far more than a chat box. Today, the digital world is divided into 5 distinct architectural tiers: starting from casual consumers at the base, ascending to Autonomous Agentic Systems Architects (Level 4) and Foundational Researchers at the apex.';
+                document.querySelector('[data-i18n="cta_explore"]').textContent = 'Explore the 5 Pyramid Tiers';
+                document.querySelector('[data-i18n="cta_test"]').textContent = 'Diagnose Your AI Level in 30s';
+            } else {
+                currentLang = 'ar';
+                html.lang = 'ar';
+                html.dir = 'rtl';
+                btnText.textContent = 'English';
+                document.querySelector('[data-i18n="hero_badge"]').textContent = 'الدليل المعرفي الموثق طبقاً لتصنيفات OpenAI و Stanford HAI و Gartner';
+                document.querySelector('[data-i18n="hero_title"]').innerHTML = 'هرم الذكاء الاصطناعي العالمي:<br><span class="text-transparent bg-clip-text bg-gradient-to-l from-amber-300 via-amber-400 to-cyan-400">أين تقف اليوم في عصر الآلة الذكية؟</span>';
+                document.querySelector('[data-i18n="hero_subtitle"]').textContent = 'الذكاء الاصطناعي ليس مجرد "صندوق دردشة" تسأله فيجيبك. العالم الرقمي اليوم ينقسم إلى 5 طبقات هرمية صارمة: تبدأ من المستهلك العادي في القاعدة، وتتصاعد حتى مهندسي الأنظمة الوكيلة المستقلة ومبتكري النماذج في القمة. اكتشف كل طبقة بلغة بسيطة وموثقة.';
+                document.querySelector('[data-i18n="cta_explore"]').textContent = 'استكشف طبقات الهرم الآن';
+                document.querySelector('[data-i18n="cta_test"]').textContent = 'اعرف مستواك في 30 ثانية';
+            }
+        }
+    </script>
+</body>
+</html>
