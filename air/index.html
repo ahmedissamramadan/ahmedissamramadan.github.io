@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AIR Platform — حاسبة وجاهزية الذكاء الاصطناعي للأعمال | أحمد عصام رمضان</title>
+    <title>AIR Platform - حاسبة وجاهزية الذكاء الاصطناعي للأعمال | أحمد عصام رمضان</title>
     <meta
       name="description"
-      content="منصة الذكاء الاصطناعي العملي (AIR) — احسب مدى جاهزية شركتك لاستخدام وكلاء الذكاء الاصطناعي وساعات العمل التي سيوفرها لك أوتوكلاو."
+      content="منصة تشخيص جاهزية الذكاء الاصطناعي للأعمال (AIR) - افحص في 30 ثانية مدى استعداد عمليات شركتك للأتمتة وحدد أول 3 مهام تستحق البناء أولاً."
     />
     <link rel="icon" type="image/x-icon" href="../assets/general/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,26 +29,28 @@
       body {
         min-height: 100vh;
         background: var(--bg);
-        background-image: 
-          radial-gradient(at 0% 0%, rgba(0, 180, 216, 0.15) 0, transparent 45%),
-          radial-gradient(at 100% 100%, rgba(224, 169, 109, 0.12) 0, transparent 45%);
+        background-image:
+          radial-gradient(at 0% 0%, rgba(0, 180, 216, 0.14) 0, transparent 45%),
+          radial-gradient(at 100% 100%, rgba(224, 169, 109, 0.10) 0, transparent 45%);
         color: var(--text-primary);
         font-family: "Cairo", "Outfit", system-ui, sans-serif;
         line-height: 1.7;
-        padding: 3rem 1.5rem;
+      }
+      .page-wrap {
+        padding: 2.5rem 1.25rem;
         display: flex;
         align-items: center;
         justify-content: center;
       }
       .container {
         width: 100%;
-        max-width: 680px;
+        max-width: 720px;
         background: var(--surface);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         border: 1px solid var(--surface-border);
         border-radius: 24px;
-        padding: 3rem 2.5rem;
+        padding: 2.5rem 2.25rem;
         box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
       }
       .badge {
@@ -63,7 +65,7 @@
         margin-bottom: 1rem;
       }
       h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
         font-weight: 800;
         line-height: 1.3;
         margin-bottom: 0.75rem;
@@ -74,15 +76,15 @@
       }
       p.subtitle {
         color: var(--text-muted);
-        font-size: 1.05rem;
-        margin-bottom: 2rem;
+        font-size: 1.02rem;
+        margin-bottom: 1.75rem;
       }
       .calc-step {
-        margin-bottom: 1.75rem;
+        margin-bottom: 1.25rem;
         background: rgba(255, 255, 255, 0.02);
-        border: 1px solid rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.07);
         border-radius: 14px;
-        padding: 1.25rem;
+        padding: 1.15rem;
       }
       .calc-step label {
         display: block;
@@ -93,7 +95,7 @@
       }
       .options-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 10px;
       }
       .opt-btn {
@@ -117,19 +119,31 @@
       }
       .result-box {
         display: none;
-        margin-top: 2rem;
-        padding: 1.75rem;
+        margin-top: 1.75rem;
+        padding: 1.6rem;
         background: rgba(0, 180, 216, 0.08);
         border: 1px solid rgba(0, 180, 216, 0.25);
         border-radius: 16px;
         text-align: center;
       }
+      .tier-pill {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 999px;
+        background: rgba(224, 169, 109, 0.16);
+        border: 1px solid rgba(224, 169, 109, 0.4);
+        color: var(--accent-gold);
+        font-size: 12px;
+        font-weight: 800;
+        margin-bottom: 10px;
+      }
       .result-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 15px;
-        margin: 1.25rem 0;
+        gap: 14px;
+        margin: 1.15rem 0;
       }
+      @media (max-width: 560px) { .result-grid { grid-template-columns: 1fr; } }
       .metric-card {
         background: rgba(8, 8, 10, 0.6);
         padding: 1rem;
@@ -137,13 +151,19 @@
         border: 1px solid rgba(255, 255, 255, 0.08);
       }
       .metric-card .val {
-        font-size: 1.8rem;
+        font-size: 1.25rem;
         font-weight: 800;
         color: var(--accent-gold);
+        margin-bottom: 4px;
       }
       .metric-card .lbl {
         font-size: 12px;
         color: var(--text-muted);
+      }
+      .cta-stack {
+        display: grid;
+        gap: 10px;
+        margin-top: 1.25rem;
       }
       .cta-btn {
         display: inline-flex;
@@ -151,117 +171,180 @@
         justify-content: center;
         gap: 8px;
         width: 100%;
-        padding: 1rem;
-        background: #25d366;
-        color: #ffffff;
+        padding: 0.95rem 1rem;
         text-decoration: none;
         font-weight: 700;
         border-radius: 12px;
-        font-size: 16px;
+        font-size: 15px;
         transition: 0.2s ease;
-        margin-top: 1rem;
       }
-      .cta-btn:hover {
-        background: #1eb956;
-        transform: translateY(-2px);
+      .cta-primary {
+        background: #ffffff;
+        color: #08080a;
       }
+      .cta-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+      .cta-wa {
+        background: #25d366;
+        color: #ffffff;
+      }
+      .cta-wa:hover { background: #1eb956; transform: translateY(-1px); }
       .footer-note {
-        margin-top: 2rem;
+        margin-top: 1.75rem;
         font-size: 12px;
         color: var(--text-muted);
         border-top: 1px solid rgba(255,255,255,0.08);
         padding-top: 1rem;
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 8px;
       }
       .footer-note a { color: var(--accent-blue); text-decoration: none; }
     </style>
   </head>
   <body>
-    <div class="container">
-      <span class="badge">AIR Platform × Practical AI</span>
-      <h1>حاسبة وجاهزية <em>الذكاء الاصطناعي للأعمال</em></h1>
-      <p class="subtitle">استكشف الساعات والتكاليف التي يمكنك توفيرها أسبوعياً باستخدام وكلاء أوتوكلاو لمهام شركتك.</p>
+    <main class="page-wrap">
+      <div class="container">
+        <span class="badge">AIR Platform · تشخيص الجاهزية الواقعي</span>
+        <h1>فحص جاهزية شركتك <em>للأتمتة والذكاء الاصطناعي</em></h1>
+        <p class="subtitle">أجب عن 4 أسئلة سريعة لنحدد لك بصدق: هل عملياتك جاهزة لبناء أنظمة أتمتة الآن أم تحتاج ترتيباً وتوثيقاً أولاً؟</p>
 
-      <div class="calc-step">
-        <label>1. ما هو حجم فريقك أو مشروعك الحالي؟</label>
-        <div class="options-grid" id="q1">
-          <button type="button" class="opt-btn selected" onclick="selectOpt('q1', this, 1)">مؤسس منفرد (1)</button>
-          <button type="button" class="opt-btn" onclick="selectOpt('q1', this, 2)">فريق صغير (2-10)</button>
-          <button type="button" class="opt-btn" onclick="selectOpt('q1', this, 3)">شركة / فريق (10+)</button>
-        </div>
-      </div>
-
-      <div class="calc-step">
-        <label>2. كم ساعة تستهلك أسبوعياً في البريد، المتابعة، والمهام التكرارية؟</label>
-        <div class="options-grid" id="q2">
-          <button type="button" class="opt-btn" onclick="selectOpt('q2', this, 10)">أقل من 10 ساعات</button>
-          <button type="button" class="opt-btn selected" onclick="selectOpt('q2', this, 20)">10 - 25 ساعة</button>
-          <button type="button" class="opt-btn" onclick="selectOpt('q2', this, 35)">أكثر من 25 ساعة</button>
-        </div>
-      </div>
-
-      <div class="calc-step">
-        <label>3. ما هي منصات التواصل والتطبيق الأكثر استخداماً في عملك؟</label>
-        <div class="options-grid" id="q3">
-          <button type="button" class="opt-btn selected" onclick="selectOpt('q3', this, 'whatsapp')">واتساب وتيليجرام</button>
-          <button type="button" class="opt-btn" onclick="selectOpt('q3', this, 'email')">البريد الإلكتروني</button>
-          <button type="button" class="opt-btn" onclick="selectOpt('q3', this, 'hybrid')">منظومة هجينة</button>
-        </div>
-      </div>
-
-      <button type="button" class="opt-btn" style="width:100%; padding:14px; background:var(--accent-blue); color:#08080a; font-size:16px; font-weight:800;" onclick="calculateROI()">احسب نسبة الجاهزية والعائد الآن ⚡</button>
-
-      <div class="result-box" id="result-box">
-        <h3 style="color:#ffffff;">🎉 نتيجة تحليل الجاهزية لمشروعك</h3>
-        <div class="result-grid">
-          <div class="metric-card">
-            <div class="val" id="score-val">94%</div>
-            <div class="lbl">نسبة جاهزية العمل للوكلاء</div>
-          </div>
-          <div class="metric-card">
-            <div class="val" id="hours-val">16 ساعة</div>
-            <div class="lbl">توفير أسبوعي متوقع</div>
+        <div class="calc-step">
+          <label>1. ما هو حجم فريقك أو مشروعك الحالي؟</label>
+          <div class="options-grid" id="q1">
+            <button type="button" class="opt-btn selected" onclick="selectOpt('q1', this, 'solo')">مؤسس منفرد (1)</button>
+            <button type="button" class="opt-btn" onclick="selectOpt('q1', this, 'small')">فريق صغير (2-10)</button>
+            <button type="button" class="opt-btn" onclick="selectOpt('q1', this, 'company')">شركة / فريق (10+)</button>
           </div>
         </div>
-        <p style="font-size:13px; color:var(--text-muted);" id="result-desc">يمكن لوكلاء أوتوكلاو استلام متابعة البريد، إعداد تقارير العمليات، والرد الفوري عبر واتساب بكفاءة تامة.</p>
 
-        <a href="https://wa.me/201501656010?text=%D9%87%D9%84%D8%A7%20%D8%A3%D8%AD%D9%85%D8%AF%D8%8C%20%D9%82%D9%85%D8%AA%20%D8%A8%D8%AD%D8%B3%D8%A7%D8%A8%20%D8%AC%D8%A7%D9%87%D8%B2%D9%8A%D8%A9%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D9%8A%20%D8%B9%D9%84%D9%89%20%D9%85%D9%86%D8%B5%D8%A9%20AIR%20%D9%88%D8%A3%D9%88%D8%AF%20%D8%B7%D9%84%D8%A9%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D8%A3%D8%AA%D9%85%D8%AA%D8%A9" target="_blank" class="cta-btn" id="wa-btn">
-          💬 تواصل مع أحمد عصام مباشرة لتطبيق الأتمتة
-        </a>
-      </div>
+        <div class="calc-step">
+          <label>2. كم ساعة تستهلك أسبوعياً في الردود، المتابعات، والتقارير المتكررة؟</label>
+          <div class="options-grid" id="q2">
+            <button type="button" class="opt-btn" onclick="selectOpt('q2', this, 'lt10')">أقل من 10 ساعات</button>
+            <button type="button" class="opt-btn selected" onclick="selectOpt('q2', this, '10_25')">10 - 25 ساعة أسبوعياً</button>
+            <button type="button" class="opt-btn" onclick="selectOpt('q2', this, 'gt25')">أكثر من 25 ساعة</button>
+          </div>
+        </div>
 
-      <div class="footer-note">
-        <span>© 2026 أحمد عصام رمضان · VentureCycle Studio</span>
-        <a href="../index.html">العودة للرئيسية ←</a>
+        <div class="calc-step">
+          <label>3. هل خطوات العمل اليومية مكتوبة وموثقة عندكم؟</label>
+          <div class="options-grid" id="q3">
+            <button type="button" class="opt-btn" onclick="selectOpt('q3', this, 'none')">غير مكتوبة بعد</button>
+            <button type="button" class="opt-btn selected" onclick="selectOpt('q3', this, 'partial')">موثقة جزئياً</button>
+            <button type="button" class="opt-btn" onclick="selectOpt('q3', this, 'clear')">موثقة وواضحة</button>
+          </div>
+        </div>
+
+        <div class="calc-step">
+          <label>4. ما أكثر مجال يستهلك وقت فريقك يومياً؟</label>
+          <div class="options-grid" id="q4">
+            <button type="button" class="opt-btn selected" onclick="selectOpt('q4', this, 'whatsapp')">واتساب وردود العملاء</button>
+            <button type="button" class="opt-btn" onclick="selectOpt('q4', this, 'reports')">التقارير والمتابعات</button>
+            <button type="button" class="opt-btn" onclick="selectOpt('q4', this, 'archive')">أرشفة الملفات والمحتوى</button>
+          </div>
+        </div>
+
+        <button type="button" class="opt-btn" style="width:100%; padding:14px; background:var(--accent-blue); color:#08080a; font-size:16px; font-weight:800;" onclick="evaluateReadiness()">اعرض تقييم الجاهزية الواقعي الآن</button>
+
+        <div class="result-box" id="result-box">
+          <div class="tier-pill" id="tier-pill">التقييم الموصى به</div>
+          <h3 style="color:#ffffff; margin-bottom:6px;" id="tier-title">نتيجة تقييم الجاهزية لمشروعك</h3>
+          <div class="result-grid">
+            <div class="metric-card">
+              <div class="val" id="scope-val">أول 3 مهام متكررة</div>
+              <div class="lbl">نطاق البداية المقترح (N -> 1)</div>
+            </div>
+            <div class="metric-card">
+              <div class="val" id="band-val">10 - 25 ساعة أسبوعياً</div>
+              <div class="lbl">العبء اليدوي الحالي المراد تنظيمه</div>
+            </div>
+          </div>
+          <p style="font-size:14px; color:var(--text-primary); line-height:1.75;" id="result-desc"></p>
+
+          <div class="cta-stack">
+            <a href="https://ahmedissamramadan.github.io/ai-business-transformation/campaign/?utm_source=air_calculator&utm_medium=result_cta" class="cta-btn cta-primary" id="call-btn">
+              احجز مكالمة استكشاف مجانية (20-30 دقيقة)
+            </a>
+            <a href="https://wa.me/201501656010" target="_blank" rel="noopener noreferrer" class="cta-btn cta-wa" id="wa-btn">
+              أرسل نتيجة الفحص مباشرة على واتساب
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-note">
+          <span>© 2026 أحمد عصام رمضان · Artelligence</span>
+          <a href="../portfolio/">البورتفوليو والأعمال ←</a>
+        </div>
       </div>
-    </div>
+    </main>
 
     <script>
-      var state = { q1: 1, q2: 20, q3: 'whatsapp' };
+      var state = { q1: 'solo', q2: '10_25', q3: 'partial', q4: 'whatsapp' };
 
       function selectOpt(group, btn, val) {
         var parent = document.getElementById(group);
-        parent.querySelectorAll('.opt-btn').forEach(b => b.classList.remove('selected'));
+        parent.querySelectorAll('.opt-btn').forEach(function (b) { b.classList.remove('selected'); });
         btn.classList.add('selected');
         state[group] = val;
       }
 
-      function calculateROI() {
-        var baseHours = state.q2;
-        var savedHours = Math.round(baseHours * 0.75);
-        var score = 85 + (state.q1 * 3);
-        if (score > 98) score = 98;
+      function evaluateReadiness() {
+        var bandLabels = {
+          lt10: 'أقل من 10 ساعات/أسبوع',
+          '10_25': '10 - 25 ساعة/أسبوع',
+          gt25: 'أكثر من 25 ساعة/أسبوع'
+        };
+        var areaLabels = {
+          whatsapp: 'واتساب وردود العملاء',
+          reports: 'التقارير والمتابعات',
+          archive: 'أرشفة الملفات والمحتوى'
+        };
+        var teamLabels = {
+          solo: 'مؤسس منفرد (1)',
+          small: 'فريق صغير (2-10)',
+          company: 'شركة / فريق (10+)'
+        };
 
-        document.getElementById('score-val').innerText = score + '%';
-        document.getElementById('hours-val').innerText = savedHours + ' ساعة/أسبوعياً';
+        var tierLabel = '';
+        var tierTitle = '';
+        var scopeText = 'أول 3 مهام متكررة';
+        var desc = '';
+
+        if (state.q3 === 'clear' && state.q2 !== 'lt10') {
+          tierLabel = 'جاهزية عالية';
+          tierTitle = 'جاهز لأتمتة أول 3 مهام الآن';
+          desc = 'لأن خطوات عملك واضحة بالفعل في (' + areaLabels[state.q4] + ') وتستهلك (' + bandLabels[state.q2] + ')، خطوتك الأذكى هي مكالمة استكشاف مجانية (20-30 دقيقة) ثم التشخيص (5-10 أيام عمل) لربط أول نظام آمن ببوابة مراجعة بشرية.';
+        } else if (state.q3 === 'partial' && state.q2 !== 'lt10') {
+          tierLabel = 'جاهزية متوسطة';
+          tierTitle = 'جاهز مع ترتيب خطوات سريع أولاً';
+          desc = 'لديك حجم تكرار واضح في (' + areaLabels[state.q4] + '). قبل كتابة أي كود، نوثق الخطوات غير المكتوبة أثناء مرحلة التشخيص حتى تتحول المهام المتكررة إلى أمر تشغيل موثوق بدون عشوائية.';
+        } else {
+          tierLabel = 'مرحلة تأسيسية';
+          tierTitle = 'ابدأ بتوثيق العملية قبل شراء أي أداة';
+          scopeText = 'مهمة واحدة ذات أولوية';
+          desc = 'بكل صراحة: لا تنفق ميزانيتك على أدوات أو روبوتات قبل كتابة خطوات (' + areaLabels[state.q4] + ') كما تحدث يومياً. ابدأ بمكالمة استكشاف مجانية (20-30 دقيقة) لنرسم معك ما يستحق التنظيم أولاً وما لا يحتاج أتمتة الآن.';
+        }
+
+        document.getElementById('tier-pill').innerText = tierLabel;
+        document.getElementById('tier-title').innerText = tierTitle;
+        document.getElementById('scope-val').innerText = scopeText;
+        document.getElementById('band-val').innerText = bandLabels[state.q2];
+        document.getElementById('result-desc').innerText = desc;
         document.getElementById('result-box').style.display = 'block';
 
-        var msg = encodeURIComponent("مرحباً أستاذ أحمد، قمت بحساب جاهزية مشروعي على منصة AIR وكانت النتيجة " + score + "% وتوفير " + savedHours + " ساعة أسبوعياً. حابب أستفسر عن استشارة الأتمتة بكلاو.");
-        document.getElementById('wa-btn').href = "https://wa.me/201501656010?text=" + msg;
-
-        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        var msg = encodeURIComponent(
+          'مرحباً أستاذ أحمد، قمت بفحص الجاهزية على منصة AIR.\n' +
+          '- حجم الفريق: ' + teamLabels[state.q1] + '\n' +
+          '- العبء الأسبوعي: ' + bandLabels[state.q2] + '\n' +
+          '- الأولوية: ' + areaLabels[state.q4] + '\n' +
+          '- التقييم: ' + tierTitle + '\n' +
+          'وأود طلب استشارة أتمتة أو مكالمة استكشاف مجانية.'
+        );
+        document.getElementById('wa-btn').href = 'https://wa.me/201501656010?text=' + msg;
+        document.getElementById('result-box').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
     </script>
+    <script src="https://ahmedissamramadan.github.io/ai-business-transformation/assets/ecosystem-bar.js" data-position="top"></script>
   </body>
 </html>
