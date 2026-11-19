@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>أحمد عصام رمضان | بورتفوليو الأنظمة والمنتجات الرقمية (Artelligence)</title>
+  <meta name="description" content="أحمد عصام رمضان: مصمم واجهات وباني أنظمة ذكاء اصطناعي وأتمتة أعمال (مصر والخليج). استعرض المشاريع الحية: WASL Network، Artelligence OS، هرم الـ AI، ومنظومة 84 يوماً." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="أحمد عصام رمضان | بورتفوليو الأنظمة والمنتجات الرقمية" />
+  <meta property="og:description" content="مشاريع حية مبنية بالكود والأتمتة: WASL Network، Artelligence، Tohamy House Media Engine، و AI Business Transformation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #F7F7F5;
+      --surface: #FFFFFF;
+      --surface-2: #F0F0EC;
+      --text: #0A0A0A;
+      --muted: #52525B;
+      --border: rgba(10, 10, 10, 0.12);
+      --accent: #0A0A0A;
+      --accent-text: #FAFAFA;
+    }
+    [data-theme="dark"] {
+      --bg: #0A0A0A;
+      --surface: #121212;
+      --surface-2: #1A1A1A;
+      --text: #FAFAFA;
+      --muted: #A1A1AA;
+      --border: rgba(250, 250, 250, 0.14);
+      --accent: #FAFAFA;
+      --accent-text: #0A0A0A;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Cairo', 'Inter', system-ui, -apple-system, sans-serif;
+      line-height: 1.75;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+    html[lang="en"] body {
+      font-family: 'Inter', 'Cairo', system-ui, -apple-system, sans-serif;
+    }
+    .container { max-width: 1020px; margin: 0 auto; padding: 0 24px; }
+    header {
+      position: sticky; top: 0; z-index: 40;
+      background: color-mix(in srgb, var(--bg) 90%, transparent);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 12px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: 0.06em; font-size: 14px; }
+    .brand svg { width: 24px; height: 22px; }
+    .controls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .btn {
+      border: 1px solid var(--border); background: var(--surface); color: var(--text);
+      padding: 7px 14px; border-radius: 999px; font-family: inherit;
+      font-size: 13px; font-weight: 600; cursor: pointer; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s ease;
+    }
+    .btn:hover { border-color: var(--text); }
+    .btn-primary { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+    .btn-primary:hover { opacity: 0.88; }
+
+    .hero { padding: 72px 0 52px; border-bottom: 1px solid var(--border); }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
+      color: var(--muted); text-transform: uppercase; margin-bottom: 16px;
+    }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--text); display: inline-block; }
+    h1 { font-size: clamp(30px, 5vw, 48px); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+    .hero-sub { font-size: 17.5px; color: var(--muted); max-width: 740px; margin-bottom: 28px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
+
+    .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; }
+    .metric {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 20px;
+    }
+    .metric-val { font-size: 30px; font-weight: 800; line-height: 1.1; margin-bottom: 6px; }
+    .metric-lbl { font-size: 13px; color: var(--muted); }
+
+    section { padding: 56px 0; border-bottom: 1px solid var(--border); }
+    .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; }
+    .sec-num { font-size: 13px; font-weight: 800; color: var(--muted); font-family: ui-monospace, monospace; }
+    .sec-title { font-size: 26px; font-weight: 800; }
+    .sec-sub { color: var(--muted); font-size: 15px; margin-bottom: 28px; max-width: 740px; }
+
+    .filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+    .filter-btn {
+      padding: 8px 15px; border-radius: 999px; border: 1px solid var(--border);
+      background: var(--surface); color: var(--muted); cursor: pointer;
+      font-family: inherit; font-size: 13px; font-weight: 700;
+    }
+    .filter-btn.active { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+    .proj-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 18px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; gap: 14px;
+    }
+    .proj-tag { font-size: 11px; font-weight: 800; color: var(--muted); letter-spacing: 0.06em; margin-bottom: 6px; }
+    .proj-card h3 { font-size: 18px; margin-bottom: 8px; }
+    .proj-card p { font-size: 14px; color: var(--muted); margin-bottom: 12px; }
+    .stack-row { display: flex; flex-wrap: wrap; gap: 6px; }
+    .stack-pill {
+      font-size: 11.5px; padding: 4px 9px; border-radius: 8px;
+      background: var(--surface-2); border: 1px solid var(--border); font-weight: 600;
+    }
+    .proj-link {
+      font-size: 13px; font-weight: 700; color: var(--text); text-decoration: none;
+      display: inline-flex; align-items: center; gap: 6px; padding-top: 8px; border-top: 1px solid var(--border);
+    }
+    .proj-link:hover { text-decoration: underline; }
+
+    .stack-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+    .box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 22px;
+    }
+    .box h3 { font-size: 17px; margin-bottom: 10px; }
+    .box p { font-size: 14px; color: var(--muted); margin-bottom: 12px; }
+
+    .cta-box {
+      background: var(--accent); color: var(--accent-text);
+      border-radius: 22px; padding: 36px 28px;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    }
+    .cta-box h2 { font-size: 24px; margin-bottom: 6px; }
+    .cta-box p { opacity: 0.82; font-size: 14.5px; max-width: 580px; }
+    .btn-inv {
+      background: var(--accent-text); color: var(--accent);
+      padding: 10px 20px; border-radius: 999px; font-weight: 800;
+      text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 8px;
+    }
+
+    footer { padding: 44px 0; text-align: center; color: var(--muted); font-size: 13.5px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <svg viewBox="0 0 120 110" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="23" cy="79" r="13.5" fill="currentColor"/>
+          <path d="M55.5 14.5 C57.2 11.4 59.8 11.4 61.5 14.5 L94.2 76.2 C98.5 84.3 103.5 89.2 110 91.5 L110 92.8 L83.5 92.8 C74.5 92.8 68.8 89.0 64.5 81.0 L40.2 35.8 C38.5 32.6 38.8 29.8 41.2 26.2 Z" fill="currentColor"/>
+        </svg>
+        <span data-ar="أحمد عصام رمضان" data-en="AHMED ISSAM RAMADAN">أحمد عصام رمضان</span>
+      </div>
+      <div class="controls">
+        <button class="btn" id="themeBtn" type="button">Obsidian Dark</button>
+        <button class="btn" id="langBtn" type="button">English</button>
+        <a class="btn btn-primary" href="https://ahmedissamramadan.github.io/ai-business-transformation/campaign/?utm_source=portfolio&utm_medium=header" data-ar="احجز مكالمة استكشاف" data-en="Book Discovery Call">احجز مكالمة استكشاف</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="eyebrow"><span class="dot"></span><span data-ar="مؤسس ARTELLIGENCE · باني أنظمة ذكاء اصطناعي ومنتجات رقمية" data-en="FOUNDER OF ARTELLIGENCE · AI SYSTEMS & DIGITAL PRODUCT BUILDER">مؤسس ARTELLIGENCE · باني أنظمة ذكاء اصطناعي ومنتجات رقمية</span></div>
+      <h1 data-ar="أبني أنظمة ذكاء اصطناعي، منتجات ويب، وخطوط أتمتة تعمل فعلياً للشركات في مصر والخليج" data-en="I Build Live AI Systems, Web Products, and Automation Pipelines for SMEs in Egypt & the GCC">أبني أنظمة ذكاء اصطناعي، منتجات ويب، وخطوط أتمتة تعمل فعلياً للشركات في مصر والخليج</h1>
+      <p class="hero-sub" data-ar="مطور وباني أنظمة بالتعلم الذاتي والتطبيق العملي. أحوّل العمليات المتكررة إلى أنظمة واضحة ومختبرة بملكية كاملة للبيانات وبدون مبالغة." data-en="Self-taught builder turning repetitive manual workflows into tested, documented AI systems and clean web interfaces with full data ownership.">مطور وباني أنظمة بالتعلم الذاتي والتطبيق العملي. أحوّل العمليات المتكررة إلى أنظمة واضحة ومختبرة بملكية كاملة للبيانات وبدون مبالغة.</p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects" data-ar="استعرض المشاريع الحية" data-en="Explore Live Projects">استعرض المشاريع الحية</a>
+        <a class="btn" href="https://ahmedissamramadan.github.io/ai-business-transformation/content-system/" data-ar="دراسة حالة 84 يوماً" data-en="84-Day Content System">دراسة حالة 84 يوماً</a>
+        <a class="btn" href="https://ahmedissamramadan.github.io/ai-pyramid/" data-ar="جرب هرم الذكاء الاصطناعي" data-en="Try The AI Pyramid">جرب هرم الذكاء الاصطناعي</a>
+      </div>
+
+      <div class="metrics">
+        <div class="metric">
+          <div class="metric-val">11</div>
+          <div class="metric-lbl" data-ar="نظاماً وتجربة حية موثقة بالكود والروابط" data-en="Verified Live Systems & Production Builds">نظاماً وتجربة حية موثقة بالكود والروابط</div>
+        </div>
+        <div class="metric">
+          <div class="metric-val">35+</div>
+          <div class="metric-lbl" data-ar="مستودعاً ومشروعاً برمجياً عملياً" data-en="Hands-On Codebases & Repositories">مستودعاً ومشروعاً برمجياً عملياً</div>
+        </div>
+        <div class="metric">
+          <div class="metric-val">336</div>
+          <div class="metric-lbl" data-ar="منشوراً مجدولاً تلقائياً عبر 84 يوماً متصلاً" data-en="Automated Scheduled Posts Across 84 Days">منشوراً مجدولاً تلقائياً عبر 84 يوماً متصلاً</div>
+        </div>
+        <div class="metric">
+          <div class="metric-val">93k+</div>
+          <div class="metric-lbl" data-ar="خطوة تنفيذية عملية موثقة في بناء الأنظمة" data-en="Documented Practical Execution Steps">خطوة تنفيذية عملية موثقة في بناء الأنظمة</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title" data-ar="المشاريع والأنظمة الحية" data-en="Selected Live Projects & Systems">المشاريع والأنظمة الحية</h2></div>
+      <p class="sec-sub" data-ar="كل مشروع هنا مبني ومختبر عملياً، ويمكنك فحص روابطه الحية مباشرة." data-en="Every project below is built, tested, and verifiable via live links.">كل مشروع هنا مبني ومختبر عملياً، ويمكنك فحص روابطه الحية مباشرة.</p>
+
+      <div class="filter-bar" id="filterBar"></div>
+      <div class="projects-grid" id="projectsGrid"></div>
+    </section>
+
+    <section id="stack">
+      <div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title" data-ar="المهارات والتقنيات العملية" data-en="Core Tech Stack & Capabilities">المهارات والتقنيات العملية</h2></div>
+      <p class="sec-sub" data-ar="مكتسبة بالكامل عبر التطبيق الفعلي وبناء المنتجات وخطوط الأتمتة." data-en="Built through hands-on product design, full-stack development, and automation engineering.">مكتسبة بالكامل عبر التطبيق الفعلي وبناء المنتجات وخطوط الأتمتة.</p>
+
+      <div class="stack-grid">
+        <div class="box">
+          <h3 data-ar="تصميم الواجهات والهوية (UI/UX)" data-en="UI/UX & Brand Systems">تصميم الواجهات والهوية (UI/UX)</h3>
+          <p data-ar="تصميم أنظمة بصرية وهندسية مونوكروم، توكنز JSON، وتجارب ثنائية اللغة RTL/LTR." data-en="Monochrome geometric design systems, JSON tokens, and native RTL/LTR interfaces.">تصميم أنظمة بصرية وهندسية مونوكروم، توكنز JSON، وتجارب ثنائية اللغة RTL/LTR.</p>
+          <div class="stack-row">
+            <span class="stack-pill">Figma</span><span class="stack-pill">Stitch</span><span class="stack-pill">Anima</span><span class="stack-pill">Design Systems</span>
+          </div>
+        </div>
+        <div class="box">
+          <h3 data-ar="تطوير الواجهات (Frontend)" data-en="Frontend Development">تطوير الواجهات (Frontend)</h3>
+          <p data-ar="بناء تطبيقات ويب سريعة ومتجاوبة بواجهات نظيفة وأداء عالٍ على الموبايل." data-en="Fast, responsive web applications built for clean typography and mobile speed.">بناء تطبيقات ويب سريعة ومتجاوبة بواجهات نظيفة وأداء عالٍ على الموبايل.</p>
+          <div class="stack-row">
+            <span class="stack-pill">HTML / CSS</span><span class="stack-pill">Tailwind CSS</span><span class="stack-pill">JavaScript</span><span class="stack-pill">TypeScript</span><span class="stack-pill">React</span><span class="stack-pill">Next.js</span>
+          </div>
+        </div>
+        <div class="box">
+          <h3 data-ar="الخوادم وقواعد البيانات والأتمتة" data-en="Backend, Databases & Automation">الخوادم وقواعد البيانات والأتمتة</h3>
+          <p data-ar="بناء وكلاء ذكاء اصطناعي، قواعد بيانات محلية وسحابية، وتكاملات APIs رسمية." data-en="AI agents, local & cloud databases, and official API integrations with human gates.">بناء وكلاء ذكاء اصطناعي، قواعد بيانات محلية وسحابية، وتكاملات APIs رسمية.</p>
+          <div class="stack-row">
+            <span class="stack-pill">Node.js</span><span class="stack-pill">Python</span><span class="stack-pill">SQLite</span><span class="stack-pill">Supabase</span><span class="stack-pill">n8n / Make</span><span class="stack-pill">WhatsApp API</span><span class="stack-pill">MCP</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="background">
+      <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title" data-ar="الخلفية والشهادات الموثقة" data-en="Background & Verified Credentials">الخلفية والشهادات الموثقة</h2></div>
+      <p class="sec-sub" data-ar="شفافية كاملة في المسار التعليمي والمهني بدون ألقاب غير دقيقة." data-en="Complete transparency on education and self-taught engineering path.">شفافية كاملة في المسار التعليمي والمهني بدون ألقاب غير دقيقة.</p>
+
+      <div class="stack-grid">
+        <div class="box">
+          <h3 data-ar="المسار الأكاديمي والتعلم الذاتي" data-en="Academic & Self-Taught Path">المسار الأكاديمي والتعلم الذاتي</h3>
+          <p data-ar="حاصل على ليسانس الحقوق من جامعة الزقازيق (2022) دون عمل بالمحاماة، وانتقلت بالكامل عبر التعلم الذاتي التطبيقي إلى تصميم الواجهات، تطوير البرمجيات، وهندسة أنظمة الذكاء الاصطناعي." data-en="Hold an LL.B. from Zagazig University (2022, non-practicing) and transitioned fully through self-taught practical execution into UI/UX, web development, and AI systems architecture.">حاصل على ليسانس الحقوق من جامعة الزقازيق (2022) دون عمل بالمحاماة، وانتقلت بالكامل عبر التعلم الذاتي التطبيقي إلى تصميم الواجهات، تطوير البرمجيات، وهندسة أنظمة الذكاء الاصطناعي.</p>
+        </div>
+        <div class="box">
+          <h3 data-ar="الشهادات الرسمية المكتملة" data-en="Verified Completed Certificates">الشهادات الرسمية المكتملة</h3>
+          <div class="stack-row">
+            <span class="stack-pill">ALX AI Career Essentials (AiCE)</span>
+            <span class="stack-pill">ALX Project Management Crash Course</span>
+            <span class="stack-pill">Anthropic Claude 101</span>
+            <span class="stack-pill">IBM SkillsBuild</span>
+            <span class="stack-pill">NTI / ITIDA / Google / HubSpot</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom:none;">
+      <div class="cta-box">
+        <div>
+          <h2 data-ar="هل لديك 3 مهام متكررة تستهلك وقت فريقك؟" data-en="Have 3 Repetitive Workflows Draining Your Team?">هل لديك 3 مهام متكررة تستهلك وقت فريقك؟</h2>
+          <p data-ar="ابدأ بمكالمة استكشاف مجانية (20-30 دقيقة) نراجع فيها عملياتك بوضوح ونحدد ما يستحق الأتمتة أولاً في مصر أو الخليج." data-en="Start with a free 20-30 minute discovery call to audit your operations and prioritize what to automate first across Egypt & the GCC.">ابدأ بمكالمة استكشاف مجانية (20-30 دقيقة) نراجع فيها عملياتك بوضوح ونحدد ما يستحق الأتمتة أولاً في مصر أو الخليج.</p>
+        </div>
+        <a class="btn-inv" href="https://ahmedissamramadan.github.io/ai-business-transformation/campaign/?utm_source=portfolio&utm_medium=bottom_cta" data-ar="احجز مكالمتك المجانية" data-en="Book Free Call">احجز مكالمتك المجانية</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p data-ar="أحمد عصام رمضان | Artelligence - جميع الأرقام والمشاريع موثقة من أنظمة حية" data-en="Ahmed Issam Ramadan | Artelligence - All Metrics Verified From Live Systems">أحمد عصام رمضان | Artelligence - جميع الأرقام والمشاريع موثقة من أنظمة حية</p>
+    </div>
+  </footer>
+
+  <script>
+    const PROJECTS = [
+      {
+        cat: "web", tag: "WEB PLATFORM · AI GATEKEEPERS",
+        arT: "شبكة وَصْل (WASL Network)", enT: "WASL Network",
+        arD: "منصة ربط المؤسسين والمستثمرين في MENA بـ Next.js 16.4.2 و Supabase RLS ووكلاء AI لفحص التسجيل وعزل الطلبات في /pending-approval مع 35+ أيقونة مخصصة.",
+        enD: "MENA founder & investor network built on Next.js 16.4.2, Supabase RLS, AI registration gatekeepers (/pending-approval), i18n RTL/LTR, and 35+ custom SVGs.",
+        stack: ["Next.js 16", "React 19", "Supabase RLS", "PGlite", "i18n"],
+        url: "https://wasl-network.com", linkAr: "زيارة الموقع الحي", linkEn: "Visit Live Site"
+      },
+      {
+        cat: "automation", tag: "AUTONOMOUS ENGINE · 84 DAYS",
+        arT: "منظومة المحتوى اليومي لـ 3 أشهر (Artelligence)", enT: "Artelligence 84-Day Content System",
+        arD: "336 منشوراً مجدولاً عبر 84 يوماً متصلاً، 180 عرض كاروسيل (1,440 شريحة PNG + 180 PDF)، ومحرك نشر محلي بـ SQLite و Meta/LinkedIn APIs و LaunchAgent.",
+        enD: "336 scheduled posts across 84 consecutive days, 180 rendered decks (1,440 PNGs + 180 PDFs), and a local SQLite + Meta/LinkedIn API daemon.",
+        stack: ["SQLite", "Node.js", "Python", "Playwright", "Meta API v21"],
+        url: "https://ahmedissamramadan.github.io/ai-business-transformation/content-system/", linkAr: "استعراض دراسة الحالة", linkEn: "View Live Case Study"
+      },
+      {
+        cat: "automation", tag: "CONSULTING · EGYPT & GCC",
+        arT: "ممارسة AI Business Transformation", enT: "AI Business Transformation Practice",
+        arD: "كتيبات تشغيل لمصر (29 فحصاً) والخليج (31 فحصاً بضوابط PDPL و ZATCA)، محرك إعادة صف PDF عربي RTL، وصفحة حملة تفاعلية مرتبطة بواتساب.",
+        enD: "Egypt (29 checks) & GCC (31 checks with PDPL/ZATCA compliance) playbooks, custom RTL Arabic PDF engine, and live discovery campaign site.",
+        stack: ["RTL PDF Engine", "Playbook v1.1", "GCC Edition", "FormSubmit"],
+        url: "https://ahmedissamramadan.github.io/ai-business-transformation/", linkAr: "صفحة الممارسة والأسعار", linkEn: "View Practice & Pricing"
+      },
+      {
+        cat: "web", tag: "INTERACTIVE DIAGNOSTIC",
+        arT: "هرم الذكاء الاصطناعي العالمي (The AI Pyramid)", enT: "The AI Pyramid",
+        arD: "دليل واختبار تشخيصي تفاعلي (نصف دقيقة) يفكك علاقة البشر بالـ AI إلى 5 درجات مستنداً إلى OpenAI و Anthropic و Gartner و Stanford HAI.",
+        enD: "Bilingual interactive guide & 30-second self-reflection diagnostic synthesizing OpenAI, Anthropic, Gartner, and Stanford HAI maturity models.",
+        stack: ["HTML/CSS/JS", "Bilingual RTL", "Interactive UI"],
+        url: "https://ahmedissamramadan.github.io/ai-pyramid/", linkAr: "جرب الاختبار الآن", linkEn: "Try Diagnostic"
+      },
+      {
+        cat: "design", tag: "BRAND SYSTEM · 216 ICONS",
+        arT: "منظومة Artelligence OS ونظام الأيقونات v2", enT: "Artelligence OS & Icon System v2",
+        arD: "هوية مونوكروم هندسية (Dot -> Stroke -> Form -> Symbol)، 216 أيقونة على شبكة 48px بزاوية 56.9°، و 379 أصلاً ونموذجاً تطبيقياً.",
+        enD: "Monochrome geometric brand system (Dot -> Stroke -> Form -> Symbol), 216 icons on a 48px grid at 56.9 deg, and 379 visual prototypes.",
+        stack: ["Figma", "Icon System v2", "JSON Tokens", "Local-First AI"],
+        url: "https://ahmedissamramadan.github.io/Artelligence-OS/", linkAr: "فتح Artelligence OS", linkEn: "Open Artelligence OS"
+      },
+      {
+        cat: "automation", tag: "FIELD ARCHIVE · MD5 100%",
+        arT: "محرك وسائط Tohamy House (Shooting OS)", enT: "Tohamy House Media Engine",
+        arD: "فصل الوسائط الخام على SSD عن الفهارس النصية عبر 6 مواقع هندسية، تطبيع Unicode NFC، فحص تطابق MD5 بنسبة 100%، وكتاب عملاء من 180 سؤالاً.",
+        enD: "Decoupled SSD raw media & JSON/CSV indexes across 6 engineering sites, Unicode NFC normalization, 100% Bit-for-Bit MD5 verification, and 180-FAQ client book.",
+        stack: ["Python", "MD5 Checksum", "Unicode NFC", "SKILL.md"],
+        url: "https://ahmedissamramadan.github.io/ai-business-transformation/content-system/", linkAr: "التفاصيل في دراسة الحالة", linkEn: "Details in Case Study"
+      }
+    ];
+
+    const FILTERS = [
+      { key: "all", ar: "الكل", en: "All" },
+      { key: "web", ar: "منصات الويب", en: "Web Platforms" },
+      { key: "automation", ar: "الأتمتة والوكلاء", en: "Automation & AI" },
+      { key: "design", ar: "الهوية والتصميم", en: "Design Systems" }
+    ];
+
+    let lang = "ar";
+    let activeCat = "all";
+
+    function renderFilters() {
+      document.getElementById("filterBar").innerHTML = FILTERS.map(f =>
+        `<button class="filter-btn ${f.key === activeCat ? "active" : ""}" onclick="setFilter('${f.key}')">${lang === "ar" ? f.ar : f.en}</button>`
+      ).join("");
+    }
+
+    function renderProjects() {
+      const list = activeCat === "all" ? PROJECTS : PROJECTS.filter(p => p.cat === activeCat);
+      document.getElementById("projectsGrid").innerHTML = list.map(p => `
+        <article class="proj-card">
+          <div>
+            <div class="proj-tag">${p.tag}</div>
+            <h3>${lang === "ar" ? p.arT : p.enT}</h3>
+            <p>${lang === "ar" ? p.arD : p.enD}</p>
+            <div class="stack-row">${p.stack.map(s => `<span class="stack-pill">${s}</span>`).join("")}</div>
+          </div>
+          <a class="proj-link" href="${p.url}" target="_blank" rel="noopener noreferrer">${lang === "ar" ? p.linkAr : p.linkEn} ↗</a>
+        </article>
+      `).join("");
+    }
+
+    function applyLang() {
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+      document.getElementById("langBtn").textContent = lang === "ar" ? "English" : "العربية";
+      document.querySelectorAll("[data-ar]").forEach(el => {
+        el.textContent = el.getAttribute(`data-${lang}`);
+      });
+      renderFilters();
+      renderProjects();
+    }
+
+    window.setFilter = (k) => { activeCat = k; renderFilters(); renderProjects(); };
+    document.getElementById("langBtn").onclick = () => { lang = lang === "ar" ? "en" : "ar"; applyLang(); };
+    document.getElementById("themeBtn").onclick = () => {
+      const cur = document.documentElement.getAttribute("data-theme");
+      const nxt = cur === "light" ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", nxt);
+      document.getElementById("themeBtn").textContent = nxt === "light" ? "Obsidian Dark" : "Gallery Light";
+    };
+
+    applyLang();
+  </script>
+  <script src="https://ahmedissamramadan.github.io/ai-business-transformation/assets/ecosystem-bar.js" data-position="top"></script>
+</body>
+</html>
