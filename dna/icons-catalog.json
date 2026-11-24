@@ -1,0 +1,1774 @@
+{
+  "brand": "Artelligence",
+  "founder": "Ahmed Issam Ramadan",
+  "geometry": {
+    "icon_grid_px": 48,
+    "stroke_width_px": 2.4,
+    "stroke_cap": "round",
+    "circle_diameter_mm": 22.0,
+    "diagonal_angle_deg": 56.9,
+    "aspect_ratios": [
+      "1:1.75",
+      "1:2.5",
+      "1:3.1"
+    ],
+    "minimum_size_mm": 10.0,
+    "isolated_dot_rule": "Every single icon contains exactly one isolated solid dot that draws the eye."
+  },
+  "stages": [
+    {
+      "stage": "01 / 04",
+      "name_ar": "النقطة",
+      "name_en": "Point",
+      "meaning": "الأصل. كل فكرة بتبدأ من نقطة (Origin, Potential, Focus)"
+    },
+    {
+      "stage": "02 / 04",
+      "name_ar": "الضربة",
+      "name_en": "Stroke",
+      "meaning": "الحركة والنية: ضربة مائلة بزاوية 56.9° زي ضلع الشعار (Motion, Intention, Human Direction)"
+    },
+    {
+      "stage": "03 / 04",
+      "name_ar": "الشكل",
+      "name_en": "Form",
+      "meaning": "الإبداع لما يبقى نظام: شبكة البناء، الدايرة Ø22 والضلع المائل (Structure, Engineering, Scalability)"
+    },
+    {
+      "stage": "04 / 04",
+      "name_ar": "الرمز",
+      "name_en": "Symbol",
+      "meaning": "الرمز النهائي حسب شبكة البناء: النقطة والضلع المائل (Harmony between Art and AI)"
+    }
+  ],
+  "icons": [
+    {
+      "id": "001",
+      "slug": "01_point",
+      "name_ar": "النقطة",
+      "name_en": "01 POINT",
+      "category": "Brand Core",
+      "file": "/dna/icons/001_01_point.svg"
+    },
+    {
+      "id": "002",
+      "slug": "02_stroke",
+      "name_ar": "الضربة",
+      "name_en": "02 STROKE",
+      "category": "Brand Core",
+      "file": "/dna/icons/002_02_stroke.svg"
+    },
+    {
+      "id": "003",
+      "slug": "03_form",
+      "name_ar": "الشكل",
+      "name_en": "03 FORM",
+      "category": "Brand Core",
+      "file": "/dna/icons/003_03_form.svg"
+    },
+    {
+      "id": "004",
+      "slug": "04_symbol",
+      "name_ar": "الرمز",
+      "name_en": "04 SYMBOL",
+      "category": "Brand Core",
+      "file": "/dna/icons/004_04_symbol.svg"
+    },
+    {
+      "id": "005",
+      "slug": "build_in_public",
+      "name_ar": "بناء أمامك",
+      "name_en": "BUILD IN PUBLIC",
+      "category": "Brand Core",
+      "file": "/dna/icons/005_build_in_public.svg"
+    },
+    {
+      "id": "006",
+      "slug": "audiobook",
+      "name_ar": "كتاب صوتي",
+      "name_en": "AUDIOBOOK",
+      "category": "Content & Media",
+      "file": "/dna/icons/006_audiobook.svg"
+    },
+    {
+      "id": "007",
+      "slug": "cinema",
+      "name_ar": "سينما",
+      "name_en": "CINEMA",
+      "category": "Content & Media",
+      "file": "/dna/icons/007_cinema.svg"
+    },
+    {
+      "id": "008",
+      "slug": "the_series",
+      "name_ar": "السلسلة",
+      "name_en": "THE SERIES",
+      "category": "Content & Media",
+      "file": "/dna/icons/008_the_series.svg"
+    },
+    {
+      "id": "009",
+      "slug": "youtube",
+      "name_ar": "يوتيوب",
+      "name_en": "YOUTUBE",
+      "category": "Social & Platforms",
+      "file": "/dna/icons/009_youtube.svg"
+    },
+    {
+      "id": "010",
+      "slug": "how_to",
+      "name_ar": "اعمل زينا",
+      "name_en": "HOW TO",
+      "category": "Education",
+      "file": "/dna/icons/010_how_to.svg"
+    },
+    {
+      "id": "011",
+      "slug": "tools",
+      "name_ar": "الأدوات",
+      "name_en": "TOOLS",
+      "category": "AI & Engineering",
+      "file": "/dna/icons/011_tools.svg"
+    },
+    {
+      "id": "012",
+      "slug": "code",
+      "name_ar": "برمجة",
+      "name_en": "CODE",
+      "category": "AI & Engineering",
+      "file": "/dna/icons/012_code.svg"
+    },
+    {
+      "id": "013",
+      "slug": "automation",
+      "name_ar": "أتمتة",
+      "name_en": "AUTOMATION",
+      "category": "AI & Engineering",
+      "file": "/dna/icons/013_automation.svg"
+    },
+    {
+      "id": "014",
+      "slug": "creative",
+      "name_ar": "إبداع",
+      "name_en": "CREATIVE",
+      "category": "Brand Core",
+      "file": "/dna/icons/014_creative.svg"
+    },
+    {
+      "id": "015",
+      "slug": "community",
+      "name_ar": "شاركنا",
+      "name_en": "COMMUNITY",
+      "category": "Community",
+      "file": "/dna/icons/015_community.svg"
+    },
+    {
+      "id": "016",
+      "slug": "about",
+      "name_ar": "عنّي",
+      "name_en": "ABOUT",
+      "category": "Portfolio",
+      "file": "/dna/icons/016_about.svg"
+    },
+    {
+      "id": "017",
+      "slug": "work",
+      "name_ar": "أعمالي",
+      "name_en": "WORK",
+      "category": "Portfolio",
+      "file": "/dna/icons/017_work.svg"
+    },
+    {
+      "id": "018",
+      "slug": "clients",
+      "name_ar": "العملاء",
+      "name_en": "CLIENTS",
+      "category": "Business",
+      "file": "/dna/icons/018_clients.svg"
+    },
+    {
+      "id": "019",
+      "slug": "reviews",
+      "name_ar": "آراء العملاء",
+      "name_en": "REVIEWS",
+      "category": "Business",
+      "file": "/dna/icons/019_reviews.svg"
+    },
+    {
+      "id": "020",
+      "slug": "contact",
+      "name_ar": "تواصل",
+      "name_en": "CONTACT",
+      "category": "Communication",
+      "file": "/dna/icons/020_contact.svg"
+    },
+    {
+      "id": "021",
+      "slug": "email",
+      "name_ar": "البريد",
+      "name_en": "EMAIL",
+      "category": "Communication",
+      "file": "/dna/icons/021_email.svg"
+    },
+    {
+      "id": "022",
+      "slug": "links",
+      "name_ar": "الروابط",
+      "name_en": "LINKS",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/022_links.svg"
+    },
+    {
+      "id": "023",
+      "slug": "behind_the_scenes",
+      "name_ar": "كواليس",
+      "name_en": "BEHIND THE SCENES",
+      "category": "Content & Media",
+      "file": "/dna/icons/023_behind_the_scenes.svg"
+    },
+    {
+      "id": "024",
+      "slug": "updates",
+      "name_ar": "الجديد",
+      "name_en": "UPDATES",
+      "category": "Communication",
+      "file": "/dna/icons/024_updates.svg"
+    },
+    {
+      "id": "025",
+      "slug": "launches",
+      "name_ar": "الإطلاقات",
+      "name_en": "LAUNCHES",
+      "category": "Product & OS",
+      "file": "/dna/icons/025_launches.svg"
+    },
+    {
+      "id": "026",
+      "slug": "events",
+      "name_ar": "الفعاليات",
+      "name_en": "EVENTS",
+      "category": "Community",
+      "file": "/dna/icons/026_events.svg"
+    },
+    {
+      "id": "027",
+      "slug": "tips",
+      "name_ar": "نصائح",
+      "name_en": "TIPS",
+      "category": "Education",
+      "file": "/dna/icons/027_tips.svg"
+    },
+    {
+      "id": "028",
+      "slug": "faq",
+      "name_ar": "أسئلة شائعة",
+      "name_en": "FAQ",
+      "category": "Education",
+      "file": "/dna/icons/028_faq.svg"
+    },
+    {
+      "id": "029",
+      "slug": "pricing",
+      "name_ar": "الباقات",
+      "name_en": "PRICING",
+      "category": "Business",
+      "file": "/dna/icons/029_pricing.svg"
+    },
+    {
+      "id": "030",
+      "slug": "cairo_to_world",
+      "name_ar": "من مصر للعالم",
+      "name_en": "CAIRO TO WORLD",
+      "category": "Brand Core",
+      "file": "/dna/icons/030_cairo_to_world.svg"
+    },
+    {
+      "id": "031",
+      "slug": "artelligence_os",
+      "name_ar": "نظام التشغيل",
+      "name_en": "ARTELLIGENCE OS",
+      "category": "Product & OS",
+      "file": "/dna/icons/031_artelligence_os.svg"
+    },
+    {
+      "id": "032",
+      "slug": "autoclaw",
+      "name_ar": "أوتوكلو",
+      "name_en": "AUTOCLAW",
+      "category": "Product & OS",
+      "file": "/dna/icons/032_autoclaw.svg"
+    },
+    {
+      "id": "033",
+      "slug": "air_platform",
+      "name_ar": "منصة إير",
+      "name_en": "AIR PLATFORM",
+      "category": "Product & OS",
+      "file": "/dna/icons/033_air_platform.svg"
+    },
+    {
+      "id": "034",
+      "slug": "wasl",
+      "name_ar": "وصل",
+      "name_en": "WASL",
+      "category": "Product & OS",
+      "file": "/dna/icons/034_wasl.svg"
+    },
+    {
+      "id": "035",
+      "slug": "roi",
+      "name_ar": "حاسبة العائد",
+      "name_en": "ROI",
+      "category": "Business",
+      "file": "/dna/icons/035_roi.svg"
+    },
+    {
+      "id": "036",
+      "slug": "download",
+      "name_ar": "تحميل",
+      "name_en": "DOWNLOAD",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/036_download.svg"
+    },
+    {
+      "id": "037",
+      "slug": "council",
+      "name_ar": "المجلس",
+      "name_en": "COUNCIL",
+      "category": "Product & OS",
+      "file": "/dna/icons/037_council.svg"
+    },
+    {
+      "id": "038",
+      "slug": "kernel",
+      "name_ar": "النواة",
+      "name_en": "KERNEL",
+      "category": "Product & OS",
+      "file": "/dna/icons/038_kernel.svg"
+    },
+    {
+      "id": "039",
+      "slug": "agents",
+      "name_ar": "الوكلاء",
+      "name_en": "AGENTS",
+      "category": "Product & OS",
+      "file": "/dna/icons/039_agents.svg"
+    },
+    {
+      "id": "040",
+      "slug": "knowledge",
+      "name_ar": "قاعدة المعرفة",
+      "name_en": "KNOWLEDGE",
+      "category": "Product & OS",
+      "file": "/dna/icons/040_knowledge.svg"
+    },
+    {
+      "id": "041",
+      "slug": "strategy",
+      "name_ar": "الاستراتيجية",
+      "name_en": "STRATEGY",
+      "category": "Business",
+      "file": "/dna/icons/041_strategy.svg"
+    },
+    {
+      "id": "042",
+      "slug": "privacy",
+      "name_ar": "الخصوصية",
+      "name_en": "PRIVACY",
+      "category": "AI & Engineering",
+      "file": "/dna/icons/042_privacy.svg"
+    },
+    {
+      "id": "043",
+      "slug": "seo",
+      "name_ar": "الظهور في البحث",
+      "name_en": "SEO",
+      "category": "Business",
+      "file": "/dna/icons/043_seo.svg"
+    },
+    {
+      "id": "044",
+      "slug": "arrow_up",
+      "name_ar": "فوق",
+      "name_en": "ARROW UP",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/044_arrow_up.svg"
+    },
+    {
+      "id": "045",
+      "slug": "arrow_down",
+      "name_ar": "تحت",
+      "name_en": "ARROW DOWN",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/045_arrow_down.svg"
+    },
+    {
+      "id": "046",
+      "slug": "arrow_left",
+      "name_ar": "يسار",
+      "name_en": "ARROW LEFT",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/046_arrow_left.svg"
+    },
+    {
+      "id": "047",
+      "slug": "arrow_right",
+      "name_ar": "يمين",
+      "name_en": "ARROW RIGHT",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/047_arrow_right.svg"
+    },
+    {
+      "id": "048",
+      "slug": "external",
+      "name_ar": "رابط خارجي",
+      "name_en": "EXTERNAL",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/048_external.svg"
+    },
+    {
+      "id": "049",
+      "slug": "up",
+      "name_ar": "لأعلى",
+      "name_en": "UP",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/049_up.svg"
+    },
+    {
+      "id": "050",
+      "slug": "down",
+      "name_ar": "لأسفل",
+      "name_en": "DOWN",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/050_down.svg"
+    },
+    {
+      "id": "051",
+      "slug": "back",
+      "name_ar": "رجوع",
+      "name_en": "BACK",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/051_back.svg"
+    },
+    {
+      "id": "052",
+      "slug": "forward",
+      "name_ar": "تقدّم",
+      "name_en": "FORWARD",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/052_forward.svg"
+    },
+    {
+      "id": "053",
+      "slug": "refresh",
+      "name_ar": "تحديث",
+      "name_en": "REFRESH",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/053_refresh.svg"
+    },
+    {
+      "id": "054",
+      "slug": "undo",
+      "name_ar": "تراجع",
+      "name_en": "UNDO",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/054_undo.svg"
+    },
+    {
+      "id": "055",
+      "slug": "redo",
+      "name_ar": "إعادة",
+      "name_en": "REDO",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/055_redo.svg"
+    },
+    {
+      "id": "056",
+      "slug": "expand",
+      "name_ar": "تكبير",
+      "name_en": "EXPAND",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/056_expand.svg"
+    },
+    {
+      "id": "057",
+      "slug": "collapse",
+      "name_ar": "تصغير",
+      "name_en": "COLLAPSE",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/057_collapse.svg"
+    },
+    {
+      "id": "058",
+      "slug": "swap",
+      "name_ar": "تبديل",
+      "name_en": "SWAP",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/058_swap.svg"
+    },
+    {
+      "id": "059",
+      "slug": "sort",
+      "name_ar": "ترتيب",
+      "name_en": "SORT",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/059_sort.svg"
+    },
+    {
+      "id": "060",
+      "slug": "home",
+      "name_ar": "الرئيسية",
+      "name_en": "HOME",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/060_home.svg"
+    },
+    {
+      "id": "061",
+      "slug": "menu",
+      "name_ar": "القائمة",
+      "name_en": "MENU",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/061_menu.svg"
+    },
+    {
+      "id": "062",
+      "slug": "grid_view",
+      "name_ar": "عرض شبكي",
+      "name_en": "GRID VIEW",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/062_grid_view.svg"
+    },
+    {
+      "id": "063",
+      "slug": "list_view",
+      "name_ar": "عرض قائمة",
+      "name_en": "LIST VIEW",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/063_list_view.svg"
+    },
+    {
+      "id": "064",
+      "slug": "filter",
+      "name_ar": "تصفية",
+      "name_en": "FILTER",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/064_filter.svg"
+    },
+    {
+      "id": "065",
+      "slug": "settings",
+      "name_ar": "الإعدادات",
+      "name_en": "SETTINGS",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/065_settings.svg"
+    },
+    {
+      "id": "066",
+      "slug": "controls",
+      "name_ar": "تحكم",
+      "name_en": "CONTROLS",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/066_controls.svg"
+    },
+    {
+      "id": "067",
+      "slug": "more",
+      "name_ar": "المزيد",
+      "name_en": "MORE",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/067_more.svg"
+    },
+    {
+      "id": "068",
+      "slug": "add",
+      "name_ar": "إضافة",
+      "name_en": "ADD",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/068_add.svg"
+    },
+    {
+      "id": "069",
+      "slug": "minus",
+      "name_ar": "تقليل",
+      "name_en": "MINUS",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/069_minus.svg"
+    },
+    {
+      "id": "070",
+      "slug": "close",
+      "name_ar": "إغلاق",
+      "name_en": "CLOSE",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/070_close.svg"
+    },
+    {
+      "id": "071",
+      "slug": "check",
+      "name_ar": "تم",
+      "name_en": "CHECK",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/071_check.svg"
+    },
+    {
+      "id": "072",
+      "slug": "info",
+      "name_ar": "معلومة",
+      "name_en": "INFO",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/072_info.svg"
+    },
+    {
+      "id": "073",
+      "slug": "alert",
+      "name_ar": "تنبيه",
+      "name_en": "ALERT",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/073_alert.svg"
+    },
+    {
+      "id": "074",
+      "slug": "lock",
+      "name_ar": "مقفول",
+      "name_en": "LOCK",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/074_lock.svg"
+    },
+    {
+      "id": "075",
+      "slug": "unlock",
+      "name_ar": "مفتوح",
+      "name_en": "UNLOCK",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/075_unlock.svg"
+    },
+    {
+      "id": "076",
+      "slug": "hide",
+      "name_ar": "إخفاء",
+      "name_en": "HIDE",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/076_hide.svg"
+    },
+    {
+      "id": "077",
+      "slug": "save",
+      "name_ar": "حفظ",
+      "name_en": "SAVE",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/077_save.svg"
+    },
+    {
+      "id": "078",
+      "slug": "like",
+      "name_ar": "مفضلة",
+      "name_en": "LIKE",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/078_like.svg"
+    },
+    {
+      "id": "079",
+      "slug": "share",
+      "name_ar": "مشاركة",
+      "name_en": "SHARE",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/079_share.svg"
+    },
+    {
+      "id": "080",
+      "slug": "copy",
+      "name_ar": "نسخ",
+      "name_en": "COPY",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/080_copy.svg"
+    },
+    {
+      "id": "081",
+      "slug": "edit",
+      "name_ar": "تعديل",
+      "name_en": "EDIT",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/081_edit.svg"
+    },
+    {
+      "id": "082",
+      "slug": "delete",
+      "name_ar": "حذف",
+      "name_en": "DELETE",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/082_delete.svg"
+    },
+    {
+      "id": "083",
+      "slug": "time",
+      "name_ar": "الوقت",
+      "name_en": "TIME",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/083_time.svg"
+    },
+    {
+      "id": "084",
+      "slug": "light",
+      "name_ar": "فاتح",
+      "name_en": "LIGHT",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/084_light.svg"
+    },
+    {
+      "id": "085",
+      "slug": "dark",
+      "name_ar": "داكن",
+      "name_en": "DARK",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/085_dark.svg"
+    },
+    {
+      "id": "086",
+      "slug": "power",
+      "name_ar": "زر التشغيل",
+      "name_en": "POWER",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/086_power.svg"
+    },
+    {
+      "id": "087",
+      "slug": "log_out",
+      "name_ar": "خروج",
+      "name_en": "LOG OUT",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/087_log_out.svg"
+    },
+    {
+      "id": "088",
+      "slug": "log_in",
+      "name_ar": "دخول",
+      "name_en": "LOG IN",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/088_log_in.svg"
+    },
+    {
+      "id": "089",
+      "slug": "follow",
+      "name_ar": "متابعة",
+      "name_en": "FOLLOW",
+      "category": "Community",
+      "file": "/dna/icons/089_follow.svg"
+    },
+    {
+      "id": "090",
+      "slug": "notification",
+      "name_ar": "إشعار جديد",
+      "name_en": "NOTIFICATION",
+      "category": "Communication",
+      "file": "/dna/icons/090_notification.svg"
+    },
+    {
+      "id": "091",
+      "slug": "toggle",
+      "name_ar": "تفعيل",
+      "name_en": "TOGGLE",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/091_toggle.svg"
+    },
+    {
+      "id": "092",
+      "slug": "chat",
+      "name_ar": "محادثة",
+      "name_en": "CHAT",
+      "category": "Communication",
+      "file": "/dna/icons/092_chat.svg"
+    },
+    {
+      "id": "093",
+      "slug": "call",
+      "name_ar": "اتصال",
+      "name_en": "CALL",
+      "category": "Communication",
+      "file": "/dna/icons/093_call.svg"
+    },
+    {
+      "id": "094",
+      "slug": "video_call",
+      "name_ar": "مكالمة فيديو",
+      "name_en": "VIDEO CALL",
+      "category": "Communication",
+      "file": "/dna/icons/094_video_call.svg"
+    },
+    {
+      "id": "095",
+      "slug": "mic",
+      "name_ar": "ميكروفون",
+      "name_en": "MIC",
+      "category": "Content & Media",
+      "file": "/dna/icons/095_mic.svg"
+    },
+    {
+      "id": "096",
+      "slug": "send",
+      "name_ar": "إرسال",
+      "name_en": "SEND",
+      "category": "Communication",
+      "file": "/dna/icons/096_send.svg"
+    },
+    {
+      "id": "097",
+      "slug": "inbox",
+      "name_ar": "الوارد",
+      "name_en": "INBOX",
+      "category": "Communication",
+      "file": "/dna/icons/097_inbox.svg"
+    },
+    {
+      "id": "098",
+      "slug": "mention",
+      "name_ar": "منشن",
+      "name_en": "MENTION",
+      "category": "Communication",
+      "file": "/dna/icons/098_mention.svg"
+    },
+    {
+      "id": "099",
+      "slug": "voice_note",
+      "name_ar": "فويس",
+      "name_en": "VOICE NOTE",
+      "category": "Communication",
+      "file": "/dna/icons/099_voice_note.svg"
+    },
+    {
+      "id": "100",
+      "slug": "translate",
+      "name_ar": "ترجمة",
+      "name_en": "TRANSLATE",
+      "category": "AI & Engineering",
+      "file": "/dna/icons/100_translate.svg"
+    },
+    {
+      "id": "101",
+      "slug": "announce",
+      "name_ar": "إعلان",
+      "name_en": "ANNOUNCE",
+      "category": "Business",
+      "file": "/dna/icons/101_announce.svg"
+    },
+    {
+      "id": "102",
+      "slug": "newsletter",
+      "name_ar": "نشرة",
+      "name_en": "NEWSLETTER",
+      "category": "Content & Media",
+      "file": "/dna/icons/102_newsletter.svg"
+    },
+    {
+      "id": "103",
+      "slug": "play",
+      "name_ar": "تشغيل",
+      "name_en": "PLAY",
+      "category": "Content & Media",
+      "file": "/dna/icons/103_play.svg"
+    },
+    {
+      "id": "104",
+      "slug": "pause",
+      "name_ar": "إيقاف مؤقت",
+      "name_en": "PAUSE",
+      "category": "Content & Media",
+      "file": "/dna/icons/104_pause.svg"
+    },
+    {
+      "id": "105",
+      "slug": "stop",
+      "name_ar": "إيقاف",
+      "name_en": "STOP",
+      "category": "Content & Media",
+      "file": "/dna/icons/105_stop.svg"
+    },
+    {
+      "id": "106",
+      "slug": "next",
+      "name_ar": "المقطع التالي",
+      "name_en": "NEXT",
+      "category": "Content & Media",
+      "file": "/dna/icons/106_next.svg"
+    },
+    {
+      "id": "107",
+      "slug": "previous",
+      "name_ar": "المقطع السابق",
+      "name_en": "PREVIOUS",
+      "category": "Content & Media",
+      "file": "/dna/icons/107_previous.svg"
+    },
+    {
+      "id": "108",
+      "slug": "volume",
+      "name_ar": "الصوت",
+      "name_en": "VOLUME",
+      "category": "Content & Media",
+      "file": "/dna/icons/108_volume.svg"
+    },
+    {
+      "id": "109",
+      "slug": "mute",
+      "name_ar": "كتم",
+      "name_en": "MUTE",
+      "category": "Content & Media",
+      "file": "/dna/icons/109_mute.svg"
+    },
+    {
+      "id": "110",
+      "slug": "image",
+      "name_ar": "صورة",
+      "name_en": "IMAGE",
+      "category": "Content & Media",
+      "file": "/dna/icons/110_image.svg"
+    },
+    {
+      "id": "111",
+      "slug": "gallery",
+      "name_ar": "معرض",
+      "name_en": "GALLERY",
+      "category": "Content & Media",
+      "file": "/dna/icons/111_gallery.svg"
+    },
+    {
+      "id": "112",
+      "slug": "video",
+      "name_ar": "فيديو",
+      "name_en": "VIDEO",
+      "category": "Content & Media",
+      "file": "/dna/icons/112_video.svg"
+    },
+    {
+      "id": "113",
+      "slug": "reels",
+      "name_ar": "ريلز",
+      "name_en": "REELS",
+      "category": "Content & Media",
+      "file": "/dna/icons/113_reels.svg"
+    },
+    {
+      "id": "114",
+      "slug": "music",
+      "name_ar": "موسيقى",
+      "name_en": "MUSIC",
+      "category": "Content & Media",
+      "file": "/dna/icons/114_music.svg"
+    },
+    {
+      "id": "115",
+      "slug": "podcast",
+      "name_ar": "بودكاست",
+      "name_en": "PODCAST",
+      "category": "Content & Media",
+      "file": "/dna/icons/115_podcast.svg"
+    },
+    {
+      "id": "116",
+      "slug": "live",
+      "name_ar": "بث مباشر",
+      "name_en": "LIVE",
+      "category": "Content & Media",
+      "file": "/dna/icons/116_live.svg"
+    },
+    {
+      "id": "117",
+      "slug": "record",
+      "name_ar": "تسجيل",
+      "name_en": "RECORD",
+      "category": "Content & Media",
+      "file": "/dna/icons/117_record.svg"
+    },
+    {
+      "id": "118",
+      "slug": "crop",
+      "name_ar": "قص",
+      "name_en": "CROP",
+      "category": "Design Studio",
+      "file": "/dna/icons/118_crop.svg"
+    },
+    {
+      "id": "119",
+      "slug": "layers",
+      "name_ar": "طبقات",
+      "name_en": "LAYERS",
+      "category": "Design Studio",
+      "file": "/dna/icons/119_layers.svg"
+    },
+    {
+      "id": "120",
+      "slug": "brush",
+      "name_ar": "فرشاة",
+      "name_en": "BRUSH",
+      "category": "Design Studio",
+      "file": "/dna/icons/120_brush.svg"
+    },
+    {
+      "id": "121",
+      "slug": "pen_tool",
+      "name_ar": "قلم تصميم",
+      "name_en": "PEN TOOL",
+      "category": "Design Studio",
+      "file": "/dna/icons/121_pen_tool.svg"
+    },
+    {
+      "id": "122",
+      "slug": "typography",
+      "name_ar": "خطوط",
+      "name_en": "TYPOGRAPHY",
+      "category": "Design Studio",
+      "file": "/dna/icons/122_typography.svg"
+    },
+    {
+      "id": "123",
+      "slug": "palette",
+      "name_ar": "ألوان",
+      "name_en": "PALETTE",
+      "category": "Design Studio",
+      "file": "/dna/icons/123_palette.svg"
+    },
+    {
+      "id": "124",
+      "slug": "file",
+      "name_ar": "ملف",
+      "name_en": "FILE",
+      "category": "Files & Cloud",
+      "file": "/dna/icons/124_file.svg"
+    },
+    {
+      "id": "125",
+      "slug": "document",
+      "name_ar": "مستند",
+      "name_en": "DOCUMENT",
+      "category": "Files & Cloud",
+      "file": "/dna/icons/125_document.svg"
+    },
+    {
+      "id": "126",
+      "slug": "folder",
+      "name_ar": "مجلد",
+      "name_en": "FOLDER",
+      "category": "Files & Cloud",
+      "file": "/dna/icons/126_folder.svg"
+    },
+    {
+      "id": "127",
+      "slug": "open_folder",
+      "name_ar": "مجلد مفتوح",
+      "name_en": "OPEN FOLDER",
+      "category": "Files & Cloud",
+      "file": "/dna/icons/127_open_folder.svg"
+    },
+    {
+      "id": "128",
+      "slug": "upload",
+      "name_ar": "رفع",
+      "name_en": "UPLOAD",
+      "category": "Files & Cloud",
+      "file": "/dna/icons/128_upload.svg"
+    },
+    {
+      "id": "129",
+      "slug": "cloud",
+      "name_ar": "سحابة",
+      "name_en": "CLOUD",
+      "category": "Files & Cloud",
+      "file": "/dna/icons/129_cloud.svg"
+    },
+    {
+      "id": "130",
+      "slug": "archive",
+      "name_ar": "أرشيف",
+      "name_en": "ARCHIVE",
+      "category": "Files & Cloud",
+      "file": "/dna/icons/130_archive.svg"
+    },
+    {
+      "id": "131",
+      "slug": "attachment",
+      "name_ar": "مرفق",
+      "name_en": "ATTACHMENT",
+      "category": "Files & Cloud",
+      "file": "/dna/icons/131_attachment.svg"
+    },
+    {
+      "id": "132",
+      "slug": "tasks",
+      "name_ar": "مهام",
+      "name_en": "TASKS",
+      "category": "Business",
+      "file": "/dna/icons/132_tasks.svg"
+    },
+    {
+      "id": "133",
+      "slug": "bar_chart",
+      "name_ar": "إحصائيات",
+      "name_en": "BAR CHART",
+      "category": "Business",
+      "file": "/dna/icons/133_bar_chart.svg"
+    },
+    {
+      "id": "134",
+      "slug": "line_chart",
+      "name_ar": "نمو",
+      "name_en": "LINE CHART",
+      "category": "Business",
+      "file": "/dna/icons/134_line_chart.svg"
+    },
+    {
+      "id": "135",
+      "slug": "pie_chart",
+      "name_ar": "توزيع",
+      "name_en": "PIE CHART",
+      "category": "Business",
+      "file": "/dna/icons/135_pie_chart.svg"
+    },
+    {
+      "id": "136",
+      "slug": "table",
+      "name_ar": "جدول",
+      "name_en": "TABLE",
+      "category": "Business",
+      "file": "/dna/icons/136_table.svg"
+    },
+    {
+      "id": "137",
+      "slug": "qr_code",
+      "name_ar": "كود QR",
+      "name_en": "QR CODE",
+      "category": "Business",
+      "file": "/dna/icons/137_qr_code.svg"
+    },
+    {
+      "id": "138",
+      "slug": "cart",
+      "name_ar": "السلة",
+      "name_en": "CART",
+      "category": "Business",
+      "file": "/dna/icons/138_cart.svg"
+    },
+    {
+      "id": "139",
+      "slug": "shop",
+      "name_ar": "المتجر",
+      "name_en": "SHOP",
+      "category": "Business",
+      "file": "/dna/icons/139_shop.svg"
+    },
+    {
+      "id": "140",
+      "slug": "wallet",
+      "name_ar": "محفظة",
+      "name_en": "WALLET",
+      "category": "Business",
+      "file": "/dna/icons/140_wallet.svg"
+    },
+    {
+      "id": "141",
+      "slug": "payment",
+      "name_ar": "دفع",
+      "name_en": "PAYMENT",
+      "category": "Business",
+      "file": "/dna/icons/141_payment.svg"
+    },
+    {
+      "id": "142",
+      "slug": "cash",
+      "name_ar": "كاش",
+      "name_en": "CASH",
+      "category": "Business",
+      "file": "/dna/icons/142_cash.svg"
+    },
+    {
+      "id": "143",
+      "slug": "invoice",
+      "name_ar": "فاتورة",
+      "name_en": "INVOICE",
+      "category": "Business",
+      "file": "/dna/icons/143_invoice.svg"
+    },
+    {
+      "id": "144",
+      "slug": "investment",
+      "name_ar": "استثمار",
+      "name_en": "INVESTMENT",
+      "category": "Business",
+      "file": "/dna/icons/144_investment.svg"
+    },
+    {
+      "id": "145",
+      "slug": "trending_up",
+      "name_ar": "صعود",
+      "name_en": "TRENDING UP",
+      "category": "Business",
+      "file": "/dna/icons/145_trending_up.svg"
+    },
+    {
+      "id": "146",
+      "slug": "trending_down",
+      "name_ar": "هبوط",
+      "name_en": "TRENDING DOWN",
+      "category": "Business",
+      "file": "/dna/icons/146_trending_down.svg"
+    },
+    {
+      "id": "147",
+      "slug": "company",
+      "name_ar": "شركة",
+      "name_en": "COMPANY",
+      "category": "Business",
+      "file": "/dna/icons/147_company.svg"
+    },
+    {
+      "id": "148",
+      "slug": "store",
+      "name_ar": "محل",
+      "name_en": "STORE",
+      "category": "Business",
+      "file": "/dna/icons/148_store.svg"
+    },
+    {
+      "id": "149",
+      "slug": "shipping",
+      "name_ar": "شحن",
+      "name_en": "SHIPPING",
+      "category": "Business",
+      "file": "/dna/icons/149_shipping.svg"
+    },
+    {
+      "id": "150",
+      "slug": "gift",
+      "name_ar": "هدية",
+      "name_en": "GIFT",
+      "category": "Business",
+      "file": "/dna/icons/150_gift.svg"
+    },
+    {
+      "id": "151",
+      "slug": "discount",
+      "name_ar": "خصم",
+      "name_en": "DISCOUNT",
+      "category": "Business",
+      "file": "/dna/icons/151_discount.svg"
+    },
+    {
+      "id": "152",
+      "slug": "award",
+      "name_ar": "جائزة",
+      "name_en": "AWARD",
+      "category": "Business",
+      "file": "/dna/icons/152_award.svg"
+    },
+    {
+      "id": "153",
+      "slug": "premium",
+      "name_ar": "بريميوم",
+      "name_en": "PREMIUM",
+      "category": "Business",
+      "file": "/dna/icons/153_premium.svg"
+    },
+    {
+      "id": "154",
+      "slug": "contract",
+      "name_ar": "عقد",
+      "name_en": "CONTRACT",
+      "category": "Business",
+      "file": "/dna/icons/154_contract.svg"
+    },
+    {
+      "id": "155",
+      "slug": "growth",
+      "name_ar": "نمو مستدام",
+      "name_en": "GROWTH",
+      "category": "Business",
+      "file": "/dna/icons/155_growth.svg"
+    },
+    {
+      "id": "156",
+      "slug": "meeting",
+      "name_ar": "اجتماع",
+      "name_en": "MEETING",
+      "category": "Business",
+      "file": "/dna/icons/156_meeting.svg"
+    },
+    {
+      "id": "157",
+      "slug": "ai",
+      "name_ar": "ذكاء اصطناعي",
+      "name_en": "AI",
+      "category": "AI & Engineering",
+      "file": "/dna/icons/157_ai.svg"
+    },
+    {
+      "id": "158",
+      "slug": "bot",
+      "name_ar": "بوت",
+      "name_en": "BOT",
+      "category": "AI & Engineering",
+      "file": "/dna/icons/158_bot.svg"
+    },
+    {
+      "id": "159",
+      "slug": "prompt",
+      "name_ar": "برومبت",
+      "name_en": "PROMPT",
+      "category": "AI & Engineering",
+      "file": "/dna/icons/159_prompt.svg"
+    },
+    {
+      "id": "160",
+      "slug": "magic",
+      "name_ar": "سحر",
+      "name_en": "MAGIC",
+      "category": "AI & Engineering",
+      "file": "/dna/icons/160_magic.svg"
+    },
+    {
+      "id": "161",
+      "slug": "loop",
+      "name_ar": "حلقة أتمتة",
+      "name_en": "LOOP",
+      "category": "AI & Engineering",
+      "file": "/dna/icons/161_loop.svg"
+    },
+    {
+      "id": "162",
+      "slug": "api",
+      "name_ar": "API",
+      "name_en": "API",
+      "category": "AI & Engineering",
+      "file": "/dna/icons/162_api.svg"
+    },
+    {
+      "id": "163",
+      "slug": "terminal",
+      "name_ar": "الطرفية",
+      "name_en": "TERMINAL",
+      "category": "AI & Engineering",
+      "file": "/dna/icons/163_terminal.svg"
+    },
+    {
+      "id": "164",
+      "slug": "server",
+      "name_ar": "سيرفر",
+      "name_en": "SERVER",
+      "category": "AI & Engineering",
+      "file": "/dna/icons/164_server.svg"
+    },
+    {
+      "id": "165",
+      "slug": "network",
+      "name_ar": "شبكة الأجهزة",
+      "name_en": "NETWORK",
+      "category": "AI & Engineering",
+      "file": "/dna/icons/165_network.svg"
+    },
+    {
+      "id": "166",
+      "slug": "branch",
+      "name_ar": "إصدار",
+      "name_en": "BRANCH",
+      "category": "AI & Engineering",
+      "file": "/dna/icons/166_branch.svg"
+    },
+    {
+      "id": "167",
+      "slug": "bug",
+      "name_ar": "باج",
+      "name_en": "BUG",
+      "category": "AI & Engineering",
+      "file": "/dna/icons/167_bug.svg"
+    },
+    {
+      "id": "168",
+      "slug": "key",
+      "name_ar": "مفتاح",
+      "name_en": "KEY",
+      "category": "AI & Engineering",
+      "file": "/dna/icons/168_key.svg"
+    },
+    {
+      "id": "169",
+      "slug": "biometric",
+      "name_ar": "بصمة",
+      "name_en": "BIOMETRIC",
+      "category": "Devices & Hardware",
+      "file": "/dna/icons/169_biometric.svg"
+    },
+    {
+      "id": "170",
+      "slug": "wifi",
+      "name_ar": "واي فاي",
+      "name_en": "WI-FI",
+      "category": "Devices & Hardware",
+      "file": "/dna/icons/170_wifi.svg"
+    },
+    {
+      "id": "171",
+      "slug": "bluetooth",
+      "name_ar": "بلوتوث",
+      "name_en": "BLUETOOTH",
+      "category": "Devices & Hardware",
+      "file": "/dna/icons/171_bluetooth.svg"
+    },
+    {
+      "id": "172",
+      "slug": "battery",
+      "name_ar": "البطارية",
+      "name_en": "BATTERY",
+      "category": "Devices & Hardware",
+      "file": "/dna/icons/172_battery.svg"
+    },
+    {
+      "id": "173",
+      "slug": "laptop",
+      "name_ar": "لابتوب",
+      "name_en": "LAPTOP",
+      "category": "Devices & Hardware",
+      "file": "/dna/icons/173_laptop.svg"
+    },
+    {
+      "id": "174",
+      "slug": "desktop",
+      "name_ar": "كمبيوتر",
+      "name_en": "DESKTOP",
+      "category": "Devices & Hardware",
+      "file": "/dna/icons/174_desktop.svg"
+    },
+    {
+      "id": "175",
+      "slug": "mobile",
+      "name_ar": "موبايل",
+      "name_en": "MOBILE",
+      "category": "Devices & Hardware",
+      "file": "/dna/icons/175_mobile.svg"
+    },
+    {
+      "id": "176",
+      "slug": "tablet",
+      "name_ar": "تابلت",
+      "name_en": "TABLET",
+      "category": "Devices & Hardware",
+      "file": "/dna/icons/176_tablet.svg"
+    },
+    {
+      "id": "177",
+      "slug": "smartwatch",
+      "name_ar": "ساعة ذكية",
+      "name_en": "SMARTWATCH",
+      "category": "Devices & Hardware",
+      "file": "/dna/icons/177_smartwatch.svg"
+    },
+    {
+      "id": "178",
+      "slug": "keyboard",
+      "name_ar": "كيبورد",
+      "name_en": "KEYBOARD",
+      "category": "Devices & Hardware",
+      "file": "/dna/icons/178_keyboard.svg"
+    },
+    {
+      "id": "179",
+      "slug": "mouse",
+      "name_ar": "ماوس",
+      "name_en": "MOUSE",
+      "category": "Devices & Hardware",
+      "file": "/dna/icons/179_mouse.svg"
+    },
+    {
+      "id": "180",
+      "slug": "headphones",
+      "name_ar": "سماعات",
+      "name_en": "HEADPHONES",
+      "category": "Devices & Hardware",
+      "file": "/dna/icons/180_headphones.svg"
+    },
+    {
+      "id": "181",
+      "slug": "mixed_reality",
+      "name_ar": "واقع مختلط",
+      "name_en": "MIXED REALITY",
+      "category": "Devices & Hardware",
+      "file": "/dna/icons/181_mixed_reality.svg"
+    },
+    {
+      "id": "182",
+      "slug": "print",
+      "name_ar": "طباعة",
+      "name_en": "PRINT",
+      "category": "Devices & Hardware",
+      "file": "/dna/icons/182_print.svg"
+    },
+    {
+      "id": "183",
+      "slug": "screen",
+      "name_ar": "شاشة",
+      "name_en": "SCREEN",
+      "category": "Devices & Hardware",
+      "file": "/dna/icons/183_screen.svg"
+    },
+    {
+      "id": "184",
+      "slug": "instagram",
+      "name_ar": "إنستجرام",
+      "name_en": "INSTAGRAM",
+      "category": "Social & Platforms",
+      "file": "/dna/icons/184_instagram.svg"
+    },
+    {
+      "id": "185",
+      "slug": "facebook",
+      "name_ar": "فيسبوك",
+      "name_en": "FACEBOOK",
+      "category": "Social & Platforms",
+      "file": "/dna/icons/185_facebook.svg"
+    },
+    {
+      "id": "186",
+      "slug": "linkedin",
+      "name_ar": "لينكدإن",
+      "name_en": "LINKEDIN",
+      "category": "Social & Platforms",
+      "file": "/dna/icons/186_linkedin.svg"
+    },
+    {
+      "id": "187",
+      "slug": "x_twitter",
+      "name_ar": "إكس",
+      "name_en": "X",
+      "category": "Social & Platforms",
+      "file": "/dna/icons/187_x_twitter.svg"
+    },
+    {
+      "id": "188",
+      "slug": "tiktok",
+      "name_ar": "تيك توك",
+      "name_en": "TIKTOK",
+      "category": "Social & Platforms",
+      "file": "/dna/icons/188_tiktok.svg"
+    },
+    {
+      "id": "189",
+      "slug": "whatsapp",
+      "name_ar": "واتساب",
+      "name_en": "WHATSAPP",
+      "category": "Social & Platforms",
+      "file": "/dna/icons/189_whatsapp.svg"
+    },
+    {
+      "id": "190",
+      "slug": "telegram",
+      "name_ar": "تيليجرام",
+      "name_en": "TELEGRAM",
+      "category": "Social & Platforms",
+      "file": "/dna/icons/190_telegram.svg"
+    },
+    {
+      "id": "191",
+      "slug": "github",
+      "name_ar": "جيت هب",
+      "name_en": "GITHUB",
+      "category": "Social & Platforms",
+      "file": "/dna/icons/191_github.svg"
+    },
+    {
+      "id": "192",
+      "slug": "behance",
+      "name_ar": "بيهانس",
+      "name_en": "BEHANCE",
+      "category": "Social & Platforms",
+      "file": "/dna/icons/192_behance.svg"
+    },
+    {
+      "id": "193",
+      "slug": "product_hunt",
+      "name_ar": "برودكت هنت",
+      "name_en": "PRODUCT HUNT",
+      "category": "Social & Platforms",
+      "file": "/dna/icons/193_product_hunt.svg"
+    },
+    {
+      "id": "194",
+      "slug": "spotify",
+      "name_ar": "سبوتيفاي",
+      "name_en": "SPOTIFY",
+      "category": "Social & Platforms",
+      "file": "/dna/icons/194_spotify.svg"
+    },
+    {
+      "id": "195",
+      "slug": "website",
+      "name_ar": "الموقع الإلكتروني",
+      "name_en": "WEBSITE",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/195_website.svg"
+    },
+    {
+      "id": "196",
+      "slug": "location",
+      "name_ar": "الموقع الجغرافي",
+      "name_en": "LOCATION",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/196_location.svg"
+    },
+    {
+      "id": "197",
+      "slug": "map",
+      "name_ar": "خريطة",
+      "name_en": "MAP",
+      "category": "UI & Navigation",
+      "file": "/dna/icons/197_map.svg"
+    },
+    {
+      "id": "198",
+      "slug": "book",
+      "name_ar": "كتاب",
+      "name_en": "BOOK",
+      "category": "Education",
+      "file": "/dna/icons/198_book.svg"
+    },
+    {
+      "id": "199",
+      "slug": "learning",
+      "name_ar": "تعلّم",
+      "name_en": "LEARNING",
+      "category": "Education",
+      "file": "/dna/icons/199_learning.svg"
+    },
+    {
+      "id": "200",
+      "slug": "travel",
+      "name_ar": "سفر",
+      "name_en": "TRAVEL",
+      "category": "Lifestyle & Culture",
+      "file": "/dna/icons/200_travel.svg"
+    },
+    {
+      "id": "201",
+      "slug": "car",
+      "name_ar": "عربية",
+      "name_en": "CAR",
+      "category": "Lifestyle & Culture",
+      "file": "/dna/icons/201_car.svg"
+    },
+    {
+      "id": "202",
+      "slug": "fitness",
+      "name_ar": "رياضة",
+      "name_en": "FITNESS",
+      "category": "Lifestyle & Culture",
+      "file": "/dna/icons/202_fitness.svg"
+    },
+    {
+      "id": "203",
+      "slug": "food",
+      "name_ar": "أكل",
+      "name_en": "FOOD",
+      "category": "Lifestyle & Culture",
+      "file": "/dna/icons/203_food.svg"
+    },
+    {
+      "id": "204",
+      "slug": "coffee",
+      "name_ar": "قهوة",
+      "name_en": "COFFEE",
+      "category": "Lifestyle & Culture",
+      "file": "/dna/icons/204_coffee.svg"
+    },
+    {
+      "id": "205",
+      "slug": "ramadan",
+      "name_ar": "فانوس رمضان",
+      "name_en": "RAMADAN",
+      "category": "Lifestyle & Culture",
+      "file": "/dna/icons/205_ramadan.svg"
+    },
+    {
+      "id": "206",
+      "slug": "crescent",
+      "name_ar": "هلال",
+      "name_en": "CRESCENT",
+      "category": "Lifestyle & Culture",
+      "file": "/dna/icons/206_crescent.svg"
+    },
+    {
+      "id": "207",
+      "slug": "egypt",
+      "name_ar": "مصر",
+      "name_en": "EGYPT",
+      "category": "Lifestyle & Culture",
+      "file": "/dna/icons/207_egypt.svg"
+    },
+    {
+      "id": "208",
+      "slug": "success",
+      "name_ar": "نجاح",
+      "name_en": "SUCCESS",
+      "category": "Status & Feedback",
+      "file": "/dna/icons/208_success.svg"
+    },
+    {
+      "id": "209",
+      "slug": "error",
+      "name_ar": "خطأ",
+      "name_en": "ERROR",
+      "category": "Status & Feedback",
+      "file": "/dna/icons/209_error.svg"
+    },
+    {
+      "id": "210",
+      "slug": "loading",
+      "name_ar": "جاري التحميل",
+      "name_en": "LOADING",
+      "category": "Status & Feedback",
+      "file": "/dna/icons/210_loading.svg"
+    },
+    {
+      "id": "211",
+      "slug": "coming_soon",
+      "name_ar": "قريباً",
+      "name_en": "COMING SOON",
+      "category": "Status & Feedback",
+      "file": "/dna/icons/211_coming_soon.svg"
+    },
+    {
+      "id": "212",
+      "slug": "verified",
+      "name_ar": "موثّق",
+      "name_en": "VERIFIED",
+      "category": "Status & Feedback",
+      "file": "/dna/icons/212_verified.svg"
+    },
+    {
+      "id": "213",
+      "slug": "trending",
+      "name_ar": "ترند",
+      "name_en": "TRENDING",
+      "category": "Status & Feedback",
+      "file": "/dna/icons/213_trending.svg"
+    },
+    {
+      "id": "214",
+      "slug": "approve",
+      "name_ar": "إعجاب",
+      "name_en": "APPROVE",
+      "category": "Status & Feedback",
+      "file": "/dna/icons/214_approve.svg"
+    },
+    {
+      "id": "215",
+      "slug": "happy",
+      "name_ar": "سعيد",
+      "name_en": "HAPPY",
+      "category": "Status & Feedback",
+      "file": "/dna/icons/215_happy.svg"
+    },
+    {
+      "id": "216",
+      "slug": "milestone",
+      "name_ar": "هدف",
+      "name_en": "MILESTONE",
+      "category": "Status & Feedback",
+      "file": "/dna/icons/216_milestone.svg"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+/* Artelligence Digital DNA Shared Design Tokens v2.0 */
+:root {
+  --ink: #0A0A0A;
+  --paper: #F5F4F0;
+  --paper-pure: #FAFAF7;
+  --white: #FFFFFF;
+  --surface-dark: #141416;
+  --surface-elevated: #1C1C20;
+  --muted-dark: #A1A1AA;
+  --muted-light: #52525B;
+  --line-dark: #27272A;
+  --line-light: #E4E4E0;
+  --blueprint: #3B82F6;
+  --signal-ok: #10B981;
+  --signal-warn: #F59E0B;
+  --signal-danger: #EF4444;
+
+  --font-ar: "IBM Plex Sans Arabic", system-ui, -apple-system, sans-serif;
+  --font-en: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --grid: 48px;
+  --stroke: 2.4px;
+  --angle: 56.9deg;
+  --circle-mm: 22mm;
+  --radius-card: 20px;
+  --radius-pill: 9999px;
+}
+
+[data-theme="dark"], html:not(.light-mode) {
+  --bg-primary: var(--ink);
+  --bg-surface: var(--surface-dark);
+  --bg-elevated: var(--surface-elevated);
+  --text-primary: var(--white);
+  --text-muted: var(--muted-dark);
+  --border-hairline: var(--line-dark);
+  --accent-fill: var(--white);
+  --accent-ink: var(--ink);
+}
+
+[data-theme="light"], html.light-mode {
+  --bg-primary: var(--paper);
+  --bg-surface: var(--white);
+  --bg-elevated: var(--paper-pure);
+  --text-primary: var(--ink);
+  --text-muted: var(--muted-light);
+  --border-hairline: var(--line-light);
+  --accent-fill: var(--ink);
+  --accent-ink: var(--white);
+}

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="512" height="512">
+  <!-- Artelligence Icon System v2 | #040 KNOWLEDGE (قاعدة المعرفة) | Category: Product & OS -->
+  <!-- Grid: 48x48 | Stroke: 2.4px Round | Single Isolated Origin Dot -->
+  <circle cx="24" cy="24" r="23" fill="#0A0A0A"/>
+  <ellipse cx="24" cy="15" rx="9" ry="3.5" stroke="#FFFFFF" stroke-width="2.4" fill="none"/><path d="M15 15V31C15 33 19 34.5 24 34.5C29 34.5 33 33 33 31V15M15 23C15 25 19 26.5 24 26.5C29 26.5 33 25 33 23" stroke="#FFFFFF" stroke-width="2.4" fill="none"/><circle cx="24" cy="30.5" r="1.8" fill="#FFFFFF"/>
+</svg>

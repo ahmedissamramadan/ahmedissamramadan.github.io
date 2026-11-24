@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <circle cx="540" cy="540" r="540" fill="#0A0A0A"/>
+  <path d="M480 340 L635 340 L515 740 L360 740 Z" fill="#FFFFFF" transform="rotate(8 540 540)"/>
+</svg>

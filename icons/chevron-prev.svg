@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-labelledby="title"><title id="title">chevron-prev</title><path fill="var(--{{px}}-secondary)" d="M19.5 2.5 7.5 12l12 9.5H11L2 12l9-9.5h8.5Z"/><path fill="var(--{{px}}-primary)" d="M19.5 5.5 11 12l8.5 6.5H15L7 12l8-6.5h4.5Z"/></svg>

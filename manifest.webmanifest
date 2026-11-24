@@ -1,0 +1,18 @@
+{
+  "name": "Artelligence · أحمد عصام رمضان",
+  "short_name": "Artelligence",
+  "description": "منظومة وتطبيق Artelligence الموحد: تحوّل الأعمال، دراسات الحالة، داخل عقلي، والمتحف البصري.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0A0A0A",
+  "theme_color": "#0A0A0A",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
